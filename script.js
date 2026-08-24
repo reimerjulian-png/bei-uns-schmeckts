@@ -155,41 +155,147 @@ function coverAnimation() {
 window.addEventListener("scroll", coverAnimation, { passive: true });
 coverAnimation();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const hauptgerichte = [
-        { name: "Gyros Suppe", url: "gyrossuppe.html" },
-        { name: "Rindergulasch", url: "rindergulasch.html" }
-    ];
+/* =========================================================
+   ZUFALLSGERICHT – AUTOMATISCH AUS „UNSERE KLASSIKER“
+   ========================================================= */
 
-    const zufallButton = document.getElementById("zufallButton");
-    const zufallNochmal = document.getElementById("zufallNochmal");
-    const zufallErgebnis = document.getElementById("zufallErgebnis");
-    const zufallName = document.getElementById("zufallName");
-    const zufallLink = document.getElementById("zufallLink");
+const zufallButton = document.getElementById("zufallButton");
+const zufallNochmal = document.getElementById("zufallNochmal");
+const zufallErgebnis = document.getElementById("zufallErgebnis");
+const zufallName = document.getElementById("zufallName");
+const zufallLink = document.getElementById("zufallLink");
 
-    if (!zufallButton || !zufallErgebnis || !zufallName || !zufallLink) {
+let hauptgerichte = [];
+let letzterZufallsIndex = -1;
+
+
+/* Rezepte automatisch aus klassiker.html laden */
+
+async function hauptgerichteLaden() {
+
+    try {
+
+        const antwort = await fetch("klassiker.html");
+
+        if (!antwort.ok) {
+            throw new Error("klassiker.html konnte nicht geladen werden.");
+        }
+
+        const html = await antwort.text();
+
+        const parser = new DOMParser();
+        const dokument = parser.parseFromString(html, "text/html");
+
+        const rezeptLinks = dokument.querySelectorAll(
+            ".rezeptliste a.rezept-eintrag[href]"
+        );
+
+        hauptgerichte = Array.from(rezeptLinks).map((link) => {
+
+            const nameElement = link.querySelector(".rezept-name");
+
+            return {
+                name: nameElement
+                    ? nameElement.textContent.trim()
+                    : link.textContent.trim(),
+
+                url: link.getAttribute("href")
+            };
+
+        });
+
+    } catch (fehler) {
+
+        console.error(
+            "Hauptgerichte konnten nicht geladen werden:",
+            fehler
+        );
+
+    }
+
+}
+
+
+/* Zufälliges Gericht anzeigen */
+
+async function zufallsgerichtAnzeigen() {
+
+    if (
+        !zufallButton ||
+        !zufallErgebnis ||
+        !zufallName ||
+        !zufallLink
+    ) {
         return;
     }
 
-    let letzterZufallsIndex = -1;
 
-    function zufallsgerichtAnzeigen() {
-        let index = 0;
+    /* Falls noch nicht geladen */
 
-        if (hauptgerichte.length > 1) {
-            do {
-                index = Math.floor(Math.random() * hauptgerichte.length);
-            } while (index === letzterZufallsIndex);
-        }
-
-        letzterZufallsIndex = index;
-
-        const gericht = hauptgerichte[index];
-        zufallName.textContent = gericht.name;
-        zufallLink.href = gericht.url;
-        zufallErgebnis.classList.add("aktiv");
+    if (hauptgerichte.length === 0) {
+        await hauptgerichteLaden();
     }
 
-    zufallButton.addEventListener("click", zufallsgerichtAnzeigen);
-    zufallNochmal?.addEventListener("click", zufallsgerichtAnzeigen);
-});
+
+    if (hauptgerichte.length === 0) {
+
+        zufallName.textContent =
+            "Noch kein Gericht verfügbar";
+
+        zufallLink.removeAttribute("href");
+
+        zufallErgebnis.classList.add("aktiv");
+
+        return;
+    }
+
+
+    let index = 0;
+
+
+    /* Nicht zweimal direkt dasselbe Gericht */
+
+    if (hauptgerichte.length > 1) {
+
+        do {
+
+            index = Math.floor(
+                Math.random() * hauptgerichte.length
+            );
+
+        } while (
+            index === letzterZufallsIndex
+        );
+
+    }
+
+
+    letzterZufallsIndex = index;
+
+    const gericht = hauptgerichte[index];
+
+
+    zufallName.textContent = gericht.name;
+
+    zufallLink.href = gericht.url;
+
+    zufallErgebnis.classList.add("aktiv");
+
+}
+
+
+/* Bereits beim Laden der Seite vorbereiten */
+
+hauptgerichteLaden();
+
+
+zufallButton?.addEventListener(
+    "click",
+    zufallsgerichtAnzeigen
+);
+
+
+zufallNochmal?.addEventListener(
+    "click",
+    zufallsgerichtAnzeigen
+);
