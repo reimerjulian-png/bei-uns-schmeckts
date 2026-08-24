@@ -975,3 +975,140 @@ body.menu-offen {
     color: #1d1d1b;
     text-underline-offset: 3px;
 }
+
+/* =========================================================
+   FAMILIENMOMENTE
+   ========================================================= */
+
+.familienmoment {
+    max-width: 720px;
+    margin: 100px auto 80px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.familienmoment-label {
+    margin: 0 0 18px;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    opacity: 0.5;
+}
+
+.familienmoment h2 {
+    margin: 0 0 28px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.familienmoment p {
+    margin: 0 0 18px;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.familienmoment-pointe {
+    margin-top: 28px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   FAMILIENZITAT – LIAMS PARKPLATZ
+   ========================================================= */
+
+.familienzitat {
+    margin: 40px 28px 70px;
+    padding: 28px 20px 24px;
+
+    border-top: 1px solid #cfc8bd;
+
+    text-align: center;
+}
+
+.familienzitat-label {
+    margin: 0 0 14px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: #8b867e;
+}
+
+.familienzitat blockquote {
+    max-width: 300px;
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.25;
+
+    color: #1d1d1b;
+}
+
+.familienzitat-name {
+    margin: 12px 0 24px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+
+    color: #8b867e;
+}
+
+
+/* ---------- PARKPLÄTZE ---------- */
+
+.parkplaetze {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.parkplatz {
+    min-height: 64px;
+    padding: 9px 7px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #c9c1b5;
+}
+
+.parkplatz span {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 300;
+    line-height: 1.2;
+
+    color: #77716a;
+}
+
+.parkplatz strong {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: 0.06em;
+
+    color: #1d1d1b;
+}
