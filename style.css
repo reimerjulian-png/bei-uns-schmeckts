@@ -1112,3 +1112,22 @@ body.menu-offen {
 
     color: #1d1d1b;
 }
+/* =========================================================
+   PERSÖNLICHER ABSCHLUSS
+   ========================================================= */
+
+.familien-footer {
+    padding: 40px 0 50px;
+    text-align: center;
+}
+
+.familien-footer p {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+
+    color: #8b867e;
+}
