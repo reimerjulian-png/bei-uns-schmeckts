@@ -1,0 +1,977 @@
+/* =========================================================
+   BEI UNS SCHMECKT'S
+   Komplette style.css
+   Mobile First / ca. 390 px Referenzbreite
+   ========================================================= */
+
+/* ---------- GRUNDLAGEN ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f3eb;
+    color: #1d1d1b;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-weight: 300;
+
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(247, 243, 235, 0.97);
+    border-bottom: 1px solid #ddd7cd;
+
+    transition: transform 0.25s ease;
+}
+
+.topbar.versteckt {
+    transform: translateY(-100%);
+}
+
+.topbar-inner {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+    padding: 13px 28px;
+
+    display: grid;
+    grid-template-columns: 36px 1fr 36px;
+    align-items: center;
+}
+
+.topbar-title {
+    justify-self: center;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #1d1d1b;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu-button,
+.suche-button,
+.menu-schliessen {
+    appearance: none;
+
+    border: 0;
+    background: none;
+
+    color: #1d1d1b;
+    cursor: pointer;
+}
+
+
+/* ---------- HAMBURGER ---------- */
+
+.menu-button {
+    width: 32px;
+    height: 32px;
+
+    padding: 7px 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-button span {
+    display: block;
+
+    width: 22px;
+    height: 1.5px;
+
+    background-color: #1d1d1b;
+}
+
+
+/* ---------- SUCHE ---------- */
+
+.suche-button {
+    justify-self: end;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 1;
+}
+
+.suche-panel {
+    display: none;
+
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+    padding: 0 28px 18px;
+}
+
+.suche-panel.aktiv {
+    display: block;
+}
+
+#sucheInput {
+    width: 100%;
+
+    padding: 12px 0;
+
+    border: 0;
+    border-bottom: 1px solid #bdb6aa;
+    outline: none;
+
+    background: transparent;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+    color: #1d1d1b;
+}
+
+#sucheInput::placeholder {
+    color: #8b867e;
+}
+
+#sucheErgebnisse {
+    margin-top: 10px;
+}
+
+.suche-ergebnis {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #ddd7cd;
+
+    color: #1d1d1b;
+    text-decoration: none;
+}
+
+.suche-ergebnis span {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.suche-ergebnis small,
+.suche-kein-treffer {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+
+    color: #8b867e;
+}
+
+
+/* =========================================================
+   SEITLICHES HAUPTMENÜ
+   ========================================================= */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1090;
+
+    background: rgba(29, 29, 27, 0.22);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.menu-overlay.aktiv {
+    opacity: 1;
+    visibility: visible;
+}
+
+.seitenmenue {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: 1100;
+
+    width: min(86vw, 360px);
+
+    background-color: #f7f3eb;
+
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.seitenmenue.aktiv {
+    transform: translateX(0);
+}
+
+body.menu-offen {
+    overflow: hidden;
+}
+
+.seitenmenue-kopf {
+    position: sticky;
+    top: 0;
+
+    padding: 20px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #f7f3eb;
+    border-bottom: 1px solid #ddd7cd;
+}
+
+.seitenmenue-kopf span {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.menu-schliessen {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.seitenmenue-inhalt {
+    padding: 28px 24px 60px;
+}
+
+.menu-start {
+    display: block;
+
+    margin-bottom: 38px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #1d1d1b;
+    text-decoration: none;
+}
+
+.menu-bereichstitel {
+    margin: 0 0 14px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    color: #8b867e;
+}
+
+.menu-kapitel {
+    margin-bottom: 38px;
+}
+
+.menu-kapitel-link {
+    display: grid;
+
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #ddd7cd;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.35;
+
+    color: #1d1d1b;
+    text-decoration: none;
+}
+
+.menu-kapitel-link:first-child {
+    border-top: 1px solid #ddd7cd;
+}
+
+.menu-kapitel-link span {
+    font-size: 12px;
+    color: #8b867e;
+}
+
+.menu-untertitel {
+    margin: 22px 0 6px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+
+    color: #1d1d1b;
+}
+
+.menu-rezept-link {
+    display: block;
+
+    padding: 9px 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+
+    color: #4a4742;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   COVER / APPLE-ARTIGER SCROLL-ZOOM
+   ========================================================= */
+
+.cover-scroll {
+    position: relative;
+
+    height: 180vh;
+
+    margin-left: -32px;
+    margin-right: -32px;
+}
+
+.cover-sticky {
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.cover-teller {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    left: 50%;
+    top: 38%;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+
+    will-change: transform;
+}
+
+.cover-teller img {
+    position: absolute;
+
+    width: 158%;
+    max-width: none;
+    height: auto;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.cover-text {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+    bottom: 12%;
+
+    will-change: opacity, transform;
+}
+
+.cover-text h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 62px;
+    font-weight: 500;
+    line-height: 0.82;
+
+    letter-spacing: -1.5px;
+}
+
+.cover-text p {
+    margin: 28px 0 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+    color: #66635e;
+}
+
+
+/* =========================================================
+   VORWORT
+   ========================================================= */
+
+.vorwort {
+    padding: 40px 0 120px;
+}
+
+.vorwort .widmung {
+    margin: 0 0 48px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.vorwort-text p {
+    margin: 0 0 16px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+
+    color: #3f3d39;
+}
+
+.vorwort-text p:last-child {
+    margin-bottom: 0;
+}
+
+.vorwort-text strong {
+    font-weight: 600;
+    color: #1d1d1b;
+}
+
+
+/* =========================================================
+   "WAS GIBT'S?"
+   ========================================================= */
+
+.kapitel-intro {
+    padding: 70px 0 80px;
+}
+
+.kapitel-intro h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.kapitel-intro p {
+    margin: 28px 0 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    color: #4a4742;
+}
+
+
+/* =========================================================
+   KAPITEL AUF DER STARTSEITE
+   ========================================================= */
+
+.kapitel {
+    padding: 0 0 120px;
+}
+
+.kapitel-karte {
+    display: block;
+
+    margin: 0 28px;
+    padding: 38px 0 42px;
+
+    border-top: 1px solid #cfc8bd;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.kapitel-karte:last-child {
+    border-bottom: 1px solid #cfc8bd;
+}
+
+.kapitel-nummer {
+    margin: 0 0 14px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+    color: #8b867e;
+}
+
+.kapitel-karte h3 {
+    margin: 0 0 12px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.kapitel-text {
+    margin: 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+
+    color: #4a4742;
+}
+
+
+/* =========================================================
+   EINZELNE KAPITELSEITEN
+   ========================================================= */
+
+.kapitel-seite {
+    padding: 60px 0 120px;
+}
+
+.zurueck {
+    display: inline-block;
+
+    margin-bottom: 80px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+
+    color: #66635e;
+    text-decoration: none;
+}
+
+.kapitel-seite h1 {
+    margin: 14px 0 18px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+.kapitel-beschreibung {
+    margin: 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    color: #4a4742;
+}
+
+
+/* =========================================================
+   REZEPTLISTEN AUF KAPITELSEITEN
+   ========================================================= */
+
+.rezeptliste {
+    margin: 0 28px;
+    padding: 0 0 120px;
+}
+
+.rezept-eintrag,
+.rezept-link {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #cfc8bd;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.rezept-eintrag:first-child,
+.rezept-link:first-child {
+    border-top: 1px solid #cfc8bd;
+}
+
+.rezept-nummer {
+    flex: 0 0 24px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+    color: #b8b067;
+}
+
+.rezept-name {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    color: #1d1d1b;
+}
+
+
+/* =========================================================
+   REZEPTDETAILSEITEN
+   ========================================================= */
+
+.rezept {
+    padding: 48px 0 120px;
+}
+
+.rezept-kopf {
+    margin-bottom: 36px;
+}
+
+.rezept-kategorie {
+    margin: 0 0 10px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: #8b867e;
+}
+
+.rezept-kopf h1 {
+    margin: 0 0 24px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+.rezept-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px 18px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+
+    color: #66635e;
+}
+
+.rezept-bild {
+    display: block;
+
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    margin-bottom: 60px;
+}
+
+.rezept-bereich {
+    margin-bottom: 64px;
+}
+
+.rezept-bereich h2 {
+    margin: 0 0 28px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+
+/* ---------- ZUTATEN ---------- */
+
+.zutaten {
+    border-top: 1px solid #cfc8bd;
+}
+
+.zutaten div {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #ddd7cd;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+
+/* Zutaten-Unterüberschriften, z. B. Lemon Curd */
+
+.zutaten .zutaten-gruppe {
+    margin: 32px 0 10px;
+    padding: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    color: #1d1d1b;
+}
+
+.zutaten .zutaten-gruppe:first-child {
+    margin-top: 0;
+}
+
+
+/* ---------- ZUBEREITUNG ---------- */
+
+.zubereitung {
+    margin: 0;
+    padding-left: 26px;
+}
+
+.zubereitung li {
+    margin-bottom: 22px;
+    padding-left: 8px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+
+    color: #3f3d39;
+}
+
+.zubereitung li::marker {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   KLEINE BILDSCHIRME
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    main {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .cover-scroll {
+        margin-left: -24px;
+        margin-right: -24px;
+    }
+
+    .cover-text {
+        left: 24px;
+        right: 24px;
+    }
+
+    .cover-text h1 {
+        font-size: 54px;
+    }
+
+    .cover-teller {
+        width: 235px;
+        height: 235px;
+    }
+
+    .kapitel-karte,
+    .rezeptliste {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .kapitel-seite h1 {
+        font-size: 46px;
+    }
+
+    .rezept-kopf h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   Seite bleibt bewusst wie ein mobiles Kochbuch zentriert.
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    body {
+        background-color: #efefef;
+    }
+
+    main,
+    .topbar-inner,
+    .suche-panel {
+        background-color: #f7f3eb;
+    }
+
+    main {
+        min-height: 100vh;
+    }
+}
+
+
+/* =========================================================
+   REDUZIERTE BEWEGUNG
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .topbar,
+    .seitenmenue,
+    .menu-overlay {
+        transition: none;
+    }
+
+    .cover-teller,
+    .cover-text {
+        will-change: auto;
+    }
+}
+
+
+/* =========================================================
+   ZUFALLSGERICHT
+   ========================================================= */
+
+.zufall {
+    padding: 80px 0 120px;
+    text-align: center;
+}
+
+.zufall-kicker {
+    margin: 0 0 10px;
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #8b867e;
+}
+
+.zufall h2 {
+    margin: 0 0 32px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.zufall-button,
+#zufallNochmal {
+    border: 1px solid #1d1d1b;
+    background: transparent;
+    padding: 13px 22px;
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #1d1d1b;
+    cursor: pointer;
+}
+
+.zufall-ergebnis {
+    display: none;
+    margin-top: 46px;
+}
+
+.zufall-ergebnis.aktiv {
+    display: block;
+}
+
+.zufall-label {
+    margin: 0 0 10px;
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #8b867e;
+}
+
+#zufallName {
+    margin: 0 0 28px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.zufall-aktionen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+#zufallLink {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #1d1d1b;
+    text-underline-offset: 3px;
+}

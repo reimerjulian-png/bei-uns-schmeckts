@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Was Süßes aus dem Ofen – Bei uns schmeckt&#x27;s</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
+                ⌕
+            </button>
+        </div>
+
+        <div class="suche-panel" id="suchePanel">
+            <input
+                type="text"
+                id="sucheInput"
+                placeholder="Rezept suchen ..."
+                autocomplete="off"
+            >
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+
+        <nav class="seitenmenue-inhalt">
+            <a href="index.html" class="menu-start">Startseite</a>
+
+            <p class="menu-bereichstitel">Kapitel</p>
+            <div class="menu-kapitel">
+                <a href="klassiker.html" class="menu-kapitel-link"><span>01</span>Unsere Klassiker</a>
+                <a href="was-kleines-dazu.html" class="menu-kapitel-link"><span>02</span>Was Kleines dazu</a>
+                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link"><span>03</span>Das macht den Unterschied</a>
+                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link"><span>04</span>Was Süßes aus dem Ofen</a>
+                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
+            </div>
+
+            <p class="menu-bereichstitel">Rezepte</p>
+            <div class="menu-rezepte">
+                <p class="menu-untertitel">Unsere Klassiker</p>
+                <a href="gyrossuppe.html" class="menu-rezept-link">Gyros Suppe</a>
+                <a href="rindergulasch.html" class="menu-rezept-link">Rindergulasch</a>
+                <p class="menu-untertitel">Das macht den Unterschied</p>
+                <a href="rahmsosse.html" class="menu-rezept-link">Rahmsoße</a>
+                <a href="remoulade.html" class="menu-rezept-link">Remoulade</a>
+                <p class="menu-untertitel">Was Süßes aus dem Ofen</p>
+                <a href="pluschki.html" class="menu-rezept-link">Pluschki</a>
+                <p class="menu-untertitel">Ein bisschen Platz ist noch</p>
+                <a href="tiramisu.html" class="menu-rezept-link">Tiramisu</a>
+                <a href="lemon-curd-tiramisu.html" class="menu-rezept-link">Lemon Curd Tiramisu</a>
+                <a href="pick-up-dessert.html" class="menu-rezept-link">Pick Up Dessert</a>
+                <a href="trauben-mascarpone-becher.html" class="menu-rezept-link">Trauben Mascarpone Becher</a>
+                <a href="creme-brulee.html" class="menu-rezept-link">Crème brûlée</a>
+            </div>
+        </nav>
+    </aside>
+
+
+    <main>
+
+        <section class="kapitel-seite">
+            <a class="zurueck" href="javascript:history.back()">← Zurück</a>
+            <p class="kapitel-nummer">04</p>
+            <h1>Was Süßes aus dem Ofen</h1>
+            <p class="kapitel-beschreibung">Kuchen, Torten &amp; Gebäck</p>
+        </section>
+
+        <section class="rezeptliste">
+
+            <a class="rezept-eintrag" href="pluschki.html">
+                <span class="rezept-nummer">01</span>
+                <span class="rezept-name">Pluschki</span>
+            </a>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">02</span>
+                <span class="rezept-name">Bienenstich Teilchen</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">03</span>
+                <span class="rezept-name">Butterkuchen</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">04</span>
+                <span class="rezept-name">Gedeckter Kirschkuchen</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">05</span>
+                <span class="rezept-name">Napoleon</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">06</span>
+                <span class="rezept-name">Kirschkuchen</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">07</span>
+                <span class="rezept-name">Donauwelle</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">08</span>
+                <span class="rezept-name">Preiselbeer Torte</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">09</span>
+                <span class="rezept-name">Vanille-Maracuja-Torte mit Kokos</span>
+            </div>
+
+            <div class="rezept-eintrag">
+                <span class="rezept-nummer">10</span>
+                <span class="rezept-name">Cinnamon Rolls</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

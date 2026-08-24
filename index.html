@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bei uns schmeckt's</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
+                ⌕
+            </button>
+        </div>
+
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+
+        <nav class="seitenmenue-inhalt">
+            <a href="index.html" class="menu-start">Startseite</a>
+
+            <p class="menu-bereichstitel">Kapitel</p>
+            <div class="menu-kapitel">
+                <a href="klassiker.html" class="menu-kapitel-link"><span>01</span>Unsere Klassiker</a>
+                <a href="was-kleines-dazu.html" class="menu-kapitel-link"><span>02</span>Was Kleines dazu</a>
+                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link"><span>03</span>Das macht den Unterschied</a>
+                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link"><span>04</span>Was Süßes aus dem Ofen</a>
+                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
+            </div>
+
+            <p class="menu-bereichstitel">Rezepte</p>
+            <div class="menu-rezepte">
+                <p class="menu-untertitel">Unsere Klassiker</p>
+                <a href="gyrossuppe.html" class="menu-rezept-link">Gyros Suppe</a>
+                <a href="rindergulasch.html" class="menu-rezept-link">Rindergulasch</a>
+
+                <p class="menu-untertitel">Das macht den Unterschied</p>
+                <a href="rahmsosse.html" class="menu-rezept-link">Rahmsoße</a>
+                <a href="remoulade.html" class="menu-rezept-link">Remoulade</a>
+
+                <p class="menu-untertitel">Was Süßes aus dem Ofen</p>
+                <a href="pluschki.html" class="menu-rezept-link">Pluschki</a>
+
+                <p class="menu-untertitel">Ein bisschen Platz ist noch</p>
+                <a href="tiramisu.html" class="menu-rezept-link">Tiramisu</a>
+                <a href="lemon-curd-tiramisu.html" class="menu-rezept-link">Lemon Curd Tiramisu</a>
+                <a href="pick-up-dessert.html" class="menu-rezept-link">Pick Up Dessert</a>
+                <a href="trauben-mascarpone-becher.html" class="menu-rezept-link">Trauben Mascarpone Becher</a>
+                <a href="creme-brulee.html" class="menu-rezept-link">Crème brûlée</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main>
+
+        <section class="start cover-scroll">
+            <div class="cover-sticky">
+                <div class="cover-teller">
+                    <img src="images/Cover.png" alt="">
+                </div>
+
+                <div class="cover-text">
+                    <h1>Bei uns<br>schmeckt's</h1>
+                    <p>Unser digitales Kochbuch.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="vorwort">
+            <p class="widmung">Für dich.</p>
+
+            <div class="vorwort-text">
+                <p>Weil die besten Geschenke ja bekanntlich die persönlichen sind – und du personalisierte Geschenke sowieso liebst – gibt’s dieses Jahr etwas, das ziemlich genau zu uns passt.</p>
+                <p><strong>unser eigenes Kochbuch.</strong></p>
+                <p>Die Idee dazu kam mir irgendwann im August. Warum eigentlich nicht all die Rezepte sammeln, die wir immer wieder machen, die uns richtig gut schmecken und die bei uns einfach dazugehören?</p>
+                <p>Und so ist nach und nach <strong>„Bei uns schmeckt’s.“</strong> entstanden.</p>
+                <p>Drin sind unsere Klassiker, eigene Kreationen, unsere absoluten Lieblingsgerichte und natürlich auch Rezepte von Familie, Freunden und Bekannten, die wir irgendwann übernommen haben und die sich bei uns längst bewährt haben.</p>
+                <p>Einfach alles, was bei uns gerne auf den Tisch kommt – gesammelt an einem Ort.</p>
+                <p>Und wer weiß, was in den nächsten Jahren noch alles dazukommt. Vielleicht wird daraus irgendwann unsere ganz eigene Sammlung an Familienklassikern.</p>
+            </div>
+        </section>
+
+        <section class="kapitel-intro">
+            <h2>Was gibt’s?</h2>
+            <p>Einmal quer durch unsere Küche</p>
+        </section>
+
+        <section class="kapitel">
+            <a class="kapitel-karte" href="klassiker.html">
+                <p class="kapitel-nummer">01</p>
+                <h3>Unsere Klassiker</h3>
+                <p class="kapitel-text">Hauptgerichte &amp; Familienrezepte</p>
+            </a>
+
+            <a class="kapitel-karte" href="was-kleines-dazu.html">
+                <p class="kapitel-nummer">02</p>
+                <h3>Was Kleines dazu</h3>
+                <p class="kapitel-text">Salate, Beilagen &amp; Kleinigkeiten</p>
+            </a>
+
+            <a class="kapitel-karte" href="das-macht-den-unterschied.html">
+                <p class="kapitel-nummer">03</p>
+                <h3>Das macht den Unterschied</h3>
+                <p class="kapitel-text">Saucen, Dips, Dressings &amp; Marinaden</p>
+            </a>
+
+            <a class="kapitel-karte" href="was-suesses-aus-dem-ofen.html">
+                <p class="kapitel-nummer">04</p>
+                <h3>Was Süßes aus dem Ofen</h3>
+                <p class="kapitel-text">Kuchen, Torten &amp; Gebäck</p>
+            </a>
+
+            <a class="kapitel-karte" href="ein-bisschen-platz-ist-noch.html">
+                <p class="kapitel-nummer">05</p>
+                <h3>Ein bisschen Platz ist noch</h3>
+                <p class="kapitel-text">Desserts &amp; Süßspeisen</p>
+            </a>
+        </section>
+
+        <section class="zufall">
+            <p class="zufall-kicker">Keine Idee?</p>
+            <h2>Was gibt’s heute?</h2>
+
+            <button type="button" class="zufall-button" id="zufallButton">
+                Gericht auswählen
+            </button>
+
+            <div class="zufall-ergebnis" id="zufallErgebnis">
+                <p class="zufall-label">Heute gibt’s</p>
+                <h3 id="zufallName"></h3>
+
+                <div class="zufall-aktionen">
+                    <a id="zufallLink" href="#">Rezept öffnen</a>
+                    <button type="button" id="zufallNochmal">Nochmal</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
