@@ -1451,3 +1451,388 @@ body.menu-offen {
         height: 225px;
     }
 }
+
+
+/* =========================================================
+   KÜCHENHELFER IM HAUPTMENÜ
+   ========================================================= */
+
+.menu-bereichstitel-kuechenhelfer {
+    margin-top: 34px;
+}
+
+.menu-kuechenhelfer {
+    margin-bottom: 38px;
+}
+
+.menu-kuechenhelfer-link {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    align-items: start;
+
+    padding: 14px 0;
+
+    border-top: 1px solid #ddd7cd;
+    border-bottom: 1px solid #ddd7cd;
+
+    color: #1d1d1b;
+    text-decoration: none;
+}
+
+.menu-kuechenhelfer-symbol {
+    padding-top: 1px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    line-height: 1;
+
+    color: #8b867e;
+}
+
+.menu-kuechenhelfer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu-kuechenhelfer-text strong {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.menu-kuechenhelfer-text small {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+
+    color: #8b867e;
+}
+
+
+/* =========================================================
+   SPICKZETTEL
+   ========================================================= */
+
+.spickzettel-main {
+    padding-bottom: 80px;
+}
+
+.spickzettel-kopf {
+    padding: 58px 0 42px;
+}
+
+.spickzettel-kopf .zurueck {
+    margin-bottom: 68px;
+}
+
+.spickzettel-kicker {
+    margin: 0 0 10px;
+
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: #8b867e;
+}
+
+.spickzettel-kopf h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+.spickzettel-kopf > p:last-child {
+    max-width: 300px;
+
+    margin: 22px 0 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #66635e;
+}
+
+
+/* ---------- Das Papier ---------- */
+
+.spickzettel-papier {
+    position: relative;
+
+    margin: 12px 2px 30px;
+    padding: 24px 18px 32px;
+
+    background:
+        linear-gradient(rgba(74, 71, 66, 0.045) 1px, transparent 1px),
+        #fffdf7;
+
+    background-size: 100% 30px;
+
+    border: 1px solid rgba(111, 102, 90, 0.16);
+
+    box-shadow:
+        0 10px 28px rgba(47, 41, 35, 0.10),
+        0 2px 5px rgba(47, 41, 35, 0.05);
+
+    transform: rotate(-0.45deg);
+}
+
+.spickzettel-papier::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 18% 22%, rgba(146, 125, 94, 0.03), transparent 20%),
+        radial-gradient(circle at 83% 75%, rgba(146, 125, 94, 0.025), transparent 24%);
+}
+
+
+/* Klebestreifen */
+
+.spickzettel-klebestreifen {
+    position: absolute;
+
+    width: 92px;
+    height: 25px;
+
+    left: 50%;
+    top: -11px;
+
+    transform: translateX(-50%) rotate(1.5deg);
+
+    background: rgba(221, 211, 185, 0.58);
+
+    box-shadow: 0 1px 2px rgba(74, 71, 66, 0.06);
+}
+
+
+/* sehr dezenter Kaffeering */
+
+.spickzettel-kaffeering {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    right: -14px;
+    top: 168px;
+
+    border: 3px solid rgba(126, 92, 54, 0.055);
+    border-radius: 50%;
+
+    transform: rotate(-13deg);
+
+    pointer-events: none;
+}
+
+.spickzettel-kaffeering::after {
+    content: "";
+
+    position: absolute;
+
+    width: 62px;
+    height: 62px;
+
+    left: 7px;
+    top: 8px;
+
+    border: 1px solid rgba(126, 92, 54, 0.035);
+    border-radius: 50%;
+}
+
+
+/* ---------- Inhalt ---------- */
+
+.spickzettel-inhalt {
+    position: relative;
+    z-index: 1;
+}
+
+.spickzettel-papierkopf {
+    padding: 20px 0 30px;
+
+    text-align: center;
+}
+
+.spickzettel-handschrift-gross {
+    margin: 0;
+
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 47px;
+    font-weight: 600;
+    line-height: 0.9;
+
+    color: #24211e;
+}
+
+.spickzettel-handschrift-klein {
+    margin: 8px 0 0;
+
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 19px;
+    font-weight: 400;
+
+    color: #5e5851;
+
+    transform: rotate(-1deg);
+}
+
+.spickzettel-abschnitt {
+    padding: 14px 3px 24px;
+}
+
+.spickzettel-abschnitt h2 {
+    margin: 0 0 16px;
+
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 29px;
+    font-weight: 600;
+
+    color: #24211e;
+}
+
+.spickzettel-zeilen {
+    display: grid;
+    gap: 3px;
+}
+
+.spickzettel-zeilen > div {
+    min-height: 30px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 14px;
+
+    padding: 5px 3px;
+
+    border-bottom: 1px dashed rgba(90, 82, 73, 0.13);
+
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 20px;
+    line-height: 1.05;
+
+    color: #2e2a26;
+}
+
+.spickzettel-zeilen strong {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.spickzettel-randnotiz {
+    width: 180px;
+
+    margin: 18px 0 0 auto;
+
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 16px;
+    line-height: 1.1;
+
+    text-align: right;
+
+    color: #756d65;
+
+    transform: rotate(-2.5deg);
+}
+
+.spickzettel-kritzeltrennlinie {
+    width: 78%;
+    height: 13px;
+
+    margin: 12px auto 8px;
+
+    border-top: 2px solid rgba(67, 61, 55, 0.43);
+    border-radius: 50%;
+
+    transform: rotate(-0.7deg);
+}
+
+.spickzettel-abkuerzungen .spickzettel-zeilen > div {
+    grid-template-columns: 52px 1fr;
+}
+
+.spickzettel-abkuerzungen .spickzettel-zeilen strong {
+    text-align: left;
+}
+
+.spickzettel-pointe {
+    margin: 33px 0 5px;
+
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 22px;
+    font-weight: 500;
+
+    text-align: center;
+
+    color: #3c3732;
+
+    transform: rotate(0.6deg);
+}
+
+
+@media (max-width: 360px) {
+
+    .spickzettel-papier {
+        margin-left: -2px;
+        margin-right: -2px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .spickzettel-handschrift-gross {
+        font-size: 43px;
+    }
+
+    .spickzettel-zeilen > div {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   DAZU PASST
+   ========================================================= */
+
+.rezept-beilage {
+    margin-bottom: 64px;
+}
+
+.beilagen-liste {
+    border-top: 1px solid #cfc8bd;
+}
+
+.beilage {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #ddd7cd;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    color: #1d1d1b;
+}
+
+.beilage-einfach {
+    grid-template-columns: 1fr;
+}
+
+.beilage span:last-child {
+    color: #66635e;
+}

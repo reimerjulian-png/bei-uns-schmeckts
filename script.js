@@ -13,8 +13,12 @@ const sucheErgebnisse = document.getElementById("sucheErgebnisse");
 const rezepte = [
     { name: "Gyros Suppe", url: "gyrossuppe.html", kapitel: "Unsere Klassiker" },
     { name: "Rindergulasch", url: "rindergulasch.html", kapitel: "Unsere Klassiker" },
+    { name: "Überbackene Brezeln", url: "ueberbackene-brezeln.html", kapitel: "Was Kleines dazu" },
+    { name: "Dillgurken", url: "dillgurken.html", kapitel: "Was Kleines dazu" },
+    { name: "Kräuterdressing", url: "kraeuterdressing.html", kapitel: "Das macht den Unterschied" },
     { name: "Rahmsoße", url: "rahmsosse.html", kapitel: "Das macht den Unterschied" },
     { name: "Remoulade", url: "remoulade.html", kapitel: "Das macht den Unterschied" },
+    { name: "Big Mac Sauce", url: "big-mac-sauce.html", kapitel: "Das macht den Unterschied" },
     { name: "Pluschki", url: "pluschki.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Tiramisu", url: "tiramisu.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Lemon Curd Tiramisu", url: "lemon-curd-tiramisu.html", kapitel: "Ein bisschen Platz ist noch" },
@@ -299,3 +303,71 @@ zufallNochmal?.addEventListener(
     "click",
     zufallsgerichtAnzeigen
 );
+
+/* =========================================================
+   HOCHZEITSMENÜ – KONTEXTBEZOGENE ZURÜCK-NAVIGATION
+   ========================================================= */
+
+/*
+   Wenn ein Rezept über die Hochzeitsseite geöffnet wird,
+   merkt sich die URL diesen Einstieg mit ?from=hochzeit.
+   Auf der Rezeptseite führt "Zurück" dann wieder zum
+   Hochzeitsmenü. In allen anderen Fällen bleibt die normale
+   feste Hierarchie Rezept -> Kapitel -> Startseite erhalten.
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* Alle Rezeptlinks auf der Hochzeitsseite automatisch markieren */
+    if (document.querySelector(".hochzeit-menue")) {
+
+        const hochzeitRezeptLinks =
+            document.querySelectorAll(
+                '.hochzeit-menue a[href$=".html"]'
+            );
+
+        hochzeitRezeptLinks.forEach((link) => {
+
+            const url = new URL(
+                link.getAttribute("href"),
+                window.location.href
+            );
+
+            url.searchParams.set(
+                "from",
+                "hochzeit"
+            );
+
+            link.href =
+                url.pathname.split("/").pop() +
+                url.search;
+        });
+    }
+
+
+    /* Auf Rezeptseiten den Zurück-Link nur bei Hochzeits-Einstieg ändern */
+    const parameter =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    if (
+        parameter.get("from") === "hochzeit"
+    ) {
+
+        const zurueckLink =
+            document.querySelector(
+                "a.zurueck"
+            );
+
+        if (zurueckLink) {
+
+            zurueckLink.href =
+                "hochzeitsmenue.html";
+
+            zurueckLink.textContent =
+                "← Unser Hochzeitsmenü";
+        }
+    }
+
+});

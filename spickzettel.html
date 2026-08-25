@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Remoulade – Bei uns schmeckt&#x27;s</title>
+    <title>Spickzettel – Bei uns schmeckt's</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -32,12 +33,7 @@
         </div>
 
         <div class="suche-panel" id="suchePanel">
-            <input
-                type="text"
-                id="sucheInput"
-                placeholder="Rezept suchen ..."
-                autocomplete="off"
-            >
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
             <div id="sucheErgebnisse"></div>
         </div>
     </header>
@@ -62,7 +58,6 @@
                 <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
             </div>
 
-
             <p class="menu-bereichstitel menu-bereichstitel-besonders">Besondere Momente</p>
             <div class="menu-besondere-momente">
                 <a href="hochzeitsmenue.html" class="menu-besonderer-link">
@@ -73,7 +68,6 @@
                     </span>
                 </a>
             </div>
-
 
             <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">Küchenhelfer</p>
             <div class="menu-kuechenhelfer">
@@ -117,78 +111,80 @@
         </nav>
     </aside>
 
+    <main class="spickzettel-main">
 
-    <main>
+        <section class="spickzettel-kopf">
+            <a class="zurueck" href="index.html">← Zurück</a>
+            <p class="spickzettel-kicker">Küchenhelfer</p>
+            <h1>Spickzettel</h1>
+            <p>Für alles, was man jedes Mal wieder nachschauen müsste.</p>
+        </section>
 
-        <article class="rezept">
+        <section class="spickzettel-papier">
 
-            <a class="zurueck" href="das-macht-den-unterschied.html">← Das macht den Unterschied</a>
+            <div class="spickzettel-klebestreifen" aria-hidden="true"></div>
+            <div class="spickzettel-kaffeering" aria-hidden="true"></div>
 
-            <header class="rezept-kopf">
-                <p class="rezept-kategorie">Das macht den Unterschied</p>
-                <h1>Remoulade</h1>
+            <div class="spickzettel-inhalt">
 
-                <div class="rezept-meta">
-                    <span>6–8 Portionen</span>
-                </div>
-            </header>
+                <header class="spickzettel-papierkopf">
+                    <p class="spickzettel-handschrift-gross">Spickzettel</p>
+                    <p class="spickzettel-handschrift-klein">für wenn ich's wieder vergessen hab</p>
+                </header>
 
-            <img
-                class="rezept-bild"
-                src="images/remoulade.png"
-                alt="Remoulade"
-            >
 
-            <section class="rezept-bereich">
-                <h2>Zutaten</h2>
+                <section class="spickzettel-abschnitt">
+                    <h2>Mengen pro Person</h2>
 
-                <div class="zutaten">
-                    <div>
-                        <span>1 Stk.</span>
-                        <span>Ei</span>
+                    <div class="spickzettel-zeilen">
+                        <div><span>Kartoffeln gekocht</span><strong>200 g</strong></div>
+                        <div><span>Kartoffeln gebacken</span><strong>250–300 g</strong></div>
+                        <div><span>Reis</span><strong>70 g</strong></div>
+                        <div><span>Nudeln</span><strong>70 g</strong></div>
+                        <div><span>Grillfleisch</span><strong>300 g</strong></div>
+                        <div><span>Soße</span><strong>70 ml</strong></div>
+                        <div><span>Salat</span><strong>200 g</strong></div>
+                        <div><span>Dessert</span><strong>150–200 g</strong></div>
                     </div>
-                    <div>
-                        <span>1 TL</span>
-                        <span>Senf</span>
-                    </div>
-                    <div>
-                        <span>2 EL</span>
-                        <span>Zitronensaft</span>
-                    </div>
-                    <div>
-                        <span>300 ml</span>
-                        <span>Neutrales Öl</span>
-                    </div>
-                    <div>
-                        <span>2 Stk.</span>
-                        <span>Schalotten</span>
-                    </div>
-                    <div>
-                        <span>50 g</span>
-                        <span>Cornichons</span>
-                    </div>
-                    <div>
-                        <span>2 TL</span>
-                        <span>Kapern</span>
-                    </div>
-                    <div>
-                        <span>2 TL</span>
-                        <span>Fein gehackte Petersilie</span>
-                    </div>
-                </div>
-            </section>
 
-            <section class="rezept-bereich">
-                <h2>Zubereitung</h2>
+                    <p class="spickzettel-randnotiz">Richtwerte – Hunger darf mitentscheiden.</p>
+                </section>
 
-                <ol class="zubereitung">
-                    <li>Ei mit Senf und Zitronensaft in einem hohen Rührbecher mit dem Stabmixer verquirlen. Öl zunächst tropfenweise, dann in einem feinen Strahl einlaufen lassen, bis eine cremige Mayonnaise entsteht.</li>
-                    <li>Schalotten schälen und zusammen mit den abgetropften Cornichons und Kapern sehr fein würfeln.</li>
-                    <li>Alles mit der Petersilie unter die Mayonnaise heben und mit Salz und Pfeffer abschmecken. Bis zum Servieren kalt stellen.</li>
-                </ol>
-            </section>
 
-        </article>
+                <div class="spickzettel-kritzeltrennlinie" aria-hidden="true"></div>
+
+
+                <section class="spickzettel-abschnitt spickzettel-abkuerzungen">
+                    <h2>Abkürzungen</h2>
+
+                    <div class="spickzettel-zeilen">
+                        <div><strong>g</strong><span>Gramm</span></div>
+                        <div><strong>kg</strong><span>Kilogramm</span></div>
+                        <div><strong>ml</strong><span>Milliliter</span></div>
+                        <div><strong>l</strong><span>Liter</span></div>
+                        <div><strong>TL</strong><span>Teelöffel</span></div>
+                        <div><strong>g.TL</strong><span>gestrichener Teelöffel</span></div>
+                        <div><strong>EL</strong><span>Esslöffel</span></div>
+                        <div><strong>Pr</strong><span>Prise</span></div>
+                        <div><strong>Pck</strong><span>Packung / Päckchen</span></div>
+                        <div><strong>Stk</strong><span>Stück / Anzahl</span></div>
+                        <div><strong>Sch</strong><span>Scheibe</span></div>
+                        <div><strong>R</strong><span>Rolle</span></div>
+                        <div><strong>D</strong><span>Dose</span></div>
+                        <div><strong>G</strong><span>Glas</span></div>
+                        <div><strong>Fl</strong><span>Flasche</span></div>
+                        <div><strong>min</strong><span>Minute</span></div>
+                        <div><strong>O/U</strong><span>Ober-/Unterhitze</span></div>
+                        <div><strong>S</strong><span>Seite</span></div>
+                    </div>
+                </section>
+
+
+                <p class="spickzettel-pointe">Wenn's nicht reicht, gibt's Nachtisch.</p>
+
+            </div>
+
+        </section>
 
     </main>
 

@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Remoulade – Bei uns schmeckt&#x27;s</title>
+    <title>Kräuterdressing – Bei uns schmeckt&#x27;s</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,25 +20,16 @@
     <header class="topbar">
         <div class="topbar-inner">
             <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
 
             <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
 
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
-                ⌕
-            </button>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
         </div>
 
         <div class="suche-panel" id="suchePanel">
-            <input
-                type="text"
-                id="sucheInput"
-                placeholder="Rezept suchen ..."
-                autocomplete="off"
-            >
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
             <div id="sucheErgebnisse"></div>
         </div>
     </header>
@@ -62,7 +54,6 @@
                 <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
             </div>
 
-
             <p class="menu-bereichstitel menu-bereichstitel-besonders">Besondere Momente</p>
             <div class="menu-besondere-momente">
                 <a href="hochzeitsmenue.html" class="menu-besonderer-link">
@@ -73,7 +64,6 @@
                     </span>
                 </a>
             </div>
-
 
             <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">Küchenhelfer</p>
             <div class="menu-kuechenhelfer">
@@ -117,63 +107,84 @@
         </nav>
     </aside>
 
-
     <main>
-
         <article class="rezept">
 
             <a class="zurueck" href="das-macht-den-unterschied.html">← Das macht den Unterschied</a>
 
             <header class="rezept-kopf">
                 <p class="rezept-kategorie">Das macht den Unterschied</p>
-                <h1>Remoulade</h1>
-
-                <div class="rezept-meta">
-                    <span>6–8 Portionen</span>
-                </div>
+                <h1>Kräuterdressing</h1>
+                <div class="rezept-meta"><span>Von Julian</span></div>
             </header>
 
-            <img
-                class="rezept-bild"
-                src="images/remoulade.png"
-                alt="Remoulade"
-            >
+            <img class="rezept-bild" src="images/kraeuterdressing.png" alt="Kräuterdressing">
 
             <section class="rezept-bereich">
                 <h2>Zutaten</h2>
 
                 <div class="zutaten">
                     <div>
-                        <span>1 Stk.</span>
-                        <span>Ei</span>
+                        <span>30 g</span>
+                        <span>Petersilie (ohne Stiel)</span>
                     </div>
                     <div>
-                        <span>1 TL</span>
+                        <span>25 g</span>
+                        <span>Dill (ohne Stiel)</span>
+                    </div>
+                    <div>
+                        <span>1 Zehe</span>
+                        <span>Knoblauch</span>
+                    </div>
+                    <div>
+                        <span>150 ml</span>
+                        <span>Olivenöl</span>
+                    </div>
+                    <div>
+                        <span>200 ml</span>
+                        <span>Pflanzenöl</span>
+                    </div>
+                    <div>
+                        <span>4 EL</span>
+                        <span>weißer Balsamico Essig</span>
+                    </div>
+                    <div>
+                        <span>1 EL</span>
                         <span>Senf</span>
                     </div>
                     <div>
-                        <span>2 EL</span>
-                        <span>Zitronensaft</span>
+                        <span>Kerngehäuse</span>
+                        <span>1/2 Gurke</span>
                     </div>
                     <div>
-                        <span>300 ml</span>
-                        <span>Neutrales Öl</span>
-                    </div>
-                    <div>
-                        <span>2 Stk.</span>
-                        <span>Schalotten</span>
-                    </div>
-                    <div>
-                        <span>50 g</span>
-                        <span>Cornichons</span>
+                        <span>Kerngehäuse</span>
+                        <span>1 große Tomate</span>
                     </div>
                     <div>
                         <span>2 TL</span>
-                        <span>Kapern</span>
+                        <span>Honig</span>
                     </div>
                     <div>
-                        <span>2 TL</span>
-                        <span>Fein gehackte Petersilie</span>
+                        <span>2 Tl</span>
+                        <span>Salz</span>
+                    </div>
+                    <div>
+                        <span>1 TL</span>
+                        <span>Pfeffer</span>
+                    </div>
+                    <div>
+                        <span>Spritzer</span>
+                        <span>1/2 Limette</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich rezept-beilage">
+                <h2>Dazu passt</h2>
+
+                <div class="beilagen-liste">
+                    <div class="beilage beilage-einfach">
+                        <span>Feldsalat mit Cherry-Tomaten &amp; gerösteten Pinienkernen</span>
                     </div>
                 </div>
             </section>
@@ -182,17 +193,15 @@
                 <h2>Zubereitung</h2>
 
                 <ol class="zubereitung">
-                    <li>Ei mit Senf und Zitronensaft in einem hohen Rührbecher mit dem Stabmixer verquirlen. Öl zunächst tropfenweise, dann in einem feinen Strahl einlaufen lassen, bis eine cremige Mayonnaise entsteht.</li>
-                    <li>Schalotten schälen und zusammen mit den abgetropften Cornichons und Kapern sehr fein würfeln.</li>
-                    <li>Alles mit der Petersilie unter die Mayonnaise heben und mit Salz und Pfeffer abschmecken. Bis zum Servieren kalt stellen.</li>
+                    <li>Petersilie, Dill, Knoblauch, Gurkenkerngehäuse und Tomate in ein hohes Gefäß geben. Olivenöl, Pflanzenöl, Balsamicoessig, Senf, Honig, Salz, Pfeffer und einen Spritzer Limettensaft hinzufügen.</li>
+                    <li>Alles fein pürieren, bis ein cremiges, gleichmäßiges Dressing entsteht. Bei Bedarf mit etwas Öl oder Wasser verdünnen.</li>
+                    <li>Abschmecken und nach Belieben mit Salz, Pfeffer oder Limettensaft verfeinern.</li>
                 </ol>
             </section>
 
         </article>
-
     </main>
 
     <script src="script.js"></script>
-
 </body>
 </html>
