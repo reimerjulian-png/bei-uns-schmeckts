@@ -1150,3 +1150,304 @@ body.menu-offen {
 
     color: #8b867e;
 }
+
+/* =========================================================
+   BESONDERE MOMENTE IM HAUPTMENÜ
+   ========================================================= */
+
+.menu-bereichstitel-besonders {
+    margin-top: 34px;
+}
+
+.menu-besondere-momente {
+    margin-bottom: 38px;
+}
+
+.menu-besonderer-link {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    align-items: start;
+
+    padding: 14px 0;
+
+    border-top: 1px solid #ddd7cd;
+    border-bottom: 1px solid #ddd7cd;
+
+    color: #1d1d1b;
+    text-decoration: none;
+}
+
+.menu-besonderer-symbol {
+    padding-top: 1px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 18px;
+    line-height: 1;
+
+    color: #8b867e;
+}
+
+.menu-besonderer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu-besonderer-text strong {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.menu-besonderer-text small {
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+
+    color: #8b867e;
+}
+
+
+/* =========================================================
+   UNSER HOCHZEITSMENÜ
+   ========================================================= */
+
+.hochzeit-kopf {
+    padding: 58px 0 82px;
+    text-align: center;
+}
+
+.hochzeit-kopf .zurueck {
+    display: block;
+    width: fit-content;
+
+    margin: 0 0 82px;
+
+    text-align: left;
+}
+
+.hochzeit-kicker {
+    margin: 0 0 15px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: #8b867e;
+}
+
+.hochzeit-kopf h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 0.95;
+
+    color: #1d1d1b;
+}
+
+.hochzeit-einleitung {
+    max-width: 290px;
+
+    margin: 28px auto 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.35;
+
+    color: #4a4742;
+}
+
+
+/* ---------- Menükarte ---------- */
+
+.hochzeit-menue {
+    margin: 0 16px;
+    padding: 54px 22px 58px;
+
+    border-top: 1px solid #cfc8bd;
+    border-bottom: 1px solid #cfc8bd;
+
+    text-align: center;
+}
+
+.hochzeit-gang {
+    padding: 5px 0;
+}
+
+.hochzeit-gang-label {
+    margin: 0 0 14px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #8b867e;
+}
+
+.hochzeit-gerichte {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.42;
+
+    color: #1d1d1b;
+}
+
+.hochzeit-gerichte a {
+    color: inherit;
+    text-decoration-color: #bdb6aa;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.hochzeit-dessert {
+    font-size: 29px;
+}
+
+.hochzeit-getraenke {
+    font-size: 21px;
+}
+
+.hochzeit-trenner {
+    margin: 28px 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+
+    color: #bdb6aa;
+}
+
+
+/* ---------- Hochzeitsfotos ---------- */
+
+.hochzeit-fotos {
+    padding: 105px 0 35px;
+}
+
+.hochzeit-foto-einleitung {
+    margin-bottom: 38px;
+}
+
+.hochzeit-foto-kicker {
+    max-width: 280px;
+
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.15;
+
+    text-align: center;
+
+    color: #1d1d1b;
+}
+
+.hochzeit-galerie {
+    display: grid;
+    gap: 18px;
+}
+
+.hochzeit-foto {
+    margin: 0;
+
+    overflow: hidden;
+}
+
+.hochzeit-foto img {
+    display: block;
+
+    width: 100%;
+    height: 245px;
+
+    object-fit: cover;
+}
+
+.hochzeit-foto:nth-child(2) img,
+.hochzeit-foto:nth-child(4) img {
+    height: 205px;
+}
+
+
+/* ---------- Abschluss ---------- */
+
+.hochzeit-abschluss {
+    padding: 80px 0 95px;
+
+    text-align: center;
+}
+
+.hochzeit-datum {
+    margin: 0 0 22px;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+
+    letter-spacing: 0.2em;
+
+    color: #8b867e;
+}
+
+.hochzeit-abschluss h2 {
+    max-width: 310px;
+
+    margin: 0 auto 12px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 1.05;
+
+    color: #1d1d1b;
+}
+
+.hochzeit-abschluss > p:last-child {
+    margin: 0;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+    color: #66635e;
+}
+
+
+@media (max-width: 360px) {
+
+    .hochzeit-kopf h1 {
+        font-size: 48px;
+    }
+
+    .hochzeit-menue {
+        margin-left: 8px;
+        margin-right: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hochzeit-gerichte {
+        font-size: 23px;
+    }
+
+    .hochzeit-getraenke {
+        font-size: 19px;
+    }
+
+    .hochzeit-foto img {
+        height: 225px;
+    }
+}
