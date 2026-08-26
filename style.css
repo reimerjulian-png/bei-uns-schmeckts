@@ -1836,3 +1836,13 @@ body.menu-offen {
 .beilage span:last-child {
     color: #66635e;
 }
+
+
+/* Links zu vorhandenen Rezepten im Bereich "Dazu passt" */
+
+.beilage a {
+    color: inherit;
+    text-decoration-color: #bdb6aa;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
