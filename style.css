@@ -24,7 +24,7 @@ body {
     background-color: #f7f3eb;
     color: #1d1d1b;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
 
     overflow-x: hidden;
@@ -157,7 +157,7 @@ main {
 
     background: transparent;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 300;
 
@@ -186,14 +186,14 @@ main {
 }
 
 .suche-ergebnis span {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 300;
 }
 
 .suche-ergebnis small,
 .suche-kein-treffer {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 300;
 
@@ -279,7 +279,7 @@ body.menu-offen {
 
     padding: 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 28px;
     font-weight: 300;
     line-height: 1;
@@ -305,7 +305,7 @@ body.menu-offen {
 .menu-bereichstitel {
     margin: 0 0 14px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 300;
 
@@ -329,7 +329,7 @@ body.menu-offen {
 
     border-bottom: 1px solid #ddd7cd;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 300;
     line-height: 1.35;
@@ -362,7 +362,7 @@ body.menu-offen {
 
     padding: 9px 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 300;
 
@@ -468,7 +468,7 @@ body.menu-offen {
 .cover-text p {
     margin: 28px 0 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 300;
 
@@ -495,7 +495,7 @@ body.menu-offen {
 .vorwort-text p {
     margin: 0 0 16px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 17px;
     font-weight: 300;
     line-height: 1.7;
@@ -533,7 +533,7 @@ body.menu-offen {
 .kapitel-intro p {
     margin: 28px 0 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
@@ -569,7 +569,7 @@ body.menu-offen {
 .kapitel-nummer {
     margin: 0 0 14px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 300;
 
@@ -588,7 +588,7 @@ body.menu-offen {
 .kapitel-text {
     margin: 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 300;
     line-height: 1.6;
@@ -610,7 +610,7 @@ body.menu-offen {
 
     margin-bottom: 80px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 300;
 
@@ -630,7 +630,7 @@ body.menu-offen {
 .kapitel-beschreibung {
     margin: 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
@@ -670,7 +670,7 @@ body.menu-offen {
 .rezept-nummer {
     flex: 0 0 24px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 300;
 
@@ -678,7 +678,7 @@ body.menu-offen {
 }
 
 .rezept-name {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 17px;
     font-weight: 300;
     line-height: 1.5;
@@ -702,7 +702,7 @@ body.menu-offen {
 .rezept-kategorie {
     margin: 0 0 10px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 300;
 
@@ -727,7 +727,7 @@ body.menu-offen {
 
     gap: 8px 18px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 300;
 
@@ -774,7 +774,7 @@ body.menu-offen {
 
     border-bottom: 1px solid #ddd7cd;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 300;
     line-height: 1.4;
@@ -811,7 +811,7 @@ body.menu-offen {
     margin-bottom: 22px;
     padding-left: 8px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.65;
@@ -928,7 +928,7 @@ body.menu-offen {
 
 .zufall-kicker {
     margin: 0 0 10px;
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 300;
     color: #8b867e;
@@ -947,7 +947,7 @@ body.menu-offen {
     border: 1px solid #1d1d1b;
     background: transparent;
     padding: 13px 22px;
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 300;
     color: #1d1d1b;
@@ -965,7 +965,7 @@ body.menu-offen {
 
 .zufall-label {
     margin: 0 0 10px;
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 300;
     color: #8b867e;
@@ -988,7 +988,7 @@ body.menu-offen {
 }
 
 #zufallLink {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 300;
     color: #1d1d1b;
@@ -1057,7 +1057,7 @@ body.menu-offen {
 .familienzitat-label {
     margin: 0 0 14px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 10px;
     font-weight: 300;
 
@@ -1082,7 +1082,7 @@ body.menu-offen {
 .familienzitat-name {
     margin: 12px 0 24px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 300;
 
@@ -1114,7 +1114,7 @@ body.menu-offen {
 }
 
 .parkplatz span {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 8px;
     font-weight: 300;
     line-height: 1.2;
@@ -1202,7 +1202,7 @@ body.menu-offen {
 }
 
 .menu-besonderer-text small {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 300;
 
@@ -1231,7 +1231,7 @@ body.menu-offen {
 .hochzeit-kicker {
     margin: 0 0 15px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 300;
 
@@ -1285,7 +1285,7 @@ body.menu-offen {
 .hochzeit-gang-label {
     margin: 0 0 14px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 10px;
     font-weight: 300;
 
@@ -1393,7 +1393,7 @@ body.menu-offen {
 .hochzeit-datum {
     margin: 0 0 22px;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 10px;
     font-weight: 300;
 
@@ -1418,7 +1418,7 @@ body.menu-offen {
 .hochzeit-abschluss > p:last-child {
     margin: 0;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 300;
 
@@ -1504,7 +1504,7 @@ body.menu-offen {
 }
 
 .menu-kuechenhelfer-text small {
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 300;
 
@@ -1821,7 +1821,7 @@ body.menu-offen {
 
     border-bottom: 1px solid #ddd7cd;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 300;
     line-height: 1.4;
@@ -1864,7 +1864,7 @@ body.menu-offen {
     border-radius: 999px;
     background: transparent;
 
-    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 0.02em;
