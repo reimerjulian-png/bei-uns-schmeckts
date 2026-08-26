@@ -378,3 +378,81 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+
+/* =========================================================
+   REZEPT TEILEN
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const teilenButton = document.querySelector(".rezept-teilen");
+
+    if (!teilenButton) {
+        return;
+    }
+
+    const originalText = teilenButton.querySelector("span:last-child")?.textContent || "Rezept teilen";
+
+    teilenButton.addEventListener("click", async () => {
+
+        const rezeptName =
+            document.querySelector(".rezept-kopf h1")?.textContent.trim()
+            || document.title.replace(" – Bei uns schmeckt's", "");
+
+        const shareData = {
+            title: `${rezeptName} – Bei uns schmeckt's`,
+            text: `${rezeptName} – Bei uns schmeckt's`,
+            url: window.location.href
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+                return;
+            }
+
+            await navigator.clipboard.writeText(window.location.href);
+
+            const textElement = teilenButton.querySelector("span:last-child");
+            if (textElement) {
+                textElement.textContent = "Link kopiert ✓";
+                window.setTimeout(() => {
+                    textElement.textContent = originalText;
+                }, 1800);
+            }
+        } catch (error) {
+            if (error?.name === "AbortError") {
+                return;
+            }
+
+            const textElement = teilenButton.querySelector("span:last-child");
+
+            try {
+                const textarea = document.createElement("textarea");
+                textarea.value = window.location.href;
+                textarea.setAttribute("readonly", "");
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                textarea.remove();
+
+                if (textElement) {
+                    textElement.textContent = "Link kopiert ✓";
+                    window.setTimeout(() => {
+                        textElement.textContent = originalText;
+                    }, 1800);
+                }
+            } catch (_) {
+                if (textElement) {
+                    textElement.textContent = "Link konnte nicht kopiert werden";
+                    window.setTimeout(() => {
+                        textElement.textContent = originalText;
+                    }, 2200);
+                }
+            }
+        }
+    });
+});

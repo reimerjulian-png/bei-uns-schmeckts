@@ -1846,3 +1846,48 @@ body.menu-offen {
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
 }
+
+
+/* =========================================================
+   REZEPT TEILEN
+   ========================================================= */
+
+.rezept-teilen {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 18px;
+    padding: 9px 14px;
+
+    border: 1px solid #d5cfc5;
+    border-radius: 999px;
+    background: transparent;
+
+    font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+
+    color: #4f4b45;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.rezept-teilen:hover {
+    background: #f3f0eb;
+    border-color: #c7c0b5;
+}
+
+.rezept-teilen:active {
+    transform: scale(0.98);
+}
+
+.rezept-teilen-symbol {
+    font-size: 15px;
+    line-height: 1;
+}
