@@ -1891,3 +1891,127 @@ body.menu-offen {
     font-size: 15px;
     line-height: 1;
 }
+
+
+/* =========================================================
+   ÜBER UNS
+   ========================================================= */
+
+.menu-bereichstitel-ueber-uns { margin-top: 34px; }
+.menu-ueber-uns { margin-bottom: 38px; }
+.menu-ueber-uns-link {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    align-items: start;
+    padding: 14px 0;
+    border-top: 1px solid #ddd7cd;
+    border-bottom: 1px solid #ddd7cd;
+    color: #1d1d1b;
+    text-decoration: none;
+}
+.menu-ueber-uns-symbol {
+    padding-top: 1px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 18px;
+    line-height: 1;
+    color: #8b867e;
+}
+.menu-ueber-uns-text { display: flex; flex-direction: column; gap: 3px; }
+.menu-ueber-uns-text strong {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+.menu-ueber-uns-text small {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #8b867e;
+}
+
+.ueber-uns-seite { padding: 54px 0 70px; }
+.ueber-uns-kopf { padding: 52px 0 42px; }
+.ueber-uns-kicker {
+    margin: 0 0 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #8b867e;
+}
+.ueber-uns-kopf h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(50px, 8vw, 74px);
+    font-weight: 500;
+    line-height: .95;
+}
+.ueber-uns-bild {
+    display: block;
+    width: 100%;
+    max-height: 720px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 0 52px;
+    border-radius: 2px;
+}
+.ueber-uns-text { max-width: 760px; }
+.ueber-uns-text p {
+    margin: 0 0 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #3f3d39;
+}
+.ueber-uns-text strong { font-weight: 500; color: #1d1d1b; }
+.ueber-uns-intro { font-size: 18px !important; }
+.ueber-uns-zitat {
+    margin: 36px 0 !important;
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: #1d1d1b !important;
+}
+.ueber-uns-est {
+    margin-top: 68px;
+    padding-top: 28px;
+    border-top: 1px solid #ddd7cd;
+    text-align: center;
+}
+.ueber-uns-est p {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    color: #8b867e;
+}
+.geheimer-link { color: inherit; text-decoration: none; cursor: default; }
+
+/* Versteckte persönliche Seite */
+.fuer-dich-seite { padding: 54px 0 90px; }
+.fuer-dich-seite .vorwort { padding-top: 70px; padding-bottom: 45px; }
+.fuer-dich-datum {
+    margin: 0;
+    padding-top: 28px;
+    border-top: 1px solid #ddd7cd;
+    text-align: center;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #8b867e;
+}
+
+@media (max-width: 700px) {
+    .ueber-uns-seite { padding-top: 36px; }
+    .ueber-uns-kopf { padding: 42px 0 32px; }
+    .ueber-uns-bild { margin-bottom: 38px; max-height: 520px; }
+    .ueber-uns-text p { font-size: 16px; line-height: 1.7; }
+    .ueber-uns-intro { font-size: 17px !important; }
+    .ueber-uns-zitat { font-size: 27px !important; }
+}

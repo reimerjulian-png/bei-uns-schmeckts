@@ -1,55 +1,26 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Tiramisu – Bei uns schmeckt&#x27;s</title>
-
+    <title>Über uns – Bei uns schmeckt&#x27;s</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Tiramisu – Bei uns schmeckt&apos;s">
-    <meta property="og:description" content="Unser Rezept für Tiramisu – direkt zum Nachkochen.">
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <header class="topbar">
-        <div class="topbar-inner">
-            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
-
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
-                ⌕
-            </button>
-        </div>
-
-        <div class="suche-panel" id="suchePanel">
-            <input
-                type="text"
-                id="sucheInput"
-                placeholder="Rezept suchen ..."
-                autocomplete="off"
-            >
-            <div id="sucheErgebnisse"></div>
-        </div>
-    </header>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+<header class="topbar">
+    <div class="topbar-inner">
+        <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+        <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+    </div>
+    <div class="suche-panel" id="suchePanel"><input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off"><div id="sucheErgebnisse"></div></div>
+</header>
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
         <div class="seitenmenue-kopf">
             <span>Bei uns schmeckt's</span>
             <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
@@ -135,91 +106,45 @@
 </div>
         </nav>
     </aside>
+<main>
+    <article class="ueber-uns-seite">
+        <a class="zurueck" href="index.html">← Zurück</a>
+        <header class="ueber-uns-kopf">
+            <p class="ueber-uns-kicker">Bei uns schmeckt's</p>
+            <h1>Über uns</h1>
+        </header>
 
+        <img class="ueber-uns-bild" src="images/wir.jpg" alt="Julian, Lena und Emilia">
 
-    <main>
+        <div class="ueber-uns-text">
+            <p class="ueber-uns-intro">Wir sind <strong>Julian &amp; Lena Reimer</strong>, 28 und 30 Jahre alt, und zusammen mit unserer knapp zweijährigen Tochter <strong>Emilia</strong> sind wir die drei hinter „Bei uns schmeckt’s“.</p>
 
-        <article class="rezept">
+            <p>Und eigentlich ist das hier genau das, was der Name sagt: <strong>das, was bei uns schmeckt.</strong> 😄</p>
 
-            <a class="zurueck" href="ein-bisschen-platz-ist-noch.html">← Ein bisschen Platz ist noch</a>
+            <p>Bei uns wird gekocht, ausprobiert, verändert und manchmal auch einfach nach Gefühl gemacht.</p>
 
-            <header class="rezept-kopf">
-                <p class="rezept-kategorie">Ein bisschen Platz ist noch</p>
-                <h1>Tiramisu</h1>
+            <p>Über die Jahre haben sich dabei ziemlich viele Rezepte angesammelt. Manche ordentlich aufgeschrieben, andere irgendwo abfotografiert – und manche auf irgendwelchen Schmierzetteln, die man natürlich genau dann nicht mehr findet, wenn man sie braucht. 😄</p>
 
-                <div class="rezept-meta">
-                    <span>4 Portionen</span>
-                </div>
+            <p>Dazu kommen Rezepte von Familie und Freunden, Sachen, die wir irgendwann mal ausprobiert und für gut befunden haben, und natürlich die Gerichte, die bei uns einfach immer wieder auf dem Tisch landen.</p>
 
-                <button class="rezept-teilen" type="button" aria-label="Rezept teilen">
-                    <span class="rezept-teilen-symbol" aria-hidden="true">↗</span>
-                    <span>Rezept teilen</span>
-                </button>
-            </header>
+            <p>Irgendwann war dann klar: <strong>Das muss alles mal an einen Ort.</strong></p>
 
-            <img
-                class="rezept-bild"
-                src="images/tiramisu.png"
-                alt="Tiramisu"
-            >
+            <p>Und genau daraus ist „Bei uns schmeckt’s“ entstanden.</p>
 
-            <section class="rezept-bereich">
-                <h2>Zutaten</h2>
+            <p>Eigentlich erstmal nur für uns – damit wir nicht jedes Mal wieder überlegen müssen, wo dieses eine Rezept jetzt eigentlich war. Aber mittlerweile auch für Familie, Freunde und jeden, der mal wieder fragt:</p>
 
-                <div class="zutaten">
-                    <div>
-                        <span>100 g</span>
-                        <span>Löffelbiskuits</span>
-                    </div>
-                    <div>
-                        <span>100 ml</span>
-                        <span>Kalter Espresso</span>
-                    </div>
-                    <div>
-                        <span>3 EL</span>
-                        <span>Amaretto</span>
-                    </div>
-                    <div>
-                        <span>5 Stk.</span>
-                        <span>Frische Eier</span>
-                    </div>
-                    <div>
-                        <span>500 g</span>
-                        <span>Mascarpone</span>
-                    </div>
-                    <div>
-                        <span>1 Stk.</span>
-                        <span>Orangensaft</span>
-                    </div>
-                    <div>
-                        <span>100 g</span>
-                        <span>Zucker</span>
-                    </div>
-                    <div>
-                        <span>2 EL</span>
-                        <span>Kakaopulver</span>
-                    </div>
-                </div>
-            </section>
+            <p class="ueber-uns-zitat">„Kannst du mir mal das Rezept schicken?“</p>
 
-            <section class="rezept-bereich">
-                <h2>Zubereitung</h2>
+            <p>Jetzt können wir einfach sagen: <strong>Guck bei „Bei uns schmeckt’s“.</strong> 😄</p>
 
-                <ol class="zubereitung">
-                    <li>Löffelbiskuits dicht nebeneinander in eine flache Auflaufform legen.</li>
-                    <li>Kaffee und Amaretto verrühren und die Löffelbiskuits gleichmäßig damit tränken.</li>
-                    <li>Eigelb, Mascarpone, Orangensaft und Zucker zu einer glatten Creme verrühren. Eiweiß steif schlagen und vorsichtig unterheben.</li>
-                    <li>Die Hälfte der Creme gleichmäßig auf den getränkten Löffelbiskuits verteilen.</li>
-                    <li>Eine zweite Schicht Löffelbiskuits darauflegen, ebenfalls mit der Kaffee-Amaretto-Mischung tränken und mit der restlichen Creme bedecken.</li>
-                    <li>Abschließend mit Kakaopulver bestäuben und bis zum Servieren kalt stellen. Am besten über Nacht.</li>
-                </ol>
-            </section>
+            <p>Und fertig wird die Sammlung wahrscheinlich sowieso nie. Es kommt ja immer wieder irgendwas Neues dazu.</p>
+        </div>
 
-        </article>
-
-    </main>
-
-    <script src="script.js"></script>
-
+        <footer class="ueber-uns-est">
+            <p>Est. 24.08.2022 · und noch lange nicht fertig. <a href="fuer-dich.html" class="geheimer-link" aria-label="Für Dich">❤️</a></p>
+        </footer>
+    </article>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
