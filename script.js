@@ -33,11 +33,20 @@ const rezepte = [
     { name: "Crème brûlée", url: "creme-brulee.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Orangencreme", url: "orangencreme.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Lebkuchenwürfel", url: "lebkuchenwuerfel.html", kapitel: "Ein bisschen Platz ist noch" },
-
     { name: "Currywurst Sauce", url: "currywurst-sauce.html", kapitel: "Das macht den Unterschied" },
     { name: "Rustikaler Schichtsalat mit Speck", url: "rustikaler-schichtsalat-mit-speck.html", kapitel: "Was Kleines dazu" },
     { name: "Lasagne", url: "lasagne.html", kapitel: "Unsere Klassiker" },
-    { name: "Mandelrollen", url: "mandelrollen.html", kapitel: "Was Süßes aus dem Ofen" },];
+    { name: "Mandelrollen", url: "mandelrollen.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Porree-Torte mit Cabanossi", url: "porree-torte-mit-cabanossi.html", kapitel: "Unsere Klassiker" },
+    { name: "Buttermilchkuchen", url: "buttermilchkuchen.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Hähnchen auf chinesische Art", url: "haehnchen-auf-chinesische-art.html", kapitel: "Unsere Klassiker" },
+    { name: "Linsensuppe mit Kassler", url: "linsensuppe-mit-kassler.html", kapitel: "Unsere Klassiker" },
+    { name: "Eintopf", url: "eintopf.html", kapitel: "Unsere Klassiker" },
+    { name: "Rindfleischsuppe mit Gurken", url: "rindfleischsuppe-mit-gurken.html", kapitel: "Unsere Klassiker" },
+    { name: "Couscous-Hack-Pfanne", url: "couscous-hack-pfanne.html", kapitel: "Unsere Klassiker" },
+    { name: "Bobat", url: "bobat.html", kapitel: "Was Kleines dazu" },
+    { name: "Rollkuchen", url: "rollkuchen.html", kapitel: "Was Kleines dazu" },
+];
 
 function menueOeffnen() {
     if (!seitenmenue || !menuOverlay) return;
