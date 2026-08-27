@@ -3,13 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Was Süßes aus dem Ofen – Bei uns schmeckt&#x27;s</title>
+    <title>Kartoffelsalat – Bei uns schmeckt&#x27;s</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Tefteli – Bei uns schmeckt&apos;s">
+    <meta property="og:description" content="Unser Rezept für Tefteli – direkt zum Nachkochen.">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,17 +24,25 @@
 
     <header class="topbar">
         <div class="topbar-inner">
-            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
+
+            <button class="menu-button" id="menuButton"
+                aria-label="Hauptmenü öffnen"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <a class="topbar-title" href="index.html">
+                Bei uns schmeckt's
+            </a>
 
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
+            <button class="suche-button" id="sucheButton"
+                aria-label="Suche öffnen"
+                aria-expanded="false">
                 ⌕
             </button>
+
         </div>
 
         <div class="suche-panel" id="suchePanel">
@@ -42,49 +56,96 @@
         </div>
     </header>
 
+
     <div class="menu-overlay" id="menuOverlay"></div>
 
+
     <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+
         <div class="seitenmenue-kopf">
             <span>Bei uns schmeckt's</span>
-            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+
+            <button class="menu-schliessen"
+                id="menuSchliessen"
+                aria-label="Hauptmenü schließen">
+                ×
+            </button>
         </div>
 
+
         <nav class="seitenmenue-inhalt">
-            <a href="index.html" class="menu-start">Startseite</a>
+
+            <a href="index.html" class="menu-start">
+                Startseite
+            </a>
+
 
             <p class="menu-bereichstitel">Kapitel</p>
+
             <div class="menu-kapitel">
-                <a href="klassiker.html" class="menu-kapitel-link"><span>01</span>Unsere Klassiker</a>
-                <a href="was-kleines-dazu.html" class="menu-kapitel-link"><span>02</span>Was Kleines dazu</a>
-                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link"><span>03</span>Das macht den Unterschied</a>
-                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link"><span>04</span>Was Süßes aus dem Ofen</a>
-                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
+
+                <a href="klassiker.html" class="menu-kapitel-link">
+                    <span>01</span>Unsere Klassiker
+                </a>
+
+                <a href="was-kleines-dazu.html" class="menu-kapitel-link">
+                    <span>02</span>Was Kleines dazu
+                </a>
+
+                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link">
+                    <span>03</span>Das macht den Unterschied
+                </a>
+
+                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link">
+                    <span>04</span>Was Süßes aus dem Ofen
+                </a>
+
+                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link">
+                    <span>05</span>Ein bisschen Platz ist noch
+                </a>
+
             </div>
 
 
-            <p class="menu-bereichstitel menu-bereichstitel-besonders">Besondere Momente</p>
+            <p class="menu-bereichstitel menu-bereichstitel-besonders">
+                Besondere Momente
+            </p>
+
             <div class="menu-besondere-momente">
+
                 <a href="hochzeitsmenue.html" class="menu-besonderer-link">
+
                     <span class="menu-besonderer-symbol">♡</span>
+
                     <span class="menu-besonderer-text">
                         <strong>Unser Hochzeitsmenü</strong>
                         <small>13.05.2023</small>
                     </span>
+
                 </a>
+
             </div>
 
 
-            <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">Küchenhelfer</p>
+            <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">
+                Küchenhelfer
+            </p>
+
             <div class="menu-kuechenhelfer">
+
                 <a href="spickzettel.html" class="menu-kuechenhelfer-link">
+
                     <span class="menu-kuechenhelfer-symbol">✎</span>
+
                     <span class="menu-kuechenhelfer-text">
                         <strong>Spickzettel</strong>
                         <small>Mengen &amp; Abkürzungen</small>
                     </span>
+
                 </a>
+
             </div>
+
 
             <p class="menu-bereichstitel">Rezepte</p>
             <div class="menu-rezepte">
@@ -116,76 +177,58 @@
 <a href="orangencreme.html" class="menu-rezept-link">Orangencreme</a>
 <a href="lebkuchenwuerfel.html" class="menu-rezept-link">Lebkuchenwürfel</a>
 </div>
+
         </nav>
+
     </aside>
 
 
     <main>
 
-        <section class="kapitel-seite">
-            <a class="zurueck" href="index.html">← Zurück</a>
-            <p class="kapitel-nummer">04</p>
-            <h1>Was Süßes aus dem Ofen</h1>
-            <p class="kapitel-beschreibung">Kuchen, Torten &amp; Gebäck</p>
-        </section>
+        <article class="rezept">
 
-        <section class="rezeptliste">
+            <a class="zurueck" href="was-kleines-dazu.html">← Was Kleines dazu</a>
 
-            <a class="rezept-eintrag" href="pluschki.html">
-                <span class="rezept-nummer">01</span>
-                <span class="rezept-name">Pluschki</span>
-            </a>
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">02</span>
-                <span class="rezept-name">Bienenstich Teilchen</span>
-            </div>
+            <header class="rezept-kopf">
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">03</span>
-                <span class="rezept-name">Butterkuchen</span>
-            </div>
+                <p class="rezept-kategorie">Was Kleines dazu</p>
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">04</span>
-                <span class="rezept-name">Gedeckter Kirschkuchen</span>
-            </div>
+                <h1>Kartoffelsalat</h1>
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">05</span>
-                <span class="rezept-name">Napoleon</span>
-            </div>
+                <div class="rezept-meta"><span>10 personen</span><span>Von Mama Friesen</span></div>
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">06</span>
-                <span class="rezept-name">Kirschkuchen</span>
-            </div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen">
+                    <span class="rezept-teilen-symbol" aria-hidden="true">↗</span>
+                    <span>Rezept teilen</span>
+                </button>
 
-            <a class="rezept-eintrag" href="donauwelle.html">
-                <span class="rezept-nummer">07</span>
-                <span class="rezept-name">Donauwelle</span>
-            </a>
+            </header>
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">08</span>
-                <span class="rezept-name">Preiselbeer Torte</span>
-            </div>
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">09</span>
-                <span class="rezept-name">Vanille-Maracuja-Torte mit Kokos</span>
-            </div>
+            <img class="rezept-bild" src="images/kartoffelsalat-mf.PNG" alt="Kartoffelsalat">
 
-            <div class="rezept-eintrag">
-                <span class="rezept-nummer">10</span>
-                <span class="rezept-name">Cinnamon Rolls</span>
-            </div>
 
-        <a class="rezept-eintrag" href="schluchttorte.html"><span class="rezept-nummer">11</span><span class="rezept-name">Schluchttorte</span></a></section>
+            <!-- ZUTATEN -->
+
+            <section class="rezept-bereich"><h2>Zutaten</h2><div class="zutaten"><div><span>900 g</span><span>Kartoffeln</span></div><div><span>3</span><span>gekochte Eier</span></div><div><span>300 g</span><span>Fleischwurst</span></div><div><span>1 D</span><span>Möhren + Erbsen</span></div><div><span>250 ml</span><span>Mayonnaise</span></div><div><span>etwas</span><span>Schmand</span></div><div><span>etwas</span><span>Salz, Pfeffer</span></div><div><span>1</span><span>Zwiebel</span></div></div></section>
+
+
+            <!-- DAZU PASST -->
+<!-- ZUBEREITUNG -->
+
+            <section class="rezept-bereich rezept-beilage"><h2>Dazu passt</h2><div class="beilagen-liste"><div class="beilage beilage-einfach"><span>Gegrilltes</span></div></div></section>
+<section class="rezept-bereich"><h2>Zubereitung</h2><ol class="zubereitung"><li>Kartoffeln und Eier kochen, vollständig abkühlen lassen und anschließend klein schneiden.</li><li>Fleischwurst und Zwiebel klein würfeln. Möhren und Erbsen gut abtropfen lassen.</li><li>Kartoffeln, Eier, Fleischwurst, Zwiebeln, Möhren und Erbsen in einer großen Schüssel vermengen.</li><li>Mayonnaise und Schmand hinzugeben und alles vorsichtig miteinander vermischen.</li><li>Mit Salz und Pfeffer abschmecken und den Kartoffelsalat vor dem Servieren gut durchziehen lassen.</li></ol></section>
+
+
+            <!-- WISSENSWERTES -->
+</article>
 
     </main>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

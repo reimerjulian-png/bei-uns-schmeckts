@@ -14,24 +14,25 @@ const rezepte = [
     { name: "Gyros Suppe", url: "gyrossuppe.html", kapitel: "Unsere Klassiker" },
     { name: "Rindergulasch", url: "rindergulasch.html", kapitel: "Unsere Klassiker" },
     { name: "Italienische Steakpfanne", url: "italienische-steakpfanne.html", kapitel: "Unsere Klassiker" },
-    { name: "Tifteli", url: "tifteli.html", kapitel: "Unsere Klassiker" },
-
-    { name: "Überbackene Brezeln", url: "ueberbackene-brezeln.html", kapitel: "Was Kleines dazu" },
+    { name: "Tefteli", url: "tefteli.html", kapitel: "Unsere Klassiker" },
+    { name: "Rinderrouladen", url: "rinderrouladen.html", kapitel: "Unsere Klassiker" },
     { name: "Dillgurken", url: "dillgurken.html", kapitel: "Was Kleines dazu" },
-
-    { name: "Kräuterdressing", url: "kraeuterdressing.html", kapitel: "Das macht den Unterschied" },
+    { name: "Überbackene Brezeln", url: "ueberbackene-brezeln.html", kapitel: "Was Kleines dazu" },
+    { name: "Kartoffelsalat", url: "kartoffelsalat.html", kapitel: "Was Kleines dazu" },
     { name: "Rahmsoße", url: "rahmsosse.html", kapitel: "Das macht den Unterschied" },
     { name: "Remoulade", url: "remoulade.html", kapitel: "Das macht den Unterschied" },
     { name: "Big Mac Sauce", url: "big-mac-sauce.html", kapitel: "Das macht den Unterschied" },
-
+    { name: "Kräuterdressing", url: "kraeuterdressing.html", kapitel: "Das macht den Unterschied" },
     { name: "Pluschki", url: "pluschki.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Donauwelle", url: "donauwelle.html", kapitel: "Was Süßes aus dem Ofen" },
-
+    { name: "Schluchttorte", url: "schluchttorte.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Tiramisu", url: "tiramisu.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Lemon Curd Tiramisu", url: "lemon-curd-tiramisu.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Pick Up Dessert", url: "pick-up-dessert.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Trauben Mascarpone Becher", url: "trauben-mascarpone-becher.html", kapitel: "Ein bisschen Platz ist noch" },
-    { name: "Crème brûlée", url: "creme-brulee.html", kapitel: "Ein bisschen Platz ist noch" }
+    { name: "Crème brûlée", url: "creme-brulee.html", kapitel: "Ein bisschen Platz ist noch" },
+    { name: "Orangencreme", url: "orangencreme.html", kapitel: "Ein bisschen Platz ist noch" },
+    { name: "Lebkuchenwürfel", url: "lebkuchenwuerfel.html", kapitel: "Ein bisschen Platz ist noch" },
 ];
 
 function menueOeffnen() {
