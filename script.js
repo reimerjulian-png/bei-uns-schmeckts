@@ -33,7 +33,11 @@ const rezepte = [
     { name: "Crème brûlée", url: "creme-brulee.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Orangencreme", url: "orangencreme.html", kapitel: "Ein bisschen Platz ist noch" },
     { name: "Lebkuchenwürfel", url: "lebkuchenwuerfel.html", kapitel: "Ein bisschen Platz ist noch" },
-];
+
+    { name: "Currywurst Sauce", url: "currywurst-sauce.html", kapitel: "Das macht den Unterschied" },
+    { name: "Rustikaler Schichtsalat mit Speck", url: "rustikaler-schichtsalat-mit-speck.html", kapitel: "Was Kleines dazu" },
+    { name: "Lasagne", url: "lasagne.html", kapitel: "Unsere Klassiker" },
+    { name: "Mandelrollen", url: "mandelrollen.html", kapitel: "Was Süßes aus dem Ofen" },];
 
 function menueOeffnen() {
     if (!seitenmenue || !menuOverlay) return;

@@ -3,13 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Unsere Klassiker – Bei uns schmeckt&#x27;s</title>
+    <title>Rustikaler Schichtsalat mit Speck – Bei uns schmeckt&#x27;s</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Tefteli – Bei uns schmeckt&apos;s">
+    <meta property="og:description" content="Unser Rezept für Tefteli – direkt zum Nachkochen.">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,17 +24,25 @@
 
     <header class="topbar">
         <div class="topbar-inner">
-            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
+
+            <button class="menu-button" id="menuButton"
+                aria-label="Hauptmenü öffnen"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <a class="topbar-title" href="index.html">
+                Bei uns schmeckt's
+            </a>
 
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
+            <button class="suche-button" id="sucheButton"
+                aria-label="Suche öffnen"
+                aria-expanded="false">
                 ⌕
             </button>
+
         </div>
 
         <div class="suche-panel" id="suchePanel">
@@ -42,24 +56,54 @@
         </div>
     </header>
 
+
     <div class="menu-overlay" id="menuOverlay"></div>
 
+
     <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+
         <div class="seitenmenue-kopf">
             <span>Bei uns schmeckt's</span>
-            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+
+            <button class="menu-schliessen"
+                id="menuSchliessen"
+                aria-label="Hauptmenü schließen">
+                ×
+            </button>
         </div>
 
+
         <nav class="seitenmenue-inhalt">
-            <a href="index.html" class="menu-start">Startseite</a>
+
+            <a href="index.html" class="menu-start">
+                Startseite
+            </a>
+
 
             <p class="menu-bereichstitel">Kapitel</p>
+
             <div class="menu-kapitel">
-                <a href="klassiker.html" class="menu-kapitel-link"><span>01</span>Unsere Klassiker</a>
-                <a href="was-kleines-dazu.html" class="menu-kapitel-link"><span>02</span>Was Kleines dazu</a>
-                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link"><span>03</span>Das macht den Unterschied</a>
-                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link"><span>04</span>Was Süßes aus dem Ofen</a>
-                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
+
+                <a href="klassiker.html" class="menu-kapitel-link">
+                    <span>01</span>Unsere Klassiker
+                </a>
+
+                <a href="was-kleines-dazu.html" class="menu-kapitel-link">
+                    <span>02</span>Was Kleines dazu
+                </a>
+
+                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link">
+                    <span>03</span>Das macht den Unterschied
+                </a>
+
+                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link">
+                    <span>04</span>Was Süßes aus dem Ofen
+                </a>
+
+                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link">
+                    <span>05</span>Ein bisschen Platz ist noch
+                </a>
+
             </div>
 
 
@@ -75,28 +119,45 @@
                 </a>
             </div>
 
-<p class="menu-bereichstitel menu-bereichstitel-besonders">Besondere Momente</p>
+<p class="menu-bereichstitel menu-bereichstitel-besonders">
+                Besondere Momente
+            </p>
+
             <div class="menu-besondere-momente">
+
                 <a href="hochzeitsmenue.html" class="menu-besonderer-link">
+
                     <span class="menu-besonderer-symbol">♡</span>
+
                     <span class="menu-besonderer-text">
                         <strong>Unser Hochzeitsmenü</strong>
                         <small>13.05.2023</small>
                     </span>
+
                 </a>
+
             </div>
 
 
-            <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">Küchenhelfer</p>
+            <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">
+                Küchenhelfer
+            </p>
+
             <div class="menu-kuechenhelfer">
+
                 <a href="spickzettel.html" class="menu-kuechenhelfer-link">
+
                     <span class="menu-kuechenhelfer-symbol">✎</span>
+
                     <span class="menu-kuechenhelfer-text">
                         <strong>Spickzettel</strong>
                         <small>Mengen &amp; Abkürzungen</small>
                     </span>
+
                 </a>
+
             </div>
+
 
             <p class="menu-bereichstitel">Rezepte</p>
             <div class="menu-rezepte">
@@ -106,6 +167,8 @@
 <a href="italienische-steakpfanne.html" class="menu-rezept-link">Italienische Steakpfanne</a>
 <a href="tefteli.html" class="menu-rezept-link">Tefteli</a>
 <a href="rinderrouladen.html" class="menu-rezept-link">Rinderrouladen</a>
+
+<a href="lasagne.html" class="menu-rezept-link">Lasagne</a>
 <p class="menu-untertitel">Was Kleines dazu</p>
 <a href="dillgurken.html" class="menu-rezept-link">Dillgurken</a>
 <a href="ueberbackene-brezeln.html" class="menu-rezept-link">Überbackene Brezeln</a>
@@ -134,113 +197,56 @@
 <a href="orangencreme.html" class="menu-rezept-link">Orangencreme</a>
 <a href="lebkuchenwuerfel.html" class="menu-rezept-link">Lebkuchenwürfel</a>
 </div>
+
         </nav>
+
     </aside>
 
 
     <main>
 
-        <section class="kapitel-seite">
-            <a class="zurueck" href="index.html">← Zurück</a>
-            <p class="kapitel-nummer">01</p>
-            <h1>Unsere Klassiker</h1>
-            <p class="kapitel-beschreibung">Hauptgerichte &amp; Familienrezepte</p>
-        </section>
+        <article class="rezept">
 
-        <section class="rezeptliste">
+            <a class="zurueck" href="was-kleines-dazu.html">← Was Kleines dazu</a>
 
-    <a class="rezept-eintrag" href="gyrossuppe.html">
-        <span class="rezept-nummer">01</span>
-        <span class="rezept-name">Gyros Suppe</span>
-    </a>
 
-    <a class="rezept-eintrag" href="rindergulasch.html">
-        <span class="rezept-nummer">02</span>
-        <span class="rezept-name">Rindergulasch</span>
-    </a>
+            <header class="rezept-kopf">
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">03</span>
-        <span class="rezept-name">Plow</span>
-    </div>
+                <p class="rezept-kategorie">Was Kleines dazu</p>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">04</span>
-        <span class="rezept-name">Rösti Auflauf</span>
-    </div>
+                <h1>Rustikaler Schichtsalat mit Speck</h1>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">05</span>
-        <span class="rezept-name">Neapolitanische Pizza</span>
-    </div>
+                <div class="rezept-meta"><span>8 Personen</span><span>Von aus Gifhorn</span></div>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">06</span>
-        <span class="rezept-name">Rinderfilet in Sahnesauce</span>
-    </div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen">
+                    <span class="rezept-teilen-symbol" aria-hidden="true">↗</span>
+                    <span>Rezept teilen</span>
+                </button>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">07</span>
-        <span class="rezept-name">Bolognese</span>
-    </div>
+            </header>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">08</span>
-        <span class="rezept-name">Basic Tomatensauce</span>
-    </div>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">09</span>
-        <span class="rezept-name">„unsere“ Pasta</span>
-    </div>
+            <img class="rezept-bild" src="images/schichtsalat-gifhorn.png" alt="Rustikaler Schichtsalat mit Speck">
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">10</span>
-        <span class="rezept-name">Frische Pizza</span>
-    </div>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">11</span>
-        <span class="rezept-name">Kassler Nacken</span>
-    </div>
+            <!-- ZUTATEN -->
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">12</span>
-        <span class="rezept-name">Smoke BBQ Ribs</span>
-    </div>
+            <section class="rezept-bereich"><h2>Zutaten</h2><div class="zutaten"><div><span>1 Kopf</span><span>Eisbergsalat</span></div><div><span>1 Stange</span><span>Sellerie aus dem Glas</span></div><div><span>1 Bund</span><span>Schnittlauch</span></div><div><span>1 Tasse</span><span>Schinkenwürfel</span></div><div><span>300 g</span><span>Erbsen, tiefgekühlt</span></div><div><span>1</span><span>Paprika, grün</span></div><div><span>750 g</span><span>Miracle Whip</span></div><div><span>1-2 TL</span><span>Zucker</span></div><div><span>6</span><span>Eier</span></div><div><span>250 g</span><span>Käse, gerieben</span></div><div><span>250 g</span><span>Schinkenspeck</span></div></div></section>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">13</span>
-        <span class="rezept-name">Burger 1</span>
-    </div>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">14</span>
-        <span class="rezept-name">Burger 2</span>
-    </div>
+            <!-- DAZU PASST -->
+<!-- ZUBEREITUNG -->
+<section class="rezept-bereich"><h2>Zubereitung</h2><ol class="zubereitung"><li>Eisbergsalat in Streifen schneiden, Sellerie fein raspeln, Schnittlauch und Paprika fein schneiden. Erbsen nicht kochen.</li><li>Alle Zutaten in dieser Reihenfolge schichten: Eisbergsalat, Sellerie, Schnittlauch, Schinkenwürfel, Erbsen und Paprika.</li><li>Miracle Whip darüberstreichen und mit Zucker bestreuen.</li><li>Eier hart kochen, fein hacken und auf der Creme verteilen. Gouda fein reiben und darüberstreuen.</li><li>Schinkenspeck fein würfeln, knusprig braten und abkühlen lassen. Anschließend über den Käse streuen.</li><li>Den Schichtsalat ca. 10 Stunden kalt stellen und durchziehen lassen.</li></ol></section>
 
-    <div class="rezept-eintrag">
-        <span class="rezept-nummer">15</span>
-        <span class="rezept-name">Pulled Pork</span>
-    </div>
 
-    <a class="rezept-eintrag" href="italienische-steakpfanne.html">
-        <span class="rezept-nummer">16</span>
-        <span class="rezept-name">Italienische Steakpfanne</span>
-    </a>
-
-    <a class="rezept-eintrag" href="tefteli.html">
-        <span class="rezept-nummer">17</span>
-        <span class="rezept-name">Tefteli</span>
-    </a>
-
-<a class="rezept-eintrag" href="rinderrouladen.html"><span class="rezept-nummer">18</span><span class="rezept-name">Rinderrouladen</span></a>
-<a class="rezept-eintrag" href="lasagne.html"><span class="rezept-nummer">19</span><span class="rezept-name">Lasagne</span></a>
-</section>
+            <!-- WISSENSWERTES -->
+</article>
 
     </main>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
