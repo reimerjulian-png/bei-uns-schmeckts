@@ -378,17 +378,18 @@ body.menu-offen {
 .cover-scroll {
     position: relative;
 
-    height: 180vh;
+    height: calc(100svh - 58px);
+    min-height: 610px;
+    max-height: 850px;
 
     margin-left: -32px;
     margin-right: -32px;
 }
 
 .cover-sticky {
-    position: sticky;
-    top: 0;
+    position: relative;
 
-    height: 100vh;
+    height: 100%;
 
     overflow: hidden;
 }
@@ -428,7 +429,6 @@ body.menu-offen {
     transform: translate(-50%, -50%) scale(1);
     transform-origin: center;
 
-    will-change: transform;
 }
 
 .cover-teller img {
@@ -451,7 +451,6 @@ body.menu-offen {
     right: 32px;
     bottom: 12%;
 
-    will-change: opacity, transform;
 }
 
 .cover-text h1 {
@@ -473,6 +472,30 @@ body.menu-offen {
     font-weight: 300;
 
     color: #66635e;
+}
+
+.cover-einstieg {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin-top: 28px;
+    padding: 0 18px;
+    border: 1px solid #b9b1a6;
+    border-radius: 999px;
+    color: #1d1d1b;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background-color .2s ease, border-color .2s ease;
+}
+
+.cover-einstieg:hover {
+    background: #eee4d5;
+    border-color: #9a604c;
+}
+
+.cover-einstieg span {
+    font-size: 17px;
 }
 
 
@@ -528,6 +551,14 @@ body.menu-offen {
     font-size: 48px;
     font-weight: 500;
     line-height: 1;
+}
+
+.kapitel-intro-kicker {
+    margin: 0 0 12px !important;
+    font-size: 11px !important;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #9a604c !important;
 }
 
 .kapitel-intro p {
@@ -594,6 +625,17 @@ body.menu-offen {
     line-height: 1.6;
 
     color: #4a4742;
+}
+
+.kapitel-aktion {
+    display: inline-block;
+    margin-top: 22px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: #8e432e;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
 }
 
 
@@ -910,10 +952,6 @@ body.menu-offen {
         transition: none;
     }
 
-    .cover-teller,
-    .cover-text {
-        will-change: auto;
-    }
 }
 
 
@@ -1892,6 +1930,39 @@ body.menu-offen {
     line-height: 1;
 }
 
+.einkaufsliste-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 39px;
+    margin-top: 10px;
+    padding: 9px 14px;
+    border: 1px solid #b86a4d;
+    border-radius: 999px;
+    background: #eee4d5;
+    color: #6f3625;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.einkaufsliste-button:hover {
+    background: #e5d4c1;
+    border-color: #8e432e;
+}
+
+.einkaufsliste-button:active {
+    transform: scale(.98);
+}
+
+.einkaufsliste-symbol {
+    font-size: 15px;
+    line-height: 1;
+}
+
 
 /* =========================================================
    ÜBER UNS
@@ -2123,4 +2194,332 @@ body.menu-offen {
     .ueber-uns-text p { font-size: 16px; line-height: 1.7; }
     .ueber-uns-intro { font-size: 17px !important; }
     .ueber-uns-zitat { font-size: 27px !important; }
+}
+
+/* =========================================================
+   RESPONSIVE FEINSCHLIFF – IPHONE, TABLET UND DESKTOP
+   ========================================================= */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+button,
+a,
+input {
+    -webkit-tap-highlight-color: rgba(142, 67, 46, 0.14);
+}
+
+@media (max-width: 699px) {
+    .topbar-inner {
+        grid-template-columns: 44px 1fr 44px;
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    .menu-button,
+    .suche-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .menu-button {
+        padding: 12px 8px;
+    }
+
+    .suche-panel {
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
+    }
+
+    #sucheInput,
+    .wochenplan-felder input {
+        font-size: 16px;
+    }
+
+    main {
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
+    }
+
+    .cover-teller {
+        top: 30%;
+    }
+
+    .cover-text {
+        bottom: 7%;
+    }
+
+    .seitenmenue-inhalt {
+        padding-bottom: calc(60px + env(safe-area-inset-bottom));
+    }
+
+    .rezept-bild {
+        height: clamp(240px, 72vw, 340px);
+        border-radius: 2px;
+    }
+
+    .rezept-kopf h1 {
+        overflow-wrap: anywhere;
+    }
+
+    .rezept-eintrag,
+    .rezept-link,
+    .menu-rezept-link {
+        min-height: 44px;
+    }
+
+    .wochenplan-button {
+        min-height: 54px;
+    }
+
+    .familien-footer {
+        padding-bottom: calc(28px + env(safe-area-inset-bottom));
+    }
+}
+
+@media (min-width: 700px) {
+    body {
+        background: #e9e4dc;
+    }
+
+    .topbar {
+        background-color: rgba(247, 243, 235, 0.94);
+        backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner,
+    .suche-panel {
+        max-width: 1180px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .topbar-title {
+        font-size: 24px;
+    }
+
+    main {
+        width: min(100%, 1180px);
+        max-width: 1180px;
+        padding-left: 64px;
+        padding-right: 64px;
+        box-shadow: 0 0 55px rgba(67, 55, 42, 0.08);
+    }
+
+    .cover-scroll {
+        margin-left: -64px;
+        margin-right: -64px;
+    }
+
+    .cover-teller {
+        width: clamp(360px, 38vw, 520px);
+        height: clamp(360px, 38vw, 520px);
+        left: 72%;
+        top: 43%;
+    }
+
+    .cover-text {
+        left: 8%;
+        right: auto;
+        bottom: 14%;
+    }
+
+    .cover-text h1 {
+        font-size: clamp(76px, 8vw, 112px);
+    }
+
+    .cover-text p {
+        font-size: 18px;
+    }
+
+    .kapitel-intro {
+        max-width: 760px;
+        padding: 90px 0 70px;
+    }
+
+    .kapitel-intro h2 {
+        font-size: 68px;
+    }
+
+    .kapitel {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 64px;
+        padding-bottom: 150px;
+    }
+
+    .kapitel-karte {
+        margin: 0;
+        padding: 42px 0 48px;
+    }
+
+    .kapitel-karte:nth-last-child(2) {
+        border-bottom: 1px solid #cfc8bd;
+    }
+
+    .kapitel-karte h3 {
+        font-size: 42px;
+    }
+
+    .kapitel-seite {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 80px;
+    }
+
+    .kapitel-seite h1 {
+        max-width: 760px;
+        font-size: 74px;
+    }
+
+    .kapitel-beschreibung {
+        max-width: 620px;
+        font-size: 18px;
+    }
+
+    .rezeptliste {
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rezept-eintrag,
+    .rezept-link {
+        padding: 22px 0;
+    }
+
+    .rezept-name {
+        font-size: 19px;
+    }
+
+    .rezept {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.85fr) minmax(380px, 1.35fr);
+        column-gap: clamp(48px, 7vw, 96px);
+        align-items: start;
+        padding-top: 70px;
+    }
+
+    .rezept > .zurueck {
+        grid-column: 1 / -1;
+        margin-bottom: 62px;
+    }
+
+    .rezept > .rezept-kopf {
+        grid-column: 1;
+        grid-row: 2;
+        margin-bottom: 70px;
+    }
+
+    .rezept-kopf h1 {
+        font-size: clamp(58px, 5vw, 82px);
+    }
+
+    .rezept > .rezept-bild {
+        grid-column: 2;
+        grid-row: 2;
+        height: min(58vw, 620px);
+        margin-bottom: 90px;
+        border-radius: 3px;
+    }
+
+    .rezept > .rezept-bereich {
+        grid-column: 1 / -1;
+        width: min(100%, 780px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 84px;
+    }
+
+    .rezept-bereich h2 {
+        font-size: 44px;
+    }
+
+    .zutaten div {
+        grid-template-columns: 120px 1fr;
+        padding: 13px 0;
+        font-size: 16px;
+    }
+
+    .zubereitung li {
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    .zufall {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .hochzeit-seite,
+    .spickzettel-main,
+    .ueber-uns-seite,
+    .fuer-dich-seite {
+        max-width: 940px;
+    }
+
+    .hochzeit-galerie {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .hochzeit-foto img {
+        height: 480px;
+    }
+
+    .wochenplan-main {
+        width: min(100%, 940px);
+        max-width: 940px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    .wochenplan-kopf {
+        max-width: 720px;
+    }
+
+    .wochenplan-einstellungen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 52px;
+        align-items: end;
+    }
+
+    .wochenplan-einstellungen > div:first-child,
+    .wochenplan-einstellungen > .wochenplan-hinweis {
+        grid-column: 1;
+    }
+
+    .wochenplan-felder,
+    .wochenplan-button {
+        grid-column: 2;
+    }
+
+    .wochenplan-felder {
+        grid-row: 1 / span 2;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .wochenplan-button {
+        grid-row: 3;
+    }
+}
+
+@media (min-width: 1100px) {
+    .kapitel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 48px;
+    }
+
+    .kapitel-karte:nth-last-child(2) {
+        border-bottom: none;
+    }
+
+    .kapitel-karte:nth-child(n + 4) {
+        border-bottom: 1px solid #cfc8bd;
+    }
 }

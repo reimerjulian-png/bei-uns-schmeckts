@@ -26,6 +26,14 @@ if (!wochenplanVorhanden && wochenplanAnker) {
     wochenplanAnker.before(bereich);
 }
 
+/* Der sichtbare Menübegriff soll direkt zur Rezeptsuche führen. */
+document.querySelectorAll('.menu-kapitel').forEach((liste) => {
+    const titel = liste.previousElementSibling;
+    if (titel?.classList.contains('menu-bereichstitel')) {
+        titel.textContent = 'Rezept-Kategorien';
+    }
+});
+
 const rezepte = [
     { name: "Gyros Suppe", url: "gyrossuppe.html", kapitel: "Unsere Klassiker" },
     { name: "Rindergulasch", url: "rindergulasch.html", kapitel: "Unsere Klassiker" },
@@ -166,35 +174,6 @@ if (topbar) {
         letzteScrollPosition = aktuelleScrollPosition;
     }, { passive: true });
 }
-
-const coverScroll = document.querySelector(".cover-scroll");
-const coverTeller = document.querySelector(".cover-teller");
-const coverText = document.querySelector(".cover-text");
-
-function coverAnimation() {
-    if (!coverScroll || !coverTeller || !coverText) return;
-
-    const rect = coverScroll.getBoundingClientRect();
-    const scrollBereich = coverScroll.offsetHeight - window.innerHeight;
-
-    if (scrollBereich <= 0) return;
-
-    let fortschritt = -rect.top / scrollBereich;
-    fortschritt = Math.max(0, Math.min(1, fortschritt));
-
-    const scale = 1 + fortschritt * 4.5;
-    coverTeller.style.transform =
-        `translate(-50%, -50%) scale(${scale})`;
-
-    const textOpacity = Math.max(0, 1 - fortschritt * 2.2);
-    const textY = fortschritt * 60;
-
-    coverText.style.opacity = textOpacity;
-    coverText.style.transform = `translateY(${textY}px)`;
-}
-
-window.addEventListener("scroll", coverAnimation, { passive: true });
-coverAnimation();
 
 /* =========================================================
    ZUFALLSGERICHT – AUTOMATISCH AUS „UNSERE KLASSIKER“
@@ -599,5 +578,72 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         }
+    });
+});
+
+/* =========================================================
+   EINKAUFSLISTE FÜR APPLE NOTIZEN
+   ========================================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const rezeptKopf = document.querySelector('.rezept-kopf');
+    const zutatenListe = document.querySelector('.zutaten');
+
+    if (!rezeptKopf || !zutatenListe) return;
+
+    const einkaufslisteButton = document.createElement('button');
+    einkaufslisteButton.className = 'einkaufsliste-button';
+    einkaufslisteButton.type = 'button';
+    einkaufslisteButton.innerHTML = `
+        <span class="einkaufsliste-symbol" aria-hidden="true">☐</span>
+        <span>Einkaufsliste teilen</span>`;
+
+    const teilenButton = rezeptKopf.querySelector('.rezept-teilen');
+    if (teilenButton) {
+        teilenButton.insertAdjacentElement('afterend', einkaufslisteButton);
+    } else {
+        rezeptKopf.append(einkaufslisteButton);
+    }
+
+    einkaufslisteButton.addEventListener('click', async () => {
+        const rezeptName = rezeptKopf.querySelector('h1')?.textContent.trim() || 'Rezept';
+        const titel = `Einkaufsliste – ${rezeptName}`;
+        const zeilen = [];
+
+        zutatenListe.querySelectorAll(':scope > div:not(.zutaten-gruppe)').forEach((zeile) => {
+            const teile = [...zeile.querySelectorAll(':scope > span')]
+                .map((teil) => teil.textContent.trim())
+                .filter(Boolean);
+
+            if (teile.length) zeilen.push(`☐ ${teile.join(' ')}`);
+        });
+
+        if (!zeilen.length) return;
+
+        const notizText = `${titel}\n\n${zeilen.join('\n')}`;
+        const beschriftung = einkaufslisteButton.querySelector('span:last-child');
+
+        try {
+            if (navigator.share) {
+                await navigator.share({ title: titel, text: notizText });
+                return;
+            }
+
+            await navigator.clipboard.writeText(notizText);
+            if (beschriftung) beschriftung.textContent = 'Liste kopiert ✓';
+        } catch (error) {
+            if (error?.name === 'AbortError') return;
+
+            try {
+                await navigator.clipboard.writeText(notizText);
+                if (beschriftung) beschriftung.textContent = 'Liste kopiert ✓';
+            } catch (_) {
+                if (beschriftung) beschriftung.textContent = 'Teilen nicht möglich';
+            }
+        }
+
+        window.setTimeout(() => {
+            if (beschriftung) beschriftung.textContent = 'Einkaufsliste teilen';
+        }, 2200);
     });
 });
