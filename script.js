@@ -10,30 +10,6 @@ const suchePanel = document.getElementById("suchePanel");
 const sucheInput = document.getElementById("sucheInput");
 const sucheErgebnisse = document.getElementById("sucheErgebnisse");
 
-/* „Unsere Woche“ in allen vorhandenen Hauptmenüs ergänzen */
-const wochenplanVorhanden = document.querySelector('.menu-unsere-woche');
-const wochenplanAnker = document.querySelector('.menu-bereichstitel-kuechenhelfer');
-
-if (!wochenplanVorhanden && wochenplanAnker) {
-    const bereich = document.createElement('div');
-    bereich.className = 'menu-wochenplan-block';
-    bereich.innerHTML = `
-        <p class="menu-bereichstitel">Wochenplanung</p>
-        <a href="unsere-woche.html" class="menu-unsere-woche">
-            <span class="menu-unsere-woche-symbol" aria-hidden="true">7</span>
-            <span><strong>Unsere Woche</strong><small>Ausgewogen &amp; passend zur Menge</small></span>
-        </a>`;
-    wochenplanAnker.before(bereich);
-}
-
-/* Der sichtbare Menübegriff soll direkt zur Rezeptsuche führen. */
-document.querySelectorAll('.menu-kapitel').forEach((liste) => {
-    const titel = liste.previousElementSibling;
-    if (titel?.classList.contains('menu-bereichstitel')) {
-        titel.textContent = 'Rezept-Kategorien';
-    }
-});
-
 const rezepte = [
     { name: "Gyros Suppe", url: "gyrossuppe.html", kapitel: "Unsere Klassiker" },
     { name: "Rindergulasch", url: "rindergulasch.html", kapitel: "Unsere Klassiker" },
@@ -74,7 +50,7 @@ const rezepte = [
 
 const neueRezepte = [
     { name: "Apfel im Schlafrock", url: "apfel-im-schlafrock.html", kapitel: "Was Süßes aus dem Ofen" },
-    { name: "Butterkuchen nach Thomas P. Mama", url: "butterkuchen-nach-thomas-p-mama.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Butterkuchen", url: "butterkuchen-nach-thomas-p-mama.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Coleslaw", url: "coleslaw.html", kapitel: "Was Kleines dazu" },
     { name: "Frikadellen", url: "frikadellen.html", kapitel: "Unsere Klassiker" },
     { name: "Gefüllte Zucchini", url: "gefuellte-zucchini.html", kapitel: "Unsere Klassiker" },
@@ -82,36 +58,79 @@ const neueRezepte = [
     { name: "Gyrospizza vom Blech", url: "gyrospizza-vom-blech.html", kapitel: "Unsere Klassiker" },
     { name: "Hähnchen-Gemüse-Pfanne", url: "haehnchen-gemuese-pfanne.html", kapitel: "Unsere Klassiker" },
     { name: "Hot-Dog-Cake", url: "hot-dog-cake.html", kapitel: "Unsere Klassiker" },
-    { name: "Lenas Lieblingsgemüse aus dem Ofen", url: "lenas-lieblingsgemuese-aus-dem-ofen.html", kapitel: "Was Kleines dazu" },
-    { name: "Nudelsalat nach Melanie Pauls", url: "nudelsalat-nach-melanie-pauls.html", kapitel: "Was Kleines dazu" },
+    { name: "Lieblingsgemüse aus dem Ofen", url: "lenas-lieblingsgemuese-aus-dem-ofen.html", kapitel: "Was Kleines dazu" },
+    { name: "Nudelsalat", url: "nudelsalat-nach-melanie-pauls.html", kapitel: "Was Kleines dazu" },
     { name: "Pikante Streusel-Tarte", url: "pikante-streusel-tarte.html", kapitel: "Was Kleines dazu" },
     { name: "Pilz-Curry mit Mandeln", url: "pilz-curry-mit-mandeln.html", kapitel: "Unsere Klassiker" },
     { name: "Röstiauflauf", url: "roestiauflauf.html", kapitel: "Unsere Klassiker" },
     { name: "Schaschlik-Gulasch", url: "schaschlik-gulasch.html", kapitel: "Unsere Klassiker" },
     { name: "Spätzle in Hackfleisch-Bratensoße", url: "spaetzle-in-hackbratensosse.html", kapitel: "Unsere Klassiker" },
     { name: "Spitzkohlsalat mit Pistazien", url: "spitzkohlsalat-mit-pistazien.html", kapitel: "Was Kleines dazu" },
-    { name: "Twoiback nach Mama Reimer", url: "twoiback-nach-mama-reimer.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Twoiback", url: "twoiback-nach-mama-reimer.html", kapitel: "Was Süßes aus dem Ofen" },
 ];
 
 rezepte.push(...neueRezepte);
 
-/* Neue Eingangsrezepte automatisch in Menü und Kategorieseiten einsortieren. */
-document.querySelectorAll('.menu-rezepte').forEach((menu) => {
-    neueRezepte.forEach((rezept) => {
-        if (menu.querySelector(`a[href="${rezept.url}"]`)) return;
-        const untertitel = [...menu.querySelectorAll('.menu-untertitel')]
-            .find((element) => element.textContent.trim() === rezept.kapitel);
-        if (!untertitel) return;
-        let einfuegePunkt = untertitel.nextElementSibling;
-        while (einfuegePunkt && !einfuegePunkt.classList.contains('menu-untertitel')) {
-            einfuegePunkt = einfuegePunkt.nextElementSibling;
-        }
-        const link = document.createElement('a');
-        link.href = rezept.url;
-        link.className = 'menu-rezept-link';
-        link.textContent = rezept.name;
-        menu.insertBefore(link, einfuegePunkt);
-    });
+/* Hauptmenü auf allen Seiten einheitlich, kompakt und aufgabenorientiert aufbauen. */
+const menueInhalt = document.querySelector('.seitenmenue-inhalt');
+if (menueInhalt) {
+    menueInhalt.innerHTML = `
+        <a href="index.html" class="menu-start-neu">
+            <span class="menu-icon" aria-hidden="true">⌂</span>
+            <span><strong>Startseite</strong><small>Zur Übersicht</small></span>
+        </a>
+
+        <button type="button" class="menu-suche-neu" id="menuSucheButton">
+            <span class="menu-icon" aria-hidden="true">⌕</span>
+            <span><strong>Rezept suchen</strong><small>Schnell zum gewünschten Gericht</small></span>
+        </button>
+
+        <section class="menu-gruppe" aria-labelledby="menuRezepteTitel">
+            <p class="menu-bereichstitel" id="menuRezepteTitel">Rezepte entdecken</p>
+            <div class="menu-kategorien-neu">
+                <a href="klassiker.html"><span>01</span><strong>Unsere Klassiker</strong><small>Herzhaft &amp; bewährt</small></a>
+                <a href="was-kleines-dazu.html"><span>02</span><strong>Was Kleines dazu</strong><small>Beilagen &amp; Salate</small></a>
+                <a href="das-macht-den-unterschied.html"><span>03</span><strong>Das macht den Unterschied</strong><small>Soßen &amp; Extras</small></a>
+                <a href="was-suesses-aus-dem-ofen.html"><span>04</span><strong>Was Süßes aus dem Ofen</strong><small>Kuchen &amp; Gebäck</small></a>
+                <a href="ein-bisschen-platz-ist-noch.html"><span>05</span><strong>Ein bisschen Platz ist noch</strong><small>Desserts &amp; Süßspeisen</small></a>
+            </div>
+        </section>
+
+        <section class="menu-gruppe" aria-labelledby="menuPlanenTitel">
+            <p class="menu-bereichstitel" id="menuPlanenTitel">Planen &amp; inspirieren</p>
+            <a href="unsere-woche.html" class="menu-funktionskarte menu-wochenkarte">
+                <span class="menu-icon menu-kalender" aria-hidden="true">7</span>
+                <span><strong>Unsere Woche</strong><small>Gerichte passend zu Personen &amp; Mengen planen</small></span>
+                <span class="menu-pfeil" aria-hidden="true">→</span>
+            </a>
+            <div class="menu-zufall">
+                <div class="menu-zufall-kopf">
+                    <span class="menu-icon" aria-hidden="true">✦</span>
+                    <span><strong>Was gibt’s heute?</strong><small>Ein Hauptgericht zufällig auswählen</small></span>
+                </div>
+                <button type="button" class="zufall-button" id="zufallButton">Gericht auswählen</button>
+                <div class="zufall-ergebnis" id="zufallErgebnis" aria-live="polite">
+                    <p class="zufall-label">Unser Vorschlag</p>
+                    <h3 id="zufallName"></h3>
+                    <div class="zufall-aktionen">
+                        <a id="zufallLink" href="#">Rezept öffnen</a>
+                        <button type="button" id="zufallNochmal">Neu wählen</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-gruppe menu-service" aria-labelledby="menuMehrTitel">
+            <p class="menu-bereichstitel" id="menuMehrTitel">Mehr</p>
+            <a href="spickzettel.html"><span aria-hidden="true">✎</span><span><strong>Spickzettel</strong><small>Mengen &amp; Abkürzungen</small></span></a>
+            <a href="hochzeitsmenue.html"><span aria-hidden="true">♡</span><span><strong>Unser Hochzeitsmenü</strong><small>13.05.2023</small></span></a>
+            <a href="ueber-uns.html"><span aria-hidden="true">○</span><span><strong>Über uns</strong><small>Wer hinter dem Kochbuch steckt</small></span></a>
+        </section>`;
+}
+
+document.getElementById('menuSucheButton')?.addEventListener('click', () => {
+    menueSchliessen();
+    window.setTimeout(() => sucheButton?.click(), 180);
 });
 
 const kategorienSeiten = {
@@ -281,50 +300,12 @@ let hauptgerichte = [];
 let letzterZufallsIndex = -1;
 
 
-/* Rezepte automatisch aus klassiker.html laden */
-
+/* Alle Rezepte der Kategorie „Unsere Klassiker“ übernehmen – einschließlich
+   der später ergänzten Rezepte, die erst per JavaScript einsortiert werden. */
 async function hauptgerichteLaden() {
-
-    try {
-
-        const antwort = await fetch("klassiker.html");
-
-        if (!antwort.ok) {
-            throw new Error("klassiker.html konnte nicht geladen werden.");
-        }
-
-        const html = await antwort.text();
-
-        const parser = new DOMParser();
-        const dokument = parser.parseFromString(html, "text/html");
-
-        const rezeptLinks = dokument.querySelectorAll(
-            ".rezeptliste a.rezept-eintrag[href]"
-        );
-
-        hauptgerichte = Array.from(rezeptLinks).map((link) => {
-
-            const nameElement = link.querySelector(".rezept-name");
-
-            return {
-                name: nameElement
-                    ? nameElement.textContent.trim()
-                    : link.textContent.trim(),
-
-                url: link.getAttribute("href")
-            };
-
-        });
-
-    } catch (fehler) {
-
-        console.error(
-            "Hauptgerichte konnten nicht geladen werden:",
-            fehler
-        );
-
-    }
-
+    hauptgerichte = rezepte
+        .filter((rezept) => rezept.kapitel === "Unsere Klassiker")
+        .map(({ name, url }) => ({ name, url }));
 }
 
 
