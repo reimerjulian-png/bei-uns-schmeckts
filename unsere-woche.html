@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsere Woche – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt">
+            <a href="index.html" class="menu-start">Startseite</a>
+            <p class="menu-bereichstitel">Kapitel</p>
+            <div class="menu-kapitel">
+                <a href="klassiker.html" class="menu-kapitel-link"><span>01</span>Unsere Klassiker</a>
+                <a href="was-kleines-dazu.html" class="menu-kapitel-link"><span>02</span>Was Kleines dazu</a>
+                <a href="das-macht-den-unterschied.html" class="menu-kapitel-link"><span>03</span>Das macht den Unterschied</a>
+                <a href="was-suesses-aus-dem-ofen.html" class="menu-kapitel-link"><span>04</span>Was Süßes aus dem Ofen</a>
+                <a href="ein-bisschen-platz-ist-noch.html" class="menu-kapitel-link"><span>05</span>Ein bisschen Platz ist noch</a>
+            </div>
+            <p class="menu-bereichstitel menu-bereichstitel-kuechenhelfer">Küchenhelfer</p>
+            <div class="menu-kuechenhelfer">
+                <a href="spickzettel.html" class="menu-kuechenhelfer-link"><span class="menu-kuechenhelfer-symbol">✎</span><span class="menu-kuechenhelfer-text"><strong>Spickzettel</strong><small>Mengen &amp; Abkürzungen</small></span></a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="wochenplan-main">
+        <section class="wochenplan-kopf">
+            <p class="wochenplan-kicker">Was gibt’s diese Woche?</p>
+            <h1>Unsere Woche</h1>
+            <p>Ein ausgewogener Zufallsplan, der mitrechnet, wie lange ein Rezept für euren Haushalt reicht.</p>
+        </section>
+
+        <section class="wochenplan-einstellungen" aria-labelledby="haushaltTitel">
+            <div>
+                <p class="wochenplan-schritt">01 · Haushalt</p>
+                <h2 id="haushaltTitel">Für wen wird gekocht?</h2>
+            </div>
+            <div class="wochenplan-felder">
+                <label for="wochenErwachsene"><span>Erwachsene</span><input id="wochenErwachsene" type="number" min="0" max="20" step="1" value="2" inputmode="numeric"></label>
+                <label for="wochenKinder"><span>Kinder</span><input id="wochenKinder" type="number" min="0" max="20" step="1" value="0" inputmode="numeric"></label>
+            </div>
+            <p class="wochenplan-hinweis">Ein Kind wird bei der Mengenberechnung mit etwa 60 % einer Erwachsenenportion berücksichtigt.</p>
+            <button class="wochenplan-button" id="wochenplanErstellen" type="button">Neue Woche auslosen</button>
+        </section>
+
+        <section class="wochenplan-ausgabe" aria-labelledby="wochenplanTitel">
+            <div class="wochenplan-ausgabe-kopf">
+                <div><p class="wochenplan-schritt">02 · Speiseplan</p><h2 id="wochenplanTitel">Eure Gerichte</h2></div>
+                <p id="wochenplanZusammenfassung" class="wochenplan-zusammenfassung"></p>
+            </div>
+            <div id="wochenplanListe" class="wochenplan-liste" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

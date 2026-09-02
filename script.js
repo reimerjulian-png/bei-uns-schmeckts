@@ -10,6 +10,22 @@ const suchePanel = document.getElementById("suchePanel");
 const sucheInput = document.getElementById("sucheInput");
 const sucheErgebnisse = document.getElementById("sucheErgebnisse");
 
+/* „Unsere Woche“ in allen vorhandenen Hauptmenüs ergänzen */
+const wochenplanVorhanden = document.querySelector('.menu-unsere-woche');
+const wochenplanAnker = document.querySelector('.menu-bereichstitel-kuechenhelfer');
+
+if (!wochenplanVorhanden && wochenplanAnker) {
+    const bereich = document.createElement('div');
+    bereich.className = 'menu-wochenplan-block';
+    bereich.innerHTML = `
+        <p class="menu-bereichstitel">Wochenplanung</p>
+        <a href="unsere-woche.html" class="menu-unsere-woche">
+            <span class="menu-unsere-woche-symbol" aria-hidden="true">7</span>
+            <span><strong>Unsere Woche</strong><small>Ausgewogen &amp; passend zur Menge</small></span>
+        </a>`;
+    wochenplanAnker.before(bereich);
+}
+
 const rezepte = [
     { name: "Gyros Suppe", url: "gyrossuppe.html", kapitel: "Unsere Klassiker" },
     { name: "Rindergulasch", url: "rindergulasch.html", kapitel: "Unsere Klassiker" },
@@ -392,6 +408,121 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* =========================================================
+   UNSERE WOCHE – AUSGEWOGENER WOCHENPLAN
+   ========================================================= */
+
+const wochenRezepte = [
+    { name: 'Gyros Suppe', url: 'gyrossuppe.html', portionen: 6, gruppe: 'suppe', label: 'Suppe & Gemüse' },
+    { name: 'Rindergulasch', url: 'rindergulasch.html', portionen: 6, gruppe: 'eintopf', label: 'Schmorgericht' },
+    { name: 'Italienische Steakpfanne', url: 'italienische-steakpfanne.html', portionen: 2, gruppe: 'reis', label: 'Reis & Gemüse' },
+    { name: 'Tefteli', url: 'tefteli.html', portionen: 6, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
+    { name: 'Rinderrouladen', url: 'rinderrouladen.html', portionen: 2, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
+    { name: 'Lasagne', url: 'lasagne.html', portionen: 6, gruppe: 'nudel', label: 'Nudeln & Gemüse' },
+    { name: 'Hähnchen auf chinesische Art', url: 'haehnchen-auf-chinesische-art.html', portionen: 4, gruppe: 'reis', label: 'Reis & Gemüse' },
+    { name: 'Rindfleischsuppe mit Gurken', url: 'rindfleischsuppe-mit-gurken.html', portionen: 8, gruppe: 'suppe', label: 'Suppe & Gemüse' },
+    { name: 'Couscous-Hack-Pfanne', url: 'couscous-hack-pfanne.html', portionen: 4, gruppe: 'couscous', label: 'Couscous & Gemüse' },
+];
+
+const wochenTage = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+const wochenErwachsene = document.getElementById('wochenErwachsene');
+const wochenKinder = document.getElementById('wochenKinder');
+const wochenplanButton = document.getElementById('wochenplanErstellen');
+const wochenplanListe = document.getElementById('wochenplanListe');
+const wochenplanZusammenfassung = document.getElementById('wochenplanZusammenfassung');
+
+function mischen(liste) {
+    const kopie = [...liste];
+    for (let i = kopie.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [kopie[i], kopie[j]] = [kopie[j], kopie[i]];
+    }
+    return kopie;
+}
+
+function haushaltsPortionen() {
+    const erwachsene = Math.max(0, Number.parseInt(wochenErwachsene?.value || '0', 10));
+    const kinder = Math.max(0, Number.parseInt(wochenKinder?.value || '0', 10));
+    return { erwachsene, kinder, proTag: Math.max(0.6, erwachsene + kinder * 0.6) };
+}
+
+function naechstesAusgewogenesRezept(verfuegbar, letzteGruppe) {
+    const andereGruppe = verfuegbar.find((rezept) => rezept.gruppe !== letzteGruppe);
+    return andereGruppe || verfuegbar[0];
+}
+
+function wochenplanAuslosen() {
+    if (!wochenplanListe || !wochenplanZusammenfassung) return;
+
+    const haushalt = haushaltsPortionen();
+    const anzahlMenschen = haushalt.erwachsene + haushalt.kinder;
+
+    if (anzahlMenschen < 1) {
+        wochenplanListe.innerHTML = '<p class="wochenplan-fehler">Bitte mindestens eine erwachsene Person oder ein Kind eintragen.</p>';
+        wochenplanZusammenfassung.textContent = '';
+        return;
+    }
+
+    let verfuegbar = mischen(wochenRezepte);
+    let tag = 0;
+    let letzteGruppe = '';
+    let neueGerichte = 0;
+    const karten = [];
+
+    while (tag < wochenTage.length) {
+        if (verfuegbar.length === 0) verfuegbar = mischen(wochenRezepte);
+        const rezept = naechstesAusgewogenesRezept(verfuegbar, letzteGruppe);
+        verfuegbar = verfuegbar.filter((eintrag) => eintrag !== rezept);
+
+        const moeglicheTage = Math.max(1, Math.floor(rezept.portionen / haushalt.proTag));
+        const reichtTage = Math.min(moeglicheTage, wochenTage.length - tag);
+        const ende = tag + reichtTage - 1;
+        neueGerichte += 1;
+
+        karten.push(`
+            <article class="wochenplan-gericht">
+                <div class="wochenplan-tag"><span>${String(tag + 1).padStart(2, '0')}</span><strong>${wochenTage[tag]}</strong></div>
+                <div class="wochenplan-gericht-inhalt">
+                    <p class="wochenplan-kategorie">${rezept.label}</p>
+                    <h3>${rezept.name}</h3>
+                    <p>${rezept.portionen} Rezeptportionen · reicht für ${reichtTage} ${reichtTage === 1 ? 'Tag' : 'Tage'}</p>
+                    <a href="${rezept.url}">Rezept öffnen →</a>
+                </div>
+            </article>`);
+
+        for (let restetag = tag + 1; restetag <= ende; restetag += 1) {
+            karten.push(`
+                <div class="wochenplan-restetag">
+                    <div class="wochenplan-tag"><span>${String(restetag + 1).padStart(2, '0')}</span><strong>${wochenTage[restetag]}</strong></div>
+                    <p><span>Kein neues Gericht</span>${rezept.name} reicht noch.</p>
+                </div>`);
+        }
+
+        letzteGruppe = rezept.gruppe;
+        tag += reichtTage;
+    }
+
+    wochenplanListe.innerHTML = karten.join('');
+    const personenText = `${haushalt.erwachsene} ${haushalt.erwachsene === 1 ? 'Erwachsener' : 'Erwachsene'}${haushalt.kinder ? ` · ${haushalt.kinder} ${haushalt.kinder === 1 ? 'Kind' : 'Kinder'}` : ''}`;
+    wochenplanZusammenfassung.textContent = `${personenText} · ${neueGerichte} neue ${neueGerichte === 1 ? 'Mahlzeit' : 'Mahlzeiten'}`;
+    localStorage.setItem('beiUnsSchmecktsHaushalt', JSON.stringify({ erwachsene: haushalt.erwachsene, kinder: haushalt.kinder }));
+}
+
+if (wochenplanListe) {
+    try {
+        const gespeichert = JSON.parse(localStorage.getItem('beiUnsSchmecktsHaushalt') || 'null');
+        if (gespeichert && wochenErwachsene && wochenKinder) {
+            wochenErwachsene.value = String(gespeichert.erwachsene ?? 2);
+            wochenKinder.value = String(gespeichert.kinder ?? 0);
+        }
+    } catch (_) {
+        // Ungültige lokale Einstellung ignorieren.
+    }
+    wochenplanAuslosen();
+}
+
+wochenplanButton?.addEventListener('click', wochenplanAuslosen);
 
 
 /* =========================================================
