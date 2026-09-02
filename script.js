@@ -72,6 +72,98 @@ const rezepte = [
     { name: "Rollkuchen", url: "rollkuchen.html", kapitel: "Was Kleines dazu" },
 ];
 
+const neueRezepte = [
+    { name: "Apfel im Schlafrock", url: "apfel-im-schlafrock.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Butterkuchen nach Thomas P. Mama", url: "butterkuchen-nach-thomas-p-mama.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Coleslaw", url: "coleslaw.html", kapitel: "Was Kleines dazu" },
+    { name: "Frikadellen", url: "frikadellen.html", kapitel: "Unsere Klassiker" },
+    { name: "Gefüllte Zucchini", url: "gefuellte-zucchini.html", kapitel: "Unsere Klassiker" },
+    { name: "Guiso", url: "guiso.html", kapitel: "Unsere Klassiker" },
+    { name: "Gyrospizza vom Blech", url: "gyrospizza-vom-blech.html", kapitel: "Unsere Klassiker" },
+    { name: "Hähnchen-Gemüse-Pfanne", url: "haehnchen-gemuese-pfanne.html", kapitel: "Unsere Klassiker" },
+    { name: "Hot-Dog-Cake", url: "hot-dog-cake.html", kapitel: "Unsere Klassiker" },
+    { name: "Lenas Lieblingsgemüse aus dem Ofen", url: "lenas-lieblingsgemuese-aus-dem-ofen.html", kapitel: "Was Kleines dazu" },
+    { name: "Nudelsalat nach Melanie Pauls", url: "nudelsalat-nach-melanie-pauls.html", kapitel: "Was Kleines dazu" },
+    { name: "Pikante Streusel-Tarte", url: "pikante-streusel-tarte.html", kapitel: "Was Kleines dazu" },
+    { name: "Pilz-Curry mit Mandeln", url: "pilz-curry-mit-mandeln.html", kapitel: "Unsere Klassiker" },
+    { name: "Röstiauflauf", url: "roestiauflauf.html", kapitel: "Unsere Klassiker" },
+    { name: "Schaschlik-Gulasch", url: "schaschlik-gulasch.html", kapitel: "Unsere Klassiker" },
+    { name: "Spätzle in Hackfleisch-Bratensoße", url: "spaetzle-in-hackbratensosse.html", kapitel: "Unsere Klassiker" },
+    { name: "Spitzkohlsalat mit Pistazien", url: "spitzkohlsalat-mit-pistazien.html", kapitel: "Was Kleines dazu" },
+    { name: "Twoiback nach Mama Reimer", url: "twoiback-nach-mama-reimer.html", kapitel: "Was Süßes aus dem Ofen" },
+];
+
+rezepte.push(...neueRezepte);
+
+/* Neue Eingangsrezepte automatisch in Menü und Kategorieseiten einsortieren. */
+document.querySelectorAll('.menu-rezepte').forEach((menu) => {
+    neueRezepte.forEach((rezept) => {
+        if (menu.querySelector(`a[href="${rezept.url}"]`)) return;
+        const untertitel = [...menu.querySelectorAll('.menu-untertitel')]
+            .find((element) => element.textContent.trim() === rezept.kapitel);
+        if (!untertitel) return;
+        let einfuegePunkt = untertitel.nextElementSibling;
+        while (einfuegePunkt && !einfuegePunkt.classList.contains('menu-untertitel')) {
+            einfuegePunkt = einfuegePunkt.nextElementSibling;
+        }
+        const link = document.createElement('a');
+        link.href = rezept.url;
+        link.className = 'menu-rezept-link';
+        link.textContent = rezept.name;
+        menu.insertBefore(link, einfuegePunkt);
+    });
+});
+
+const kategorienSeiten = {
+    'klassiker.html': 'Unsere Klassiker',
+    'was-kleines-dazu.html': 'Was Kleines dazu',
+    'was-suesses-aus-dem-ofen.html': 'Was Süßes aus dem Ofen'
+};
+const aktuelleKategorie = kategorienSeiten[window.location.pathname.split('/').pop()];
+const kategorienListe = document.querySelector('main .rezeptliste');
+if (aktuelleKategorie && kategorienListe) {
+    neueRezepte.filter((rezept) => rezept.kapitel === aktuelleKategorie).forEach((rezept) => {
+        if (kategorienListe.querySelector(`a[href="${rezept.url}"]`)) return;
+        const nummer = String(kategorienListe.querySelectorAll('.rezept-eintrag').length + 1).padStart(2, '0');
+        const link = document.createElement('a');
+        link.className = 'rezept-eintrag';
+        link.href = rezept.url;
+        link.innerHTML = `<span class="rezept-nummer">${nummer}</span><span class="rezept-name"></span>`;
+        link.querySelector('.rezept-name').textContent = rezept.name;
+        kategorienListe.append(link);
+    });
+
+    const abweichendeBildnamen = {
+        'kartoffelsalat.html': 'kartoffelsalat-mf.PNG',
+        'porree-torte-mit-cabanossi.html': 'porree-torte.png',
+        'haehnchen-auf-chinesische-art.html': 'hähnchen-chinaart.png',
+        'linsensuppe-mit-kassler.html': 'linsensuppe.png',
+        'rindfleischsuppe-mit-gurken.html': 'rindfleischsuppe.png',
+        'rustikaler-schichtsalat-mit-speck.html': 'schichtsalat-gifhorn.png',
+        'pfefferkuchenwuerfel-mit-nougat.html': 'pfefferkuchen.png'
+    };
+
+    Object.assign(abweichendeBildnamen, {
+        'bobat.html': 'bobat.jpg',
+        'couscous-hack-pfanne.html': 'couscous-hack-pfanne.jpg',
+        'rollkuchen.html': 'rollkuchen.jpg'
+    });
+
+    kategorienListe.classList.add('rezeptkacheln');
+    kategorienListe.querySelectorAll('a.rezept-eintrag[href]').forEach((link) => {
+        const datei = link.getAttribute('href').split('/').pop();
+        const istNeuesRezept = neueRezepte.some((rezept) => rezept.url === datei);
+        const bildname = abweichendeBildnamen[datei] || datei.replace(/\.html$/, istNeuesRezept ? '.jpg' : '.png');
+        const bild = document.createElement('img');
+        bild.className = 'rezept-kachelbild';
+        bild.src = `images/${bildname}`;
+        bild.alt = '';
+        bild.loading = 'lazy';
+        bild.addEventListener('error', () => link.classList.add('rezeptkachel-ohne-bild'));
+        link.prepend(bild);
+    });
+}
+
 function menueOeffnen() {
     if (!seitenmenue || !menuOverlay) return;
     seitenmenue.classList.add("aktiv");
@@ -402,6 +494,15 @@ const wochenRezepte = [
     { name: 'Hähnchen auf chinesische Art', url: 'haehnchen-auf-chinesische-art.html', portionen: 4, gruppe: 'reis', label: 'Reis & Gemüse' },
     { name: 'Rindfleischsuppe mit Gurken', url: 'rindfleischsuppe-mit-gurken.html', portionen: 8, gruppe: 'suppe', label: 'Suppe & Gemüse' },
     { name: 'Couscous-Hack-Pfanne', url: 'couscous-hack-pfanne.html', portionen: 4, gruppe: 'couscous', label: 'Couscous & Gemüse' },
+    { name: 'Frikadellen', url: 'frikadellen.html', portionen: 10, gruppe: 'kartoffel', label: 'Fleischgericht' },
+    { name: 'Gefüllte Zucchini', url: 'gefuellte-zucchini.html', portionen: 4, gruppe: 'gemuese', label: 'Gemüse & Fleisch' },
+    { name: 'Guiso', url: 'guiso.html', portionen: 4, gruppe: 'nudel', label: 'Nudeln & Fleisch' },
+    { name: 'Gyrospizza vom Blech', url: 'gyrospizza-vom-blech.html', portionen: 6, gruppe: 'teig', label: 'Ofengericht' },
+    { name: 'Hähnchen-Gemüse-Pfanne', url: 'haehnchen-gemuese-pfanne.html', portionen: 4, gruppe: 'nudel', label: 'Gemüse & Spätzle' },
+    { name: 'Pilz-Curry mit Mandeln', url: 'pilz-curry-mit-mandeln.html', portionen: 4, gruppe: 'reis', label: 'Pilze & Reis' },
+    { name: 'Röstiauflauf', url: 'roestiauflauf.html', portionen: 4, gruppe: 'kartoffel', label: 'Kartoffelauflauf' },
+    { name: 'Schaschlik-Gulasch', url: 'schaschlik-gulasch.html', portionen: 4, gruppe: 'reis', label: 'Fleisch & Gemüse' },
+    { name: 'Spätzle in Hackfleisch-Bratensoße', url: 'spaetzle-in-hackbratensosse.html', portionen: 4, gruppe: 'nudel', label: 'Spätzle & Gemüse' },
 ];
 
 const wochenTage = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
@@ -595,8 +696,12 @@ document.addEventListener('DOMContentLoaded', () => {
     einkaufslisteButton.className = 'einkaufsliste-button';
     einkaufslisteButton.type = 'button';
     einkaufslisteButton.innerHTML = `
-        <span class="einkaufsliste-symbol" aria-hidden="true">☐</span>
-        <span>Einkaufsliste teilen</span>`;
+        <span class="einkaufsliste-symbol" aria-hidden="true">⧉</span>
+        <span>Zutaten kopieren</span>`;
+
+    const einkaufslisteHinweis = document.createElement('p');
+    einkaufslisteHinweis.className = 'einkaufsliste-hinweis';
+    einkaufslisteHinweis.textContent = 'Danach in Apple Notizen einfügen, die Zutaten markieren und das Checklisten-Symbol auswählen.';
 
     const teilenButton = rezeptKopf.querySelector('.rezept-teilen');
     if (teilenButton) {
@@ -604,6 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         rezeptKopf.append(einkaufslisteButton);
     }
+    einkaufslisteButton.insertAdjacentElement('afterend', einkaufslisteHinweis);
 
     einkaufslisteButton.addEventListener('click', async () => {
         const rezeptName = rezeptKopf.querySelector('h1')?.textContent.trim() || 'Rezept';
@@ -615,7 +721,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map((teil) => teil.textContent.trim())
                 .filter(Boolean);
 
-            if (teile.length) zeilen.push(`☐ ${teile.join(' ')}`);
+            if (teile.length) zeilen.push(teile.join(' '));
         });
 
         if (!zeilen.length) return;
@@ -624,26 +730,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const beschriftung = einkaufslisteButton.querySelector('span:last-child');
 
         try {
-            if (navigator.share) {
-                await navigator.share({ title: titel, text: notizText });
-                return;
-            }
-
             await navigator.clipboard.writeText(notizText);
-            if (beschriftung) beschriftung.textContent = 'Liste kopiert ✓';
-        } catch (error) {
-            if (error?.name === 'AbortError') return;
-
-            try {
-                await navigator.clipboard.writeText(notizText);
-                if (beschriftung) beschriftung.textContent = 'Liste kopiert ✓';
-            } catch (_) {
-                if (beschriftung) beschriftung.textContent = 'Teilen nicht möglich';
-            }
+            if (beschriftung) beschriftung.textContent = 'Zutaten kopiert ✓';
+            einkaufslisteHinweis.textContent = 'Kopiert! Jetzt in Apple Notizen einfügen, die Zutaten markieren und das Checklisten-Symbol auswählen.';
+        } catch (_) {
+            if (beschriftung) beschriftung.textContent = 'Kopieren nicht möglich';
         }
 
         window.setTimeout(() => {
-            if (beschriftung) beschriftung.textContent = 'Einkaufsliste teilen';
-        }, 2200);
+            if (beschriftung) beschriftung.textContent = 'Zutaten kopieren';
+            einkaufslisteHinweis.textContent = 'Danach in Apple Notizen einfügen, die Zutaten markieren und das Checklisten-Symbol auswählen.';
+        }, 4000);
     });
 });
