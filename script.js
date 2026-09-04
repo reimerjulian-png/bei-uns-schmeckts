@@ -136,7 +136,9 @@ document.getElementById('menuSucheButton')?.addEventListener('click', () => {
 const kategorienSeiten = {
     'klassiker.html': 'Unsere Klassiker',
     'was-kleines-dazu.html': 'Was Kleines dazu',
-    'was-suesses-aus-dem-ofen.html': 'Was Süßes aus dem Ofen'
+    'das-macht-den-unterschied.html': 'Das macht den Unterschied',
+    'was-suesses-aus-dem-ofen.html': 'Was Süßes aus dem Ofen',
+    'ein-bisschen-platz-ist-noch.html': 'Ein bisschen Platz ist noch'
 };
 const aktuelleKategorie = kategorienSeiten[window.location.pathname.split('/').pop()];
 const kategorienListe = document.querySelector('main .rezeptliste');
@@ -159,6 +161,7 @@ if (aktuelleKategorie && kategorienListe) {
         'linsensuppe-mit-kassler.html': 'linsensuppe.png',
         'rindfleischsuppe-mit-gurken.html': 'rindfleischsuppe.png',
         'rustikaler-schichtsalat-mit-speck.html': 'schichtsalat-gifhorn.png',
+        'lebkuchenwuerfel.html': 'pfefferkuchen.png',
         'pfefferkuchenwuerfel-mit-nougat.html': 'pfefferkuchen.png'
     };
 
