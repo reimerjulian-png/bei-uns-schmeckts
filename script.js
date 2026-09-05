@@ -49,6 +49,8 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "Juli's Marinade mit Mayo", url: "julis-marinade-mit-mayo.html", kapitel: "Das macht den Unterschied" },
+    { name: "Marinade mit Zigeunersauce", url: "schaschlikmarinade.html", kapitel: "Das macht den Unterschied" },
     { name: "Apfel im Schlafrock", url: "apfel-im-schlafrock.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Butterkuchen", url: "butterkuchen-nach-thomas-p-mama.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Coleslaw", url: "coleslaw.html", kapitel: "Was Kleines dazu" },
@@ -155,6 +157,8 @@ if (aktuelleKategorie && kategorienListe) {
     });
 
     const abweichendeBildnamen = {
+        'julis-marinade-mit-mayo.html': 'julis-marinade-mit-mayo.png',
+        'schaschlikmarinade.html': 'schaschlikmarinade.png',
         'kartoffelsalat.html': 'kartoffelsalat-mf.PNG',
         'porree-torte-mit-cabanossi.html': 'porree-torte.png',
         'haehnchen-auf-chinesische-art.html': 'hähnchen-chinaart.png',
@@ -174,6 +178,10 @@ if (aktuelleKategorie && kategorienListe) {
     kategorienListe.classList.add('rezeptkacheln');
     kategorienListe.querySelectorAll('a.rezept-eintrag[href]').forEach((link) => {
         const datei = link.getAttribute('href').split('/').pop();
+        if (neueRezepte.some((rezept) => rezept.url === datei && rezept.ohneBild)) {
+            link.classList.add('rezeptkachel-ohne-bild');
+            return;
+        }
         const istNeuesRezept = neueRezepte.some((rezept) => rezept.url === datei);
         const bildname = abweichendeBildnamen[datei] || datei.replace(/\.html$/, istNeuesRezept ? '.jpg' : '.png');
         const bild = document.createElement('img');
@@ -727,3 +735,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     });
 });
+
+
+
+
+
+
