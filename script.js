@@ -49,7 +49,7 @@ const rezepte = [
 ];
 
 const neueRezepte = [
-    { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu", ohneBild: true },
+    { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu" },
     { name: "Guacamole-Cheeseburger mit Nachos", url: "guacamole-cheeseburger-mit-nachos.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's BBQ Sauce", url: "julis-bbq-sauce.html", kapitel: "Das macht den Unterschied" },
     { name: "Juli's Schaschlik mit Mayo", url: "julis-schaschlik-mit-mayo.html", kapitel: "Unsere Klassiker" },
@@ -162,6 +162,7 @@ if (aktuelleKategorie && kategorienListe) {
     });
 
     const abweichendeBildnamen = {
+        'burger-buns.html': 'burger-buns.png',
         'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
         'julis-bbq-sauce.html': 'julis-bbq-sauce.png',
         'julis-schaschlik-mit-mayo.html': 'julis-marinade-mit-mayo.png',
