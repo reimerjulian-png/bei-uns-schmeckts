@@ -49,6 +49,7 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "3-2-1 Ribs vom Grill", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker", ohneBild: true },
     { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu" },
     { name: "Guacamole-Cheeseburger mit Nachos", url: "guacamole-cheeseburger-mit-nachos.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's BBQ Sauce", url: "julis-bbq-sauce.html", kapitel: "Das macht den Unterschied" },
