@@ -49,6 +49,7 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "Juli's BBQ Sauce", url: "julis-bbq-sauce.html", kapitel: "Das macht den Unterschied", ohneBild: true },
     { name: "Juli's Schaschlik mit Mayo", url: "julis-schaschlik-mit-mayo.html", kapitel: "Unsere Klassiker" },
     { name: "Schaschlik mit Zigeunersauce – von Andre", url: "schaschlik-von-andre.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's Marinade mit Mayo", url: "julis-marinade-mit-mayo.html", kapitel: "Das macht den Unterschied" },
