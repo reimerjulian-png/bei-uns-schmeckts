@@ -2232,6 +2232,22 @@ body.menu-offen {
     padding-bottom: 120px;
 }
 
+.rezeptkacheln .rezept-thema {
+    grid-column: 1 / -1;
+    margin: 34px 0 0;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #cfc8bd;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(26px, 7vw, 36px);
+    font-weight: 500;
+    line-height: 1;
+    color: #5f392e;
+}
+
+.rezeptkacheln .rezept-thema:first-of-type {
+    margin-top: 0;
+}
+
 .rezeptkacheln .rezept-eintrag {
     position: relative;
     display: grid;
@@ -2889,12 +2905,18 @@ input {
 
 /* Rezeptverweise im Fließtext */
 .rezept-bereich a {
-    color: inherit;
-    text-decoration: none;
+    color: #9a604c;
+    text-decoration-line: underline;
+    text-decoration-color: #c9a99d;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+.rezept-bereich a:visited {
+    color: #9a604c;
 }
 .rezept-bereich a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    color: #7c4938;
+    text-decoration-color: currentColor;
 }
 .rezept-bereich a:focus-visible {
     outline: 2px solid currentColor;

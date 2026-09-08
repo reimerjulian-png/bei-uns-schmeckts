@@ -49,7 +49,8 @@ const rezepte = [
 ];
 
 const neueRezepte = [
-    { name: "3-2-1 Ribs vom Grill", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker" },
+    { name: "Frische Pizza", url: "frische-pizza-mit-haehnchen-und-salat.html", kapitel: "Unsere Klassiker" },
+    { name: "Juli's 3-2-1 Ribs", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker" },
     { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu" },
     { name: "Guacamole-Cheeseburger mit Nachos", url: "guacamole-cheeseburger-mit-nachos.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's BBQ Sauce", url: "julis-bbq-sauce.html", kapitel: "Das macht den Unterschied" },
@@ -162,7 +163,96 @@ if (aktuelleKategorie && kategorienListe) {
         kategorienListe.append(link);
     });
 
+    if (aktuelleKategorie === 'Unsere Klassiker') {
+        const themen = [
+            {
+                titel: 'Grill & BBQ',
+                rezepte: [
+                    '3-2-1-ribs.html',
+                    'julis-schaschlik-mit-mayo.html',
+                    'schaschlik-von-andre.html',
+                    'guacamole-cheeseburger-mit-nachos.html'
+                ]
+            },
+            {
+                titel: 'Pizza & Ofengerichte',
+                rezepte: [
+                    'frische-pizza-mit-haehnchen-und-salat.html',
+                    'gyrospizza-vom-blech.html',
+                    'lasagne.html',
+                    'porree-torte-mit-cabanossi.html',
+                    'gefuellte-zucchini.html',
+                    'roestiauflauf.html',
+                    'hot-dog-cake.html'
+                ]
+            },
+            {
+                titel: 'Pfannen- & Hackgerichte',
+                rezepte: [
+                    'italienische-steakpfanne.html',
+                    'haehnchen-auf-chinesische-art.html',
+                    'haehnchen-gemuese-pfanne.html',
+                    'couscous-hack-pfanne.html',
+                    'frikadellen.html',
+                    'tefteli.html',
+                    'spaetzle-in-hackbratensosse.html',
+                    'pilz-curry-mit-mandeln.html'
+                ]
+            },
+            {
+                titel: 'Suppen & Schmorgerichte',
+                rezepte: [
+                    'gyrossuppe.html',
+                    'guiso.html',
+                    'eintopf.html',
+                    'linsensuppe-mit-kassler.html',
+                    'rindfleischsuppe-mit-gurken.html',
+                    'schaschlik-gulasch.html',
+                    'rindergulasch.html',
+                    'rinderrouladen.html'
+                ]
+            }
+        ];
+        const links = new Map(
+            [...kategorienListe.querySelectorAll('a.rezept-eintrag[href]')]
+                .map((link) => [link.getAttribute('href').split('/').pop(), link])
+        );
+        let laufendeNummer = 1;
+
+        themen.forEach((thema) => {
+            const vorhandeneRezepte = thema.rezepte.filter((url) => links.has(url));
+            if (!vorhandeneRezepte.length) return;
+
+            const ueberschrift = document.createElement('h2');
+            ueberschrift.className = 'rezept-thema';
+            ueberschrift.textContent = thema.titel;
+            kategorienListe.append(ueberschrift);
+
+            vorhandeneRezepte.forEach((url) => {
+                const link = links.get(url);
+                const nummer = link.querySelector('.rezept-nummer');
+                if (nummer) nummer.textContent = String(laufendeNummer++).padStart(2, '0');
+                kategorienListe.append(link);
+                links.delete(url);
+            });
+        });
+
+        if (links.size) {
+            const ueberschrift = document.createElement('h2');
+            ueberschrift.className = 'rezept-thema';
+            ueberschrift.textContent = 'Weitere Klassiker';
+            kategorienListe.append(ueberschrift);
+
+            links.forEach((link) => {
+                const nummer = link.querySelector('.rezept-nummer');
+                if (nummer) nummer.textContent = String(laufendeNummer++).padStart(2, '0');
+                kategorienListe.append(link);
+            });
+        }
+    }
+
     const abweichendeBildnamen = {
+        'frische-pizza-mit-haehnchen-und-salat.html': 'frische-pizza.png',
         '3-2-1-ribs.html': '3-2-1-ribs.png',
         'burger-buns.html': 'burger-buns.png',
         'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
