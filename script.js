@@ -49,6 +49,7 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "Pasta mit Rindfleisch in Sahnesauce", url: "pasta-mit-rindfleisch-in-sahnesauce.html", kapitel: "Unsere Klassiker" },
     { name: "Frische Pizza", url: "frische-pizza-mit-haehnchen-und-salat.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's 3-2-1 Ribs", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker" },
     { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu" },
@@ -175,8 +176,9 @@ if (aktuelleKategorie && kategorienListe) {
                 ]
             },
             {
-                titel: 'Pizza & Ofengerichte',
+                titel: 'Pasta, Pizza & Ofengerichte',
                 rezepte: [
+                    'pasta-mit-rindfleisch-in-sahnesauce.html',
                     'frische-pizza-mit-haehnchen-und-salat.html',
                     'gyrospizza-vom-blech.html',
                     'lasagne.html',
@@ -252,6 +254,7 @@ if (aktuelleKategorie && kategorienListe) {
     }
 
     const abweichendeBildnamen = {
+        'pasta-mit-rindfleisch-in-sahnesauce.html': 'pasta-mit-rindfleisch-in-sahnesauce.png',
         'frische-pizza-mit-haehnchen-und-salat.html': 'frische-pizza.png',
         '3-2-1-ribs.html': '3-2-1-ribs.png',
         'burger-buns.html': 'burger-buns.png',

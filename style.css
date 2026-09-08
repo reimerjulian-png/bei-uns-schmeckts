@@ -1013,6 +1013,53 @@ body.menu-offen {
     line-height: 0.95;
 }
 
+.rezept-stempel {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    width: 116px;
+    aspect-ratio: 1;
+    margin: 0;
+    padding: 13px;
+    border: 2px solid #9a604c;
+    border-radius: 50%;
+    background: rgba(247, 243, 235, 0.94);
+    box-shadow: 0 6px 18px rgba(40, 26, 19, 0.28), inset 0 0 0 4px #f7f3eb, inset 0 0 0 5px #c9a99d;
+    color: #8b4f3d;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    transform: rotate(-7deg);
+}
+
+.rezept-stempel span {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.rezept-stempel strong {
+    display: block;
+    max-width: 100%;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+}
+
+.rezeptbild-mit-stempel {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.rezeptbild-mit-stempel .rezept-bild {
+    margin-bottom: 0;
+}
+
 .rezept-meta {
     display: flex;
     flex-wrap: wrap;
@@ -2796,12 +2843,25 @@ input {
         font-size: clamp(58px, 5vw, 82px);
     }
 
-    .rezept > .rezept-bild {
+    .rezept > .rezept-bild,
+    .rezept > .rezeptbild-mit-stempel {
         grid-column: 2;
         grid-row: 2;
         height: min(58vw, 620px);
         margin-bottom: 90px;
         border-radius: 3px;
+    }
+
+    .rezeptbild-mit-stempel .rezept-stempel {
+        top: 24px;
+        right: 24px;
+        width: 136px;
+    }
+
+    .rezeptbild-mit-stempel .rezept-bild {
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
     }
 
     .rezept > .rezept-bereich {
