@@ -1076,6 +1076,7 @@ body.menu-offen {
 /* Zutaten-Unterüberschriften, z. B. Lemon Curd */
 
 .zutaten .zutaten-gruppe {
+    display: block;
     margin: 32px 0 10px;
     padding: 0;
 
