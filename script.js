@@ -176,9 +176,14 @@ if (aktuelleKategorie && kategorienListe) {
                 ]
             },
             {
-                titel: 'Pasta, Pizza & Ofengerichte',
+                titel: 'Pasta',
                 rezepte: [
-                    'pasta-mit-rindfleisch-in-sahnesauce.html',
+                    'pasta-mit-rindfleisch-in-sahnesauce.html'
+                ]
+            },
+            {
+                titel: 'Pizza & Ofengerichte',
+                rezepte: [
                     'frische-pizza-mit-haehnchen-und-salat.html',
                     'gyrospizza-vom-blech.html',
                     'lasagne.html',
