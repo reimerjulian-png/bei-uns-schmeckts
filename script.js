@@ -49,7 +49,7 @@ const rezepte = [
 ];
 
 const neueRezepte = [
-    { name: "3-2-1 Ribs vom Grill", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker", ohneBild: true },
+    { name: "3-2-1 Ribs vom Grill", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker" },
     { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu" },
     { name: "Guacamole-Cheeseburger mit Nachos", url: "guacamole-cheeseburger-mit-nachos.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's BBQ Sauce", url: "julis-bbq-sauce.html", kapitel: "Das macht den Unterschied" },
@@ -163,6 +163,7 @@ if (aktuelleKategorie && kategorienListe) {
     });
 
     const abweichendeBildnamen = {
+        '3-2-1-ribs.html': '3-2-1-ribs.png',
         'burger-buns.html': 'burger-buns.png',
         'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
         'julis-bbq-sauce.html': 'julis-bbq-sauce.png',
