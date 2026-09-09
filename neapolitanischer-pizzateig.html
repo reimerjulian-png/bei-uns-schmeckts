@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neapolitanischer Pizzateig – Bei uns schmeckt's</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Neapolitanischer Pizzateig – Bei uns schmeckt's">
+    <meta property="og:description" content="Aromatischer neapolitanischer Pizzateig mit 48 Stunden Reifezeit.">
+    <meta property="og:image" content="images/neapolitanischer-pizzateig.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker</p>
+                <h1>Neapolitanischer Pizzateig</h1>
+                <div class="rezept-meta">
+                    <span>6 Pizzen à ca. 280 g</span>
+                    <span>48 Stunden Reifezeit</span>
+                    <span>Wenig Hefe, viel Aroma</span>
+                </div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen">
+                    <span class="rezept-teilen-symbol" aria-hidden="true">↗</span>
+                    <span>Rezept teilen</span>
+                </button>
+            </header>
+
+            <img class="rezept-bild" src="images/neapolitanischer-pizzateig.png" alt="Gereifte Teiglinge für neapolitanische Pizza in einer Teigbox">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Dieser Teig bekommt durch seine lange, kalte Reifezeit besonders viel Aroma und einen luftigen Rand. Nach dem Teig wählst du einfach eine Sauce und anschließend deinen Lieblingsbelag.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <p class="pizza-schritt-label">Schritt 1 · Der Teig</p>
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>1 kg</span><span>Weizenmehl, Type 00</span></div>
+                    <div><span>640 ml</span><span>Kaltes Wasser</span></div>
+                    <div><span>3 g</span><span>Frische Hefe, alternativ ca. 1 g Trockenhefe</span></div>
+                    <div><span>30 g</span><span>Feines Meersalz, ca. 5 TL</span></div>
+                    <div><span>Etwas</span><span>Mehl oder feiner Hartweizengrieß zum Formen</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li><strong>Tag 1 – Autolyse:</strong> 40&nbsp;ml Wasser beiseitestellen. Mehl und die übrigen 600&nbsp;ml Wasser grob vermengen, bis keine trockenen Stellen mehr zu sehen sind. Abgedeckt 30 Minuten ruhen lassen.</li>
+                    <li>Die Hefe im zurückbehaltenen Wasser auflösen und gründlich in den Teig einarbeiten. Anschließend das Salz hinzufügen und den Teig etwa 10–15 Minuten kneten, bis er glatt, elastisch und geschmeidig ist.</li>
+                    <li>Den Teig einmal dehnen und falten, zu einer Kugel formen und in eine leicht geölte, verschließbare Box legen. Etwa 24 Stunden im Kühlschrank reifen lassen.</li>
+                    <li><strong>Tag 2 – Stückgare:</strong> Den Teig in sechs gleich große Portionen von jeweils etwa 280&nbsp;g teilen. Jede Portion straff rundwirken und mit ausreichend Abstand zurück in die verschlossene Box legen. Weitere 20 Stunden im Kühlschrank reifen lassen.</li>
+                    <li><strong>Tag 3 – Vor dem Backen:</strong> Die Teiglinge etwa vier Stunden vor dem Backen aus dem Kühlschrank nehmen und abgedeckt bei Raumtemperatur stehen lassen.</li>
+                    <li>Den Ofen mit Pizzastein oder Pizzastahl mindestens 45 Minuten auf der höchstmöglichen Temperatur vorheizen. Einen Teigling auf wenig Mehl oder Hartweizengrieß vorsichtig von innen nach außen drücken und auf etwa 28–30&nbsp;cm ausziehen. Den luftigen Rand nicht platt drücken und kein Nudelholz verwenden.</li>
+                    <li>Die Pizza nach Wunsch sparsam belegen und sofort backen. Im Pizzaofen bei etwa 400–450&nbsp;°C dauert das ungefähr 60–90 Sekunden; im Haushaltsbackofen bei 250–300&nbsp;°C je nach Ofen etwa fünf bis acht Minuten.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich pizza-baukasten-schritt">
+                <div class="pizza-schritt-kopf">
+                    <p class="pizza-schritt-label">Schritt 2 · Sauce auswählen</p>
+                    <h2>Die Basis für deine Pizza</h2>
+                    <p>Die Mengen reichen jeweils für etwa drei Pizzen. Für alle sechs Teiglinge bereitest du einfach die doppelte Menge zu oder kombinierst beide Saucen.</p>
+                </div>
+                <div class="pizza-karten pizza-karten--saucen">
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-tomatensauce.png" alt="Frische Tomatensauce für Pizza in einer kleinen Schale">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Tomatensauce</h3>
+                            <p class="pizza-karten-menge">Für ca. 3 Pizzen</p>
+                            <ul>
+                                <li>400 g geschälte Dosentomaten</li>
+                                <li>1 TL feines Meersalz</li>
+                                <li>1 EL Olivenöl</li>
+                                <li>Optional: 4–5 Basilikumblätter</li>
+                            </ul>
+                            <p>Die Tomaten mit den Händen oder einer Gabel zerdrücken. Salz, Olivenöl und nach Wunsch Basilikum unterrühren. Die Sauce bleibt ungekocht.</p>
+                        </div>
+                    </article>
+
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-parmesancreme.png" alt="Cremige Parmesansauce für Pizza in einer kleinen Schale">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Parmesancreme</h3>
+                            <p class="pizza-karten-menge">Für ca. 3 Pizzen</p>
+                            <ul>
+                                <li>200 ml Sahne</li>
+                                <li>80 g Parmesan, fein gerieben</li>
+                                <li>1 kleine Knoblauchzehe</li>
+                                <li>Etwas schwarzer Pfeffer</li>
+                            </ul>
+                            <p>Die Sahne mit der angedrückten Knoblauchzehe sanft erwärmen. Parmesan einrühren, bis eine glatte Creme entsteht, mit Pfeffer würzen und vollständig abkühlen lassen.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="rezept-bereich pizza-baukasten-schritt">
+                <div class="pizza-schritt-kopf">
+                    <p class="pizza-schritt-label">Schritt 3 · Belag auswählen</p>
+                    <h2>Ideen für deinen Belag</h2>
+                    <p>Die Karten dienen als Inspiration. Belege deine Pizza einfach nach Gefühl und Geschmack – weitere Ideen können später ganz leicht dazukommen.</p>
+                </div>
+                <div class="pizza-karten pizza-karten--belaege">
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-margherita.png" alt="Neapolitanische Pizza Margherita mit Tomaten, Mozzarella und Basilikum">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Margherita</h3>
+                            <ul>
+                                <li>Tomatensauce</li>
+                                <li>Fior di Latte oder Mozzarella</li>
+                                <li>Frischer Basilikum</li>
+                                <li>Olivenöl</li>
+                            </ul>
+                            <p>Tomatensauce und Käse sparsam verteilen. Nach dem Backen mit Basilikum und etwas Olivenöl vollenden.</p>
+                        </div>
+                    </article>
+
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-hawaii.png" alt="Neapolitanische Pizza Hawaii mit Schinken und Ananas">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Hawaii</h3>
+                            <ul>
+                                <li>Tomatensauce</li>
+                                <li>Fior di Latte oder Mozzarella</li>
+                                <li>Kochschinken</li>
+                                <li>Ananasstücke</li>
+                            </ul>
+                            <p>Alle Zutaten gut abtropfen lassen und locker verteilen, damit die Pizza in der Mitte nicht zu feucht wird.</p>
+                        </div>
+                    </article>
+
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-bresaola-rucola.png" alt="Pizza mit Bresaola, Cherrytomaten, Rucola und Parmesan">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Bresaola, Rucola &amp; Cherrytomaten</h3>
+                            <ul>
+                                <li>Tomatensauce oder Parmesancreme</li>
+                                <li>Fior di Latte oder Mozzarella</li>
+                                <li>Bresaola oder Parmaschinken</li>
+                                <li>Cherrytomaten</li>
+                                <li>Rucola &amp; Parmesan</li>
+                            </ul>
+                            <p>Nur Sauce und Mozzarella mitbacken. Bresaola oder Schinken, halbierte Tomaten, Rucola und Parmesan erst auf die fertige Pizza geben.</p>
+                        </div>
+                    </article>
+
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-gamberetti-rucola.png" alt="Pizza mit Garnelen, Knoblauchöl, Cherrytomaten und Rucola">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Gamberetti, Rucola &amp; Cherrytomaten</h3>
+                            <ul>
+                                <li>Garnelen</li>
+                                <li><a href="knoblauchoel.html">Knoblauchöl</a></li>
+                                <li>Cherrytomaten</li>
+                                <li>Rucola</li>
+                            </ul>
+                            <p>Garnelen und Cherrytomaten mitbacken und mit etwas Knoblauchöl verfeinern. Den Rucola erst auf die fertige Pizza geben.</p>
+                        </div>
+                    </article>
+
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-pancetta-zwiebeln.png" alt="Pizza mit Pancetta, karamellisierten Zwiebeln und Cherrytomaten">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Pancetta &amp; karamellisierte Zwiebeln</h3>
+                            <ul>
+                                <li>Pancetta</li>
+                                <li>Karamellisierte Zwiebeln</li>
+                                <li>Cherrytomaten</li>
+                            </ul>
+                            <p>Die karamellisierten Zwiebeln zusammen mit Pancetta und halbierten Cherrytomaten locker auf der Pizza verteilen und mitbacken.</p>
+                        </div>
+                    </article>
+
+                    <article class="pizza-rezeptkarte">
+                        <img src="images/pizza-haehnchen-brokkoli-hollandaise.png" alt="Pizza mit Sauce Hollandaise, Brokkoli und Hähnchenbrust">
+                        <div class="pizza-rezeptkarte-inhalt">
+                            <h3>Hähnchen-Brokkoli mit Hollandaise</h3>
+                            <ul>
+                                <li>Sauce Hollandaise</li>
+                                <li>Brokkoliröschen</li>
+                                <li>Hähnchenbrustfilet</li>
+                                <li>Fior di Latte, Mozzarella oder Gouda</li>
+                            </ul>
+                            <p>Brokkoli kurz vorgaren und das Hähnchen vorher knapp gar braten. Beides mit Hollandaise auf der Pizza verteilen, Käse darübergeben und gemeinsam fertig backen.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Weniger ist bei neapolitanischer Pizza mehr: Zu viel Sauce oder Belag beschwert den Teig und lässt die Mitte weich werden. Den Belag deshalb lieber sparsam verteilen.</p>
+            </section>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

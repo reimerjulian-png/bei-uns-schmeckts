@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulled-Kassler-Burger – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pulled-Kassler-Burger – Bei uns schmeckt's">
+    <meta property="og:description" content="Saftiges Pulled Kassler mit Coleslaw und Juli's BBQ-Sauce im Burger-Bun.">
+    <meta property="og:image" content="images/pulled-kassler-burger.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Grill &amp; BBQ</p>
+                <h1>Pulled-Kassler-Burger</h1>
+                <p class="rezept-untertitel">Saftiges Pulled Kassler, cremiger Coleslaw und BBQ-Sauce im weichen Bun</p>
+                <div class="rezept-meta"><span>4 Burger</span><span>Ca. 15 Minuten</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/pulled-kassler-burger.png" alt="Pulled-Kassler-Burger mit Coleslaw und BBQ-Sauce">
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>4</span><span><a href="burger-buns.html">Burger-Buns</a></span></div>
+                    <div><span>Ca. 600 g</span><span>fertiges <a href="pulled-kassler.html">Pulled Kassler</a></span></div>
+                    <div><span>Ca. 200 g</span><span><a href="coleslaw.html">Coleslaw</a></span></div>
+                    <div><span>Nach Geschmack</span><span><a href="julis-bbq-sauce.html">Juli's BBQ Sauce</a></span></div>
+                    <div><span>Etwas</span><span>Butter oder Öl für die Brötchen</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Das vorbereitete <a href="pulled-kassler.html">Pulled Kassler</a> langsam erwärmen. Bei Bedarf etwas Bratensaft oder BBQ-Sauce unterheben, damit das Fleisch schön saftig bleibt.</li>
+                    <li>Die Burger-Buns halbieren. Die Schnittflächen dünn mit Butter oder Öl bestreichen und in einer heißen Pfanne oder auf dem Grill kurz goldbraun rösten.</li>
+                    <li>Auf jede untere Brötchenhälfte eine großzügige Portion Pulled Kassler geben. Etwas <a href="julis-bbq-sauce.html">Juli's BBQ Sauce</a> darüber verteilen und mit <a href="coleslaw.html">Coleslaw</a> belegen.</li>
+                    <li>Die oberen Brötchenhälften aufsetzen und die Burger direkt servieren. Übrigen Coleslaw und BBQ-Sauce einfach dazustellen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Vorbereitung</h2>
+                <p>Das Fleisch braucht deutlich länger als der fertige Burger. Bereite deshalb zuerst das <a href="pulled-kassler.html">Pulled-Kassler-Grundrezept</a> zu. Burger-Buns, Coleslaw und BBQ-Sauce lassen sich gut schon am Vortag vorbereiten.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

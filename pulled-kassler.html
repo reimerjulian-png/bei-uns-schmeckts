@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulled Kassler – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pulled Kassler – Bei uns schmeckt's">
+    <meta property="og:description" content="Zart gezupftes Kassler mit Cola und Kirschsaft – pur oder als Burger.">
+    <meta property="og:image" content="images/pulled-kassler.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Grill &amp; BBQ</p>
+                <h1>Pulled Kassler</h1>
+                <p class="rezept-untertitel">Zart gezupft, mit Cola und einem Hauch Kirsche</p>
+                <div class="rezept-meta"><span>6–8 Portionen</span><span>Ca. 30 Minuten Vorbereitung</span><span>Ca. 5–7 Stunden Garzeit</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/pulled-kassler.png" alt="Gezupftes Pulled Kassler mit Coleslaw und einem Pulled-Kassler-Burger">
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>2–2,5 kg</span><span>Kasslernacken ohne Knochen</span></div>
+                    <div><span>2 EL</span><span>Senf</span></div>
+                    <div><span>2–3 EL</span><span>BBQ-Gewürzmischung ohne zusätzliches Salz</span></div>
+                    <div><span>3 große</span><span>Zwiebeln</span></div>
+                    <div><span>500 ml</span><span>Cola</span></div>
+                    <div><span>500 ml</span><span>Kirschsaft; alternativ durch weitere Cola ersetzen</span></div>
+                    <div><span>Nach Bedarf</span><span><a href="julis-bbq-sauce.html">Juli's BBQ Sauce</a></span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Das brauchst du</h2>
+                <ul class="rezept-ausruestung">
+                    <li><span class="ausruestung-symbol" aria-hidden="true">♨️</span><strong>Grill oder Backofen</strong><span>Für gleichmäßige 120–130 °C</span></li>
+                    <li><span class="ausruestung-symbol" aria-hidden="true">🍲</span><strong>Bräter mit Deckel</strong><span>Oder eine dicht verschließbare Ofenform</span></li>
+                    <li><span class="ausruestung-symbol" aria-hidden="true">🌡️</span><strong>Fleischthermometer</strong><span>Für Kerntemperatur und Garprobe</span></li>
+                    <li><span class="ausruestung-symbol" aria-hidden="true">🍴</span><strong>Zwei Gabeln</strong><span>Zum Zupfen des fertigen Kasslers</span></li>
+                </ul>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Das Kassler trocken tupfen, rundherum dünn mit Senf bestreichen und mit der BBQ-Gewürzmischung einreiben. Kein zusätzliches Salz verwenden, da Kassler bereits gepökelt ist. Abgedeckt mindestens 2 Stunden, am besten über Nacht, im Kühlschrank ziehen lassen.</li>
+                    <li>Das Fleisch etwa 45 Minuten vor dem Garen aus dem Kühlschrank nehmen. Grill oder Backofen auf 120–130 °C indirekte Hitze beziehungsweise Ober-/Unterhitze vorheizen. Die Zwiebeln schälen, in dicke Ringe schneiden und auf dem Boden eines Bräters verteilen.</li>
+                    <li>Das Kassler auf die Zwiebeln legen und zunächst ohne Deckel 2–3 Stunden garen, bis es eine kräftige Farbe angenommen hat. Auf dem Grill kann in dieser Phase etwas mildes Räucherholz verwendet werden.</li>
+                    <li>Cola und Kirschsaft seitlich in den Bräter gießen. Das Fleisch soll auf den Zwiebeln liegen und nicht vollständig in der Flüssigkeit schwimmen. Den Bräter dicht verschließen und weitere 3–4 Stunden garen.</li>
+                    <li>Ab etwa 90 °C Kerntemperatur die Zartheit prüfen: Ein Thermometer oder Holzspieß sollte fast ohne Widerstand in das Fleisch gleiten. Meist ist das Kassler bei 90–93 °C fertig. Danach zugedeckt 30–45 Minuten ruhen lassen.</li>
+                    <li>Das Fleisch mit zwei Gabeln auseinanderzupfen. Etwas vom entfetteten Bratensaft und nach Geschmack <a href="julis-bbq-sauce.html">Juli's BBQ Sauce</a> untermischen, bis das Pulled Kassler schön saftig ist.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>So schmeckt es besonders gut</h2>
+                <ul class="rezept-ausruestung">
+                    <li><span class="ausruestung-symbol" aria-hidden="true">🍽️</span><strong>Pur serviert</strong><span>Mit <a href="coleslaw.html">Coleslaw</a> und etwas <a href="julis-bbq-sauce.html">Juli's BBQ Sauce</a>.</span></li>
+                    <li><span class="ausruestung-symbol" aria-hidden="true">🍔</span><strong>Als Burgervariante</strong><span><a href="burger-buns.html">Burger-Buns</a> mit Pulled Kassler, <a href="coleslaw.html">Coleslaw</a> und <a href="julis-bbq-sauce.html">Juli's BBQ Sauce</a> belegen.</span></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

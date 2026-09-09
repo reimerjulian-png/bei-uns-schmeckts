@@ -49,6 +49,9 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "Cremiges Balsamico-Dressing", url: "cremiges-balsamico-dressing.html", kapitel: "Das macht den Unterschied" },
+    { name: "Pulled-Kassler-Burger", url: "pulled-kassler-burger.html", kapitel: "Unsere Klassiker" },
+    { name: "Pulled Kassler", url: "pulled-kassler.html", kapitel: "Unsere Klassiker" },
     { name: "Pasta mit Rindfleisch in Sahnesauce", url: "pasta-mit-rindfleisch-in-sahnesauce.html", kapitel: "Unsere Klassiker" },
     { name: "Frische Pizza", url: "frische-pizza-mit-haehnchen-und-salat.html", kapitel: "Unsere Klassiker" },
     { name: "Juli's 3-2-1 Ribs", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker" },
@@ -77,6 +80,9 @@ const neueRezepte = [
     { name: "Spätzle in Hackfleisch-Bratensoße", url: "spaetzle-in-hackbratensosse.html", kapitel: "Unsere Klassiker" },
     { name: "Spitzkohlsalat mit Pistazien", url: "spitzkohlsalat-mit-pistazien.html", kapitel: "Was Kleines dazu" },
     { name: "Twoiback", url: "twoiback-nach-mama-reimer.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Ölbällchen", url: "oelbaellchen.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Neapolitanischer Pizzateig", url: "neapolitanischer-pizzateig.html", kapitel: "Unsere Klassiker" },
+    { name: "Knoblauchöl", url: "knoblauchoel.html", kapitel: "Das macht den Unterschied" },
 ];
 
 rezepte.push(...neueRezepte);
@@ -167,8 +173,18 @@ if (aktuelleKategorie && kategorienListe) {
     if (aktuelleKategorie === 'Unsere Klassiker') {
         const themen = [
             {
+                titel: 'Pizza',
+                rezepte: [
+                    'neapolitanischer-pizzateig.html',
+                    'frische-pizza-mit-haehnchen-und-salat.html',
+                    'gyrospizza-vom-blech.html'
+                ]
+            },
+            {
                 titel: 'Grill & BBQ',
                 rezepte: [
+                    'pulled-kassler.html',
+                    'pulled-kassler-burger.html',
                     '3-2-1-ribs.html',
                     'julis-schaschlik-mit-mayo.html',
                     'schaschlik-von-andre.html',
@@ -182,10 +198,8 @@ if (aktuelleKategorie && kategorienListe) {
                 ]
             },
             {
-                titel: 'Pizza & Ofengerichte',
+                titel: 'Ofengerichte',
                 rezepte: [
-                    'frische-pizza-mit-haehnchen-und-salat.html',
-                    'gyrospizza-vom-blech.html',
                     'lasagne.html',
                     'porree-torte-mit-cabanossi.html',
                     'gefuellte-zucchini.html',
@@ -259,12 +273,17 @@ if (aktuelleKategorie && kategorienListe) {
     }
 
     const abweichendeBildnamen = {
+        'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
+        'pulled-kassler-burger.html': 'pulled-kassler-burger.png',
+        'pulled-kassler.html': 'pulled-kassler.png',
         'pasta-mit-rindfleisch-in-sahnesauce.html': 'pasta-mit-rindfleisch-in-sahnesauce.png',
         'frische-pizza-mit-haehnchen-und-salat.html': 'frische-pizza.png',
+        'neapolitanischer-pizzateig.html': 'neapolitanischer-pizzateig.png',
         '3-2-1-ribs.html': '3-2-1-ribs.png',
         'burger-buns.html': 'burger-buns.png',
         'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
         'julis-bbq-sauce.html': 'julis-bbq-sauce.png',
+        'knoblauchoel.html': 'knoblauchoel.png',
         'julis-schaschlik-mit-mayo.html': 'julis-marinade-mit-mayo.png',
         'schaschlik-von-andre.html': 'schaschlikmarinade.png',
         'julis-marinade-mit-mayo.html': 'julis-marinade-mit-mayo.png',
@@ -586,26 +605,53 @@ document.addEventListener("DOMContentLoaded", () => {
    UNSERE WOCHE – AUSGEWOGENER WOCHENPLAN
    ========================================================= */
 
-const wochenRezepte = [
-    { name: 'Gyros Suppe', url: 'gyrossuppe.html', portionen: 6, gruppe: 'suppe', label: 'Suppe & Gemüse' },
-    { name: 'Rindergulasch', url: 'rindergulasch.html', portionen: 6, gruppe: 'eintopf', label: 'Schmorgericht' },
-    { name: 'Italienische Steakpfanne', url: 'italienische-steakpfanne.html', portionen: 2, gruppe: 'reis', label: 'Reis & Gemüse' },
-    { name: 'Tefteli', url: 'tefteli.html', portionen: 6, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
-    { name: 'Rinderrouladen', url: 'rinderrouladen.html', portionen: 2, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
-    { name: 'Lasagne', url: 'lasagne.html', portionen: 6, gruppe: 'nudel', label: 'Nudeln & Gemüse' },
-    { name: 'Hähnchen auf chinesische Art', url: 'haehnchen-auf-chinesische-art.html', portionen: 4, gruppe: 'reis', label: 'Reis & Gemüse' },
-    { name: 'Rindfleischsuppe mit Gurken', url: 'rindfleischsuppe-mit-gurken.html', portionen: 8, gruppe: 'suppe', label: 'Suppe & Gemüse' },
-    { name: 'Couscous-Hack-Pfanne', url: 'couscous-hack-pfanne.html', portionen: 4, gruppe: 'couscous', label: 'Couscous & Gemüse' },
-    { name: 'Frikadellen', url: 'frikadellen.html', portionen: 10, gruppe: 'kartoffel', label: 'Fleischgericht' },
-    { name: 'Gefüllte Zucchini', url: 'gefuellte-zucchini.html', portionen: 4, gruppe: 'gemuese', label: 'Gemüse & Fleisch' },
-    { name: 'Guiso', url: 'guiso.html', portionen: 4, gruppe: 'nudel', label: 'Nudeln & Fleisch' },
-    { name: 'Gyrospizza vom Blech', url: 'gyrospizza-vom-blech.html', portionen: 6, gruppe: 'teig', label: 'Ofengericht' },
-    { name: 'Hähnchen-Gemüse-Pfanne', url: 'haehnchen-gemuese-pfanne.html', portionen: 4, gruppe: 'nudel', label: 'Gemüse & Spätzle' },
-    { name: 'Pilz-Curry mit Mandeln', url: 'pilz-curry-mit-mandeln.html', portionen: 4, gruppe: 'reis', label: 'Pilze & Reis' },
-    { name: 'Röstiauflauf', url: 'roestiauflauf.html', portionen: 4, gruppe: 'kartoffel', label: 'Kartoffelauflauf' },
-    { name: 'Schaschlik-Gulasch', url: 'schaschlik-gulasch.html', portionen: 4, gruppe: 'reis', label: 'Fleisch & Gemüse' },
-    { name: 'Spätzle in Hackfleisch-Bratensoße', url: 'spaetzle-in-hackbratensosse.html', portionen: 4, gruppe: 'nudel', label: 'Spätzle & Gemüse' },
-];
+const wochenRezeptDetails = {
+    'pulled-kassler-burger.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
+    'pulled-kassler.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
+    'gyrossuppe.html': { portionen: 6, gruppe: 'suppe', label: 'Suppe & Gemüse' },
+    'rindergulasch.html': { portionen: 6, gruppe: 'eintopf', label: 'Schmorgericht' },
+    'italienische-steakpfanne.html': { portionen: 2, gruppe: 'reis', label: 'Reis & Gemüse' },
+    'tefteli.html': { portionen: 6, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
+    'rinderrouladen.html': { portionen: 2, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
+    'lasagne.html': { portionen: 6, gruppe: 'nudel', label: 'Nudeln & Gemüse' },
+    'porree-torte-mit-cabanossi.html': { portionen: 6, gruppe: 'teig', label: 'Herzhafter Kuchen' },
+    'haehnchen-auf-chinesische-art.html': { portionen: 4, gruppe: 'reis', label: 'Reis & Gemüse' },
+    'linsensuppe-mit-kassler.html': { portionen: 6, gruppe: 'suppe', label: 'Suppe & Fleisch' },
+    'eintopf.html': { portionen: 6, gruppe: 'eintopf', label: 'Eintopf' },
+    'rindfleischsuppe-mit-gurken.html': { portionen: 8, gruppe: 'suppe', label: 'Suppe & Gemüse' },
+    'couscous-hack-pfanne.html': { portionen: 4, gruppe: 'couscous', label: 'Couscous & Gemüse' },
+    'pasta-mit-rindfleisch-in-sahnesauce.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
+    'frische-pizza-mit-haehnchen-und-salat.html': { portionen: 6, gruppe: 'teig', label: 'Pizza & Salat' },
+    '3-2-1-ribs.html': { portionen: 6, gruppe: 'grill', label: 'Grill & BBQ' },
+    'guacamole-cheeseburger-mit-nachos.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
+    'julis-schaschlik-mit-mayo.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
+    'schaschlik-von-andre.html': { portionen: 20, gruppe: 'grill', label: 'Grill & BBQ' },
+    'frikadellen.html': { portionen: 10, gruppe: 'kartoffel', label: 'Fleischgericht' },
+    'gefuellte-zucchini.html': { portionen: 4, gruppe: 'gemuese', label: 'Gemüse & Fleisch' },
+    'guiso.html': { portionen: 4, gruppe: 'nudel', label: 'Nudeln & Fleisch' },
+    'gyrospizza-vom-blech.html': { portionen: 6, gruppe: 'teig', label: 'Ofengericht' },
+    'haehnchen-gemuese-pfanne.html': { portionen: 4, gruppe: 'nudel', label: 'Gemüse & Spätzle' },
+    'hot-dog-cake.html': { portionen: 6, gruppe: 'teig', label: 'Ofengericht' },
+    'pilz-curry-mit-mandeln.html': { portionen: 4, gruppe: 'reis', label: 'Pilze & Reis' },
+    'roestiauflauf.html': { portionen: 4, gruppe: 'kartoffel', label: 'Kartoffelauflauf' },
+    'schaschlik-gulasch.html': { portionen: 4, gruppe: 'reis', label: 'Fleisch & Gemüse' },
+    'spaetzle-in-hackbratensosse.html': { portionen: 4, gruppe: 'nudel', label: 'Spätzle & Gemüse' },
+    'neapolitanischer-pizzateig.html': { portionen: 6, gruppe: 'teig', label: 'Pizza' }
+};
+
+/* Die Wochenplanung verwendet dieselbe vollständige Klassiker-Liste wie Suche,
+   Kategorieübersicht und Einzel-Zufallsgenerator. Neue Klassiker sind dadurch
+   automatisch dabei und erhalten bis zur genaueren Einordnung sinnvolle Standardwerte. */
+const wochenRezepte = rezepte
+    .filter((rezept) => rezept.kapitel === 'Unsere Klassiker')
+    .map((rezept) => ({
+        name: rezept.name,
+        url: rezept.url,
+        portionen: 4,
+        gruppe: 'klassiker',
+        label: 'Hauptgericht',
+        ...wochenRezeptDetails[rezept.url]
+    }));
 
 const wochenTage = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 const wochenErwachsene = document.getElementById('wochenErwachsene');

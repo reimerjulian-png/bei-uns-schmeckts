@@ -1,0 +1,30 @@
+REZEPT-EINGANG
+===============
+
+Bitte fuer jedes neue Rezept einen eigenen Unterordner anlegen.
+
+Beispiel:
+
+rezept-eingang
+  Kartoffelauflauf
+    zutaten.jpg
+    zubereitung.jpg
+    vorschaubild.jpg
+    quelle.txt
+
+Du kannst in einem Rezeptordner Folgendes ablegen:
+
+- Fotos oder Screenshots der Zutatenliste
+- Fotos oder Screenshots der Zubereitung
+- ein eigenes Vorschaubild des fertigen Gerichts
+- PDF-, Word- oder Textdateien mit dem Rezept
+- eine Datei quelle.txt mit einem Pinterest- oder Webseiten-Link
+
+Die Dateinamen muessen nicht exakt dem Beispiel entsprechen. Wichtig ist nur,
+dass alle Dateien zu einem Rezept gemeinsam in einem eigenen Ordner liegen.
+
+Wenn alles abgelegt ist, teile Codex einfach mit:
+"Bitte meinen Rezept-Eingang verarbeiten."
+
+Codex liest die Inhalte aus, prueft fehlende Angaben und erstellt zuerst eine
+lokale Vorschau. Die Webseite wird erst nach deiner Freigabe veroeffentlicht.

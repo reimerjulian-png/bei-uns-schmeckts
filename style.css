@@ -3005,9 +3005,113 @@ input {
 .rezept-ausruestung .ausruestung-symbol { font-size: 2rem; line-height: 1.3; }
 .rezept-ausruestung strong { font-size: 1rem; font-weight: 500; }
 .rezept-ausruestung li > span:last-child { font-size: 0.875rem; line-height: 1.5; }
+
 @media (max-width: 600px) {
     .rezept-ausruestung { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 340px) {
     .rezept-ausruestung { grid-template-columns: 1fr; }
+}
+
+/* Pizza-Baukasten */
+.pizza-schritt-label {
+    margin: 0 0 0.45rem;
+    color: #9a604c;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.pizza-schritt-kopf {
+    width: min(100%, 780px);
+    margin: 0 auto 1.6rem;
+}
+
+.pizza-schritt-kopf h2 {
+    margin-bottom: 0.65rem;
+}
+
+.pizza-schritt-kopf > p:last-child {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.pizza-karten {
+    display: grid;
+    gap: 1.35rem;
+}
+
+.pizza-karten--saucen {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pizza-karten--belaege {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pizza-rezeptkarte {
+    overflow: hidden;
+    border: 1px solid #d9d0c4;
+    border-radius: 14px;
+    background: #fbf8f2;
+    box-shadow: 0 8px 22px rgba(62, 48, 34, 0.06);
+}
+
+.pizza-rezeptkarte img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.pizza-rezeptkarte-inhalt {
+    padding: 1.25rem 1.3rem 1.4rem;
+}
+
+.pizza-rezeptkarte h3 {
+    margin: 0 0 0.35rem;
+    color: #3b3128;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.75rem, 3vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.pizza-karten-menge {
+    margin: 0 0 0.8rem;
+    color: #8a7162;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.pizza-rezeptkarte ul {
+    margin: 0.85rem 0 1rem;
+    padding-left: 1.15rem;
+    line-height: 1.65;
+}
+
+.pizza-rezeptkarte-inhalt > p:last-child {
+    margin: 0;
+    line-height: 1.65;
+}
+
+@media (min-width: 900px) {
+    .rezept > .pizza-baukasten-schritt {
+        width: min(100%, 1120px);
+    }
+}
+
+@media (max-width: 850px) {
+    .pizza-karten--belaege {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .pizza-karten--saucen,
+    .pizza-karten--belaege {
+        grid-template-columns: 1fr;
+    }
 }

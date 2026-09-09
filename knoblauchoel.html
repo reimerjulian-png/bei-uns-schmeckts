@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knoblauchöl – Bei uns schmeckt's</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Knoblauchöl – Bei uns schmeckt's">
+    <meta property="og:description" content="Schnelles Knoblauchöl zum Verfeinern von Pizza, Pasta und vielem mehr.">
+    <meta property="og:image" content="images/knoblauchoel.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="das-macht-den-unterschied.html">← Das macht den Unterschied</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Das macht den Unterschied</p>
+                <h1>Knoblauchöl</h1>
+                <div class="rezept-meta">
+                    <span>Ca. 300 ml</span>
+                    <span>5 Minuten</span>
+                    <span>Schnell gemacht</span>
+                </div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen">
+                    <span class="rezept-teilen-symbol" aria-hidden="true">↗</span>
+                    <span>Rezept teilen</span>
+                </button>
+            </header>
+
+            <img class="rezept-bild" src="images/knoblauchoel.png" alt="Selbst gemachtes Knoblauchöl in einer Glasflasche und einer kleinen Schale">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Dieses schnelle Knoblauchöl bringt ordentlich Geschmack auf Pizza, Pasta und Brot. Besonders gut passt es zu unserem <a href="neapolitanischer-pizzateig.html">neapolitanischen Pizzateig</a> und der Variante mit Garnelen, Cherrytomaten und Rucola.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>1 Knolle</span><span>Knoblauch</span></div>
+                    <div><span>250 ml</span><span>Rapsöl, alternativ mildes Olivenöl</span></div>
+                    <div><span>½ TL</span><span>Salz</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die Knoblauchknolle in einzelne Zehen teilen und alle Zehen sorgfältig schälen.</li>
+                    <li>Knoblauch, Salz und einen kleinen Teil des Öls in ein hohes Gefäß geben. Mit dem Pürierstab zu einer feinen Paste pürieren.</li>
+                    <li>Die Knoblauchpaste in ein sehr sauberes Glas füllen und mit dem restlichen Öl aufgießen. Gut verrühren, sofort verschließen und direkt in den Kühlschrank stellen.</li>
+                    <li>Vor dem Verwenden noch einmal umrühren und nach Geschmack über die fertige Pizza träufeln oder zum Verfeinern anderer Gerichte verwenden.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Aufbewahrung</h2>
+                <p>Das Knoblauchöl nicht auf Vorrat bei Raumtemperatur lagern. Nach der Zubereitung sofort kühlen und spätestens am folgenden Tag verbrauchen. Übriges Öl am besten direkt portionsweise einfrieren und nach dem Auftauen zügig verwenden.</p>
+            </section>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

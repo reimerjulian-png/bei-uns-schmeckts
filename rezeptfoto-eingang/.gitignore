@@ -1,0 +1,12 @@
+# Rohfotos bleiben lokal und werden nicht versehentlich versioniert.
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.webp
+*.JPG
+*.JPEG
+*.PNG
+*.HEIC
+*.WEBP
+
