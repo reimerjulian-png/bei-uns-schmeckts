@@ -264,11 +264,13 @@ if (aktuelleKategorie && kategorienListe) {
     if (aktuelleKategorie === 'Unsere Klassiker') {
         const themen = [
             {
-                titel: 'Pizza',
+                titel: 'Pasta',
                 rezepte: [
-                    'neapolitanischer-pizzateig.html',
-                    'frische-pizza-mit-haehnchen-und-salat.html',
-                    'gyrospizza-vom-blech.html'
+                    'pasta-mit-rindfleisch-in-sahnesauce.html',
+                    'tagliatelle-mit-champignons.html',
+                    'meine-pasta.html',
+                    'spaghetti-bolognese.html',
+                    'rigatoni-al-pollo-funghi.html'
                 ]
             },
             {
@@ -283,23 +285,11 @@ if (aktuelleKategorie && kategorienListe) {
                 ]
             },
             {
-                titel: 'Pasta',
+                titel: 'Pizza',
                 rezepte: [
-                    'pasta-mit-rindfleisch-in-sahnesauce.html',
-                    'tagliatelle-mit-champignons.html',
-                    'meine-pasta.html',
-                    'spaghetti-bolognese.html',
-                    'rigatoni-al-pollo-funghi.html'
-                ]
-            },
-            {
-                titel: 'Ofengerichte',
-                rezepte: [
-                    'lasagne.html',
-                    'porree-torte-mit-cabanossi.html',
-                    'gefuellte-zucchini.html',
-                    'roestiauflauf.html',
-                    'hot-dog-cake.html'
+                    'neapolitanischer-pizzateig.html',
+                    'frische-pizza-mit-haehnchen-und-salat.html',
+                    'gyrospizza-vom-blech.html'
                 ]
             },
             {
@@ -316,7 +306,25 @@ if (aktuelleKategorie && kategorienListe) {
                 ]
             },
             {
-                titel: 'Suppen & Schmorgerichte',
+                titel: 'Schmorgerichte',
+                rezepte: [
+                    'schaschlik-gulasch.html',
+                    'rindergulasch.html',
+                    'rinderrouladen.html'
+                ]
+            },
+            {
+                titel: 'Ofengerichte',
+                rezepte: [
+                    'lasagne.html',
+                    'porree-torte-mit-cabanossi.html',
+                    'gefuellte-zucchini.html',
+                    'roestiauflauf.html',
+                    'hot-dog-cake.html'
+                ]
+            },
+            {
+                titel: 'Suppen',
                 rezepte: [
                     'gyrossuppe.html',
                     'kartoffelsuppe.html',
@@ -324,10 +332,7 @@ if (aktuelleKategorie && kategorienListe) {
                     'guiso.html',
                     'eintopf.html',
                     'linsensuppe-mit-kassler.html',
-                    'rindfleischsuppe-mit-gurken.html',
-                    'schaschlik-gulasch.html',
-                    'rindergulasch.html',
-                    'rinderrouladen.html'
+                    'rindfleischsuppe-mit-gurken.html'
                 ]
             }
         ];
