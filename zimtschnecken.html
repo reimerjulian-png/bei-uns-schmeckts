@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zimtschnecken – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Zimtschnecken – Bei uns schmeckt's">
+    <meta property="og:description" content="Fluffige Zimtschnecken aus Hefeteig mit Zimtfüllung und cremigem Frischkäsefrosting.">
+    <meta property="og:image" content="images/zimtschnecken.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-suesses-aus-dem-ofen.html">← Was Süßes aus dem Ofen</a>
+
+            <header class="rezept-kopf rezept-kopf-kompakt">
+                <p class="rezept-kategorie">Was Süßes aus dem Ofen</p>
+                <h1>Zimtschnecken</h1>
+                <div class="rezept-meta"><span>Ca. 10 Stück</span><span>Ca. 2 Stunden</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/zimtschnecken.png" alt="Fluffige Zimtschnecken mit cremigem Frischkäsefrosting">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Weiche Hefeschnecken mit einer saftigen Zimtfüllung und cremigem Frischkäsefrosting. Wer sie besonders fluffig mag, gönnt ihnen vor dem Backen noch eine zweite Ruhepause.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div class="zutaten-gruppe">Für den Hefeteig</div>
+                    <div><span>7 g</span><span>Trockenhefe, alternativ 21 g frische Hefe</span></div>
+                    <div><span>230 ml</span><span>Milch, lauwarm</span></div>
+                    <div><span>60 g</span><span>Butter, weich</span></div>
+                    <div><span>60 g</span><span>Zucker</span></div>
+                    <div><span>½ TL</span><span>Salz</span></div>
+                    <div><span>1</span><span>Ei</span></div>
+                    <div><span>450 g</span><span>Mehl</span></div>
+
+                    <div class="zutaten-gruppe">Für die Zimtfüllung</div>
+                    <div><span>120 g</span><span>Butter, sehr weich</span></div>
+                    <div><span>200 g</span><span>Brauner Zucker</span></div>
+                    <div><span>2–3 TL</span><span>Zimt, am besten Ceylon-Zimt</span></div>
+
+                    <div class="zutaten-gruppe">Außerdem</div>
+                    <div><span>Ca. 40 ml</span><span>Schlagsahne</span></div>
+                    <div><span>Etwas</span><span>Butter für die Form</span></div>
+
+                    <div class="zutaten-gruppe">Für das Frosting</div>
+                    <div><span>50 g</span><span>Butter, weich</span></div>
+                    <div><span>60 g</span><span>Puderzucker</span></div>
+                    <div><span>200 g</span><span>Frischkäse</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die lauwarme Milch mit der Hefe verrühren und einige Minuten stehen lassen.</li>
+                    <li>Zucker, Mehl, weiche Butter, Salz und Ei in eine große Schüssel geben. Die Hefemilch dazugießen und alles etwa <strong>10 Minuten</strong> gründlich verkneten. Der Teig ist anfangs sehr klebrig, wird durch das lange Kneten aber glatt und elastisch.</li>
+                    <li>Den Teig zu einer Kugel formen, zurück in die Schüssel legen und mit einem angefeuchteten Tuch abdecken. An einem warmen Ort gehen lassen, bis sich sein Volumen ungefähr verdoppelt hat.</li>
+                    <li>Für die Füllung die sehr weiche Butter mit braunem Zucker und Zimt zu einer gleichmäßigen Creme verrühren.</li>
+                    <li>Den aufgegangenen Teig kurz durchkneten und auf einer leicht bemehlten Fläche zu einem Rechteck ausrollen. Die Zimtfüllung gleichmäßig darauf verstreichen.</li>
+                    <li>Den Teig von der langen Seite her eng aufrollen und in gleich große Schnecken schneiden. Eine Backform einfetten und die Schnecken mit etwas Abstand hineinsetzen. Die Sahne gleichmäßig darüber verteilen.</li>
+                    <li>Den Backofen auf <strong>200 °C Ober-/Unterhitze</strong> vorheizen. Die Schnecken direkt backen oder für ein besonders fluffiges Ergebnis vorher noch einmal etwa <strong>20–30 Minuten</strong> abgedeckt gehen lassen.</li>
+                    <li>Die Zimtschnecken etwa <strong>25–30 Minuten</strong> goldbraun backen.</li>
+                    <li>Für das Frosting weiche Butter, Puderzucker und Frischkäse glatt verrühren. Auf den noch warmen Zimtschnecken verteilen und leicht anschmelzen lassen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Beim Kneten nicht vorschnell zusätzliches Mehl einarbeiten. Der anfangs klebrige Teig entwickelt erst durch langes Kneten sein stabiles Glutengerüst und wird dadurch besonders weich und fluffig.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

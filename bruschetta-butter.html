@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruschetta Butter – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Bruschetta Butter – Bei uns schmeckt's">
+    <meta property="og:description" content="Cremige Bruschetta Butter mit Cherrytomaten, Knoblauch, Parmesan und Basilikum.">
+    <meta property="og:image" content="images/bruschetta-butter.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="das-macht-den-unterschied.html">← Das macht den Unterschied</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Das macht den Unterschied</p>
+                <h1>Bruschetta Butter</h1>
+                <div class="rezept-meta"><span>Eine große Portion</span><span>Ca. 30 Minuten</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/bruschetta-butter.png" alt="Cremige Bruschetta Butter mit Tomaten, Basilikum und Parmesan auf geröstetem Brot">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Tomatig, würzig und wunderbar cremig: Diese Bruschetta Butter passt zu frischem Baguette, Grillfleisch, Ofenkartoffeln oder einfach direkt aufs Brot.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>500 g</span><span>Butter, zimmerwarm</span></div>
+                    <div><span>250 g</span><span>Cherrytomaten</span></div>
+                    <div><span>1 Knolle</span><span>Knoblauch</span></div>
+                    <div><span>2–3 EL</span><span>Tomatenmark</span></div>
+                    <div><span>30 g</span><span>Parmesan, fein gerieben</span></div>
+                    <div><span>3–4 EL</span><span>Guter Balsamico oder Crema di Balsamico</span></div>
+                    <div><span>1 Bund</span><span>Basilikum, gehackt</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz</span></div>
+                    <div><span>Optional</span><span>Chiliflocken</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die Butter rechtzeitig aus dem Kühlschrank nehmen und auf Zimmertemperatur bringen. Die Cherrytomaten halbieren. Die Knoblauchknolle in einzelne Zehen teilen, schälen und grob hacken.</li>
+                    <li>Tomaten und Knoblauch in einer Pfanne bei mittlerer Hitze weich garen. Den Balsamico dazugeben und die Mischung kurz einkochen lassen.</li>
+                    <li>Das Tomatenmark ganz zum Schluss gründlich unterrühren und die Pfanne sofort vom Herd nehmen.</li>
+                    <li>Die Tomatenmischung fein pürieren und vollständig abkühlen lassen. Sie darf nicht mehr warm sein, wenn sie zur Butter kommt.</li>
+                    <li>Die zimmerwarme Butter luftig aufschlagen. Tomatenmischung, Parmesan und Basilikum dazugeben und alles zu einer cremigen Butter aufschlagen.</li>
+                    <li>Mit Salz und nach Wunsch mit Chiliflocken abschmecken. Vor dem Servieren kurz kalt stellen oder direkt cremig aufs Brot streichen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Die Menge lässt sich gut teilen. Einen Teil direkt servieren und den Rest portionsweise einfrieren.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

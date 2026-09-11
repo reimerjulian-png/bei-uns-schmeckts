@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streuselkuchen mit Kirschen – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Streuselkuchen mit Kirschen – Bei uns schmeckt's">
+    <meta property="og:description" content="Saftiger Hefekuchen vom Blech mit Kirschen, goldenen Streuseln und Sahne.">
+    <meta property="og:image" content="images/streuselkuchen-mit-kirschen.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-suesses-aus-dem-ofen.html">← Was Süßes aus dem Ofen</a>
+
+            <header class="rezept-kopf rezept-kopf-kompakt">
+                <p class="rezept-kategorie">Was Süßes aus dem Ofen</p>
+                <h1>Streuselkuchen mit Kirschen</h1>
+                <div class="rezept-meta"><span>1 Blech</span><span>Ca. 2 Stunden</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/streuselkuchen-mit-kirschen.png" alt="Saftiger Streuselkuchen vom Blech mit Kirschen und goldbraunen Streuseln">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Ein lockerer Hefekuchen mit saftigen Kirschen und einer dicken Schicht knuspriger Streusel. Die Sahne kommt direkt nach dem Backen über den heißen Kuchen und macht ihn besonders saftig.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div class="zutaten-gruppe">Für den Hefeteig</div>
+                    <div><span>450–500 g</span><span>Mehl</span></div>
+                    <div><span>2 Pck.</span><span>Trockenhefe, alternativ 1 Würfel frische Hefe</span></div>
+                    <div><span>1</span><span>Ei</span></div>
+                    <div><span>150 g</span><span>Joghurt</span></div>
+                    <div><span>120 ml</span><span>Milch, lauwarm</span></div>
+                    <div><span>130 g</span><span>Butter, zerlassen</span></div>
+                    <div><span>150 g</span><span>Zucker</span></div>
+                    <div><span>1 Pck.</span><span>Vanillezucker</span></div>
+
+                    <div class="zutaten-gruppe">Für die Streusel</div>
+                    <div><span>200 g</span><span>Butter, weich</span></div>
+                    <div><span>300 g</span><span>Mehl</span></div>
+                    <div><span>150 g</span><span>Zucker</span></div>
+                    <div><span>1 Pck.</span><span>Vanillezucker</span></div>
+                    <div><span>1 Prise</span><span>Salz</span></div>
+
+                    <div class="zutaten-gruppe">Außerdem</div>
+                    <div><span>1 Glas</span><span>Kirschen</span></div>
+                    <div><span>200 ml</span><span>Schlagsahne</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Für den Hefeteig zunächst <strong>450 g Mehl</strong> mit der Trockenhefe, dem Zucker und dem Vanillezucker vermischen. Bei frischer Hefe diese vorher in der lauwarmen Milch auflösen.</li>
+                    <li>Ei, Joghurt, lauwarme Milch und die nur noch handwarme zerlassene Butter dazugeben. Alles zu einem glatten, weichen Hefeteig verkneten. Klebt der Teig noch stark, nach und nach etwas vom restlichen Mehl einarbeiten.</li>
+                    <li>Den Teig abgedeckt an einem warmen Ort etwa <strong>60 Minuten</strong> gehen lassen, bis er sein Volumen deutlich vergrößert hat.</li>
+                    <li>Inzwischen die Kirschen in einem Sieb sehr gut abtropfen lassen. Für die Streusel weiche Butter, Mehl, Zucker, Vanillezucker und Salz mit den Händen zu groben Streuseln verkneten.</li>
+                    <li>Ein Backblech fetten oder mit Backpapier auslegen. Den Hefeteig darauf gleichmäßig verteilen und mit den Händen bis in die Ecken drücken. Die Kirschen darauf verteilen und anschließend vollständig mit den Streuseln bedecken.</li>
+                    <li>Den belegten Kuchen noch einmal etwa <strong>20 Minuten</strong> ruhen lassen. Währenddessen den Backofen auf <strong>180 °C Ober-/Unterhitze</strong> vorheizen.</li>
+                    <li>Den Streuselkuchen auf mittlerer Schiene etwa <strong>30–35 Minuten</strong> backen, bis die Streusel goldbraun sind.</li>
+                    <li>Die kalte Schlagsahne direkt nach dem Backen gleichmäßig über den noch heißen Kuchen gießen. Den Kuchen auf dem Blech auskühlen lassen, damit die Sahne einziehen kann.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Die Kirschen wirklich gut abtropfen lassen. So bleibt der Hefeboden locker und die Streusel werden schön knusprig.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blätterteig-Küchlein mit Vanillecreme – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Blätterteig-Küchlein mit Vanillecreme – Bei uns schmeckt's">
+    <meta property="og:description" content="Knusprige Blätterteig-Küchlein mit einer cremigen Vanille-Mascarpone-Füllung.">
+    <meta property="og:image" content="images/blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-suesses-aus-dem-ofen.html">← Was Süßes aus dem Ofen</a>
+            <header class="rezept-kopf rezept-kopf-kompakt">
+                <p class="rezept-kategorie">Was Süßes aus dem Ofen</p>
+                <h1>Blätterteig-Küchlein mit Vanillecreme</h1>
+                <div class="rezept-meta"><span>Ca. 12 Stück</span><span>Ca. 35 Minuten plus Kühlzeit</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png" alt="Goldbraune Blätterteig-Küchlein mit Vanille-Mascarpone-Creme und Mandelblättchen">
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div class="zutaten-gruppe">Für die Küchlein</div>
+                    <div><span>2 Rollen</span><span>Blätterteig aus dem Kühlregal</span></div>
+                    <div><span>1</span><span>Eigelb</span></div>
+                    <div><span>Nach Bedarf</span><span>Mandelblättchen</span></div>
+
+                    <div class="zutaten-gruppe">Für die Creme</div>
+                    <div><span>300 ml</span><span>Kalte Milch</span></div>
+                    <div><span>1 Pck.</span><span>Paradiescreme Vanille</span></div>
+                    <div><span>250 g</span><span>Mascarpone</span></div>
+                    <div><span>100 ml</span><span>Kalte Schlagsahne</span></div>
+                    <div><span>1 Pck.</span><span>Sahnesteif</span></div>
+                    <div><span>1 Pck.</span><span>Vanillezucker</span></div>
+
+                    <div class="zutaten-gruppe">Außerdem</div>
+                    <div><span>Nach Bedarf</span><span>Puderzucker zum Bestäuben</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Den Backofen auf <strong>200 °C Ober-/Unterhitze</strong> vorheizen. Den Blätterteig ausrollen, jeweils einmal zusammenklappen und leicht andrücken. Insgesamt zwölf Kreise ausstechen und mit etwas Abstand auf ein mit Backpapier belegtes Blech legen.</li>
+                    <li>Das Eigelb verquirlen und die Teigkreise dünn damit bestreichen. Mit Mandelblättchen bestreuen und etwa <strong>15 Minuten</strong> goldbraun backen. Anschließend vollständig auskühlen lassen.</li>
+                    <li>Die kalte Milch mit der Paradiescreme etwa <strong>3 Minuten</strong> zu einer glatten Creme aufschlagen.</li>
+                    <li>Mascarpone, kalte Sahne, Sahnesteif und Vanillezucker in einer zweiten Schüssel zu einer festen Creme aufschlagen. Die Vanillecreme nur kurz unterrühren, damit die Füllung stabil bleibt. In einen Spritzbeutel geben und kurz kalt stellen.</li>
+                    <li>Die ausgekühlten Blätterteig-Küchlein vorsichtig waagerecht halbieren. Die Deckel mit Puderzucker bestäuben.</li>
+                    <li>Die Vanille-Mascarpone-Creme auf die Unterseiten spritzen und die Deckel vorsichtig aufsetzen. Bis zum Servieren kalt stellen.</li>
+                </ol>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

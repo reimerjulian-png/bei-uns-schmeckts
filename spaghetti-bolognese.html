@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti Bolognese – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Spaghetti Bolognese – Bei uns schmeckt's">
+    <meta property="og:description" content="Kräftige Bolognese mit Hackfleisch, Speck, Gemüse, Rotwein und Parmesan.">
+    <meta property="og:image" content="images/spaghetti-bolognese.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf rezept-kopf-kompakt">
+                <p class="rezept-kategorie">Unsere Klassiker · Pasta</p>
+                <h1>Spaghetti Bolognese</h1>
+                <div class="rezept-meta"><span>4 Portionen</span><span>Ca. 1½ Stunden</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/spaghetti-bolognese.png" alt="Spaghetti mit kräftiger Bolognese und frisch geriebenem Parmesan">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Eine kräftige Bolognese mit einem fein gewürfelten Soffritto aus Zwiebel, Karotten und Sellerie, knuspriger Pancetta und saftig angebratenem Rinderhackfleisch. Dazu passen klassisch Spaghetti, aber auch Tagliatelle oder Rigatoni nehmen die langsam geschmorte Sauce wunderbar auf.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>400 g</span><span>Spaghetti, Tagliatelle oder Rigatoni</span></div>
+                    <div><span>100 g</span><span>Pancetta oder Speckwürfel</span></div>
+                    <div><span>500 g</span><span>Rinderhackfleisch</span></div>
+                    <div><span>2</span><span>Karotten</span></div>
+                    <div><span>2 Stangen</span><span>Sellerie</span></div>
+                    <div><span>1 große</span><span>Zwiebel</span></div>
+                    <div><span>2 EL</span><span>Tomatenmark</span></div>
+                    <div><span>100 ml</span><span>Passierte Tomaten</span></div>
+                    <div><span>500 ml</span><span>Hühnerbrühe</span></div>
+                    <div><span>150 ml</span><span>Rotwein</span></div>
+                    <div><span>1 kleiner Schuss</span><span>Milch, etwa 50 ml</span></div>
+                    <div><span>Etwas</span><span>Olivenöl</span></div>
+                    <div><span>Nach Bedarf</span><span>Salz und Pfeffer</span></div>
+                    <div><span>Nach Bedarf</span><span>Parmesan, frisch gerieben</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Zwiebel, Karotten und Stangensellerie in sehr kleine, möglichst gleichmäßige Würfel schneiden. Dieses Gemüse bildet das <strong>Soffritto</strong>.</li>
+                    <li>Etwas Olivenöl in einem großen Topf erhitzen. Das Soffritto darin bei mittlerer Hitze etwa <strong>8–10 Minuten</strong> weich und leicht goldgelb anschwitzen. Anschließend aus dem Topf nehmen und kurz beiseitestellen.</li>
+                    <li>Die Pancetta oder Speckwürfel im selben Topf anrösten. Das Rinderhackfleisch dazugeben und bei kräftiger Hitze krümelig und deutlich gebräunt anbraten. Mit Salz und Pfeffer würzen.</li>
+                    <li>Das Tomatenmark unterrühren und gründlich mitrösten. Mit Rotwein ablöschen und kurz einkochen lassen.</li>
+                    <li>Das Soffritto zurück in den Topf geben. Passierte Tomaten und Hühnerbrühe angießen und einen kleinen Schuss Milch unterrühren.</li>
+                    <li>Die Sauce bei niedriger Hitze etwa <strong>60 Minuten</strong> sanft köcheln lassen und gelegentlich umrühren. Wenn es schnell gehen muss, darf sie auch etwas kürzer köcheln – länger schmeckt allerdings besser. 😉</li>
+                    <li>Die gewünschte Pasta in reichlich Salzwasser al dente kochen. Vor dem Abgießen etwas Nudelwasser auffangen.</li>
+                    <li>Die Bolognese abschmecken. Bei Bedarf etwas Nudelwasser einrühren, die Pasta mit der Sauce vermengen oder die Sauce darauf anrichten und mit frisch geriebenem Parmesan servieren.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Je länger die Sauce ganz sanft köchelt, desto runder wird ihr Geschmack. Sie lässt sich deshalb wunderbar am Vortag vorbereiten und schmeckt aufgewärmt sogar noch besser.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

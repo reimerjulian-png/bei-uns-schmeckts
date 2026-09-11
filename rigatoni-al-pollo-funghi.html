@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rigatoni al Pollo Funghi – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Rigatoni al Pollo Funghi – Bei uns schmeckt's">
+    <meta property="og:description" content="Rigatoni mit Hähnchenbrust, Champignons, Kirschtomaten und roten Zwiebeln in Tomatensauce.">
+    <meta property="og:image" content="images/rigatoni-al-pollo-funghi.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf rezept-kopf-kompakt">
+                <p class="rezept-kategorie">Unsere Klassiker · Pasta</p>
+                <h1>Rigatoni al Pollo Funghi</h1>
+                <div class="rezept-meta"><span>4 Portionen</span><span>Ca. 40 Minuten</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <div class="rezeptbild-mit-stempel">
+                <img class="rezept-bild" src="images/rigatoni-al-pollo-funghi.png" alt="Rigatoni mit Hähnchenbrust, kleinen geviertelten Champignons, Kirschtomaten, roten Zwiebeln und feinen Parmesanspänen">
+                <div class="rezept-stempel" aria-label="Lena's Lieblingspasta">
+                    <span>Lena's</span>
+                    <strong>Lieblingspasta</strong>
+                </div>
+            </div>
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Herzhafte Rigatoni mit saftigen Hähnchenbruststreifen, kleinen Champignonvierteln, süßen Kirschtomaten und roten Zwiebeln in einer kräftigen Tomatensauce. Feine Parmesanspäne machen Lenas Lieblingspasta komplett.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>400 g</span><span>Rigatoni</span></div>
+                    <div><span>500 g</span><span>Hähnchenbrustfilet</span></div>
+                    <div><span>250 g</span><span>Kleine Champignons</span></div>
+                    <div><span>250 g</span><span>Kirschtomaten</span></div>
+                    <div><span>1</span><span>Rote Zwiebel</span></div>
+                    <div><span>1</span><span>Knoblauchzehe</span></div>
+                    <div><span>2 EL</span><span>Tomatenmark</span></div>
+                    <div><span>500 ml</span><span>Passierte Tomaten</span></div>
+                    <div><span>Etwas</span><span>Olivenöl</span></div>
+                    <div><span>Nach Bedarf</span><span>Salz und Pfeffer</span></div>
+                    <div><span>Nach Bedarf</span><span>Parmesan am Stück</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die Hähnchenbrust in Streifen schneiden. Die Champignons putzen und vierteln. Größere Exemplare in entsprechend kleinere Stücke schneiden, damit die Pilze im fertigen Gericht nicht zu grob sind. Kirschtomaten halbieren, die rote Zwiebel in feine Streifen schneiden und den Knoblauch fein hacken.</li>
+                    <li>Etwas Olivenöl in einer großen Pfanne kräftig erhitzen. Die Hähnchenbruststreifen darin portionsweise goldbraun anbraten, mit Salz und Pfeffer würzen und anschließend aus der Pfanne nehmen.</li>
+                    <li>Die Champignonviertel in derselben Pfanne bei kräftiger Hitze anrösten. Rote Zwiebel dazugeben und kurz mitbraten. Den Knoblauch hinzufügen und nur wenige Sekunden anschwitzen.</li>
+                    <li>Das Tomatenmark unterrühren und kurz mitrösten. Die passierten Tomaten angießen und die Sauce etwa <strong>10 Minuten</strong> sanft köcheln lassen.</li>
+                    <li>Währenddessen die Rigatoni in reichlich Salzwasser al dente kochen. Vor dem Abgießen etwas Nudelwasser auffangen.</li>
+                    <li>Kirschtomaten und Hähnchenbruststreifen zur Sauce geben und nur so lange erhitzen, bis das Fleisch vollständig gar und noch saftig ist. Mit Salz und Pfeffer abschmecken.</li>
+                    <li>Die Rigatoni unterheben. Falls nötig, mit etwas Nudelwasser schön sämig rühren. Auf Tellern anrichten und mit kleinen, feinen Parmesanspänen vollenden.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Die Champignons mit genügend Platz und bei kräftiger Hitze anrösten. So bekommen die kleinen Viertel Farbe, statt im eigenen Saft weich zu werden.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

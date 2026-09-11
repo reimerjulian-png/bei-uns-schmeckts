@@ -49,6 +49,15 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "Rigatoni al Pollo Funghi", url: "rigatoni-al-pollo-funghi.html", kapitel: "Unsere Klassiker" },
+    { name: "Spaghetti Bolognese", url: "spaghetti-bolognese.html", kapitel: "Unsere Klassiker" },
+    { name: "Zimtschnecken", url: "zimtschnecken.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Meine Pasta", url: "meine-pasta.html", kapitel: "Unsere Klassiker" },
+    { name: "Tagliatelle mit Champignons", url: "tagliatelle-mit-champignons.html", kapitel: "Unsere Klassiker" },
+    { name: "Streuselkuchen mit Kirschen", url: "streuselkuchen-mit-kirschen.html", kapitel: "Was Süßes aus dem Ofen" },
+    { name: "Kartoffelsuppe", url: "kartoffelsuppe.html", kapitel: "Unsere Klassiker" },
+    { name: "Bruschetta Butter", url: "bruschetta-butter.html", kapitel: "Das macht den Unterschied" },
+    { name: "Blätterteig-Küchlein mit Vanillecreme", url: "blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html", kapitel: "Was Süßes aus dem Ofen" },
     { name: "Cremiges Balsamico-Dressing", url: "cremiges-balsamico-dressing.html", kapitel: "Das macht den Unterschied" },
     { name: "Pulled-Kassler-Burger", url: "pulled-kassler-burger.html", kapitel: "Unsere Klassiker" },
     { name: "Pulled Kassler", url: "pulled-kassler.html", kapitel: "Unsere Klassiker" },
@@ -100,6 +109,11 @@ if (menueInhalt) {
             <span class="menu-icon" aria-hidden="true">⌕</span>
             <span><strong>Rezept suchen</strong><small>Schnell zum gewünschten Gericht</small></span>
         </button>
+
+        <a href="alle-rezepte.html" class="menu-start-neu menu-alle-rezepte">
+            <span class="menu-icon" aria-hidden="true">▦</span>
+            <span><strong>Alle Rezepte</strong><small>Die ganze Sammlung auf einen Blick</small></span>
+        </a>
 
         <section class="menu-gruppe" aria-labelledby="menuRezepteTitel">
             <p class="menu-bereichstitel" id="menuRezepteTitel">Rezepte entdecken</p>
@@ -194,7 +208,11 @@ if (aktuelleKategorie && kategorienListe) {
             {
                 titel: 'Pasta',
                 rezepte: [
-                    'pasta-mit-rindfleisch-in-sahnesauce.html'
+                    'pasta-mit-rindfleisch-in-sahnesauce.html',
+                    'tagliatelle-mit-champignons.html',
+                    'meine-pasta.html',
+                    'spaghetti-bolognese.html',
+                    'rigatoni-al-pollo-funghi.html'
                 ]
             },
             {
@@ -224,6 +242,7 @@ if (aktuelleKategorie && kategorienListe) {
                 titel: 'Suppen & Schmorgerichte',
                 rezepte: [
                     'gyrossuppe.html',
+                    'kartoffelsuppe.html',
                     'guiso.html',
                     'eintopf.html',
                     'linsensuppe-mit-kassler.html',
@@ -273,6 +292,16 @@ if (aktuelleKategorie && kategorienListe) {
     }
 
     const abweichendeBildnamen = {
+        'rigatoni-al-pollo-funghi.html': 'rigatoni-al-pollo-funghi.png',
+        'spaghetti-bolognese.html': 'spaghetti-bolognese.png',
+        'zimtschnecken.html': 'zimtschnecken.png',
+        'meine-pasta.html': 'meine-pasta.png',
+        'oelbaellchen.html': 'oelbaellchen.png',
+        'tagliatelle-mit-champignons.html': 'tagliatelle-mit-champignons.png',
+        'streuselkuchen-mit-kirschen.html': 'streuselkuchen-mit-kirschen.png',
+        'kartoffelsuppe.html': 'kartoffelsuppe.png',
+        'bruschetta-butter.html': 'bruschetta-butter.png',
+        'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html': 'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png',
         'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
         'pulled-kassler-burger.html': 'pulled-kassler-burger.png',
         'pulled-kassler.html': 'pulled-kassler.png',
@@ -321,6 +350,130 @@ if (aktuelleKategorie && kategorienListe) {
         bild.addEventListener('error', () => link.classList.add('rezeptkachel-ohne-bild'));
         link.prepend(bild);
     });
+}
+
+/* Alle Rezepte: automatisch aus der zentralen Rezeptliste aufbauen. */
+const alleRezepteGrid = document.getElementById('alleRezepteGrid');
+if (alleRezepteGrid) {
+    const bildnamen = {
+        'rigatoni-al-pollo-funghi.html': 'rigatoni-al-pollo-funghi.png',
+        'spaghetti-bolognese.html': 'spaghetti-bolognese.png',
+        'zimtschnecken.html': 'zimtschnecken.png',
+        'meine-pasta.html': 'meine-pasta.png',
+        'oelbaellchen.html': 'oelbaellchen.png',
+        'tagliatelle-mit-champignons.html': 'tagliatelle-mit-champignons.png',
+        'streuselkuchen-mit-kirschen.html': 'streuselkuchen-mit-kirschen.png',
+        'kartoffelsuppe.html': 'kartoffelsuppe.png',
+        'bruschetta-butter.html': 'bruschetta-butter.png',
+        'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html': 'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png',
+        'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
+        'pulled-kassler-burger.html': 'pulled-kassler-burger.png',
+        'pulled-kassler.html': 'pulled-kassler.png',
+        'pasta-mit-rindfleisch-in-sahnesauce.html': 'pasta-mit-rindfleisch-in-sahnesauce.png',
+        'frische-pizza-mit-haehnchen-und-salat.html': 'frische-pizza.png',
+        'neapolitanischer-pizzateig.html': 'neapolitanischer-pizzateig.png',
+        '3-2-1-ribs.html': '3-2-1-ribs.png',
+        'burger-buns.html': 'burger-buns.png',
+        'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
+        'julis-bbq-sauce.html': 'julis-bbq-sauce.png',
+        'knoblauchoel.html': 'knoblauchoel.png',
+        'julis-schaschlik-mit-mayo.html': 'julis-marinade-mit-mayo.png',
+        'schaschlik-von-andre.html': 'schaschlikmarinade.png',
+        'julis-marinade-mit-mayo.html': 'julis-marinade-mit-mayo.png',
+        'schaschlikmarinade.html': 'schaschlikmarinade.png',
+        'kartoffelsalat.html': 'kartoffelsalat-mf.PNG',
+        'porree-torte-mit-cabanossi.html': 'porree-torte.png',
+        'haehnchen-auf-chinesische-art.html': 'hähnchen-chinaart.png',
+        'linsensuppe-mit-kassler.html': 'linsensuppe.png',
+        'rindfleischsuppe-mit-gurken.html': 'rindfleischsuppe.png',
+        'rustikaler-schichtsalat-mit-speck.html': 'schichtsalat-gifhorn.png',
+        'lebkuchenwuerfel.html': 'pfefferkuchen.png',
+        'pfefferkuchenwuerfel-mit-nougat.html': 'pfefferkuchen.png',
+        'bobat.html': 'bobat.jpg',
+        'couscous-hack-pfanne.html': 'couscous-hack-pfanne.jpg',
+        'rollkuchen.html': 'rollkuchen.jpg'
+    };
+    const themenUrls = {
+        pizza: new Set(['neapolitanischer-pizzateig.html', 'frische-pizza-mit-haehnchen-und-salat.html', 'gyrospizza-vom-blech.html']),
+        pasta: new Set(['pasta-mit-rindfleisch-in-sahnesauce.html', 'tagliatelle-mit-champignons.html', 'meine-pasta.html', 'spaghetti-bolognese.html', 'rigatoni-al-pollo-funghi.html', 'lasagne.html', 'spaetzle-in-hackbratensosse.html']),
+        grill: new Set(['pulled-kassler.html', 'pulled-kassler-burger.html', '3-2-1-ribs.html', 'julis-schaschlik-mit-mayo.html', 'schaschlik-von-andre.html', 'guacamole-cheeseburger-mit-nachos.html']),
+        suppen: new Set(['gyrossuppe.html', 'kartoffelsuppe.html', 'guiso.html', 'eintopf.html', 'linsensuppe-mit-kassler.html', 'rindfleischsuppe-mit-gurken.html', 'schaschlik-gulasch.html', 'rindergulasch.html'])
+    };
+    const filterReihenfolge = ['pizza', 'pasta', 'grill', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses'];
+    const filterNamen = { pizza: 'Pizza', pasta: 'Pasta', grill: 'Grill & BBQ', suppen: 'Suppen', klassiker: 'Klassiker', beilagen: 'Beilagen', sossen: 'Soßen & Extras', suesses: 'Süßes' };
+    const neueRangfolge = new Map(neueRezepte.map((rezept, index) => [rezept.url, index]));
+
+    const rezeptDaten = rezepte.map((rezept, index) => {
+        let thema = 'klassiker';
+        if (themenUrls.pizza.has(rezept.url)) thema = 'pizza';
+        else if (themenUrls.pasta.has(rezept.url)) thema = 'pasta';
+        else if (themenUrls.grill.has(rezept.url)) thema = 'grill';
+        else if (themenUrls.suppen.has(rezept.url)) thema = 'suppen';
+        else if (rezept.kapitel === 'Was Kleines dazu') thema = 'beilagen';
+        else if (rezept.kapitel === 'Das macht den Unterschied') thema = 'sossen';
+        else if (rezept.kapitel === 'Was Süßes aus dem Ofen' || rezept.kapitel === 'Ein bisschen Platz ist noch') thema = 'suesses';
+
+        const istNeu = neueRangfolge.has(rezept.url);
+        const bildname = bildnamen[rezept.url] || rezept.url.replace(/\.html$/, istNeu ? '.jpg' : '.png');
+        return { ...rezept, thema, index, neuRang: istNeu ? neueRangfolge.get(rezept.url) : 1000 + index, bild: `images/${bildname}` };
+    });
+
+    const suchfeld = document.getElementById('alleRezepteSuche');
+    const sortierung = document.getElementById('alleRezepteSortierung');
+    const zaehler = document.getElementById('alleRezepteZaehler');
+    const leer = document.getElementById('alleRezepteLeer');
+    const filterButtons = [...document.querySelectorAll('[data-rezept-filter]')];
+    let aktiverFilter = 'alle';
+
+    const normalisieren = (text) => text.toLocaleLowerCase('de').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    function alleRezepteAnzeigen() {
+        const suche = normalisieren(suchfeld?.value.trim() || '');
+        let auswahl = rezeptDaten.filter((rezept) => {
+            const passtZumFilter = aktiverFilter === 'alle'
+                || (aktiverFilter === 'klassiker' && rezept.kapitel === 'Unsere Klassiker')
+                || rezept.thema === aktiverFilter;
+            const passtZurSuche = !suche || normalisieren(`${rezept.name} ${rezept.kapitel} ${filterNamen[rezept.thema] || ''}`).includes(suche);
+            return passtZumFilter && passtZurSuche;
+        });
+
+        if (sortierung?.value === 'az') {
+            auswahl.sort((a, b) => a.name.localeCompare(b.name, 'de'));
+        } else if (sortierung?.value === 'neu') {
+            auswahl.sort((a, b) => a.neuRang - b.neuRang);
+        } else {
+            auswahl.sort((a, b) => filterReihenfolge.indexOf(a.thema) - filterReihenfolge.indexOf(b.thema) || a.name.localeCompare(b.name, 'de'));
+        }
+
+        alleRezepteGrid.innerHTML = '';
+        auswahl.forEach((rezept) => {
+            const karte = document.createElement('a');
+            karte.className = 'alle-rezept-karte';
+            karte.href = rezept.url;
+            karte.dataset.url = rezept.url;
+            karte.innerHTML = `<img src="${rezept.bild}" alt="" loading="lazy"><span class="alle-rezept-kategorie">${filterNamen[rezept.thema] || rezept.kapitel}</span><strong></strong><span class="alle-rezept-pfeil" aria-hidden="true">→</span>`;
+            karte.querySelector('strong').textContent = rezept.name;
+            karte.querySelector('img').addEventListener('error', (event) => event.currentTarget.closest('.alle-rezept-karte').classList.add('ohne-bild'));
+            alleRezepteGrid.append(karte);
+        });
+
+        if (zaehler) zaehler.textContent = `${auswahl.length} ${auswahl.length === 1 ? 'Rezept' : 'Rezepte'}`;
+        if (leer) leer.hidden = auswahl.length !== 0;
+    }
+
+    filterButtons.forEach((button) => button.addEventListener('click', () => {
+        aktiverFilter = button.dataset.rezeptFilter;
+        filterButtons.forEach((element) => element.classList.toggle('aktiv', element === button));
+        alleRezepteAnzeigen();
+    }));
+    suchfeld?.addEventListener('input', alleRezepteAnzeigen);
+    sortierung?.addEventListener('change', alleRezepteAnzeigen);
+    document.getElementById('alleRezepteZufall')?.addEventListener('click', () => {
+        const sichtbareLinks = [...alleRezepteGrid.querySelectorAll('.alle-rezept-karte')];
+        if (!sichtbareLinks.length) return;
+        window.location.href = sichtbareLinks[Math.floor(Math.random() * sichtbareLinks.length)].href;
+    });
+    alleRezepteAnzeigen();
 }
 
 function menueOeffnen() {
@@ -606,6 +759,11 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================= */
 
 const wochenRezeptDetails = {
+    'rigatoni-al-pollo-funghi.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
+    'spaghetti-bolognese.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
+    'meine-pasta.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
+    'tagliatelle-mit-champignons.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
+    'kartoffelsuppe.html': { portionen: 4, gruppe: 'suppe', label: 'Suppe & Gemüse' },
     'pulled-kassler-burger.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
     'pulled-kassler.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
     'gyrossuppe.html': { portionen: 6, gruppe: 'suppe', label: 'Suppe & Gemüse' },
