@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfrischende Getränke – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta name="description" content="Erfrischende Getränke, hausgemachte Limonaden und sommerliche Drinks.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <section class="kapitel-seite">
+            <a class="zurueck" href="index.html">← Zurück</a>
+            <p class="kapitel-nummer">05</p>
+            <h1>Erfrischende Getränke</h1>
+            <p class="kapitel-beschreibung">Hausgemachte Limonaden, Eistees &amp; sommerliche Drinks</p>
+        </section>
+
+        <section class="rezeptliste" aria-label="Getränkerezepte"></section>
+
+        <section class="kapitel-leerstand">
+            <span aria-hidden="true">◌</span>
+            <h2>Hier wird bald eingeschenkt</h2>
+            <p>Die ersten erfrischenden Getränke kommen mit den nächsten Rezepten dazu.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

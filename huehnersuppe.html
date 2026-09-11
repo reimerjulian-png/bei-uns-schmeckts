@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hühnersuppe – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hühnersuppe – Bei uns schmeckt's">
+    <meta property="og:description" content="Kräftige, klare Hühnersuppe mit Suppennudeln, Gemüse und aromatischen Gewürzen.">
+    <meta property="og:image" content="images/huehnersuppe.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker</p>
+                <h1>Hühnersuppe</h1>
+                <div class="rezept-meta"><span>6–8 Portionen</span><span>Ca. 3½ Stunden</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/huehnersuppe.png" alt="Klare goldene Hühnersuppe mit Möhren, Nudeln, Hühnerfleisch und Frühlingslauch">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Eine kräftige, klare Hühnersuppe, die ganz langsam vor sich hin siedet. Brühe, Suppennudeln und gezupftes Hühnerfleisch kommen getrennt auf den Tisch – so kann sich jeder seine Lieblingsportion zusammenstellen.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>1</span><span>Suppenhuhn</span></div>
+                    <div><span>1 Bund</span><span>Suppengrün</span></div>
+                    <div><span>2 Stangen</span><span>Sellerie</span></div>
+                    <div><span>½ Knolle</span><span>Ingwer, etwa handflächengroß</span></div>
+                    <div><span>1</span><span>Zwiebel</span></div>
+                    <div><span>2 Zehen</span><span>Knoblauch</span></div>
+                    <div><span>Etwas</span><span>Neutrales Speiseöl</span></div>
+                    <div><span>Nach Bedarf</span><span>Wasser</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Gewürze</h2>
+                <div class="zutaten">
+                    <div><span>1</span><span>Sternanis</span></div>
+                    <div><span>15</span><span>Pfefferkörner</span></div>
+                    <div><span>15</span><span>Fenchelsamen</span></div>
+                    <div><span>25</span><span>Koriandersamen</span></div>
+                    <div><span>5</span><span>Wacholderbeeren</span></div>
+                    <div><span>3</span><span>Lorbeerblätter</span></div>
+                    <div><span>Optional</span><span>Liebstöckel</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz und Pfeffer</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Suppeneinlage</h2>
+                <div class="zutaten">
+                    <div><span>1</span><span>Karotte</span></div>
+                    <div><span>150 g</span><span>Suppennudeln</span></div>
+                    <div><span>Nach Bedarf</span><span>Frühlingslauch, nur der grüne Teil</span></div>
+                    <div><span>Nach Bedarf</span><span>Petersilie</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Das Suppengrün waschen und in etwa <strong>2–3 cm große Stücke</strong> schneiden. Ingwer und Zwiebel halbieren, die Schnittflächen mit wenigen Tropfen neutralem Speiseöl bepinseln und in einer heißen Pfanne dunkelbraun rösten.</li>
+                    <li>Kurz vor Ende Sternanis, Pfefferkörner, Fenchelsamen, Koriandersamen und Wacholderbeeren dazugeben und <strong>1–2 Minuten</strong> mitrösten. Den Herd ausschalten.</li>
+                    <li>Suppengrün, Sellerie, Ingwer, Zwiebel, geröstete Gewürze, Lorbeerblätter und nach Wunsch Liebstöckel zusammen mit dem Suppenhuhn in einen großen Topf geben. Den Knoblauch mit der flachen Messerseite andrücken und hinzufügen. Mit so viel Wasser auffüllen, dass alles gerade bedeckt ist.</li>
+                    <li>Alles einmal aufkochen, dann sofort auf die niedrigste Stufe zurückschalten. Die Suppe mindestens <strong>3 Stunden</strong> ganz sanft sieden lassen. Sie soll dabei nie kräftig oder wallend kochen.</li>
+                    <li>Das gare Huhn aus der Brühe nehmen und kurz abkühlen lassen. Brust, Keulen und Flügel lösen, das Fleisch in mundgerechte Stücke zupfen und separat warm halten. Haut, Knorpel und Knochen entsorgen.</li>
+                    <li>Die Brühe durch ein feines Sieb in einen sauberen Topf gießen. Die Karotte in dünne Scheiben oder kleine Würfel schneiden und in der Brühe gar ziehen lassen. Anschließend die Brühe mit Salz und Pfeffer abschmecken.</li>
+                    <li>Die Suppennudeln separat nach Packungsangabe garen und abgießen. Frühlingslauch in feine Ringe schneiden und die Petersilie hacken.</li>
+                    <li>Brühe, Suppennudeln und gezupftes Hühnerfleisch getrennt auf den Tisch stellen. Jeder gibt sich die gewünschte Menge in seine Schale, gießt heiße Brühe darüber und verfeinert die Suppe mit Frühlingslauch und Petersilie.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Brühe, Fleisch und Nudeln vollständig abkühlen lassen und getrennt aufbewahren oder einfrieren. Dadurch bleiben die Nudeln bissfest und jeder Bestandteil lässt sich später genau in der benötigten Menge auftauen.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
