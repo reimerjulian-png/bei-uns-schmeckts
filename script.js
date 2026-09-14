@@ -49,6 +49,12 @@ const rezepte = [
 ];
 
 const neueRezepte = [
+    { name: "Brisket aus dem Smoker", url: "brisket-aus-dem-smoker.html", kapitel: "Unsere Klassiker" },
+    { name: "Bratwurst selbst gemacht", url: "bratwurst-selbst-gemacht.html", kapitel: "Unsere Klassiker" },
+    { name: "Pulled Pork Burger", url: "pulled-pork-burger.html", kapitel: "Unsere Klassiker" },
+    { name: "Pulled Pork aus dem Smoker", url: "pulled-pork-aus-dem-smoker.html", kapitel: "Unsere Klassiker" },
+    { name: "Russischer Zupfkuchen mit Kirschen", url: "russischer-zupfkuchen-mit-kirschen.html", kapitel: "Was Süßes geht immer" },
+    { name: "Lagman", url: "lagman.html", kapitel: "Unsere Klassiker" },
     { name: "Hühnersuppe", url: "huehnersuppe.html", kapitel: "Unsere Klassiker" },
     { name: "Rigatoni al Pollo Funghi", url: "rigatoni-al-pollo-funghi.html", kapitel: "Unsere Klassiker" },
     { name: "Spaghetti Bolognese", url: "spaghetti-bolognese.html", kapitel: "Unsere Klassiker" },
@@ -197,7 +203,8 @@ if (aktuelleKategorie && kategorienListe) {
                     'schluchttorte.html',
                     'butterkuchen-nach-thomas-p-mama.html',
                     'buttermilchkuchen.html',
-                    'streuselkuchen-mit-kirschen.html'
+                    'streuselkuchen-mit-kirschen.html',
+                    'russischer-zupfkuchen-mit-kirschen.html'
                 ]
             },
             {
@@ -276,12 +283,21 @@ if (aktuelleKategorie && kategorienListe) {
             {
                 titel: 'Grill & BBQ',
                 rezepte: [
+                    'brisket-aus-dem-smoker.html',
+                    'bratwurst-selbst-gemacht.html',
+                    'pulled-pork-aus-dem-smoker.html',
                     'pulled-kassler.html',
-                    'pulled-kassler-burger.html',
                     '3-2-1-ribs.html',
                     'julis-schaschlik-mit-mayo.html',
-                    'schaschlik-von-andre.html',
-                    'guacamole-cheeseburger-mit-nachos.html'
+                    'schaschlik-von-andre.html'
+                ]
+            },
+            {
+                titel: 'Burger',
+                rezepte: [
+                    'guacamole-cheeseburger-mit-nachos.html',
+                    'pulled-pork-burger.html',
+                    'pulled-kassler-burger.html'
                 ]
             },
             {
@@ -329,6 +345,7 @@ if (aktuelleKategorie && kategorienListe) {
                     'gyrossuppe.html',
                     'kartoffelsuppe.html',
                     'huehnersuppe.html',
+                    'lagman.html',
                     'guiso.html',
                     'eintopf.html',
                     'linsensuppe-mit-kassler.html',
@@ -384,6 +401,12 @@ if (aktuelleKategorie && kategorienListe) {
         'streuselkuchen-mit-kirschen.html': 'streuselkuchen-mit-kirschen.png',
         'kartoffelsuppe.html': 'kartoffelsuppe.png',
         'huehnersuppe.html': 'huehnersuppe.png',
+        'lagman.html': 'lagman.png',
+        'russischer-zupfkuchen-mit-kirschen.html': 'russischer-zupfkuchen-mit-kirschen.png',
+        'pulled-pork-aus-dem-smoker.html': 'pulled-pork-aus-dem-smoker.png',
+        'brisket-aus-dem-smoker.html': 'brisket-aus-dem-smoker.png',
+        'bratwurst-selbst-gemacht.html': 'bratwurst-selbst-gemacht.png',
+        'pulled-pork-burger.html': 'pulled-pork-burger.png',
         'bruschetta-butter.html': 'bruschetta-butter.png',
         'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html': 'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png',
         'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
@@ -449,6 +472,12 @@ if (alleRezepteGrid) {
         'streuselkuchen-mit-kirschen.html': 'streuselkuchen-mit-kirschen.png',
         'kartoffelsuppe.html': 'kartoffelsuppe.png',
         'huehnersuppe.html': 'huehnersuppe.png',
+        'lagman.html': 'lagman.png',
+        'russischer-zupfkuchen-mit-kirschen.html': 'russischer-zupfkuchen-mit-kirschen.png',
+        'pulled-pork-aus-dem-smoker.html': 'pulled-pork-aus-dem-smoker.png',
+        'brisket-aus-dem-smoker.html': 'brisket-aus-dem-smoker.png',
+        'bratwurst-selbst-gemacht.html': 'bratwurst-selbst-gemacht.png',
+        'pulled-pork-burger.html': 'pulled-pork-burger.png',
         'bruschetta-butter.html': 'bruschetta-butter.png',
         'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html': 'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png',
         'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
@@ -481,17 +510,19 @@ if (alleRezepteGrid) {
     const themenUrls = {
         pizza: new Set(['neapolitanischer-pizzateig.html', 'frische-pizza-mit-haehnchen-und-salat.html', 'gyrospizza-vom-blech.html']),
         pasta: new Set(['pasta-mit-rindfleisch-in-sahnesauce.html', 'tagliatelle-mit-champignons.html', 'meine-pasta.html', 'spaghetti-bolognese.html', 'rigatoni-al-pollo-funghi.html', 'lasagne.html', 'spaetzle-in-hackbratensosse.html']),
-        grill: new Set(['pulled-kassler.html', 'pulled-kassler-burger.html', '3-2-1-ribs.html', 'julis-schaschlik-mit-mayo.html', 'schaschlik-von-andre.html', 'guacamole-cheeseburger-mit-nachos.html']),
-        suppen: new Set(['gyrossuppe.html', 'kartoffelsuppe.html', 'huehnersuppe.html', 'guiso.html', 'eintopf.html', 'linsensuppe-mit-kassler.html', 'rindfleischsuppe-mit-gurken.html', 'schaschlik-gulasch.html', 'rindergulasch.html'])
+        burger: new Set(['guacamole-cheeseburger-mit-nachos.html', 'pulled-pork-burger.html', 'pulled-kassler-burger.html']),
+        grill: new Set(['brisket-aus-dem-smoker.html', 'bratwurst-selbst-gemacht.html', 'pulled-pork-aus-dem-smoker.html', 'pulled-kassler.html', '3-2-1-ribs.html', 'julis-schaschlik-mit-mayo.html', 'schaschlik-von-andre.html']),
+        suppen: new Set(['gyrossuppe.html', 'kartoffelsuppe.html', 'huehnersuppe.html', 'lagman.html', 'guiso.html', 'eintopf.html', 'linsensuppe-mit-kassler.html', 'rindfleischsuppe-mit-gurken.html', 'schaschlik-gulasch.html', 'rindergulasch.html'])
     };
-    const filterReihenfolge = ['pizza', 'pasta', 'grill', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses', 'getraenke'];
-    const filterNamen = { pizza: 'Pizza', pasta: 'Pasta', grill: 'Grill & BBQ', suppen: 'Suppen', klassiker: 'Klassiker', beilagen: 'Beilagen', sossen: 'Soßen & Extras', suesses: 'Süßes', getraenke: 'Getränke' };
+    const filterReihenfolge = ['pizza', 'pasta', 'burger', 'grill', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses', 'getraenke'];
+    const filterNamen = { pizza: 'Pizza', pasta: 'Pasta', burger: 'Burger', grill: 'Grill & BBQ', suppen: 'Suppen', klassiker: 'Klassiker', beilagen: 'Beilagen', sossen: 'Soßen & Extras', suesses: 'Süßes', getraenke: 'Getränke' };
     const neueRangfolge = new Map(neueRezepte.map((rezept, index) => [rezept.url, index]));
 
     const rezeptDaten = rezepte.map((rezept, index) => {
         let thema = 'klassiker';
         if (themenUrls.pizza.has(rezept.url)) thema = 'pizza';
         else if (themenUrls.pasta.has(rezept.url)) thema = 'pasta';
+        else if (themenUrls.burger.has(rezept.url)) thema = 'burger';
         else if (themenUrls.grill.has(rezept.url)) thema = 'grill';
         else if (themenUrls.suppen.has(rezept.url)) thema = 'suppen';
         else if (rezept.kapitel === 'Was Kleines dazu') thema = 'beilagen';
@@ -783,6 +814,11 @@ const wochenRezeptDetails = {
     'tagliatelle-mit-champignons.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
     'kartoffelsuppe.html': { portionen: 4, gruppe: 'suppe', label: 'Suppe & Gemüse' },
     'huehnersuppe.html': { portionen: 8, gruppe: 'suppe', label: 'Suppe & Huhn' },
+    'lagman.html': { portionen: 5, gruppe: 'nudel', label: 'Nudeln & Fleisch' },
+    'pulled-pork-aus-dem-smoker.html': { portionen: 10, gruppe: 'grill', label: 'Grill & BBQ' },
+    'brisket-aus-dem-smoker.html': { portionen: 4, gruppe: 'grill', label: 'Grill & BBQ' },
+    'bratwurst-selbst-gemacht.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
+    'pulled-pork-burger.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
     'pulled-kassler-burger.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
     'pulled-kassler.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
     'gyrossuppe.html': { portionen: 6, gruppe: 'suppe', label: 'Suppe & Gemüse' },

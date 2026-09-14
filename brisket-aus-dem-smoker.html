@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisket aus dem Smoker – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Brisket aus dem Smoker – Bei uns schmeckt's">
+    <meta property="og:description" content="Zartes, saftiges Brisket mit kräftiger Kruste und feinem Raucharoma.">
+    <meta property="og:image" content="images/brisket-aus-dem-smoker.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Grill &amp; BBQ</p>
+                <h1>Brisket aus dem Smoker</h1>
+                <p class="rezept-untertitel">Saftiges Rindfleisch mit kräftiger Kruste und feinem Raucharoma</p>
+                <div class="rezept-meta"><span>Ca. 4 Portionen</span><span>Ca. 11 Stunden</span><span>Mit etwas Planung</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/brisket-aus-dem-smoker.png" alt="Aufgeschnittenes Brisket mit dunkler Kruste und sichtbarem Rauchring">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Brisket braucht Zeit, belohnt die Geduld aber mit zartem Fleisch, einer würzigen Kruste und einem herrlichen Raucharoma. Es wird langsam bei niedriger Temperatur im indirekten Bereich gegart.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <h3>Für das Fleisch</h3>
+                <div class="zutaten">
+                    <div><span>2–3 kg</span><span>Rinderbrust am Stück</span></div>
+                    <div><span>6 EL</span><span>Sonnenblumenöl</span></div>
+                </div>
+
+                <h3>Rub</h3>
+                <div class="zutaten">
+                    <div><span>2 EL</span><span>Meersalz</span></div>
+                    <div><span>2 EL</span><span>Rohrzucker</span></div>
+                    <div><span>2 EL</span><span>Paprikapulver, edelsüß</span></div>
+                    <div><span>2 EL</span><span>Chilipulver</span></div>
+                    <div><span>2 EL</span><span>Schwarzer Pfeffer, frisch gemahlen</span></div>
+                    <div><span>2 EL</span><span>Zwiebelpulver</span></div>
+                    <div><span>2 EL</span><span>Knoblauchpulver</span></div>
+                </div>
+
+                <h3>Außerdem</h3>
+                <div class="zutaten">
+                    <div><span>1 Handvoll</span><span>Räucherchips</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Das brauchst du</h2>
+                <div class="zutaten">
+                    <div><span>1</span><span>Smoker oder verschließbarer Grill</span></div>
+                    <div><span>1</span><span>Grillthermometer</span></div>
+                    <div><span>1</span><span>Scharfes Messer</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die Rinderbrust sorgfältig von festen Sehnen und überschüssigem Fett befreien. Eine gleichmäßige Fettschicht auf dem Fleisch lassen, damit es während der langen Garzeit saftig bleibt.</li>
+                    <li>Alle Zutaten für den Rub gründlich vermischen. Das Fleisch rundherum dünn mit Sonnenblumenöl einreiben und den Rub kräftig von beiden Seiten andrücken. Abgedeckt <strong>2–3 Stunden</strong> im Kühlschrank ziehen lassen.</li>
+                    <li>Den Smoker oder verschließbaren Grill auf <strong>110–115 °C</strong> einregeln. Das Brisket in den indirekten Bereich legen, sodass es nicht direkt über der Glut liegt.</li>
+                    <li>In den ersten <strong>1½ Stunden</strong> nach und nach Räucherchips auf die Glut geben. Die Temperatur möglichst gleichmäßig halten und den Deckel nur öffnen, wenn es nötig ist.</li>
+                    <li>Das Brisket je nach Dicke ungefähr <strong>8 Stunden</strong> langsam garen. Es ist fertig, wenn es sich bei leichtem Druck weich und elastisch anfühlt und ein Messer nahezu ohne Widerstand hineingleitet.</li>
+                    <li>Das Fleisch vom Smoker nehmen und vor dem Anschneiden kurz ruhen lassen. Anschließend mit einem scharfen Messer quer zur Faser in Scheiben schneiden.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Dazu passt</h2>
+                <p>Brisket ist ein Herzstück der klassischen BBQ Plate. Dazu passen <a href="pulled-pork-aus-dem-smoker.html">Pulled Pork</a>, <a href="3-2-1-ribs.html">Spareribs</a>, <a href="bratwurst-selbst-gemacht.html">selbst gemachte Bratwurst</a> und <a href="coleslaw.html">Coleslaw</a>.</p>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Eine passende Rinderbrust am besten rechtzeitig beim Metzger vorbestellen und darauf achten, dass die Fettschicht noch vorhanden ist.</p>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
