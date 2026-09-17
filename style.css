@@ -748,6 +748,53 @@ body.menu-offen {
     font-size: 17px;
 }
 
+.cover-aktionen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.cover-aktionen .cover-einstieg {
+    margin-top: 0;
+}
+
+.cover-suche {
+    cursor: pointer;
+    background: #8e432e;
+    border-color: #8e432e;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+}
+
+.cover-suche:hover {
+    background: #733521;
+    border-color: #733521;
+}
+
+.suchsymbol {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1.8px solid currentColor;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.suchsymbol::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 1.8px;
+    right: -5px;
+    bottom: -2px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
 
 /* =========================================================
    VORWORT
@@ -894,13 +941,13 @@ body.menu-offen {
    ========================================================= */
 
 .kapitel-seite {
-    padding: 60px 0 120px;
+    padding: 44px 0 64px;
 }
 
 .zurueck {
     display: inline-block;
 
-    margin-bottom: 80px;
+    margin-bottom: 48px;
 
     font-family: "Inter", sans-serif;
     font-size: 14px;
@@ -990,6 +1037,84 @@ body.menu-offen {
 .rezept-kopf {
     min-width: 0;
     margin-bottom: 36px;
+}
+
+.rezept-sprungnavigation {
+    display: flex;
+    gap: 9px;
+    overflow-x: auto;
+    margin: 0 28px 36px;
+    padding: 0 0 8px;
+    scrollbar-width: thin;
+}
+
+.rezept-sprungnavigation a {
+    flex: 0 0 auto;
+    padding: 10px 15px;
+    border: 1px solid #cfc8bd;
+    border-radius: 999px;
+    color: #554f48;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, .38);
+}
+
+.rezept-sprungnavigation a:hover,
+.rezept-sprungnavigation a:focus-visible {
+    border-color: #9a604c;
+    color: #7c4938;
+    background: #f0e5d8;
+}
+
+.rezept-thema {
+    scroll-margin-top: 90px;
+}
+
+.start-wochenplan {
+    display: grid;
+    gap: 26px;
+    margin: 0 28px 110px;
+    padding: 34px;
+    border-radius: 18px;
+    background: #e9dfd2;
+}
+
+.start-wochenplan h2 {
+    margin: 0 0 12px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.start-wochenplan p:last-child {
+    max-width: 620px;
+    margin: 0;
+    color: #4a4742;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.start-wochenplan > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: fit-content;
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: #8e432e;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.start-wochenplan > a:hover {
+    background: #733521;
 }
 
 .kapitel-leerstand {
@@ -2356,6 +2481,34 @@ body.menu-offen {
     .alle-rezepte-zufall,
     .alle-rezepte-aktionen select {
         width: 100%;
+    }
+}
+
+@media (min-width: 700px) {
+    .kapitel-seite {
+        padding-top: 52px;
+        padding-bottom: 72px;
+    }
+
+    .kapitel-seite .zurueck {
+        margin-bottom: 44px;
+    }
+
+    .rezept-sprungnavigation {
+        max-width: 850px;
+        margin: 0 auto 46px;
+        padding-bottom: 0;
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+
+    .start-wochenplan {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        max-width: 1040px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 46px 52px;
     }
 }
 

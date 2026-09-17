@@ -10,11 +10,11 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Meine Pasta – Bei uns schmeckt's">
     <meta property="og:description" content="Cremige Pasta mit Tomatenmark, Parmesan und einem Hauch geräuchertem Paprikapulver.">
-    <meta property="og:image" content="images/meine-pasta.png">
-    <link rel="stylesheet" href="style.css">
+    <meta property="og:image" content="images/meine-pasta.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
 </head>
 <body>
-    <header class="topbar"><div class="topbar-inner"><button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button><a class="topbar-title" href="index.html">Bei uns schmeckt's</a><button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button></div><div class="suche-panel" id="suchePanel"><input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off"><div id="sucheErgebnisse"></div></div></header>
+    <header class="topbar"><div class="topbar-inner"><button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button><a class="topbar-title" href="index.html">Bei uns schmeckt's</a><button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button></div><div class="suche-panel" id="suchePanel"><input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off"><div id="sucheErgebnisse"></div></div></header>
     <div class="menu-overlay" id="menuOverlay"></div>
     <aside class="seitenmenue" id="seitenmenue" aria-hidden="true"><div class="seitenmenue-kopf"><span>Bei uns schmeckt's</span><button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button></div><nav class="seitenmenue-inhalt"></nav></aside>
     <main>
@@ -26,7 +26,7 @@
                 <div class="rezept-meta"><span>4 Portionen</span><span>Ca. 30 Minuten</span><span>Einfach</span></div>
                 <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
             </header>
-            <img class="rezept-bild" src="images/meine-pasta.png" alt="Cremige Pasta in einer würzigen Tomaten Sahnesauce mit Parmesan">
+            <img class="rezept-bild" src="images/meine-pasta.webp" alt="Cremige Pasta in einer würzigen Tomaten Sahnesauce mit Parmesan">
             <section class="rezept-bereich rezept-einleitung"><p>Eine unkomplizierte, wunderbar cremige Pasta mit angeröstetem Tomatenmark und Parmesan. Eine kleine Prise geräuchertes Paprikapulver gibt der Sauce ihren besonderen Geschmack.</p></section>
             <section class="rezept-bereich">
                 <h2>Zutaten</h2>
@@ -58,6 +58,7 @@
             <section class="rezept-bereich rezept-tipp"><h2>Mein Geheimtipp</h2><p>Das geräucherte Paprikapulver gibt der cremigen Sauce eine feine rauchige Tiefe. Lieber zunächst sparsam verwenden und nach dem Probieren noch etwas ergänzen.</p></section>
         </article>
     </main>
-    <script src="script.js"></script>
+    <script src="recipes-data.js?v=20260917-3"></script>
+    <script src="script.js?v=20260917-3"></script>
 </body>
 </html>

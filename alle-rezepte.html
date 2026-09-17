@@ -7,14 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
 </head>
 <body>
     <header class="topbar">
         <div class="topbar-inner">
             <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
             <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
         </div>
         <div class="suche-panel" id="suchePanel">
             <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
@@ -41,7 +41,7 @@
 
         <section class="alle-rezepte-werkzeuge" aria-label="Rezepte filtern und sortieren">
             <label class="alle-rezepte-suche">
-                <span aria-hidden="true">⌕</span>
+                <span class="suchsymbol" aria-hidden="true"></span>
                 <input id="alleRezepteSuche" type="search" placeholder="Wonach suchst du?" autocomplete="off">
             </label>
 
@@ -52,6 +52,7 @@
                 <button type="button" data-rezept-filter="pizza">Pizza</button>
                 <button type="button" data-rezept-filter="burger">Burger</button>
                 <button type="button" data-rezept-filter="grill">Grill &amp; BBQ</button>
+                <button type="button" data-rezept-filter="schmor">Schmorgerichte</button>
                 <button type="button" data-rezept-filter="suppen">Suppen</button>
                 <button type="button" data-rezept-filter="beilagen">Beilagen</button>
                 <button type="button" data-rezept-filter="sossen">Soßen &amp; Extras</button>
@@ -79,6 +80,7 @@
         <p class="alle-rezepte-leer" id="alleRezepteLeer" hidden>Hierzu haben wir noch kein Rezept gefunden.</p>
     </main>
 
-    <script src="script.js"></script>
+    <script src="recipes-data.js?v=20260917-3"></script>
+    <script src="script.js?v=20260917-3"></script>
 </body>
 </html>

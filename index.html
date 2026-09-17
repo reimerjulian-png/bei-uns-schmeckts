@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
 </head>
 
 <body>
@@ -28,9 +28,7 @@
 
             <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
 
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">
-                ⌕
-            </button>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
         </div>
 
         <div class="suche-panel" id="suchePanel">
@@ -135,13 +133,16 @@
         <section class="start cover-scroll">
             <div class="cover-sticky">
                 <div class="cover-teller">
-                    <img src="images/cover.png" alt="">
+                    <img src="images/cover.webp" alt="">
                 </div>
 
                 <div class="cover-text">
                     <h1>Bei uns<br>schmeckt's</h1>
                     <p>Unser digitales Kochbuch.</p>
-                    <a class="cover-einstieg" href="#rezepte-entdecken">Rezepte entdecken <span aria-hidden="true">↓</span></a>
+                    <div class="cover-aktionen">
+                        <button class="cover-einstieg cover-suche" id="startSucheButton" type="button"><span class="suchsymbol" aria-hidden="true"></span> Rezept suchen</button>
+                        <a class="cover-einstieg" href="alle-rezepte.html">Alle Rezepte <span aria-hidden="true">→</span></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -188,12 +189,19 @@
             </a>
         </section>
 
+
+        <section class="start-wochenplan" aria-labelledby="startWochenplanTitel">
+            <div><p class="kapitel-intro-kicker">Einfach planen</p><h2 id="startWochenplanTitel">Unsere Woche</h2><p>Sieben Tage, passende Mengen und abwechslungsreiche Gerichte – einmal auslosen und später wieder öffnen.</p></div>
+            <a href="unsere-woche.html">Wochenplan erstellen <span aria-hidden="true">→</span></a>
+        </section>
+
 <footer class="familien-footer">
     <p>Est. 24.08.2022 · und noch lange nicht fertig. ❤️</p>
 </footer>
     </main>
 
-    <script src="script.js"></script>
+    <script src="recipes-data.js?v=20260917-3"></script>
+    <script src="script.js?v=20260917-3"></script>
 
 </body>
 </html>

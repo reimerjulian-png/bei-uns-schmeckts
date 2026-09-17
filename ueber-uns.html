@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
 </head>
 <body>
 <header class="topbar">
     <div class="topbar-inner">
         <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
         <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
-        <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+        <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
     </div>
     <div class="suche-panel" id="suchePanel"><input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off"><div id="sucheErgebnisse"></div></div>
 </header>
@@ -116,7 +116,7 @@
             <h1>Über uns</h1>
         </header>
 
-        <img class="ueber-uns-bild" src="images/wir.jpg" alt="Julian, Lena und Emilia">
+        <img class="ueber-uns-bild" src="images/wir.webp" alt="Julian, Lena und Emilia">
 
         <div class="ueber-uns-text">
             <p class="ueber-uns-intro">Wir sind <strong>Julian &amp; Lena Reimer</strong>, 28 und 30 Jahre alt, und zusammen mit unserer knapp zweijährigen Tochter <strong>Emilia</strong> sind wir die drei hinter „Bei uns schmeckt’s“.</p>
@@ -147,6 +147,7 @@
         </footer>
     </article>
 </main>
-<script src="script.js"></script>
+<script src="recipes-data.js?v=20260917-3"></script>
+    <script src="script.js?v=20260917-3"></script>
 </body>
 </html>

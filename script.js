@@ -10,98 +10,11 @@ const suchePanel = document.getElementById("suchePanel");
 const sucheInput = document.getElementById("sucheInput");
 const sucheErgebnisse = document.getElementById("sucheErgebnisse");
 
-const rezepte = [
-    { name: "Gyros Suppe", url: "gyrossuppe.html", kapitel: "Unsere Klassiker" },
-    { name: "Rindergulasch", url: "rindergulasch.html", kapitel: "Unsere Klassiker" },
-    { name: "Italienische Steakpfanne", url: "italienische-steakpfanne.html", kapitel: "Unsere Klassiker" },
-    { name: "Tefteli", url: "tefteli.html", kapitel: "Unsere Klassiker" },
-    { name: "Rinderrouladen", url: "rinderrouladen.html", kapitel: "Unsere Klassiker" },
-    { name: "Dillgurken", url: "dillgurken.html", kapitel: "Was Kleines dazu" },
-    { name: "Überbackene Brezeln", url: "ueberbackene-brezeln.html", kapitel: "Was Kleines dazu" },
-    { name: "Kartoffelsalat", url: "kartoffelsalat.html", kapitel: "Was Kleines dazu" },
-    { name: "Rahmsoße", url: "rahmsosse.html", kapitel: "Das macht den Unterschied" },
-    { name: "Remoulade", url: "remoulade.html", kapitel: "Das macht den Unterschied" },
-    { name: "Big Mac Sauce", url: "big-mac-sauce.html", kapitel: "Das macht den Unterschied" },
-    { name: "Kräuterdressing", url: "kraeuterdressing.html", kapitel: "Das macht den Unterschied" },
-    { name: "Pluschki", url: "pluschki.html", kapitel: "Was Süßes geht immer" },
-    { name: "Donauwelle", url: "donauwelle.html", kapitel: "Was Süßes geht immer" },
-    { name: "Schluchttorte", url: "schluchttorte.html", kapitel: "Was Süßes geht immer" },
-    { name: "Tiramisu", url: "tiramisu.html", kapitel: "Was Süßes geht immer" },
-    { name: "Lemon Curd Tiramisu", url: "lemon-curd-tiramisu.html", kapitel: "Was Süßes geht immer" },
-    { name: "Pick Up Dessert", url: "pick-up-dessert.html", kapitel: "Was Süßes geht immer" },
-    { name: "Trauben Mascarpone Becher", url: "trauben-mascarpone-becher.html", kapitel: "Was Süßes geht immer" },
-    { name: "Crème brûlée", url: "creme-brulee.html", kapitel: "Was Süßes geht immer" },
-    { name: "Orangencreme", url: "orangencreme.html", kapitel: "Was Süßes geht immer" },
-    { name: "Lebkuchenwürfel", url: "lebkuchenwuerfel.html", kapitel: "Was Süßes geht immer" },
-    { name: "Currywurst Sauce", url: "currywurst-sauce.html", kapitel: "Das macht den Unterschied" },
-    { name: "Rustikaler Schichtsalat mit Speck", url: "rustikaler-schichtsalat-mit-speck.html", kapitel: "Was Kleines dazu" },
-    { name: "Lasagne", url: "lasagne.html", kapitel: "Unsere Klassiker" },
-    { name: "Mandelrollen", url: "mandelrollen.html", kapitel: "Was Süßes geht immer" },
-    { name: "Porree-Torte mit Cabanossi", url: "porree-torte-mit-cabanossi.html", kapitel: "Unsere Klassiker" },
-    { name: "Buttermilchkuchen", url: "buttermilchkuchen.html", kapitel: "Was Süßes geht immer" },
-    { name: "Hähnchen auf chinesische Art", url: "haehnchen-auf-chinesische-art.html", kapitel: "Unsere Klassiker" },
-    { name: "Linsensuppe mit Kassler", url: "linsensuppe-mit-kassler.html", kapitel: "Unsere Klassiker" },
-    { name: "Eintopf", url: "eintopf.html", kapitel: "Unsere Klassiker" },
-    { name: "Rindfleischsuppe mit Gurken", url: "rindfleischsuppe-mit-gurken.html", kapitel: "Unsere Klassiker" },
-    { name: "Couscous-Hack-Pfanne", url: "couscous-hack-pfanne.html", kapitel: "Unsere Klassiker" },
-    { name: "Bobat", url: "bobat.html", kapitel: "Was Kleines dazu" },
-    { name: "Rollkuchen", url: "rollkuchen.html", kapitel: "Was Kleines dazu" },
-];
-
-const neueRezepte = [
-    { name: "Brisket aus dem Smoker", url: "brisket-aus-dem-smoker.html", kapitel: "Unsere Klassiker" },
-    { name: "Bratwurst selbst gemacht", url: "bratwurst-selbst-gemacht.html", kapitel: "Unsere Klassiker" },
-    { name: "Pulled Pork Burger", url: "pulled-pork-burger.html", kapitel: "Unsere Klassiker" },
-    { name: "Pulled Pork aus dem Smoker", url: "pulled-pork-aus-dem-smoker.html", kapitel: "Unsere Klassiker" },
-    { name: "Russischer Zupfkuchen mit Kirschen", url: "russischer-zupfkuchen-mit-kirschen.html", kapitel: "Was Süßes geht immer" },
-    { name: "Lagman", url: "lagman.html", kapitel: "Unsere Klassiker" },
-    { name: "Hühnersuppe", url: "huehnersuppe.html", kapitel: "Unsere Klassiker" },
-    { name: "Rigatoni al Pollo Funghi", url: "rigatoni-al-pollo-funghi.html", kapitel: "Unsere Klassiker" },
-    { name: "Spaghetti Bolognese", url: "spaghetti-bolognese.html", kapitel: "Unsere Klassiker" },
-    { name: "Zimtschnecken", url: "zimtschnecken.html", kapitel: "Was Süßes geht immer" },
-    { name: "Meine Pasta", url: "meine-pasta.html", kapitel: "Unsere Klassiker" },
-    { name: "Tagliatelle mit Champignons", url: "tagliatelle-mit-champignons.html", kapitel: "Unsere Klassiker" },
-    { name: "Streuselkuchen mit Kirschen", url: "streuselkuchen-mit-kirschen.html", kapitel: "Was Süßes geht immer" },
-    { name: "Kartoffelsuppe", url: "kartoffelsuppe.html", kapitel: "Unsere Klassiker" },
-    { name: "Bruschetta Butter", url: "bruschetta-butter.html", kapitel: "Das macht den Unterschied" },
-    { name: "Blätterteig-Küchlein mit Vanillecreme", url: "blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html", kapitel: "Was Süßes geht immer" },
-    { name: "Cremiges Balsamico-Dressing", url: "cremiges-balsamico-dressing.html", kapitel: "Das macht den Unterschied" },
-    { name: "Pulled-Kassler-Burger", url: "pulled-kassler-burger.html", kapitel: "Unsere Klassiker" },
-    { name: "Pulled Kassler", url: "pulled-kassler.html", kapitel: "Unsere Klassiker" },
-    { name: "Pasta mit Rindfleisch in Sahnesauce", url: "pasta-mit-rindfleisch-in-sahnesauce.html", kapitel: "Unsere Klassiker" },
-    { name: "Frische Pizza", url: "frische-pizza-mit-haehnchen-und-salat.html", kapitel: "Unsere Klassiker" },
-    { name: "Juli's 3-2-1 Ribs", url: "3-2-1-ribs.html", kapitel: "Unsere Klassiker" },
-    { name: "Burger-Buns", url: "burger-buns.html", kapitel: "Was Kleines dazu" },
-    { name: "Guacamole-Cheeseburger mit Nachos", url: "guacamole-cheeseburger-mit-nachos.html", kapitel: "Unsere Klassiker" },
-    { name: "Juli's BBQ Sauce", url: "julis-bbq-sauce.html", kapitel: "Das macht den Unterschied" },
-    { name: "Juli's Schaschlik mit Mayo", url: "julis-schaschlik-mit-mayo.html", kapitel: "Unsere Klassiker" },
-    { name: "Schaschlik mit Zigeunersauce – von Andre", url: "schaschlik-von-andre.html", kapitel: "Unsere Klassiker" },
-    { name: "Juli's Marinade mit Mayo", url: "julis-marinade-mit-mayo.html", kapitel: "Das macht den Unterschied" },
-    { name: "Marinade mit Zigeunersauce", url: "schaschlikmarinade.html", kapitel: "Das macht den Unterschied" },
-    { name: "Apfel im Schlafrock", url: "apfel-im-schlafrock.html", kapitel: "Was Süßes geht immer" },
-    { name: "Butterkuchen", url: "butterkuchen-nach-thomas-p-mama.html", kapitel: "Was Süßes geht immer" },
-    { name: "Coleslaw", url: "coleslaw.html", kapitel: "Was Kleines dazu" },
-    { name: "Frikadellen", url: "frikadellen.html", kapitel: "Unsere Klassiker" },
-    { name: "Gefüllte Zucchini", url: "gefuellte-zucchini.html", kapitel: "Unsere Klassiker" },
-    { name: "Guiso", url: "guiso.html", kapitel: "Unsere Klassiker" },
-    { name: "Gyrospizza vom Blech", url: "gyrospizza-vom-blech.html", kapitel: "Unsere Klassiker" },
-    { name: "Hähnchen-Gemüse-Pfanne", url: "haehnchen-gemuese-pfanne.html", kapitel: "Unsere Klassiker" },
-    { name: "Hot-Dog-Cake", url: "hot-dog-cake.html", kapitel: "Unsere Klassiker" },
-    { name: "Lieblingsgemüse aus dem Ofen", url: "lenas-lieblingsgemuese-aus-dem-ofen.html", kapitel: "Was Kleines dazu" },
-    { name: "Nudelsalat", url: "nudelsalat-nach-melanie-pauls.html", kapitel: "Was Kleines dazu" },
-    { name: "Pikante Streusel-Tarte", url: "pikante-streusel-tarte.html", kapitel: "Was Kleines dazu" },
-    { name: "Pilz-Curry mit Mandeln", url: "pilz-curry-mit-mandeln.html", kapitel: "Unsere Klassiker" },
-    { name: "Röstiauflauf", url: "roestiauflauf.html", kapitel: "Unsere Klassiker" },
-    { name: "Schaschlik-Gulasch", url: "schaschlik-gulasch.html", kapitel: "Unsere Klassiker" },
-    { name: "Spätzle in Hackfleisch-Bratensoße", url: "spaetzle-in-hackbratensosse.html", kapitel: "Unsere Klassiker" },
-    { name: "Spitzkohlsalat mit Pistazien", url: "spitzkohlsalat-mit-pistazien.html", kapitel: "Was Kleines dazu" },
-    { name: "Twoiback", url: "twoiback-nach-mama-reimer.html", kapitel: "Was Süßes geht immer" },
-    { name: "Ölbällchen", url: "oelbaellchen.html", kapitel: "Was Süßes geht immer" },
-    { name: "Neapolitanischer Pizzateig", url: "neapolitanischer-pizzateig.html", kapitel: "Unsere Klassiker" },
-    { name: "Knoblauchöl", url: "knoblauchoel.html", kapitel: "Das macht den Unterschied" },
-];
-
-rezepte.push(...neueRezepte);
+const rezeptKatalog = Array.isArray(window.RECIPE_CATALOG) ? window.RECIPE_CATALOG : [];
+const rezepte = rezeptKatalog.map((rezept) => ({ ...rezept, kapitel: rezept.chapter }));
+const neueRezepte = [...rezepte]
+    .filter((rezept) => rezept.newRank < 1000)
+    .sort((a, b) => a.newRank - b.newRank);
 
 /* Hauptmenü auf allen Seiten einheitlich, kompakt und aufgabenorientiert aufbauen. */
 const menueInhalt = document.querySelector('.seitenmenue-inhalt');
@@ -113,7 +26,7 @@ if (menueInhalt) {
         </a>
 
         <button type="button" class="menu-suche-neu" id="menuSucheButton">
-            <span class="menu-icon" aria-hidden="true">⌕</span>
+            <span class="menu-icon suchsymbol" aria-hidden="true"></span>
             <span><strong>Rezept suchen</strong><small>Schnell zum gewünschten Gericht</small></span>
         </button>
 
@@ -178,363 +91,73 @@ const kategorienSeiten = {
 };
 const aktuelleKategorie = kategorienSeiten[window.location.pathname.split('/').pop()];
 const kategorienListe = document.querySelector('main .rezeptliste');
+
+function sprungmarke(text) {
+    return text.toLocaleLowerCase('de').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 if (aktuelleKategorie && kategorienListe) {
-    rezepte.filter((rezept) => rezept.kapitel === aktuelleKategorie).forEach((rezept) => {
-        if (kategorienListe.querySelector(`a[href="${rezept.url}"]`)) return;
-        const nummer = String(kategorienListe.querySelectorAll('.rezept-eintrag').length + 1).padStart(2, '0');
-        const link = document.createElement('a');
-        link.className = 'rezept-eintrag';
-        link.href = rezept.url;
-        link.innerHTML = `<span class="rezept-nummer">${nummer}</span><span class="rezept-name"></span>`;
-        link.querySelector('.rezept-name').textContent = rezept.name;
-        kategorienListe.append(link);
+    const kategorienRezepte = rezeptKatalog
+        .filter((rezept) => rezept.chapter === aktuelleKategorie)
+        .sort((a, b) => (a.sectionRank ?? 999) - (b.sectionRank ?? 999) || (a.recipeRank ?? 999) - (b.recipeRank ?? 999) || a.name.localeCompare(b.name, 'de'));
+    const abschnitte = [];
+    kategorienRezepte.forEach((rezept) => {
+        const titel = rezept.section || '';
+        let abschnitt = abschnitte.find((eintrag) => eintrag.titel === titel);
+        if (!abschnitt) {
+            abschnitt = { titel, rezepte: [] };
+            abschnitte.push(abschnitt);
+        }
+        abschnitt.rezepte.push(rezept);
+    });
+
+    kategorienListe.innerHTML = '';
+    kategorienListe.classList.add('rezeptkacheln');
+    let nummer = 1;
+    abschnitte.forEach((abschnitt) => {
+        if (abschnitt.titel) {
+            const ueberschrift = document.createElement('h2');
+            ueberschrift.className = 'rezept-thema';
+            ueberschrift.id = sprungmarke(abschnitt.titel);
+            ueberschrift.textContent = abschnitt.titel;
+            kategorienListe.append(ueberschrift);
+        }
+        abschnitt.rezepte.forEach((rezept) => {
+            const link = document.createElement('a');
+            link.className = 'rezept-eintrag';
+            link.href = rezept.url;
+            const bild = rezept.image ? `<img class="rezept-kachelbild" src="${rezept.image}" alt="" loading="lazy">` : '';
+            link.innerHTML = `${bild}<span class="rezept-nummer">${String(nummer++).padStart(2, '0')}</span><span class="rezept-name"></span>`;
+            link.querySelector('.rezept-name').textContent = rezept.name;
+            link.querySelector('img')?.addEventListener('error', () => link.classList.add('rezeptkachel-ohne-bild'));
+            if (!rezept.image) link.classList.add('rezeptkachel-ohne-bild');
+            kategorienListe.append(link);
+        });
     });
 
     const leerstand = document.querySelector('.kapitel-leerstand');
-    if (leerstand) leerstand.hidden = Boolean(kategorienListe.querySelector('a.rezept-eintrag[href]'));
+    if (leerstand) leerstand.hidden = kategorienRezepte.length > 0;
 
-    if (aktuelleKategorie === 'Was Süßes geht immer') {
-        kategorienListe.querySelectorAll('.rezept-eintrag:not(a)').forEach((element) => element.remove());
-        const gruppen = [
-            {
-                titel: 'Kuchen & Torten',
-                rezepte: [
-                    'donauwelle.html',
-                    'schluchttorte.html',
-                    'butterkuchen-nach-thomas-p-mama.html',
-                    'buttermilchkuchen.html',
-                    'streuselkuchen-mit-kirschen.html',
-                    'russischer-zupfkuchen-mit-kirschen.html'
-                ]
-            },
-            {
-                titel: 'Gebäck & süße Teilchen',
-                rezepte: [
-                    'pluschki.html',
-                    'mandelrollen.html',
-                    'zimtschnecken.html',
-                    'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html',
-                    'apfel-im-schlafrock.html',
-                    'twoiback-nach-mama-reimer.html',
-                    'oelbaellchen.html',
-                    'lebkuchenwuerfel.html'
-                ]
-            },
-            {
-                titel: 'Desserts',
-                rezepte: [
-                    'tiramisu.html',
-                    'lemon-curd-tiramisu.html',
-                    'pick-up-dessert.html',
-                    'trauben-mascarpone-becher.html',
-                    'creme-brulee.html',
-                    'orangencreme.html'
-                ]
-            }
-        ];
-        const links = new Map(
-            [...kategorienListe.querySelectorAll('a.rezept-eintrag[href]')]
-                .map((link) => [link.getAttribute('href').split('/').pop(), link])
-        );
-        kategorienListe.innerHTML = '';
-        let laufendeNummer = 1;
-
-        gruppen.forEach((gruppe) => {
-            const vorhandeneRezepte = gruppe.rezepte.filter((url) => links.has(url));
-            if (!vorhandeneRezepte.length) return;
-            const ueberschrift = document.createElement('h2');
-            ueberschrift.className = 'rezept-thema';
-            ueberschrift.textContent = gruppe.titel;
-            kategorienListe.append(ueberschrift);
-            vorhandeneRezepte.forEach((url) => {
-                const link = links.get(url);
-                const nummer = link.querySelector('.rezept-nummer');
-                if (nummer) nummer.textContent = String(laufendeNummer++).padStart(2, '0');
-                kategorienListe.append(link);
-                links.delete(url);
-            });
-        });
-
-        if (links.size) {
-            const ueberschrift = document.createElement('h2');
-            ueberschrift.className = 'rezept-thema';
-            ueberschrift.textContent = 'Weitere süße Ideen';
-            kategorienListe.append(ueberschrift);
-            links.forEach((link) => {
-                const nummer = link.querySelector('.rezept-nummer');
-                if (nummer) nummer.textContent = String(laufendeNummer++).padStart(2, '0');
-                kategorienListe.append(link);
-            });
-        }
+    const sichtbareAbschnitte = abschnitte.filter((abschnitt) => abschnitt.titel && abschnitt.rezepte.length);
+    if (sichtbareAbschnitte.length > 1) {
+        const navigation = document.createElement('nav');
+        navigation.className = 'rezept-sprungnavigation';
+        navigation.setAttribute('aria-label', 'Unterkategorien');
+        navigation.innerHTML = sichtbareAbschnitte.map((abschnitt) => `<a href="#${sprungmarke(abschnitt.titel)}">${abschnitt.titel}</a>`).join('');
+        kategorienListe.before(navigation);
     }
-
-    if (aktuelleKategorie === 'Unsere Klassiker') {
-        const themen = [
-            {
-                titel: 'Pasta',
-                rezepte: [
-                    'pasta-mit-rindfleisch-in-sahnesauce.html',
-                    'tagliatelle-mit-champignons.html',
-                    'meine-pasta.html',
-                    'spaghetti-bolognese.html',
-                    'rigatoni-al-pollo-funghi.html'
-                ]
-            },
-            {
-                titel: 'Grill & BBQ',
-                rezepte: [
-                    'brisket-aus-dem-smoker.html',
-                    'bratwurst-selbst-gemacht.html',
-                    'pulled-pork-aus-dem-smoker.html',
-                    'pulled-kassler.html',
-                    '3-2-1-ribs.html',
-                    'julis-schaschlik-mit-mayo.html',
-                    'schaschlik-von-andre.html'
-                ]
-            },
-            {
-                titel: 'Burger',
-                rezepte: [
-                    'guacamole-cheeseburger-mit-nachos.html',
-                    'pulled-pork-burger.html',
-                    'pulled-kassler-burger.html'
-                ]
-            },
-            {
-                titel: 'Pizza',
-                rezepte: [
-                    'neapolitanischer-pizzateig.html',
-                    'frische-pizza-mit-haehnchen-und-salat.html',
-                    'gyrospizza-vom-blech.html'
-                ]
-            },
-            {
-                titel: 'Pfannen- & Hackgerichte',
-                rezepte: [
-                    'italienische-steakpfanne.html',
-                    'haehnchen-auf-chinesische-art.html',
-                    'haehnchen-gemuese-pfanne.html',
-                    'couscous-hack-pfanne.html',
-                    'frikadellen.html',
-                    'tefteli.html',
-                    'spaetzle-in-hackbratensosse.html',
-                    'pilz-curry-mit-mandeln.html'
-                ]
-            },
-            {
-                titel: 'Schmorgerichte',
-                rezepte: [
-                    'schaschlik-gulasch.html',
-                    'rindergulasch.html',
-                    'rinderrouladen.html'
-                ]
-            },
-            {
-                titel: 'Ofengerichte',
-                rezepte: [
-                    'lasagne.html',
-                    'porree-torte-mit-cabanossi.html',
-                    'gefuellte-zucchini.html',
-                    'roestiauflauf.html',
-                    'hot-dog-cake.html'
-                ]
-            },
-            {
-                titel: 'Suppen',
-                rezepte: [
-                    'gyrossuppe.html',
-                    'kartoffelsuppe.html',
-                    'huehnersuppe.html',
-                    'lagman.html',
-                    'guiso.html',
-                    'eintopf.html',
-                    'linsensuppe-mit-kassler.html',
-                    'rindfleischsuppe-mit-gurken.html'
-                ]
-            }
-        ];
-        const links = new Map(
-            [...kategorienListe.querySelectorAll('a.rezept-eintrag[href]')]
-                .map((link) => [link.getAttribute('href').split('/').pop(), link])
-        );
-        let laufendeNummer = 1;
-
-        themen.forEach((thema) => {
-            const vorhandeneRezepte = thema.rezepte.filter((url) => links.has(url));
-            if (!vorhandeneRezepte.length) return;
-
-            const ueberschrift = document.createElement('h2');
-            ueberschrift.className = 'rezept-thema';
-            ueberschrift.textContent = thema.titel;
-            kategorienListe.append(ueberschrift);
-
-            vorhandeneRezepte.forEach((url) => {
-                const link = links.get(url);
-                const nummer = link.querySelector('.rezept-nummer');
-                if (nummer) nummer.textContent = String(laufendeNummer++).padStart(2, '0');
-                kategorienListe.append(link);
-                links.delete(url);
-            });
-        });
-
-        if (links.size) {
-            const ueberschrift = document.createElement('h2');
-            ueberschrift.className = 'rezept-thema';
-            ueberschrift.textContent = 'Weitere Klassiker';
-            kategorienListe.append(ueberschrift);
-
-            links.forEach((link) => {
-                const nummer = link.querySelector('.rezept-nummer');
-                if (nummer) nummer.textContent = String(laufendeNummer++).padStart(2, '0');
-                kategorienListe.append(link);
-            });
-        }
-    }
-
-    const abweichendeBildnamen = {
-        'rigatoni-al-pollo-funghi.html': 'rigatoni-al-pollo-funghi.png',
-        'spaghetti-bolognese.html': 'spaghetti-bolognese.png',
-        'zimtschnecken.html': 'zimtschnecken.png',
-        'meine-pasta.html': 'meine-pasta.png',
-        'oelbaellchen.html': 'oelbaellchen.png',
-        'tagliatelle-mit-champignons.html': 'tagliatelle-mit-champignons.png',
-        'streuselkuchen-mit-kirschen.html': 'streuselkuchen-mit-kirschen.png',
-        'kartoffelsuppe.html': 'kartoffelsuppe.png',
-        'huehnersuppe.html': 'huehnersuppe.png',
-        'lagman.html': 'lagman.png',
-        'russischer-zupfkuchen-mit-kirschen.html': 'russischer-zupfkuchen-mit-kirschen.png',
-        'pulled-pork-aus-dem-smoker.html': 'pulled-pork-aus-dem-smoker.png',
-        'brisket-aus-dem-smoker.html': 'brisket-aus-dem-smoker.png',
-        'bratwurst-selbst-gemacht.html': 'bratwurst-selbst-gemacht.png',
-        'pulled-pork-burger.html': 'pulled-pork-burger.png',
-        'bruschetta-butter.html': 'bruschetta-butter.png',
-        'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html': 'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png',
-        'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
-        'pulled-kassler-burger.html': 'pulled-kassler-burger.png',
-        'pulled-kassler.html': 'pulled-kassler.png',
-        'pasta-mit-rindfleisch-in-sahnesauce.html': 'pasta-mit-rindfleisch-in-sahnesauce.png',
-        'frische-pizza-mit-haehnchen-und-salat.html': 'frische-pizza.png',
-        'neapolitanischer-pizzateig.html': 'neapolitanischer-pizzateig.png',
-        '3-2-1-ribs.html': '3-2-1-ribs.png',
-        'burger-buns.html': 'burger-buns.png',
-        'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
-        'julis-bbq-sauce.html': 'julis-bbq-sauce.png',
-        'knoblauchoel.html': 'knoblauchoel.png',
-        'julis-schaschlik-mit-mayo.html': 'julis-marinade-mit-mayo.png',
-        'schaschlik-von-andre.html': 'schaschlikmarinade.png',
-        'julis-marinade-mit-mayo.html': 'julis-marinade-mit-mayo.png',
-        'schaschlikmarinade.html': 'schaschlikmarinade.png',
-        'kartoffelsalat.html': 'kartoffelsalat-mf.PNG',
-        'porree-torte-mit-cabanossi.html': 'porree-torte.png',
-        'haehnchen-auf-chinesische-art.html': 'hähnchen-chinaart.png',
-        'linsensuppe-mit-kassler.html': 'linsensuppe.png',
-        'rindfleischsuppe-mit-gurken.html': 'rindfleischsuppe.png',
-        'rustikaler-schichtsalat-mit-speck.html': 'schichtsalat-gifhorn.png',
-        'lebkuchenwuerfel.html': 'pfefferkuchen.png',
-        'pfefferkuchenwuerfel-mit-nougat.html': 'pfefferkuchen.png'
-    };
-
-    Object.assign(abweichendeBildnamen, {
-        'bobat.html': 'bobat.jpg',
-        'couscous-hack-pfanne.html': 'couscous-hack-pfanne.jpg',
-        'rollkuchen.html': 'rollkuchen.jpg'
-    });
-
-    kategorienListe.classList.add('rezeptkacheln');
-    kategorienListe.querySelectorAll('a.rezept-eintrag[href]').forEach((link) => {
-        const datei = link.getAttribute('href').split('/').pop();
-        if (neueRezepte.some((rezept) => rezept.url === datei && rezept.ohneBild)) {
-            link.classList.add('rezeptkachel-ohne-bild');
-            return;
-        }
-        const istNeuesRezept = neueRezepte.some((rezept) => rezept.url === datei);
-        const bildname = abweichendeBildnamen[datei] || datei.replace(/\.html$/, istNeuesRezept ? '.jpg' : '.png');
-        const bild = document.createElement('img');
-        bild.className = 'rezept-kachelbild';
-        bild.src = `images/${bildname}`;
-        bild.alt = '';
-        bild.loading = 'lazy';
-        bild.addEventListener('error', () => link.classList.add('rezeptkachel-ohne-bild'));
-        link.prepend(bild);
-    });
 }
 
-/* Alle Rezepte: automatisch aus der zentralen Rezeptliste aufbauen. */
+/* Alle Rezepte: automatisch aus dem zentralen Rezeptkatalog aufbauen. */
 const alleRezepteGrid = document.getElementById('alleRezepteGrid');
 if (alleRezepteGrid) {
-    const bildnamen = {
-        'rigatoni-al-pollo-funghi.html': 'rigatoni-al-pollo-funghi.png',
-        'spaghetti-bolognese.html': 'spaghetti-bolognese.png',
-        'zimtschnecken.html': 'zimtschnecken.png',
-        'meine-pasta.html': 'meine-pasta.png',
-        'oelbaellchen.html': 'oelbaellchen.png',
-        'tagliatelle-mit-champignons.html': 'tagliatelle-mit-champignons.png',
-        'streuselkuchen-mit-kirschen.html': 'streuselkuchen-mit-kirschen.png',
-        'kartoffelsuppe.html': 'kartoffelsuppe.png',
-        'huehnersuppe.html': 'huehnersuppe.png',
-        'lagman.html': 'lagman.png',
-        'russischer-zupfkuchen-mit-kirschen.html': 'russischer-zupfkuchen-mit-kirschen.png',
-        'pulled-pork-aus-dem-smoker.html': 'pulled-pork-aus-dem-smoker.png',
-        'brisket-aus-dem-smoker.html': 'brisket-aus-dem-smoker.png',
-        'bratwurst-selbst-gemacht.html': 'bratwurst-selbst-gemacht.png',
-        'pulled-pork-burger.html': 'pulled-pork-burger.png',
-        'bruschetta-butter.html': 'bruschetta-butter.png',
-        'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html': 'blaetterteig-kuechlein-mit-vanille-mascarpone-creme.png',
-        'cremiges-balsamico-dressing.html': 'cremiges-balsamico-dressing.png',
-        'pulled-kassler-burger.html': 'pulled-kassler-burger.png',
-        'pulled-kassler.html': 'pulled-kassler.png',
-        'pasta-mit-rindfleisch-in-sahnesauce.html': 'pasta-mit-rindfleisch-in-sahnesauce.png',
-        'frische-pizza-mit-haehnchen-und-salat.html': 'frische-pizza.png',
-        'neapolitanischer-pizzateig.html': 'neapolitanischer-pizzateig.png',
-        '3-2-1-ribs.html': '3-2-1-ribs.png',
-        'burger-buns.html': 'burger-buns.png',
-        'guacamole-cheeseburger-mit-nachos.html': 'guacamole-cheeseburger-mit-nachos.png',
-        'julis-bbq-sauce.html': 'julis-bbq-sauce.png',
-        'knoblauchoel.html': 'knoblauchoel.png',
-        'julis-schaschlik-mit-mayo.html': 'julis-marinade-mit-mayo.png',
-        'schaschlik-von-andre.html': 'schaschlikmarinade.png',
-        'julis-marinade-mit-mayo.html': 'julis-marinade-mit-mayo.png',
-        'schaschlikmarinade.html': 'schaschlikmarinade.png',
-        'kartoffelsalat.html': 'kartoffelsalat-mf.PNG',
-        'porree-torte-mit-cabanossi.html': 'porree-torte.png',
-        'haehnchen-auf-chinesische-art.html': 'hähnchen-chinaart.png',
-        'linsensuppe-mit-kassler.html': 'linsensuppe.png',
-        'rindfleischsuppe-mit-gurken.html': 'rindfleischsuppe.png',
-        'rustikaler-schichtsalat-mit-speck.html': 'schichtsalat-gifhorn.png',
-        'lebkuchenwuerfel.html': 'pfefferkuchen.png',
-        'pfefferkuchenwuerfel-mit-nougat.html': 'pfefferkuchen.png',
-        'bobat.html': 'bobat.jpg',
-        'couscous-hack-pfanne.html': 'couscous-hack-pfanne.jpg',
-        'rollkuchen.html': 'rollkuchen.jpg'
+    const rezeptDaten = rezeptKatalog.map((rezept, index) => ({ ...rezept, kapitel: rezept.chapter, thema: rezept.theme, bild: rezept.image, index, neuRang: rezept.newRank }));
+    const filterNamen = {
+        pizza: 'Pizza', pasta: 'Pasta', burger: 'Burger', grill: 'Grill & BBQ', schmor: 'Schmorgerichte',
+        suppen: 'Suppen', klassiker: 'Klassiker', beilagen: 'Beilagen', sossen: 'Soßen & Extras',
+        suesses: 'Süßes', getraenke: 'Getränke'
     };
-    const themenUrls = {
-        pizza: new Set(['neapolitanischer-pizzateig.html', 'frische-pizza-mit-haehnchen-und-salat.html', 'gyrospizza-vom-blech.html']),
-        pasta: new Set(['pasta-mit-rindfleisch-in-sahnesauce.html', 'tagliatelle-mit-champignons.html', 'meine-pasta.html', 'spaghetti-bolognese.html', 'rigatoni-al-pollo-funghi.html', 'lasagne.html', 'spaetzle-in-hackbratensosse.html']),
-        burger: new Set(['guacamole-cheeseburger-mit-nachos.html', 'pulled-pork-burger.html', 'pulled-kassler-burger.html']),
-        grill: new Set(['brisket-aus-dem-smoker.html', 'bratwurst-selbst-gemacht.html', 'pulled-pork-aus-dem-smoker.html', 'pulled-kassler.html', '3-2-1-ribs.html', 'julis-schaschlik-mit-mayo.html', 'schaschlik-von-andre.html']),
-        suppen: new Set(['gyrossuppe.html', 'kartoffelsuppe.html', 'huehnersuppe.html', 'lagman.html', 'guiso.html', 'eintopf.html', 'linsensuppe-mit-kassler.html', 'rindfleischsuppe-mit-gurken.html', 'schaschlik-gulasch.html', 'rindergulasch.html'])
-    };
-    const filterReihenfolge = ['pizza', 'pasta', 'burger', 'grill', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses', 'getraenke'];
-    const filterNamen = { pizza: 'Pizza', pasta: 'Pasta', burger: 'Burger', grill: 'Grill & BBQ', suppen: 'Suppen', klassiker: 'Klassiker', beilagen: 'Beilagen', sossen: 'Soßen & Extras', suesses: 'Süßes', getraenke: 'Getränke' };
-    const neueRangfolge = new Map(neueRezepte.map((rezept, index) => [rezept.url, index]));
-
-    const rezeptDaten = rezepte.map((rezept, index) => {
-        let thema = 'klassiker';
-        if (themenUrls.pizza.has(rezept.url)) thema = 'pizza';
-        else if (themenUrls.pasta.has(rezept.url)) thema = 'pasta';
-        else if (themenUrls.burger.has(rezept.url)) thema = 'burger';
-        else if (themenUrls.grill.has(rezept.url)) thema = 'grill';
-        else if (themenUrls.suppen.has(rezept.url)) thema = 'suppen';
-        else if (rezept.kapitel === 'Was Kleines dazu') thema = 'beilagen';
-        else if (rezept.kapitel === 'Das macht den Unterschied') thema = 'sossen';
-        else if (rezept.kapitel === 'Was Süßes geht immer') thema = 'suesses';
-        else if (rezept.kapitel === 'Erfrischende Getränke') thema = 'getraenke';
-
-        const istNeu = neueRangfolge.has(rezept.url);
-        const bildname = bildnamen[rezept.url] || rezept.url.replace(/\.html$/, istNeu ? '.jpg' : '.png');
-        return { ...rezept, thema, index, neuRang: istNeu ? neueRangfolge.get(rezept.url) : 1000 + index, bild: `images/${bildname}` };
-    });
-
+    const filterReihenfolge = ['pasta', 'burger', 'pizza', 'grill', 'schmor', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses', 'getraenke'];
     const suchfeld = document.getElementById('alleRezepteSuche');
     const sortierung = document.getElementById('alleRezepteSortierung');
     const zaehler = document.getElementById('alleRezepteZaehler');
@@ -548,32 +171,28 @@ if (alleRezepteGrid) {
         const suche = normalisieren(suchfeld?.value.trim() || '');
         let auswahl = rezeptDaten.filter((rezept) => {
             const passtZumFilter = aktiverFilter === 'alle'
-                || (aktiverFilter === 'klassiker' && rezept.kapitel === 'Unsere Klassiker')
-                || rezept.thema === aktiverFilter;
-            const passtZurSuche = !suche || normalisieren(`${rezept.name} ${rezept.kapitel} ${filterNamen[rezept.thema] || ''}`).includes(suche);
-            return passtZumFilter && passtZurSuche;
+                || (aktiverFilter === 'klassiker' && rezept.chapter === 'Unsere Klassiker')
+                || rezept.theme === aktiverFilter;
+            const suchinhalt = `${rezept.name} ${rezept.chapter} ${rezept.section} ${filterNamen[rezept.theme] || ''} ${rezept.searchText || ''}`;
+            return passtZumFilter && (!suche || normalisieren(suchinhalt).includes(suche));
         });
 
-        if (sortierung?.value === 'az') {
-            auswahl.sort((a, b) => a.name.localeCompare(b.name, 'de'));
-        } else if (sortierung?.value === 'neu') {
-            auswahl.sort((a, b) => a.neuRang - b.neuRang);
-        } else {
-            auswahl.sort((a, b) => filterReihenfolge.indexOf(a.thema) - filterReihenfolge.indexOf(b.thema) || a.name.localeCompare(b.name, 'de'));
-        }
+        if (sortierung?.value === 'az') auswahl.sort((a, b) => a.name.localeCompare(b.name, 'de'));
+        else if (sortierung?.value === 'neu') auswahl.sort((a, b) => a.newRank - b.newRank);
+        else auswahl.sort((a, b) => filterReihenfolge.indexOf(a.theme) - filterReihenfolge.indexOf(b.theme) || a.name.localeCompare(b.name, 'de'));
 
         alleRezepteGrid.innerHTML = '';
         auswahl.forEach((rezept) => {
             const karte = document.createElement('a');
             karte.className = 'alle-rezept-karte';
             karte.href = rezept.url;
-            karte.dataset.url = rezept.url;
-            karte.innerHTML = `<img src="${rezept.bild}" alt="" loading="lazy"><span class="alle-rezept-kategorie">${filterNamen[rezept.thema] || rezept.kapitel}</span><strong></strong><span class="alle-rezept-pfeil" aria-hidden="true">→</span>`;
+            const bild = rezept.image ? `<img src="${rezept.image}" alt="" loading="lazy">` : '';
+            karte.innerHTML = `${bild}<span class="alle-rezept-kategorie">${filterNamen[rezept.theme] || rezept.chapter}</span><strong></strong><span class="alle-rezept-pfeil" aria-hidden="true">→</span>`;
             karte.querySelector('strong').textContent = rezept.name;
-            karte.querySelector('img').addEventListener('error', (event) => event.currentTarget.closest('.alle-rezept-karte').classList.add('ohne-bild'));
+            karte.querySelector('img')?.addEventListener('error', () => karte.classList.add('ohne-bild'));
+            if (!rezept.image) karte.classList.add('ohne-bild');
             alleRezepteGrid.append(karte);
         });
-
         if (zaehler) zaehler.textContent = `${auswahl.length} ${auswahl.length === 1 ? 'Rezept' : 'Rezepte'}`;
         if (leer) leer.hidden = auswahl.length !== 0;
     }
@@ -587,8 +206,7 @@ if (alleRezepteGrid) {
     sortierung?.addEventListener('change', alleRezepteAnzeigen);
     document.getElementById('alleRezepteZufall')?.addEventListener('click', () => {
         const sichtbareLinks = [...alleRezepteGrid.querySelectorAll('.alle-rezept-karte')];
-        if (!sichtbareLinks.length) return;
-        window.location.href = sichtbareLinks[Math.floor(Math.random() * sichtbareLinks.length)].href;
+        if (sichtbareLinks.length) window.location.href = sichtbareLinks[Math.floor(Math.random() * sichtbareLinks.length)].href;
     });
     alleRezepteAnzeigen();
 }
@@ -640,8 +258,7 @@ function sucheAnzeigen(suchtext) {
     }
 
     const treffer = rezepte.filter((rezept) =>
-        rezept.name.toLocaleLowerCase("de").includes(text) ||
-        rezept.kapitel.toLocaleLowerCase("de").includes(text)
+        `${rezept.name} ${rezept.kapitel} ${rezept.section || ''} ${rezept.searchText || ''}`.toLocaleLowerCase("de").includes(text)
     );
 
     if (treffer.length === 0) {
@@ -807,63 +424,14 @@ zufallNochmal?.addEventListener(
    UNSERE WOCHE – AUSGEWOGENER WOCHENPLAN
    ========================================================= */
 
-const wochenRezeptDetails = {
-    'rigatoni-al-pollo-funghi.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
-    'spaghetti-bolognese.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
-    'meine-pasta.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
-    'tagliatelle-mit-champignons.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
-    'kartoffelsuppe.html': { portionen: 4, gruppe: 'suppe', label: 'Suppe & Gemüse' },
-    'huehnersuppe.html': { portionen: 8, gruppe: 'suppe', label: 'Suppe & Huhn' },
-    'lagman.html': { portionen: 5, gruppe: 'nudel', label: 'Nudeln & Fleisch' },
-    'pulled-pork-aus-dem-smoker.html': { portionen: 10, gruppe: 'grill', label: 'Grill & BBQ' },
-    'brisket-aus-dem-smoker.html': { portionen: 4, gruppe: 'grill', label: 'Grill & BBQ' },
-    'bratwurst-selbst-gemacht.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
-    'pulled-pork-burger.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
-    'pulled-kassler-burger.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
-    'pulled-kassler.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
-    'gyrossuppe.html': { portionen: 6, gruppe: 'suppe', label: 'Suppe & Gemüse' },
-    'rindergulasch.html': { portionen: 6, gruppe: 'eintopf', label: 'Schmorgericht' },
-    'italienische-steakpfanne.html': { portionen: 2, gruppe: 'reis', label: 'Reis & Gemüse' },
-    'tefteli.html': { portionen: 6, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
-    'rinderrouladen.html': { portionen: 2, gruppe: 'kartoffel', label: 'Kartoffeln & Fleisch' },
-    'lasagne.html': { portionen: 6, gruppe: 'nudel', label: 'Nudeln & Gemüse' },
-    'porree-torte-mit-cabanossi.html': { portionen: 6, gruppe: 'teig', label: 'Herzhafter Kuchen' },
-    'haehnchen-auf-chinesische-art.html': { portionen: 4, gruppe: 'reis', label: 'Reis & Gemüse' },
-    'linsensuppe-mit-kassler.html': { portionen: 6, gruppe: 'suppe', label: 'Suppe & Fleisch' },
-    'eintopf.html': { portionen: 6, gruppe: 'eintopf', label: 'Eintopf' },
-    'rindfleischsuppe-mit-gurken.html': { portionen: 8, gruppe: 'suppe', label: 'Suppe & Gemüse' },
-    'couscous-hack-pfanne.html': { portionen: 4, gruppe: 'couscous', label: 'Couscous & Gemüse' },
-    'pasta-mit-rindfleisch-in-sahnesauce.html': { portionen: 4, gruppe: 'nudel', label: 'Pasta' },
-    'frische-pizza-mit-haehnchen-und-salat.html': { portionen: 6, gruppe: 'teig', label: 'Pizza & Salat' },
-    '3-2-1-ribs.html': { portionen: 6, gruppe: 'grill', label: 'Grill & BBQ' },
-    'guacamole-cheeseburger-mit-nachos.html': { portionen: 4, gruppe: 'grill', label: 'Burger & BBQ' },
-    'julis-schaschlik-mit-mayo.html': { portionen: 8, gruppe: 'grill', label: 'Grill & BBQ' },
-    'schaschlik-von-andre.html': { portionen: 20, gruppe: 'grill', label: 'Grill & BBQ' },
-    'frikadellen.html': { portionen: 10, gruppe: 'kartoffel', label: 'Fleischgericht' },
-    'gefuellte-zucchini.html': { portionen: 4, gruppe: 'gemuese', label: 'Gemüse & Fleisch' },
-    'guiso.html': { portionen: 4, gruppe: 'nudel', label: 'Nudeln & Fleisch' },
-    'gyrospizza-vom-blech.html': { portionen: 6, gruppe: 'teig', label: 'Ofengericht' },
-    'haehnchen-gemuese-pfanne.html': { portionen: 4, gruppe: 'nudel', label: 'Gemüse & Spätzle' },
-    'hot-dog-cake.html': { portionen: 6, gruppe: 'teig', label: 'Ofengericht' },
-    'pilz-curry-mit-mandeln.html': { portionen: 4, gruppe: 'reis', label: 'Pilze & Reis' },
-    'roestiauflauf.html': { portionen: 4, gruppe: 'kartoffel', label: 'Kartoffelauflauf' },
-    'schaschlik-gulasch.html': { portionen: 4, gruppe: 'reis', label: 'Fleisch & Gemüse' },
-    'spaetzle-in-hackbratensosse.html': { portionen: 4, gruppe: 'nudel', label: 'Spätzle & Gemüse' },
-    'neapolitanischer-pizzateig.html': { portionen: 6, gruppe: 'teig', label: 'Pizza' }
-};
-
-/* Die Wochenplanung verwendet dieselbe vollständige Klassiker-Liste wie Suche,
-   Kategorieübersicht und Einzel-Zufallsgenerator. Neue Klassiker sind dadurch
-   automatisch dabei und erhalten bis zur genaueren Einordnung sinnvolle Standardwerte. */
-const wochenRezepte = rezepte
-    .filter((rezept) => rezept.kapitel === 'Unsere Klassiker')
+const wochenRezepte = rezeptKatalog
+    .filter((rezept) => rezept.chapter === 'Unsere Klassiker')
     .map((rezept) => ({
         name: rezept.name,
         url: rezept.url,
-        portionen: 4,
-        gruppe: 'klassiker',
-        label: 'Hauptgericht',
-        ...wochenRezeptDetails[rezept.url]
+        portionen: rezept.portions || 4,
+        gruppe: rezept.weekGroup || rezept.theme || 'klassiker',
+        label: rezept.weekLabel || rezept.section || 'Hauptgericht'
     }));
 
 const wochenTage = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
@@ -948,6 +516,12 @@ function wochenplanAuslosen() {
     const personenText = `${haushalt.erwachsene} ${haushalt.erwachsene === 1 ? 'Erwachsener' : 'Erwachsene'}${haushalt.kinder ? ` · ${haushalt.kinder} ${haushalt.kinder === 1 ? 'Kind' : 'Kinder'}` : ''}`;
     wochenplanZusammenfassung.textContent = `${personenText} · ${neueGerichte} neue ${neueGerichte === 1 ? 'Mahlzeit' : 'Mahlzeiten'}`;
     localStorage.setItem('beiUnsSchmecktsHaushalt', JSON.stringify({ erwachsene: haushalt.erwachsene, kinder: haushalt.kinder }));
+    localStorage.setItem('beiUnsSchmecktsWochenplan', JSON.stringify({
+        html: wochenplanListe.innerHTML,
+        zusammenfassung: wochenplanZusammenfassung.textContent,
+        erwachsene: haushalt.erwachsene,
+        kinder: haushalt.kinder
+    }));
 }
 
 if (wochenplanListe) {
@@ -960,7 +534,17 @@ if (wochenplanListe) {
     } catch (_) {
         // Ungültige lokale Einstellung ignorieren.
     }
-    wochenplanAuslosen();
+    try {
+        const gespeicherterPlan = JSON.parse(localStorage.getItem('beiUnsSchmecktsWochenplan') || 'null');
+        if (gespeicherterPlan?.html) {
+            wochenplanListe.innerHTML = gespeicherterPlan.html;
+            wochenplanZusammenfassung.textContent = gespeicherterPlan.zusammenfassung || '';
+        } else {
+            wochenplanAuslosen();
+        }
+    } catch (_) {
+        wochenplanAuslosen();
+    }
 }
 
 wochenplanButton?.addEventListener('click', wochenplanAuslosen);
@@ -1044,7 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
-   EINKAUFSLISTE FÜR APPLE NOTIZEN
+   ZUTATEN KOPIEREN
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1062,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const einkaufslisteHinweis = document.createElement('p');
     einkaufslisteHinweis.className = 'einkaufsliste-hinweis';
-    einkaufslisteHinweis.textContent = 'Danach in Apple Notizen einfügen, die Zutaten markieren und das Checklisten-Symbol auswählen.';
+    einkaufslisteHinweis.textContent = 'Für deine Notizen oder Einkaufsliste kopieren.';
 
     const teilenButton = rezeptKopf.querySelector('.rezept-teilen');
     if (teilenButton) {
@@ -1093,14 +677,20 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             await navigator.clipboard.writeText(notizText);
             if (beschriftung) beschriftung.textContent = 'Zutaten kopiert ✓';
-            einkaufslisteHinweis.textContent = 'Kopiert! Jetzt in Apple Notizen einfügen, die Zutaten markieren und das Checklisten-Symbol auswählen.';
+            einkaufslisteHinweis.textContent = 'Kopiert! Jetzt in deine Notizen oder Einkaufsliste einfügen.';
         } catch (_) {
             if (beschriftung) beschriftung.textContent = 'Kopieren nicht möglich';
         }
 
         window.setTimeout(() => {
             if (beschriftung) beschriftung.textContent = 'Zutaten kopieren';
-            einkaufslisteHinweis.textContent = 'Danach in Apple Notizen einfügen, die Zutaten markieren und das Checklisten-Symbol auswählen.';
+            einkaufslisteHinweis.textContent = 'Für deine Notizen oder Einkaufsliste kopieren.';
         }, 4000);
     });
+});
+
+
+document.getElementById('startSucheButton')?.addEventListener('click', () => {
+    sucheButton?.click();
+    window.setTimeout(() => sucheInput?.focus(), 80);
 });

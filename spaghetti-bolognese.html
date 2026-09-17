@@ -10,15 +10,15 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Spaghetti Bolognese – Bei uns schmeckt's">
     <meta property="og:description" content="Kräftige Bolognese mit Hackfleisch, Speck, Gemüse, Rotwein und Parmesan.">
-    <meta property="og:image" content="images/spaghetti-bolognese.png">
-    <link rel="stylesheet" href="style.css">
+    <meta property="og:image" content="images/spaghetti-bolognese.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
 </head>
 <body>
     <header class="topbar">
         <div class="topbar-inner">
             <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
             <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
-            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false">⌕</button>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
         </div>
         <div class="suche-panel" id="suchePanel">
             <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
@@ -46,7 +46,7 @@
                 <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
             </header>
 
-            <img class="rezept-bild" src="images/spaghetti-bolognese.png" alt="Spaghetti mit kräftiger Bolognese und frisch geriebenem Parmesan">
+            <img class="rezept-bild" src="images/spaghetti-bolognese.webp" alt="Spaghetti mit kräftiger Bolognese und frisch geriebenem Parmesan">
 
             <section class="rezept-bereich rezept-einleitung">
                 <p>Eine kräftige Bolognese mit einem fein gewürfelten Soffritto aus Zwiebel, Karotten und Sellerie, knuspriger Pancetta und saftig angebratenem Rinderhackfleisch. Dazu passen klassisch Spaghetti, aber auch Tagliatelle oder Rigatoni nehmen die langsam geschmorte Sauce wunderbar auf.</p>
@@ -92,6 +92,7 @@
             </section>
         </article>
     </main>
-    <script src="script.js"></script>
+    <script src="recipes-data.js?v=20260917-3"></script>
+    <script src="script.js?v=20260917-3"></script>
 </body>
 </html>
