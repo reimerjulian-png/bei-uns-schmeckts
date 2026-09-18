@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Käsebrötchen – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Käsebrötchen – Bei uns schmeckt's">
+    <meta property="og:description" content="Fluffige Käsebrötchen aus Hefeteig mit goldbraun gebackenem Käse.">
+    <meta property="og:image" content="images/kaesebroetchen.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-kleines-dazu.html#brot-buns-teiggebaeck">← Was Kleines dazu</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Was Kleines dazu · Brot, Buns &amp; Teiggebäck</p>
+                <h1>Käsebrötchen</h1>
+                <p class="rezept-untertitel">Von Mama R.</p>
+                <div class="rezept-meta"><span>Ca. 10–12 Stück</span><span>Ca. 2 Stunden</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/kaesebroetchen.webp" alt="Goldbraune Käsebrötchen frisch vom Blech">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Fluffige, selbst gemachte Brötchen mit einer herzhaften Käsekruste – frisch aus dem Ofen schmecken sie besonders gut.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>320 ml</span><span>Milch, lauwarm</span></div>
+                    <div><span>½ Würfel</span><span>Frische Hefe</span></div>
+                    <div><span>1 EL</span><span>Zucker</span></div>
+                    <div><span>100 ml</span><span>Neutrales Speiseöl</span></div>
+                    <div><span>½ EL</span><span>Salz</span></div>
+                    <div><span>Ca. 500 g</span><span>Mehl</span></div>
+                    <div><span>1</span><span>Ei</span></div>
+                    <div><span>2 EL</span><span>Milch</span></div>
+                    <div><span>1 Prise</span><span>Salz</span></div>
+                    <div><span>Nach Bedarf</span><span>Geriebener Käse</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die lauwarme Milch mit Hefe und Zucker verrühren und etwa 5 Minuten stehen lassen, bis sich die Hefe gelöst hat.</li>
+                    <li>Öl, Salz und zunächst etwa 450 g Mehl dazugeben. Alles mindestens 3 Minuten zu einem glatten, weichen Hefeteig kneten. Nur so viel vom restlichen Mehl einarbeiten, bis sich der Teig gut von der Schüssel löst.</li>
+                    <li>Den Teig abgedeckt an einem warmen Ort etwa 60 Minuten gehen lassen, bis er sein Volumen deutlich vergrößert hat.</li>
+                    <li>Den Teig in 10–12 gleich große Portionen teilen, zu runden Brötchen formen und mit etwas Abstand auf ein mit Backpapier belegtes Blech setzen. Noch einmal 20–30 Minuten abgedeckt gehen lassen.</li>
+                    <li>Den Backofen auf 200 °C Ober-/Unterhitze vorheizen. Ei, 2 EL Milch und eine Prise Salz verquirlen. Die Brötchen damit bestreichen und großzügig mit geriebenem Käse bestreuen.</li>
+                    <li>Die Käsebrötchen auf mittlerer Schiene etwa 15 Minuten goldbraun backen und anschließend kurz auf einem Gitter abkühlen lassen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Gouda oder Emmentaler schmelzen besonders schön. Für eine kräftigere Käsekruste kannst du beide Sorten miteinander mischen.</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>

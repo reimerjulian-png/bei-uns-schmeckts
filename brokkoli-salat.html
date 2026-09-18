@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brokkoli Salat – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Brokkoli Salat – Bei uns schmeckt's">
+    <meta property="og:description" content="Knackiger Brokkoli Salat mit Cherrytomaten, Weintrauben und würzigen Honig-Salz-Mandeln.">
+    <meta property="og:image" content="images/brokkoli-salat.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-kleines-dazu.html#salate">← Was Kleines dazu</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Was Kleines dazu · Salate</p>
+                <h1>Brokkoli Salat</h1>
+                <p class="rezept-untertitel">Von Nelli F.</p>
+                <div class="rezept-meta"><span>Ca. 6 Portionen</span><span>Ca. 30 Minuten</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/brokkoli-salat.webp" alt="Brokkoli Salat mit Cherrytomaten, Weintrauben und Honig-Salz-Mandeln">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Knackiger Brokkoli, süße Weintrauben und saftige Cherrytomaten treffen auf würzige Honig-Salz-Mandeln. Das cremige Paprika-Dressing verbindet alles zu einem frischen Salat mit süß-herzhafter Note.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>1</span><span>Brokkoli, in kleinen Röschen</span></div>
+                    <div><span>250 g</span><span>Cherrytomaten, halbiert</span></div>
+                    <div><span>250 g</span><span>Kernlose Weintrauben, halbiert</span></div>
+                    <div><span>150 g</span><span>Honig-Salz-Mandeln, fertig gekauft</span></div>
+                    <div><span>4–5 EL</span><span>Mayonnaise</span></div>
+                    <div><span>1 Pck.</span><span>Paprika-Salatkrönung</span></div>
+                    <div><span>1 TL</span><span>Zucker</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz und Pfeffer</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Den Brokkoli waschen, sehr gut abtropfen lassen und in kleine, mundgerechte Röschen teilen. Cherrytomaten und Weintrauben waschen und halbieren.</li>
+                    <li>Mayonnaise, Paprika-Salatkrönung und Zucker zu einem cremigen Dressing verrühren. Mit Salz und Pfeffer abschmecken.</li>
+                    <li>Brokkoliröschen, Cherrytomaten und Weintrauben in einer großen Schüssel mit dem Dressing vermengen.</li>
+                    <li>Die fertigen Honig-Salz-Mandeln kurz vor dem Servieren unterheben oder über den Salat streuen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Der Salat darf vor dem Servieren etwa 20 Minuten durchziehen. Die Mandeln erst zum Schluss hinzufügen, damit sie schön knackig bleiben.</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>

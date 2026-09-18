@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesundes Müsli – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Gesundes Müsli – Bei uns schmeckt's">
+    <meta property="og:description" content="Knusprig geröstetes Müsli mit Hafer- und Roggenflocken, Nüssen, Kernen, Kokos, Akazienhonig und Zimt.">
+    <meta property="og:image" content="images/gesundes-muesli-von-evelyn-w.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-suesses-aus-dem-ofen.html#fruhstuck-musli">← Was Süßes geht immer</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Was Süßes geht immer · Frühstück &amp; Müsli</p>
+                <h1>Gesundes Müsli</h1>
+                <p class="rezept-untertitel">von Evelyn W.</p>
+                <div class="rezept-meta"><span>Ca. 1,2 kg</span><span>Ca. 35 Minuten</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/gesundes-muesli-von-evelyn-w.webp" alt="Knuspriges Müsli mit Haferflocken, Nüssen, Kernen und Kokos">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Evelyns knuspriges Ofenmüsli verbindet Hafer- und Roggenflocken mit reichlich Nüssen, Kernen und Kokos. Akazienhonig und Zimt geben ihm eine feine Süße und ein warmes Aroma.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>500 g</span><span>Weiche Haferflocken</span></div>
+                    <div><span>80 g</span><span>Roggenflocken</span></div>
+                    <div><span>80 g</span><span>Kokosflocken</span></div>
+                    <div><span>120 g</span><span>Mandeln, geschält</span></div>
+                    <div><span>60 g</span><span>Cashewkerne</span></div>
+                    <div><span>80 g</span><span>Sonnenblumenkerne</span></div>
+                    <div><span>60 g</span><span>Kürbiskerne</span></div>
+                    <div><span>125 g</span><span>Butter, zimmerwarm</span></div>
+                    <div><span>200 g</span><span>Akazienhonig</span></div>
+                    <div><span>Nach Geschmack</span><span>Zimt</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Den Backofen auf <strong>160 °C Ober-/Unterhitze</strong> vorheizen und ein großes Backblech mit Backpapier auslegen.</li>
+                    <li>Haferflocken, Roggenflocken, Kokosflocken, ganze Mandeln, ganze Cashewkerne, Sonnenblumenkerne und Kürbiskerne in eine große Schüssel geben. Zimmerwarme Butter, Akazienhonig und Zimt hinzufügen und alles gründlich miteinander vermischen.</li>
+                    <li>Die gesamte Müslimischung gleichmäßig auf dem vorbereiteten Backblech verteilen.</li>
+                    <li>Das Müsli etwa <strong>15–20 Minuten</strong> rösten und dabei gelegentlich wenden. Gut beobachten und aus dem Ofen nehmen, sobald es gleichmäßig goldgelb ist.</li>
+                    <li>Das Müsli auf dem Blech vollständig auskühlen lassen und anschließend in eine ausreichend große, gut verschließbare Box füllen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Das Müsli bräunt nach dem Herausnehmen noch etwas nach. Lieber einen Moment zu früh aus dem Ofen holen und vollständig auskühlen lassen – dabei wird es erst richtig knusprig.</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>

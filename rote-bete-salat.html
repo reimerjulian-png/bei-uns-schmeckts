@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rote Bete Salat – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Rote Bete Salat – Bei uns schmeckt's">
+    <meta property="og:description" content="Cremiger Rote Bete Salat mit frischen Möhren und knusprigen Kartoffelsticks.">
+    <meta property="og:image" content="images/rote-bete-salat.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="was-kleines-dazu.html#salate">← Was Kleines dazu</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Was Kleines dazu · Salate</p>
+                <h1>Rote Bete Salat</h1>
+                <p class="rezept-untertitel">Von Angelina F.</p>
+                <div class="rezept-meta"><span>Ca. 4–6 Portionen</span><span>Ca. 20 Minuten</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/rote-bete-salat.webp" alt="Rote Bete Salat mit Möhren und knusprigen Kartoffelsticks">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Ein unkomplizierter, cremiger Salat aus Roter Bete und frischen Möhren. Die feinen Kartoffelsticks kommen erst kurz vor dem Servieren darüber und sorgen für einen würzigen Crunch.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>500 g</span><span>Gekochte Rote Bete, in dünnen Streifen</span></div>
+                    <div><span>3</span><span>Möhren, frisch geraspelt</span></div>
+                    <div><span>1 kleine</span><span>Zwiebel, fein gewürfelt</span></div>
+                    <div><span>4 EL</span><span>Mayonnaise</span></div>
+                    <div><span>2 EL</span><span>Schmand</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz und Pfeffer</span></div>
+                    <div><span>1 große Handvoll</span><span>Kartoffelsticks</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Die gekochte Rote Bete gut abtropfen lassen und in dünne Streifen schneiden.</li>
+                    <li>Die Möhren schälen und grob raspeln. Die Zwiebel schälen und fein würfeln.</li>
+                    <li>Rote Bete, Möhren und Zwiebel mit Mayonnaise und Schmand gründlich vermischen. Mit Salz und Pfeffer abschmecken und nach Wunsch kurz durchziehen lassen.</li>
+                    <li>Die Kartoffelsticks erst unmittelbar vor dem Servieren großzügig über dem Salat verteilen.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Wenn du den Salat vorbereitest, bewahre die Kartoffelsticks separat auf. So bleiben sie bis zum Servieren schön knusprig.</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>

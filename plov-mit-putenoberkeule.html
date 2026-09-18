@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plov – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Plov – Bei uns schmeckt's">
+    <meta property="og:description" content="Lockerer Plov mit saftiger Putenoberkeule, Karotten, Zwiebeln und Knoblauch.">
+    <meta property="og:image" content="images/plov-mit-putenoberkeule.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Reisgerichte</p>
+                <h1>Plov</h1>
+                <div class="rezept-meta"><span>6 Portionen</span><span>Ca. 2 ½ Stunden</span><span>Mittel</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/plov-mit-putenoberkeule.webp" alt="Plov mit Putenoberkeule, lockerem Reis, Karotten, Knoblauch und Chili">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Ein herzhafter Plov mit lockerem Reis, süßen Karotten und saftiger Putenoberkeule. Das Gericht wird Schicht für Schicht gegart und erst ganz am Ende vorsichtig vermischt.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>600 g</span><span>Putenoberkeule, alternativ Rindernacken, Rinderschulter, Lammnacken oder Lammschulter</span></div>
+                    <div><span>400 g</span><span>Parboiled Langkornreis</span></div>
+                    <div><span>500–550 g</span><span>Karotten, gerne gelbe und orange</span></div>
+                    <div><span>120 g</span><span>Zwiebeln</span></div>
+                    <div><span>1 Knolle</span><span>Knoblauch</span></div>
+                    <div><span>1–2</span><span>ganze Chilischoten</span></div>
+                    <div><span>150 ml</span><span>Raps- oder Sonnenblumenöl</span></div>
+                    <div><span>1 ½ TL</span><span>Kreuzkümmel, ganz</span></div>
+                    <div><span>1 TL</span><span>Koriandersaat, gestoßen</span></div>
+                    <div><span>Alternativ</span><span>2–3 TL Plovgewürz statt Kreuzkümmel und Koriandersaat</span></div>
+                    <div><span>2 TL</span><span>Salz, später nach Geschmack</span></div>
+                    <div><span>1 Prise</span><span>Zucker</span></div>
+                    <div><span>Ca. 700 ml</span><span>heißes Wasser</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Den Reis mehrmals gründlich waschen, bis das Wasser fast klar bleibt. Anschließend mit etwa 50 °C warmem Wasser bedecken und rund 45 Minuten einweichen. Danach gut abtropfen lassen.</li>
+                    <li>Das Fleisch in große, mundgerechte Stücke schneiden. Zwiebeln würfeln und die Karotten in etwa streichholzgroße Stifte schneiden. Von der Knoblauchknolle nur die äußere, lose Schale entfernen; die Knolle bleibt ganz.</li>
+                    <li>Das Öl in einem Kazan oder einem großen, schweren Topf sehr heiß werden lassen. Das Fleisch portionsweise bei kräftiger Hitze rundherum scharf anbraten. Nicht zu viel auf einmal hineingeben, damit die Hitze erhalten bleibt und das Fleisch eine schöne Kruste bekommt. Das angebratene Fleisch kurz herausnehmen.</li>
+                    <li>Die Zwiebeln im heißen Öl goldgelb braten. Das Fleisch wieder dazugeben und gleichmäßig mit den Karotten bedecken. Die Schichten dabei nicht vermischen.</li>
+                    <li>Die Knoblauchknolle und die geschlossenen Chilischoten mittig zwischen die Karotten setzen. Etwa 300 ml heißes Wasser angießen, mit Salz und einer Prise Zucker würzen und alles ohne Deckel rund 35 Minuten sanft köcheln lassen.</li>
+                    <li>Knoblauch und Chili kurz herausnehmen. Den abgetropften Reis von der Mitte nach außen gleichmäßig auf den Karotten verteilen, ohne ihn mit den unteren Schichten zu vermischen. Vorsichtig so viel heißes Wasser angießen, dass es knapp an den Reis heranreicht; der Reis soll nicht darin schwimmen.</li>
+                    <li>Offen und bei mittlerer Hitze garen, bis der Reis die Flüssigkeit weitgehend aufgenommen hat. Den Reis von außen nach innen wenden, dabei die Fleisch- und Karottenschicht darunter möglichst nicht berühren.</li>
+                    <li>Den Kreuzkümmel zwischen den Händen leicht zerreiben und zusammen mit der gestoßenen Koriandersaat über den Reis geben. Alternativ das Plovgewürz verwenden. Den Reis zu einem flachen Berg zusammenschieben, mehrere Löcher bis fast zum Topfboden hineinstechen und Knoblauch sowie Chili wieder daraufsetzen.</li>
+                    <li>Den Deckel schließen, die Hitze deutlich reduzieren und den Plov weitere 20 Minuten gar ziehen lassen. Danach 10 Minuten ruhen lassen, Knoblauch und Chili herausnehmen und den Reis locker mit Karotten und Fleisch vermischen. Abschmecken und gemeinsam auf einer großen Platte anrichten.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-beilage">
+                <h2>Dazu passt</h2>
+                <div class="beilagen-liste">
+                    <div class="beilage beilage-einfach"><span><a href="tomatensalat-zum-plov.html">Tomatensalat zum Plov</a></span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Im Originalrezept gehören auch Rosinen, Berberitzen und Kichererbsen in den Plov. Bei uns dürfen die drei heute allerdings zuschauen: Obst im Reis ist einfach nicht unser Ding – und die Kichererbsen bekommen ebenfalls frei. 😉</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>

@@ -23,17 +23,19 @@ EXCLUDED_PAGES = {"pfefferkuchenwuerfel-mit-nougat.html", "tifteli.html"}
 
 CLASSIC_SECTIONS = {
     "Pasta": ["pasta-mit-rindfleisch-in-sahnesauce.html", "tagliatelle-mit-champignons.html", "meine-pasta.html", "spaghetti-bolognese.html", "rigatoni-al-pollo-funghi.html"],
+    "Reisgerichte": ["plov-mit-putenoberkeule.html"],
     "Grill & BBQ": ["brisket-aus-dem-smoker.html", "bratwurst-selbst-gemacht.html", "pulled-pork-aus-dem-smoker.html", "pulled-kassler.html", "3-2-1-ribs.html", "julis-schaschlik-mit-mayo.html", "schaschlik-von-andre.html"],
     "Burger": ["guacamole-cheeseburger-mit-nachos.html", "pulled-pork-burger.html", "pulled-kassler-burger.html"],
     "Pizza": ["neapolitanischer-pizzateig.html", "frische-pizza-mit-haehnchen-und-salat.html", "gyrospizza-vom-blech.html"],
     "Pfannen- & Hackgerichte": ["italienische-steakpfanne.html", "haehnchen-auf-chinesische-art.html", "haehnchen-gemuese-pfanne.html", "couscous-hack-pfanne.html", "frikadellen.html", "tefteli.html", "spaetzle-in-hackbratensosse.html", "pilz-curry-mit-mandeln.html"],
     "Schmorgerichte": ["schaschlik-gulasch.html", "rindergulasch.html", "rinderrouladen.html"],
-    "Ofengerichte": ["lasagne.html", "porree-torte-mit-cabanossi.html", "gefuellte-zucchini.html", "roestiauflauf.html", "hot-dog-cake.html"],
-    "Suppen": ["gyrossuppe.html", "kartoffelsuppe.html", "huehnersuppe.html", "lagman.html", "guiso.html", "eintopf.html", "linsensuppe-mit-kassler.html", "rindfleischsuppe-mit-gurken.html"],
+    "Ofengerichte": ["haehnchenrouladen.html", "lasagne.html", "porree-torte-mit-cabanossi.html", "gefuellte-zucchini.html", "roestiauflauf.html", "hot-dog-cake.html"],
+    "Suppen": ["deftige-gulaschsuppe.html", "gyrossuppe.html", "kartoffelsuppe.html", "huehnersuppe.html", "lagman.html", "guiso.html", "eintopf.html", "linsensuppe-mit-kassler.html", "rindfleischsuppe-mit-gurken.html"],
 }
 
 SWEET_SECTIONS = {
-    "Kuchen & Torten": ["donauwelle.html", "schluchttorte.html", "butterkuchen-nach-thomas-p-mama.html", "buttermilchkuchen.html", "streuselkuchen-mit-kirschen.html", "russischer-zupfkuchen-mit-kirschen.html"],
+    "Frühstück & Müsli": ["gesundes-muesli-von-evelyn-w.html"],
+    "Kuchen & Torten": ["fantakuchen-mit-pfirsich.html", "donauwelle.html", "schluchttorte.html", "butterkuchen-nach-thomas-p-mama.html", "buttermilchkuchen.html", "streuselkuchen-mit-kirschen.html", "russischer-zupfkuchen-mit-kirschen.html"],
     "Gebäck & süße Teilchen": ["pluschki.html", "mandelrollen.html", "zimtschnecken.html", "blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html", "apfel-im-schlafrock.html", "twoiback-nach-mama-reimer.html", "oelbaellchen.html", "lebkuchenwuerfel.html"],
     "Desserts": ["tiramisu.html", "lemon-curd-tiramisu.html", "pick-up-dessert.html", "trauben-mascarpone-becher.html", "creme-brulee.html", "orangencreme.html"],
 }
@@ -45,15 +47,20 @@ SIDE_SECTIONS = {
         "coleslaw.html",
         "nudelsalat-nach-melanie-pauls.html",
         "spitzkohlsalat-mit-pistazien.html",
+        "tomatensalat-zum-plov.html",
+        "brokkoli-salat.html",
+        "rote-bete-salat.html",
     ],
     "Gemüse & Eingelegtes": [
         "dillgurken.html",
         "lenas-lieblingsgemuese-aus-dem-ofen.html",
     ],
     "Brot, Buns & Teiggebäck": [
+        "kaesebroetchen.html",
         "ueberbackene-brezeln.html",
         "burger-buns.html",
         "rollkuchen.html",
+        "walnussbrot.html",
     ],
     "Herzhafte Kleinigkeiten": [
         "bobat.html",
@@ -96,7 +103,31 @@ THEMES = {
     "burger": ["guacamole-cheeseburger-mit-nachos.html", "pulled-pork-burger.html", "pulled-kassler-burger.html"],
     "grill": ["brisket-aus-dem-smoker.html", "bratwurst-selbst-gemacht.html", "pulled-pork-aus-dem-smoker.html", "pulled-kassler.html", "3-2-1-ribs.html", "julis-schaschlik-mit-mayo.html", "schaschlik-von-andre.html"],
     "schmor": ["schaschlik-gulasch.html", "rindergulasch.html", "rinderrouladen.html"],
-    "suppen": ["gyrossuppe.html", "kartoffelsuppe.html", "huehnersuppe.html", "lagman.html", "guiso.html", "eintopf.html", "linsensuppe-mit-kassler.html", "rindfleischsuppe-mit-gurken.html"],
+    "suppen": ["deftige-gulaschsuppe.html", "gyrossuppe.html", "kartoffelsuppe.html", "huehnersuppe.html", "lagman.html", "guiso.html", "eintopf.html", "linsensuppe-mit-kassler.html", "rindfleischsuppe-mit-gurken.html"],
+    "reisgerichte": ["plov-mit-putenoberkeule.html"],
+}
+
+CHAPTER_OVERRIDES = {
+    "kaesebroetchen.html": "Was Kleines dazu",
+    "brokkoli-salat.html": "Was Kleines dazu",
+    "rote-bete-salat.html": "Was Kleines dazu",
+    "gesundes-muesli-von-evelyn-w.html": "Was Süßes geht immer",
+    "fantakuchen-mit-pfirsich.html": "Was Süßes geht immer",
+    "tomatensalat-zum-plov.html": "Was Kleines dazu",
+    "walnussbrot.html": "Was Kleines dazu",
+}
+
+NEW_RANK_OVERRIDES = {
+    "kaesebroetchen.html": -10,
+    "rote-bete-salat.html": -9,
+    "brokkoli-salat.html": -8,
+    "gesundes-muesli-von-evelyn-w.html": -7,
+    "plov-mit-putenoberkeule.html": -1,
+    "tomatensalat-zum-plov.html": -2,
+    "walnussbrot.html": -3,
+    "deftige-gulaschsuppe.html": -4,
+    "fantakuchen-mit-pfirsich.html": -5,
+    "haehnchenrouladen.html": -6,
 }
 
 
@@ -119,7 +150,7 @@ class RecipeParser(HTMLParser):
             self.is_recipe = True
         if tag == "h1":
             self.in_h1 = True
-        if "zutaten" in classes:
+        if "zutaten" in classes or "zutaten-option" in classes:
             self.in_ingredients += 1
         if tag == "meta" and attrs.get("property") == "og:image":
             self.image = attrs.get("content") or self.image
@@ -130,7 +161,7 @@ class RecipeParser(HTMLParser):
         classes = self.stack.pop() if self.stack else set()
         if tag == "h1":
             self.in_h1 = False
-        if "zutaten" in classes:
+        if "zutaten" in classes or "zutaten-option" in classes:
             self.in_ingredients = max(0, self.in_ingredients - 1)
 
     def handle_data(self, data: str) -> None:
@@ -213,7 +244,7 @@ def main() -> None:
         prior = meta.get(url, {})
         page_title = " ".join(parser.title_parts) if parser else ""
         name = page_title or prior.get("name") or Path(url).stem.replace("-", " ").title()
-        chapter = prior.get("chapter") or prior.get("kapitel") or "Unsere Klassiker"
+        chapter = CHAPTER_OVERRIDES.get(url) or prior.get("chapter") or prior.get("kapitel") or "Unsere Klassiker"
         image = prior.get("image") or (parser.image if parser else "")
         if image.startswith("http"):
             image = ""
@@ -227,7 +258,8 @@ def main() -> None:
             "Was Süßes geht immer": "Weitere süße Ideen",
         }
         default_section = fallback_sections.get(chapter, "")
-        section = prior.get("section") or lookup(section_map, url, default_section)
+        mapped_section = lookup(section_map, url, "")
+        section = mapped_section or prior.get("section") or default_section
         section_rank, recipe_rank = ranking(section_map, url) if section_map else (0, index)
         if chapter == "Was Kleines dazu":
             theme = "beilagen"
@@ -255,7 +287,7 @@ def main() -> None:
             "theme": theme,
             "image": image,
             "searchText": clean_search,
-            "newRank": new_urls[url] if url in new_urls else prior.get("newRank", 1000 + index),
+            "newRank": NEW_RANK_OVERRIDES.get(url, new_urls[url] if url in new_urls else prior.get("newRank", 1000 + index)),
         }
         for key in ("portions", "weekGroup", "weekLabel"):
             if key in prior:

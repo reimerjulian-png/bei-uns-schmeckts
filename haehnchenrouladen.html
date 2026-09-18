@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hähnchen Rouladen – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hähnchen Rouladen – Bei uns schmeckt's">
+    <meta property="og:description" content="Mit Kochschinken und Gouda gefüllte Hähnchen Rouladen in cremiger Sweet-Chili-Schmand-Soße.">
+    <meta property="og:image" content="images/haehnchenrouladen.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html#ofengerichte">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Ofengerichte</p>
+                <h1>Hähnchen Rouladen</h1>
+                <p class="rezept-untertitel">Rezept von Ina Lehr</p>
+                <div class="rezept-meta"><span>6 Portionen</span><span>Ca. 1½ Stunden</span><span>Einfach</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/haehnchenrouladen.webp" alt="Hähnchen Rouladen mit Kochschinken und Gouda in cremiger Sweet-Chili-Schmand-Soße">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Saftige Hähnchen Rouladen, gefüllt mit Kochschinken und Gouda, garen in einer cremigen Sweet-Chili-Schmand-Soße ganz entspannt im Ofen.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>1 kg</span><span>Hähnchenbrustfilet</span></div>
+                    <div><span>1 Pck.</span><span>Kochschinken</span></div>
+                    <div><span>1 Pck.</span><span>Gouda in Scheiben</span></div>
+                    <div><span>3 Becher</span><span>Schmand, je etwa 200 g</span></div>
+                    <div><span>200 ml</span><span>Sweet-Chili-Soße</span></div>
+                    <div><span>200 ml</span><span>Wasser</span></div>
+                    <div><span>1 EL</span><span>Gemüsebrühepulver</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz</span></div>
+                    <div><span>Nach Geschmack</span><span>Pfeffer</span></div>
+                    <div><span>Nach Geschmack</span><span>Paprikapulver, edelsüß</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Den Backofen auf <strong>210 °C Ober-/Unterhitze</strong> vorheizen. Eine große, ofenfeste Form mit passendem Deckel bereitstellen.</li>
+                    <li>Die Hähnchenbrustfilets längs halbieren und zwischen zwei Lagen Frischhaltefolie vorsichtig etwas flacher klopfen. Dadurch lassen sie sich später leichter einrollen.</li>
+                    <li>Jedes Stück Hähnchenfleisch mit etwas Salz, Pfeffer und edelsüßem Paprikapulver würzen. Anschließend jeweils mit einer halben Scheibe Kochschinken und einer passenden Scheibe Gouda belegen.</li>
+                    <li>Die belegten Fleischstücke straff aufrollen und mit der Naht nach unten nebeneinander in die ofenfeste Form legen.</li>
+                    <li>Schmand, Sweet-Chili-Soße, Wasser und Gemüsebrühepulver glatt verrühren. Die Soße gleichmäßig über die Hähnchen Rouladen gießen.</li>
+                    <li>Die Form mit dem Deckel verschließen und die Rouladen im vorgeheizten Ofen etwa <strong>60 Minuten</strong> garen. Anschließend direkt mit der cremigen Soße servieren.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Dazu passt</h2>
+                <p>Reis passt besonders gut zu den Hähnchen Rouladen und nimmt die cremige Soße wunderbar auf.</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>
+

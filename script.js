@@ -153,11 +153,11 @@ const alleRezepteGrid = document.getElementById('alleRezepteGrid');
 if (alleRezepteGrid) {
     const rezeptDaten = rezeptKatalog.map((rezept, index) => ({ ...rezept, kapitel: rezept.chapter, thema: rezept.theme, bild: rezept.image, index, neuRang: rezept.newRank }));
     const filterNamen = {
-        pizza: 'Pizza', pasta: 'Pasta', burger: 'Burger', grill: 'Grill & BBQ', schmor: 'Schmorgerichte',
+        pizza: 'Pizza', pasta: 'Pasta', reisgerichte: 'Reisgerichte', burger: 'Burger', grill: 'Grill & BBQ', schmor: 'Schmorgerichte',
         suppen: 'Suppen', klassiker: 'Klassiker', beilagen: 'Beilagen', sossen: 'Soßen & Extras',
         suesses: 'Süßes', getraenke: 'Getränke'
     };
-    const filterReihenfolge = ['pasta', 'burger', 'pizza', 'grill', 'schmor', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses', 'getraenke'];
+    const filterReihenfolge = ['pasta', 'reisgerichte', 'burger', 'pizza', 'grill', 'schmor', 'suppen', 'klassiker', 'beilagen', 'sossen', 'suesses', 'getraenke'];
     const suchfeld = document.getElementById('alleRezepteSuche');
     const sortierung = document.getElementById('alleRezepteSortierung');
     const zaehler = document.getElementById('alleRezepteZaehler');
@@ -634,6 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
     const rezeptKopf = document.querySelector('.rezept-kopf');
     const zutatenListe = document.querySelector('.zutaten');
+    const zutatenOptionen = document.querySelectorAll('.zutaten-option');
 
     if (!rezeptKopf || !zutatenListe) return;
 
@@ -667,6 +668,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 .filter(Boolean);
 
             if (teile.length) zeilen.push(teile.join(' '));
+        });
+
+        zutatenOptionen.forEach((option) => {
+            const ueberschrift = option.querySelector('h3')?.textContent.trim();
+            const optionZeilen = [...option.querySelectorAll('li')]
+                .map((zeile) => zeile.textContent.trim())
+                .filter(Boolean);
+
+            if (!optionZeilen.length) return;
+            if (ueberschrift) zeilen.push(`\n${ueberschrift}:`);
+            zeilen.push(...optionZeilen);
         });
 
         if (!zeilen.length) return;

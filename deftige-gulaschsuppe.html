@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deftige Gulaschsuppe – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Deftige Gulaschsuppe – Bei uns schmeckt's">
+    <meta property="og:description" content="Herzhafte Gulaschsuppe mit Rindfleisch, Kartoffeln, Paprika und Champignons für vier Personen.">
+    <meta property="og:image" content="images/deftige-gulaschsuppe.webp">
+    <link rel="stylesheet" href="style.css?v=20260917-3">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html#suppen">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Suppen</p>
+                <h1>Deftige Gulaschsuppe</h1>
+                <div class="rezept-meta"><span>4 Portionen</span><span>Ca. 2 Stunden</span><span>Normal</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/deftige-gulaschsuppe.webp" alt="Deftige Gulaschsuppe mit Rindfleisch, Kartoffeln, Paprika, Möhren und Champignons">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Eine kräftige, wärmende Gulaschsuppe mit zart geschmortem Rindfleisch, Kartoffeln, buntem Gemüse und Champignons.</p>
+                <p><strong>Diese Suppe habe ich 2018 für unseren Gemeindeausflug gekocht – seitdem gehört sie für mich unbedingt in unser Rezeptbuch.</strong></p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+                <div class="zutaten">
+                    <div><span>500 g</span><span>Rinderschulter oder Rindernacken</span></div>
+                    <div><span>2 EL</span><span>Butterschmalz</span></div>
+                    <div><span>1 große</span><span>Zwiebel, fein gewürfelt</span></div>
+                    <div><span>2 Zehen</span><span>Knoblauch, fein gehackt</span></div>
+                    <div><span>1 EL</span><span>Tomatenmark</span></div>
+                    <div><span>150 ml</span><span>Rotwein, nach Geschmack</span></div>
+                    <div><span>800 ml</span><span>Rinderbouillon</span></div>
+                    <div><span>2 EL</span><span>Zucker</span></div>
+                    <div><span>3 EL</span><span>Paprikapulver, edelsüß</span></div>
+                    <div><span>3 TL</span><span>Paprikapulver, rosenscharf</span></div>
+                    <div><span>2</span><span>Lorbeerblätter</span></div>
+                    <div><span>4 Zweige</span><span>Majoran, Blätter grob gehackt</span></div>
+                    <div><span>3 große</span><span>Kartoffeln, gewürfelt</span></div>
+                    <div><span>1 große</span><span>Karotte, in Scheiben</span></div>
+                    <div><span>2</span><span>Paprikaschoten, klein gewürfelt</span></div>
+                    <div><span>250 g</span><span>Champignons, in Scheiben; kleine Champignons geviertelt</span></div>
+                    <div><span>½ Bund</span><span>Petersilie, fein gehackt</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz und Pfeffer</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Rinderschulter oder Rindernacken in etwa <strong>3 × 3 cm große Würfel</strong> schneiden. Zwiebel und Knoblauch fein würfeln. Kartoffeln und Paprika würfeln, die Karotte in Scheiben schneiden. Große Champignons in Scheiben schneiden, kleine Champignons vierteln.</li>
+                    <li>Das Butterschmalz in einem großen Topf erhitzen. Die Rindfleischwürfel hineingeben und unter regelmäßigem Rühren etwa <strong>5 Minuten</strong> kräftig anbraten. Zwiebel und Knoblauch dazugeben und alles weitere <strong>5 Minuten</strong> mitdünsten.</li>
+                    <li>Das Fleisch mit Rinderbouillon und Rotwein ablöschen. Salz, Pfeffer, Zucker, beide Sorten Paprikapulver, Lorbeerblätter, Tomatenmark und Majoran dazugeben und gründlich unterrühren.</li>
+                    <li>Den Deckel auflegen und die Suppe bei kleiner Hitze etwa <strong>60 Minuten</strong> sanft schmoren lassen, damit das Fleisch schön zart wird.</li>
+                    <li>Kartoffeln, Paprika, Champignons und Karotten hinzugeben. Alles weitere <strong>etwa 20 Minuten</strong> köcheln lassen, bis das Gemüse gar ist. Zum Schluss die Petersilie unterrühren und die Gulaschsuppe heiß servieren.</li>
+                </ol>
+            </section>
+
+            <section class="rezept-bereich rezept-tipp">
+                <h2>Tipp</h2>
+                <p>Am nächsten Tag schmeckt die Gulaschsuppe oft noch kräftiger, weil sie über Nacht schön durchziehen konnte. Dazu passt frisches Baguette oder ein kräftiges Bauernbrot.</p>
+            </section>
+        </article>
+    </main>
+    <script src="recipes-data.js?v=20260918-9"></script>
+    <script src="script.js?v=20260918-5"></script>
+</body>
+</html>
