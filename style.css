@@ -1278,8 +1278,9 @@ body.menu-offen {
 }
 
 
-/* Zutaten-Unterüberschriften, z. B. Lemon Curd */
+/* Zutaten-Unterüberschriften: auf allen Rezeptseiten einheitlich */
 
+.rezept-bereich > h3,
 .zutaten .zutaten-gruppe {
     display: block;
     margin: 32px 0 10px;
@@ -1293,6 +1294,7 @@ body.menu-offen {
     color: #1d1d1b;
 }
 
+.rezept-bereich > h2 + h3,
 .zutaten .zutaten-gruppe:first-child {
     margin-top: 0;
 }

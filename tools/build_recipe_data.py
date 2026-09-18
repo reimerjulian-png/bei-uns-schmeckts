@@ -36,7 +36,7 @@ CLASSIC_SECTIONS = {
 SWEET_SECTIONS = {
     "Frühstück & Müsli": ["gesundes-muesli-von-evelyn-w.html"],
     "Kuchen & Torten": ["fantakuchen-mit-pfirsich.html", "donauwelle.html", "schluchttorte.html", "butterkuchen-nach-thomas-p-mama.html", "buttermilchkuchen.html", "streuselkuchen-mit-kirschen.html", "russischer-zupfkuchen-mit-kirschen.html"],
-    "Gebäck & süße Teilchen": ["pluschki.html", "mandelrollen.html", "zimtschnecken.html", "blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html", "apfel-im-schlafrock.html", "twoiback-nach-mama-reimer.html", "oelbaellchen.html", "lebkuchenwuerfel.html"],
+    "Gebäck & süße Teilchen": ["macarons.html", "cookies.html", "pluschki.html", "mandelrollen.html", "zimtschnecken.html", "blaetterteig-kuechlein-mit-vanille-mascarpone-creme.html", "apfel-im-schlafrock.html", "twoiback-nach-mama-reimer.html", "oelbaellchen.html", "lebkuchenwuerfel.html"],
     "Desserts": ["tiramisu.html", "lemon-curd-tiramisu.html", "pick-up-dessert.html", "trauben-mascarpone-becher.html", "creme-brulee.html", "orangencreme.html"],
 }
 
@@ -108,6 +108,8 @@ THEMES = {
 }
 
 CHAPTER_OVERRIDES = {
+    "macarons.html": "Was Süßes geht immer",
+    "cookies.html": "Was Süßes geht immer",
     "kaesebroetchen.html": "Was Kleines dazu",
     "brokkoli-salat.html": "Was Kleines dazu",
     "rote-bete-salat.html": "Was Kleines dazu",
@@ -118,6 +120,8 @@ CHAPTER_OVERRIDES = {
 }
 
 NEW_RANK_OVERRIDES = {
+    "macarons.html": -12,
+    "cookies.html": -11,
     "kaesebroetchen.html": -10,
     "rote-bete-salat.html": -9,
     "brokkoli-salat.html": -8,
