@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauch Creme Kuchen – Bei uns schmeckt's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Lauch Creme Kuchen – Bei uns schmeckt's">
+    <meta property="og:description" content="Herzhafter Lauch Creme Kuchen mit Hähnchen, Bacon, Béchamelsoße und rotem Pesto.">
+    <meta property="og:image" content="images/lauch-creme-kuchen.webp">
+    <link rel="stylesheet" href="style.css?v=20260919-2">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="menu-button" id="menuButton" aria-label="Hauptmenü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+            <a class="topbar-title" href="index.html">Bei uns schmeckt's</a>
+            <button class="suche-button" id="sucheButton" aria-label="Suche öffnen" aria-expanded="false"><span class="suchsymbol" aria-hidden="true"></span></button>
+        </div>
+        <div class="suche-panel" id="suchePanel">
+            <input type="text" id="sucheInput" placeholder="Rezept suchen ..." autocomplete="off">
+            <div id="sucheErgebnisse"></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="seitenmenue" id="seitenmenue" aria-hidden="true">
+        <div class="seitenmenue-kopf">
+            <span>Bei uns schmeckt's</span>
+            <button class="menu-schliessen" id="menuSchliessen" aria-label="Hauptmenü schließen">×</button>
+        </div>
+        <nav class="seitenmenue-inhalt"></nav>
+    </aside>
+
+    <main>
+        <article class="rezept">
+            <a class="zurueck" href="klassiker.html#ofengerichte">← Unsere Klassiker</a>
+
+            <header class="rezept-kopf">
+                <p class="rezept-kategorie">Unsere Klassiker · Ofengerichte</p>
+                <h1>Lauch Creme Kuchen</h1>
+                <p class="rezept-untertitel">Knusprig, cremig und herzhaft</p>
+                <div class="rezept-meta"><span>Ca. 16 Stück</span><span>Ca. 1¼ Stunden</span><span>Etwas Übung</span></div>
+                <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
+            </header>
+
+            <img class="rezept-bild" src="images/lauch-creme-kuchen.webp" alt="Herzhafter Lauch Creme Kuchen mit Hähnchen und knusprigem Bacon">
+
+            <section class="rezept-bereich rezept-einleitung">
+                <p>Ein herzhafter Blechkuchen mit saftigem Hähnchen, viel Lauch und cremiger Béchamelsoße. Rotes Pesto unter der Füllung und knuspriger Bacon obendrauf sorgen für besonders viel Geschmack.</p>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zutaten</h2>
+
+                <h3>Für den Belag</h3>
+                <div class="zutaten">
+                    <div><span>500 g</span><span>Hähnchenbrustfilet</span></div>
+                    <div><span>750 g</span><span>Porree (Lauch)</span></div>
+                    <div><span>200 g</span><span>Bacon (Frühstücksspeck)</span></div>
+                    <div><span>2–3 EL</span><span>Speiseöl, zum Beispiel Olivenöl</span></div>
+                </div>
+
+                <h3>Für die Béchamelsoße</h3>
+                <div class="zutaten">
+                    <div><span>50 g</span><span>Butter oder Margarine</span></div>
+                    <div><span>50 g</span><span>Weizenmehl</span></div>
+                    <div><span>500 ml</span><span>Milch</span></div>
+                    <div><span>Nach Geschmack</span><span>Salz</span></div>
+                    <div><span>Nach Geschmack</span><span>Schwarzer Pfeffer, frisch gemahlen</span></div>
+                    <div><span>Nach Geschmack</span><span>Muskatnuss, frisch gerieben</span></div>
+                </div>
+
+                <h3>Für den Teig</h3>
+                <div class="zutaten">
+                    <div><span>400 g</span><span>Weizenmehl</span></div>
+                    <div><span>4 gestr. TL</span><span>Backpulver</span></div>
+                    <div><span>150 g</span><span>Joghurt</span></div>
+                    <div><span>100 ml</span><span>Speiseöl, zum Beispiel Olivenöl</span></div>
+                    <div><span>1</span><span>Ei, Größe M</span></div>
+                    <div><span>1 TL</span><span>Salz</span></div>
+                </div>
+
+                <h3>Außerdem</h3>
+                <div class="zutaten">
+                    <div><span>100 g</span><span>Rotes Pesto</span></div>
+                    <div><span>Etwas</span><span>Fett für das Backblech</span></div>
+                </div>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Zubereitung</h2>
+                <ol class="zubereitung">
+                    <li>Den Backofen auf <strong>200 °C Ober-/Unterhitze</strong> oder <strong>180 °C Umluft</strong> vorheizen und ein Backblech von etwa <strong>40 × 30 cm</strong> einfetten. Das Hähnchen trocken tupfen und in kleine Stücke schneiden. Den Lauch gründlich waschen und in Ringe, den Bacon in Streifen schneiden.</li>
+                    <li>Das Öl in einer großen Pfanne erhitzen und das Hähnchen darin kurz und kräftig anbraten. Herausnehmen und beiseitestellen. Den Lauch in derselben Pfanne bei mittlerer Hitze unter gelegentlichem Rühren etwa <strong>10 Minuten</strong> dünsten. Das Hähnchen wieder dazugeben und die Pfanne vom Herd nehmen.</li>
+                    <li>Für die Béchamelsoße Butter in einem Topf zerlassen. Das Mehl einrühren und kurz erhitzen, bis es hell bleibt. Die Milch nach und nach mit einem Schneebesen einrühren und die Soße unter Rühren aufkochen. Etwa <strong>3 Minuten</strong> sanft köcheln lassen, mit Salz, Pfeffer und Muskat abschmecken und anschließend mit der Lauch-Hähnchen-Mischung vermengen.</li>
+                    <li>Mehl und Backpulver vermischen. Joghurt, Öl, Ei und Salz dazugeben und alles zunächst kurz auf niedriger, dann auf höchster Stufe zu einem glatten Teig verkneten. Den Teig auf einer leicht bemehlten Arbeitsfläche kurz durchkneten und passend für das Backblech ausrollen.</li>
+                    <li>Den Teig auf das vorbereitete Blech legen und gleichmäßig mit dem roten Pesto bestreichen. Die Lauch-Hähnchen-Creme darauf verteilen und mit den Baconstreifen bestreuen.</li>
+                    <li>Den Lauch Creme Kuchen auf der mittleren Schiene etwa <strong>30 Minuten</strong> goldbraun backen und am besten heiß servieren.</li>
+                </ol>
+            </section>
+        </article>
+    </main>
+
+    <script src="recipes-data.js?v=20260919-1"></script>
+    <script src="script.js?v=20260919-3"></script>
+</body>
+</html>

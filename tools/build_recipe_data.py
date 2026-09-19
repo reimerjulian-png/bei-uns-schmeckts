@@ -29,7 +29,7 @@ CLASSIC_SECTIONS = {
     "Pizza": ["neapolitanischer-pizzateig.html", "frische-pizza-mit-haehnchen-und-salat.html", "gyrospizza-vom-blech.html"],
     "Pfannen- & Hackgerichte": ["italienische-steakpfanne.html", "haehnchen-auf-chinesische-art.html", "haehnchen-gemuese-pfanne.html", "couscous-hack-pfanne.html", "frikadellen.html", "tefteli.html", "spaetzle-in-hackbratensosse.html", "pilz-curry-mit-mandeln.html"],
     "Schmorgerichte": ["schaschlik-gulasch.html", "rindergulasch.html", "rinderrouladen.html"],
-    "Ofengerichte": ["haehnchenrouladen.html", "lasagne.html", "porree-torte-mit-cabanossi.html", "gefuellte-zucchini.html", "roestiauflauf.html", "hot-dog-cake.html"],
+    "Ofengerichte": ["lauch-creme-kuchen.html", "haehnchenrouladen.html", "lasagne.html", "porree-torte-mit-cabanossi.html", "gefuellte-zucchini.html", "roestiauflauf.html", "hot-dog-cake.html"],
     "Suppen": ["deftige-gulaschsuppe.html", "gyrossuppe.html", "kartoffelsuppe.html", "huehnersuppe.html", "lagman.html", "guiso.html", "eintopf.html", "linsensuppe-mit-kassler.html", "rindfleischsuppe-mit-gurken.html"],
 }
 
@@ -120,6 +120,7 @@ CHAPTER_OVERRIDES = {
 }
 
 NEW_RANK_OVERRIDES = {
+    "lauch-creme-kuchen.html": -13,
     "macarons.html": -12,
     "cookies.html": -11,
     "kaesebroetchen.html": -10,

@@ -35,6 +35,11 @@ if (menueInhalt) {
             <span><strong>Alle Rezepte</strong><small>Die ganze Sammlung auf einen Blick</small></span>
         </a>
 
+        <button type="button" class="menu-start-neu menu-einkaufszettel" id="menuEinkaufszettelButton">
+            <span class="menu-icon" aria-hidden="true">✓</span>
+            <span><strong>Einkaufszettel <em id="menuEinkaufszettelAnzahl"></em></strong><small>Gesammelte Zutaten ansehen &amp; abhaken</small></span>
+        </button>
+
         <section class="menu-gruppe" aria-labelledby="menuRezepteTitel">
             <p class="menu-bereichstitel" id="menuRezepteTitel">Rezepte entdecken</p>
             <div class="menu-kategorien-neu">
@@ -284,6 +289,7 @@ document.addEventListener("keydown", (event) => {
     menueSchliessen();
     suchePanel?.classList.remove("aktiv");
     sucheButton?.setAttribute("aria-expanded", "false");
+    einkaufszettelSchliessen();
 });
 
 if (topbar) {
@@ -628,77 +634,308 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
-   ZUTATEN KOPIEREN
+   PERSISTENTER EINKAUFSZETTEL
    ========================================================= */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const rezeptKopf = document.querySelector('.rezept-kopf');
-    const zutatenListe = document.querySelector('.zutaten');
-    const zutatenOptionen = document.querySelectorAll('.zutaten-option');
+const EINKAUFSZETTEL_SPEICHER = 'beiUnsSchmecktsEinkaufszettelV1';
+let einkaufszettelStatus = { rezepte: [] };
+let einkaufszettelMeldung = '';
 
-    if (!rezeptKopf || !zutatenListe) return;
+function einkaufszettelLaden() {
+    try {
+        const gespeichert = JSON.parse(localStorage.getItem(EINKAUFSZETTEL_SPEICHER) || 'null');
+        if (Array.isArray(gespeichert?.rezepte)) {
+            einkaufszettelStatus = {
+                rezepte: gespeichert.rezepte.filter((rezept) =>
+                    rezept && typeof rezept.name === 'string' && Array.isArray(rezept.zutaten)
+                )
+            };
+        }
+    } catch (_) {
+        einkaufszettelStatus = { rezepte: [] };
+    }
+}
+
+function einkaufszettelSpeichern() {
+    localStorage.setItem(EINKAUFSZETTEL_SPEICHER, JSON.stringify(einkaufszettelStatus));
+}
+
+function einkaufszettelId(prefix = 'zutat') {
+    if (window.crypto?.randomUUID) return `${prefix}-${window.crypto.randomUUID()}`;
+    return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function einkaufszettelZahlen() {
+    const zutaten = einkaufszettelStatus.rezepte.flatMap((rezept) => rezept.zutaten);
+    return {
+        gesamt: zutaten.length,
+        erledigt: zutaten.filter((zutat) => zutat.erledigt).length
+    };
+}
+
+function einkaufszettelZaehlerAktualisieren() {
+    const zahlen = einkaufszettelZahlen();
+    const fortschritt = document.getElementById('einkaufszettelFortschritt');
+    const schnellzugriff = document.getElementById('einkaufszettelSchnellzugriff');
+    const menuAnzahl = document.getElementById('menuEinkaufszettelAnzahl');
+    const leerenButton = document.getElementById('einkaufszettelLeeren');
+    const fertigButton = document.getElementById('einkaufszettelFertig');
+
+    if (schnellzugriff) {
+        schnellzugriff.hidden = zahlen.gesamt === 0;
+        schnellzugriff.setAttribute('aria-hidden', String(zahlen.gesamt === 0));
+        schnellzugriff.classList.toggle('sichtbar', zahlen.gesamt > 0);
+        const anzahl = schnellzugriff.querySelector('em');
+        if (anzahl) anzahl.textContent = String(zahlen.gesamt - zahlen.erledigt);
+    }
+    if (menuAnzahl) menuAnzahl.textContent = zahlen.gesamt ? `(${zahlen.gesamt - zahlen.erledigt})` : '';
+    if (fortschritt) fortschritt.textContent = zahlen.gesamt ? `${zahlen.erledigt} von ${zahlen.gesamt} Zutaten abgehakt` : '';
+    if (leerenButton) leerenButton.disabled = zahlen.gesamt === 0;
+    if (fertigButton) fertigButton.disabled = zahlen.gesamt === 0;
+}
+
+function einkaufszettelZutatenSammeln() {
+    const eintraege = [];
+
+    document.querySelectorAll('.rezept-bereich .zutaten').forEach((liste) => {
+        liste.querySelectorAll(':scope > div:not(.zutaten-gruppe)').forEach((zeile) => {
+            const teile = [...zeile.querySelectorAll(':scope > span')]
+                .map((teil) => teil.textContent.trim())
+                .filter(Boolean);
+            if (teile.length) eintraege.push(teile.join(' '));
+        });
+    });
+
+    document.querySelectorAll('.zutaten-option').forEach((option) => {
+        const ueberschrift = option.querySelector('h3')?.textContent.trim();
+        option.querySelectorAll('li').forEach((zeile) => {
+            const text = zeile.textContent.trim();
+            if (text) eintraege.push(ueberschrift ? `${ueberschrift}: ${text}` : text);
+        });
+    });
+
+    return [...new Set(eintraege)];
+}
+
+function einkaufszettelAufbauen() {
+    if (document.getElementById('einkaufszettelPanel')) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'einkaufszettel-overlay';
+    overlay.id = 'einkaufszettelOverlay';
+
+    const panel = document.createElement('aside');
+    panel.className = 'einkaufszettel-panel';
+    panel.id = 'einkaufszettelPanel';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-labelledby', 'einkaufszettelTitel');
+    panel.setAttribute('aria-hidden', 'true');
+    panel.innerHTML = `
+        <div class="einkaufszettel-kopf">
+            <div>
+                <p>Bei uns schmeckt's</p>
+                <h2 id="einkaufszettelTitel">Einkaufszettel</h2>
+            </div>
+            <button type="button" class="einkaufszettel-schliessen" aria-label="Einkaufszettel schließen">×</button>
+        </div>
+        <div class="einkaufszettel-inhalt" id="einkaufszettelInhalt"></div>
+        <div class="einkaufszettel-fuss">
+            <p id="einkaufszettelFortschritt"></p>
+            <div class="einkaufszettel-aktionen">
+                <button type="button" class="einkaufszettel-leeren" id="einkaufszettelLeeren">Liste leeren</button>
+                <button type="button" class="einkaufszettel-fertig" id="einkaufszettelFertig">Ich hab alles für die Gerichte ✓</button>
+            </div>
+        </div>`;
+
+    const schnellzugriff = document.createElement('button');
+    schnellzugriff.className = 'einkaufszettel-schnellzugriff';
+    schnellzugriff.id = 'einkaufszettelSchnellzugriff';
+    schnellzugriff.type = 'button';
+    schnellzugriff.setAttribute('aria-label', 'Einkaufszettel öffnen');
+    schnellzugriff.innerHTML = '<span aria-hidden="true">✓</span><strong>Einkaufszettel</strong><em></em>';
+
+    document.body.append(overlay, panel, schnellzugriff);
+
+    overlay.addEventListener('click', einkaufszettelSchliessen);
+    panel.querySelector('.einkaufszettel-schliessen')?.addEventListener('click', einkaufszettelSchliessen);
+    schnellzugriff.addEventListener('click', einkaufszettelOeffnen);
+    document.getElementById('menuEinkaufszettelButton')?.addEventListener('click', () => {
+        menueSchliessen();
+        einkaufszettelOeffnen();
+    });
+    document.getElementById('einkaufszettelLeeren')?.addEventListener('click', () => einkaufszettelLeeren(false));
+    document.getElementById('einkaufszettelFertig')?.addEventListener('click', () => einkaufszettelLeeren(true));
+}
+
+function einkaufszettelOeffnen() {
+    const panel = document.getElementById('einkaufszettelPanel');
+    const overlay = document.getElementById('einkaufszettelOverlay');
+    if (!panel || !overlay) return;
+    einkaufszettelRendern();
+    panel.classList.add('aktiv');
+    overlay.classList.add('aktiv');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('einkaufszettel-offen');
+    panel.querySelector('.einkaufszettel-schliessen')?.focus();
+}
+
+function einkaufszettelSchliessen() {
+    const panel = document.getElementById('einkaufszettelPanel');
+    const overlay = document.getElementById('einkaufszettelOverlay');
+    panel?.classList.remove('aktiv');
+    overlay?.classList.remove('aktiv');
+    panel?.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('einkaufszettel-offen');
+}
+
+function einkaufszettelRendern() {
+    const inhalt = document.getElementById('einkaufszettelInhalt');
+    if (!inhalt) return;
+
+    einkaufszettelZaehlerAktualisieren();
+
+    inhalt.replaceChildren();
+    if (!einkaufszettelStatus.rezepte.length) {
+        const leer = document.createElement('div');
+        leer.className = 'einkaufszettel-leer';
+        leer.innerHTML = '<span aria-hidden="true">✓</span><h3></h3><p>Öffne ein Rezept und tippe dort auf „Auf die Einkaufsliste“.</p>';
+        leer.querySelector('h3').textContent = einkaufszettelMeldung || 'Dein Einkaufszettel ist noch leer.';
+        inhalt.append(leer);
+        einkaufszettelMeldung = '';
+        return;
+    }
+
+    einkaufszettelStatus.rezepte.forEach((rezept) => {
+        const gruppe = document.createElement('section');
+        gruppe.className = 'einkaufszettel-rezept';
+
+        const kopf = document.createElement('div');
+        kopf.className = 'einkaufszettel-rezeptkopf';
+        const link = document.createElement('a');
+        link.href = rezept.url || '#';
+        link.textContent = rezept.name;
+        const entfernen = document.createElement('button');
+        entfernen.type = 'button';
+        entfernen.setAttribute('aria-label', `${rezept.name} entfernen`);
+        entfernen.textContent = '×';
+        entfernen.addEventListener('click', () => {
+            einkaufszettelStatus.rezepte = einkaufszettelStatus.rezepte.filter((eintrag) => eintrag.id !== rezept.id);
+            einkaufszettelSpeichern();
+            einkaufszettelRendern();
+            einkaufszettelRezeptbuttonAktualisieren();
+        });
+        kopf.append(link, entfernen);
+
+        const liste = document.createElement('ul');
+        rezept.zutaten.forEach((zutat) => {
+            const zeile = document.createElement('li');
+            if (zutat.erledigt) zeile.classList.add('erledigt');
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = Boolean(zutat.erledigt);
+            const text = document.createElement('span');
+            text.textContent = zutat.text;
+            checkbox.addEventListener('change', () => {
+                zutat.erledigt = checkbox.checked;
+                zeile.classList.toggle('erledigt', checkbox.checked);
+                einkaufszettelSpeichern();
+                einkaufszettelZaehlerAktualisieren();
+            });
+            label.append(checkbox, text);
+            zeile.append(label);
+            liste.append(zeile);
+        });
+
+        gruppe.append(kopf, liste);
+        inhalt.append(gruppe);
+    });
+}
+
+function einkaufszettelLeeren(allesErledigt) {
+    einkaufszettelStatus = { rezepte: [] };
+    einkaufszettelMeldung = allesErledigt ? 'Alles erledigt – guten Appetit!' : 'Der Einkaufszettel wurde geleert.';
+    einkaufszettelSpeichern();
+    einkaufszettelRendern();
+    einkaufszettelRezeptbuttonAktualisieren();
+}
+
+function einkaufszettelRezeptHinzufuegen() {
+    const rezeptKopf = document.querySelector('.rezept-kopf');
+    const rezeptName = rezeptKopf?.querySelector('h1')?.textContent.trim() || 'Rezept';
+    const rezeptUrl = window.location.pathname.split('/').pop() || window.location.href;
+    const zutatenTexte = einkaufszettelZutatenSammeln();
+    if (!zutatenTexte.length) return;
+
+    const vorhanden = einkaufszettelStatus.rezepte.find((rezept) => rezept.url === rezeptUrl);
+    const erledigtNachText = new Map((vorhanden?.zutaten || []).map((zutat) => [zutat.text, zutat.erledigt]));
+    const rezept = {
+        id: vorhanden?.id || einkaufszettelId('rezept'),
+        name: rezeptName,
+        url: rezeptUrl,
+        zutaten: zutatenTexte.map((text) => ({
+            id: einkaufszettelId(),
+            text,
+            erledigt: Boolean(erledigtNachText.get(text))
+        }))
+    };
+
+    if (vorhanden) {
+        einkaufszettelStatus.rezepte = einkaufszettelStatus.rezepte.map((eintrag) => eintrag.url === rezeptUrl ? rezept : eintrag);
+    } else {
+        einkaufszettelStatus.rezepte.push(rezept);
+    }
+    einkaufszettelMeldung = '';
+    einkaufszettelSpeichern();
+    einkaufszettelRendern();
+    einkaufszettelRezeptbuttonAktualisieren();
+    einkaufszettelOeffnen();
+}
+
+function einkaufszettelRezeptbuttonAktualisieren() {
+    const button = document.querySelector('.einkaufsliste-button');
+    if (!button) return;
+    const rezeptUrl = window.location.pathname.split('/').pop();
+    const vorhanden = einkaufszettelStatus.rezepte.some((rezept) => rezept.url === rezeptUrl);
+    button.classList.toggle('hinzugefuegt', vorhanden);
+    const beschriftung = button.querySelector('span:last-child');
+    if (beschriftung) beschriftung.textContent = vorhanden ? 'Auf Einkaufsliste ✓' : 'Auf die Einkaufsliste';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    einkaufszettelLaden();
+    einkaufszettelAufbauen();
+    einkaufszettelRendern();
+
+    const rezeptKopf = document.querySelector('.rezept-kopf');
+    const hatZutaten = document.querySelector('.rezept-bereich .zutaten, .zutaten-option');
+    if (!rezeptKopf || !hatZutaten) return;
 
     const einkaufslisteButton = document.createElement('button');
     einkaufslisteButton.className = 'einkaufsliste-button';
     einkaufslisteButton.type = 'button';
     einkaufslisteButton.innerHTML = `
-        <span class="einkaufsliste-symbol" aria-hidden="true">⧉</span>
-        <span>Zutaten kopieren</span>`;
+        <span class="einkaufsliste-symbol" aria-hidden="true">✓</span>
+        <span>Auf die Einkaufsliste</span>`;
 
     const einkaufslisteHinweis = document.createElement('p');
     einkaufslisteHinweis.className = 'einkaufsliste-hinweis';
-    einkaufslisteHinweis.textContent = 'Für deine Notizen oder Einkaufsliste kopieren.';
+    einkaufslisteHinweis.textContent = 'Mit weiteren Rezepten sammeln und beim Einkaufen abhaken.';
 
     const teilenButton = rezeptKopf.querySelector('.rezept-teilen');
-    if (teilenButton) {
-        teilenButton.insertAdjacentElement('afterend', einkaufslisteButton);
-    } else {
-        rezeptKopf.append(einkaufslisteButton);
-    }
+    if (teilenButton) teilenButton.insertAdjacentElement('afterend', einkaufslisteButton);
+    else rezeptKopf.append(einkaufslisteButton);
     einkaufslisteButton.insertAdjacentElement('afterend', einkaufslisteHinweis);
+    einkaufslisteButton.addEventListener('click', einkaufszettelRezeptHinzufuegen);
+    einkaufszettelRezeptbuttonAktualisieren();
+});
 
-    einkaufslisteButton.addEventListener('click', async () => {
-        const rezeptName = rezeptKopf.querySelector('h1')?.textContent.trim() || 'Rezept';
-        const titel = `Einkaufsliste – ${rezeptName}`;
-        const zeilen = [];
-
-        zutatenListe.querySelectorAll(':scope > div:not(.zutaten-gruppe)').forEach((zeile) => {
-            const teile = [...zeile.querySelectorAll(':scope > span')]
-                .map((teil) => teil.textContent.trim())
-                .filter(Boolean);
-
-            if (teile.length) zeilen.push(teile.join(' '));
-        });
-
-        zutatenOptionen.forEach((option) => {
-            const ueberschrift = option.querySelector('h3')?.textContent.trim();
-            const optionZeilen = [...option.querySelectorAll('li')]
-                .map((zeile) => zeile.textContent.trim())
-                .filter(Boolean);
-
-            if (!optionZeilen.length) return;
-            if (ueberschrift) zeilen.push(`\n${ueberschrift}:`);
-            zeilen.push(...optionZeilen);
-        });
-
-        if (!zeilen.length) return;
-
-        const notizText = `${titel}\n\n${zeilen.join('\n')}`;
-        const beschriftung = einkaufslisteButton.querySelector('span:last-child');
-
-        try {
-            await navigator.clipboard.writeText(notizText);
-            if (beschriftung) beschriftung.textContent = 'Zutaten kopiert ✓';
-            einkaufslisteHinweis.textContent = 'Kopiert! Jetzt in deine Notizen oder Einkaufsliste einfügen.';
-        } catch (_) {
-            if (beschriftung) beschriftung.textContent = 'Kopieren nicht möglich';
-        }
-
-        window.setTimeout(() => {
-            if (beschriftung) beschriftung.textContent = 'Zutaten kopieren';
-            einkaufslisteHinweis.textContent = 'Für deine Notizen oder Einkaufsliste kopieren.';
-        }, 4000);
-    });
+window.addEventListener('storage', (event) => {
+    if (event.key !== EINKAUFSZETTEL_SPEICHER) return;
+    einkaufszettelLaden();
+    einkaufszettelRendern();
+    einkaufszettelRezeptbuttonAktualisieren();
 });
 
 

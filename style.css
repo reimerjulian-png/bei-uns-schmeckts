@@ -2110,6 +2110,12 @@ body.menu-offen {
     border-color: #8e432e;
 }
 
+.einkaufsliste-button.hinzugefuegt {
+    background: #dce5d6;
+    border-color: #788f6b;
+    color: #3e5636;
+}
+
 .einkaufsliste-button:active {
     transform: scale(.98);
 }
@@ -2126,6 +2132,388 @@ body.menu-offen {
     font-family: "Inter", sans-serif;
     font-size: 11px;
     line-height: 1.45;
+}
+
+/* =========================================================
+   HANDSCHRIFTLICHER EINKAUFSZETTEL
+   ========================================================= */
+
+body.einkaufszettel-offen {
+    overflow: hidden;
+}
+
+.menu-einkaufszettel em {
+    color: #9a604c;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.einkaufszettel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1990;
+    background: rgba(34, 28, 23, .42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+}
+
+.einkaufszettel-overlay.aktiv {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.einkaufszettel-panel {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    width: min(96vw, 480px);
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    overflow: hidden;
+    border-left: 1px solid rgba(96, 75, 54, .18);
+    background-color: #fffaf0;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 33px,
+        rgba(91, 138, 174, .18) 34px
+    );
+    box-shadow: -18px 0 55px rgba(43, 33, 24, .18);
+    transform: translateX(102%);
+    transition: transform .28s ease;
+}
+
+.einkaufszettel-panel::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 51px;
+    width: 1px;
+    background: rgba(190, 79, 70, .28);
+    pointer-events: none;
+}
+
+.einkaufszettel-panel.aktiv {
+    transform: translateX(0);
+}
+
+.einkaufszettel-kopf,
+.einkaufszettel-fuss {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 250, 240, .94);
+}
+
+.einkaufszettel-kopf {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    min-height: 118px;
+    padding: 24px 24px 18px 68px;
+    border-bottom: 1px solid rgba(111, 79, 56, .13);
+}
+
+.einkaufszettel-kopf p {
+    margin: 0 0 2px;
+    color: #9a604c;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.einkaufszettel-kopf h2 {
+    margin: 0;
+    color: #28231f;
+    font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.15;
+    transform: rotate(-1deg);
+}
+
+.einkaufszettel-schliessen {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid #d2c6b8;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .48);
+    color: #5f554c;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.einkaufszettel-inhalt {
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
+    padding: 18px 26px 42px 68px;
+    scrollbar-width: thin;
+    scrollbar-color: #c7b8a8 transparent;
+}
+
+.einkaufszettel-rezept {
+    margin: 0 0 26px;
+}
+
+.einkaufszettel-rezeptkopf {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 30px;
+    align-items: start;
+    gap: 8px;
+    min-height: 34px;
+    margin-bottom: 2px;
+}
+
+.einkaufszettel-rezeptkopf a {
+    color: #7c3f2d;
+    font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-decoration-color: rgba(124, 63, 45, .28);
+    text-underline-offset: 4px;
+}
+
+.einkaufszettel-rezeptkopf button {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #9a8d82;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.einkaufszettel-rezept ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.einkaufszettel-rezept li {
+    min-height: 34px;
+}
+
+.einkaufszettel-rezept label {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 9px;
+    align-items: start;
+    min-height: 34px;
+    padding: 5px 0 3px;
+    color: #302b27;
+    font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+    font-size: 15px;
+    line-height: 1.55;
+    cursor: pointer;
+}
+
+.einkaufszettel-rezept input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    border: 1.7px solid #746b62;
+    border-radius: 3px 4px 2px 5px;
+    background: rgba(255, 255, 255, .26);
+    transform: rotate(-2deg);
+    cursor: pointer;
+}
+
+.einkaufszettel-rezept input:checked {
+    position: relative;
+    border-color: #788f6b;
+    background: #dce5d6;
+}
+
+.einkaufszettel-rezept input:checked::after {
+    content: "✓";
+    position: absolute;
+    left: 2px;
+    top: -7px;
+    color: #47613c;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.einkaufszettel-rezept li.erledigt span {
+    color: #8e8881;
+    text-decoration: line-through;
+    text-decoration-color: rgba(79, 101, 69, .62);
+    text-decoration-thickness: 2px;
+}
+
+.einkaufszettel-leer {
+    padding: 54px 12px 30px;
+    text-align: center;
+}
+
+.einkaufszettel-leer > span {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+    border: 2px solid #92a287;
+    border-radius: 50%;
+    color: #647958;
+    font-family: "Segoe Print", cursive;
+    font-size: 26px;
+    transform: rotate(-5deg);
+}
+
+.einkaufszettel-leer h3 {
+    margin: 0 0 12px;
+    font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.einkaufszettel-leer p {
+    margin: 0;
+    color: #746d66;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.einkaufszettel-fuss {
+    padding: 15px 22px 20px 68px;
+    border-top: 1px solid rgba(111, 79, 56, .15);
+}
+
+.einkaufszettel-fuss > p {
+    min-height: 17px;
+    margin: 0 0 10px;
+    color: #746d66;
+    font-size: 11px;
+}
+
+.einkaufszettel-aktionen {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 9px;
+}
+
+.einkaufszettel-aktionen button {
+    min-height: 42px;
+    padding: 9px 13px;
+    border-radius: 999px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    line-height: 1.25;
+    cursor: pointer;
+}
+
+.einkaufszettel-aktionen button:disabled {
+    opacity: .45;
+    cursor: default;
+}
+
+.einkaufszettel-leeren {
+    border: 1px solid #cfc5b9;
+    background: transparent;
+    color: #6d665f;
+}
+
+.einkaufszettel-fertig {
+    border: 1px solid #718667;
+    background: #dce5d6;
+    color: #3e5636;
+    font-weight: 500;
+}
+
+.einkaufszettel-schnellzugriff {
+    position: fixed;
+    z-index: 900;
+    right: max(16px, calc((100vw - 430px) / 2 + 16px));
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 8px 10px 8px 14px;
+    border: 1px solid #8f5a46;
+    border-radius: 999px;
+    background: #f4e8d7;
+    box-shadow: 0 8px 24px rgba(60, 42, 29, .18);
+    color: #633523;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.einkaufszettel-schnellzugriff[hidden] {
+    display: none;
+}
+
+.einkaufszettel-schnellzugriff.sichtbar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.einkaufszettel-schnellzugriff > span {
+    font-family: "Segoe Print", cursive;
+    font-size: 18px;
+}
+
+.einkaufszettel-schnellzugriff strong {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.einkaufszettel-schnellzugriff em {
+    display: grid;
+    place-items: center;
+    min-width: 23px;
+    height: 23px;
+    padding: 0 5px;
+    border-radius: 50%;
+    background: #8e432e;
+    color: #fff;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .einkaufszettel-panel {
+        width: 100vw;
+    }
+
+    .einkaufszettel-kopf {
+        padding-right: 18px;
+    }
+
+    .einkaufszettel-inhalt,
+    .einkaufszettel-fuss {
+        padding-right: 18px;
+    }
+
+    .einkaufszettel-aktionen {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Rezeptauswahl als visuelles Kachelraster */
