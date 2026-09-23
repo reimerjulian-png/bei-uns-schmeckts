@@ -1277,6 +1277,84 @@ body.menu-offen {
     line-height: 1.4;
 }
 
+.plov-zutatenkopf {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.plov-zutatenkopf h2 {
+    margin: 0;
+}
+
+.plov-mengenwahl {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+.plov-mengenwahl button {
+    min-height: 42px;
+    padding: 9px 13px;
+    border: 1px solid #bdb2a5;
+    border-radius: 999px;
+    background: transparent;
+    color: #5d5750;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+.plov-mengenwahl button[aria-pressed="true"] {
+    border-color: #8e432e;
+    background: #f2e6da;
+    color: #6e3423;
+    font-weight: 500;
+}
+
+.plov-mengenstatus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    margin: 0 0 18px;
+    color: #777169;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+}
+
+.plov-mengenstatus button {
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(142, 67, 46, .35);
+    background: transparent;
+    color: #8e432e;
+    font: inherit;
+    cursor: pointer;
+}
+
+.plov-mengenstatus button[hidden] {
+    display: none;
+}
+
+@media (min-width: 700px) {
+    .plov-zutatenkopf {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .plov-mengenwahl {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: min(100%, 560px);
+    }
+}
+
 
 /* Zutaten-Unterüberschriften: auf allen Rezeptseiten einheitlich */
 
@@ -1939,6 +2017,25 @@ body.menu-offen {
     transform: rotate(-2.5deg);
 }
 
+.spickzettel-marinade h3 {
+    margin: 26px 0 10px;
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 22px;
+    font-weight: 600;
+    color: #4d463f;
+}
+
+.spickzettel-merksatz {
+    margin: 17px 3px 0;
+    padding: 11px 13px;
+    border-left: 2px solid rgba(119, 105, 85, .38);
+    background: rgba(232, 222, 197, .24);
+    color: #5f5851;
+    font-family: "Caveat", "Comic Sans MS", cursive;
+    font-size: 17px;
+    line-height: 1.25;
+}
+
 .spickzettel-kritzeltrennlinie {
     width: 78%;
     height: 13px;
@@ -1949,14 +2046,6 @@ body.menu-offen {
     border-radius: 50%;
 
     transform: rotate(-0.7deg);
-}
-
-.spickzettel-abkuerzungen .spickzettel-zeilen > div {
-    grid-template-columns: 52px 1fr;
-}
-
-.spickzettel-abkuerzungen .spickzettel-zeilen strong {
-    text-align: left;
 }
 
 .spickzettel-pointe {
@@ -2408,8 +2497,7 @@ body.einkaufszettel-offen {
 
 .einkaufszettel-aktionen {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 9px;
+    grid-template-columns: 1fr;
 }
 
 .einkaufszettel-aktionen button {
@@ -2425,12 +2513,6 @@ body.einkaufszettel-offen {
 .einkaufszettel-aktionen button:disabled {
     opacity: .45;
     cursor: default;
-}
-
-.einkaufszettel-leeren {
-    border: 1px solid #cfc5b9;
-    background: transparent;
-    color: #6d665f;
 }
 
 .einkaufszettel-fertig {

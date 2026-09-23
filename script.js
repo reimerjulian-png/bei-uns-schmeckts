@@ -77,7 +77,7 @@ if (menueInhalt) {
 
         <section class="menu-gruppe menu-service" aria-labelledby="menuMehrTitel">
             <p class="menu-bereichstitel" id="menuMehrTitel">Mehr</p>
-            <a href="spickzettel.html"><span aria-hidden="true">✎</span><span><strong>Spickzettel</strong><small>Mengen &amp; Abkürzungen</small></span></a>
+            <a href="spickzettel.html"><span aria-hidden="true">✎</span><span><strong>Spickzettel</strong><small>Mengen &amp; Richtwerte</small></span></a>
             <a href="ueber-uns.html"><span aria-hidden="true">○</span><span><strong>Über uns</strong><small>Wer hinter dem Kochbuch steckt</small></span></a>
         </section>`;
 }
@@ -678,7 +678,6 @@ function einkaufszettelZaehlerAktualisieren() {
     const fortschritt = document.getElementById('einkaufszettelFortschritt');
     const schnellzugriff = document.getElementById('einkaufszettelSchnellzugriff');
     const menuAnzahl = document.getElementById('menuEinkaufszettelAnzahl');
-    const leerenButton = document.getElementById('einkaufszettelLeeren');
     const fertigButton = document.getElementById('einkaufszettelFertig');
 
     if (schnellzugriff) {
@@ -690,7 +689,6 @@ function einkaufszettelZaehlerAktualisieren() {
     }
     if (menuAnzahl) menuAnzahl.textContent = zahlen.gesamt ? `(${zahlen.gesamt - zahlen.erledigt})` : '';
     if (fortschritt) fortschritt.textContent = zahlen.gesamt ? `${zahlen.erledigt} von ${zahlen.gesamt} Zutaten abgehakt` : '';
-    if (leerenButton) leerenButton.disabled = zahlen.gesamt === 0;
     if (fertigButton) fertigButton.disabled = zahlen.gesamt === 0;
 }
 
@@ -743,7 +741,6 @@ function einkaufszettelAufbauen() {
         <div class="einkaufszettel-fuss">
             <p id="einkaufszettelFortschritt"></p>
             <div class="einkaufszettel-aktionen">
-                <button type="button" class="einkaufszettel-leeren" id="einkaufszettelLeeren">Liste leeren</button>
                 <button type="button" class="einkaufszettel-fertig" id="einkaufszettelFertig">Ich hab alles für die Gerichte ✓</button>
             </div>
         </div>`;
@@ -764,8 +761,7 @@ function einkaufszettelAufbauen() {
         menueSchliessen();
         einkaufszettelOeffnen();
     });
-    document.getElementById('einkaufszettelLeeren')?.addEventListener('click', () => einkaufszettelLeeren(false));
-    document.getElementById('einkaufszettelFertig')?.addEventListener('click', () => einkaufszettelLeeren(true));
+    document.getElementById('einkaufszettelFertig')?.addEventListener('click', einkaufszettelLeeren);
 }
 
 function einkaufszettelOeffnen() {
@@ -853,9 +849,9 @@ function einkaufszettelRendern() {
     });
 }
 
-function einkaufszettelLeeren(allesErledigt) {
+function einkaufszettelLeeren() {
     einkaufszettelStatus = { rezepte: [] };
-    einkaufszettelMeldung = allesErledigt ? 'Alles erledigt – guten Appetit!' : 'Der Einkaufszettel wurde geleert.';
+    einkaufszettelMeldung = 'Alles erledigt – guten Appetit!';
     einkaufszettelSpeichern();
     einkaufszettelRendern();
     einkaufszettelRezeptbuttonAktualisieren();
@@ -937,6 +933,40 @@ window.addEventListener('storage', (event) => {
     einkaufszettelRendern();
     einkaufszettelRezeptbuttonAktualisieren();
 });
+
+function plovMengenwahlInitialisieren() {
+    const auswahl = document.querySelector('[data-plov-mengenwahl]');
+    if (!auswahl) return;
+
+    const mengen = [...document.querySelectorAll('[data-plov-menge]')];
+    const buttons = [...auswahl.querySelectorAll('[data-plov-stufe]')];
+    const status = document.querySelector('[data-plov-status]');
+    const reset = document.querySelector('[data-plov-reset]');
+    const beschriftungen = {
+        basis: 'Grundrezept · 6 Portionen',
+        kazan12: '12-L-Kazan · ca. 14–16 Portionen',
+        kazan16: '16-L-Kazan · ca. 18–20 Portionen'
+    };
+
+    function stufeSetzen(stufe) {
+        mengen.forEach((menge) => {
+            menge.textContent = menge.dataset[stufe] || menge.dataset.basis;
+        });
+        buttons.forEach((button) => {
+            button.setAttribute('aria-pressed', String(button.dataset.plovStufe === stufe));
+        });
+        if (status) status.textContent = beschriftungen[stufe] || beschriftungen.basis;
+        if (reset) reset.hidden = stufe === 'basis';
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => stufeSetzen(button.dataset.plovStufe));
+    });
+    reset?.addEventListener('click', () => stufeSetzen('basis'));
+    stufeSetzen('basis');
+}
+
+document.addEventListener('DOMContentLoaded', plovMengenwahlInitialisieren);
 
 
 document.getElementById('startSucheButton')?.addEventListener('click', () => {

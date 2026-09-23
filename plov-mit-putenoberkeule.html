@@ -11,7 +11,7 @@
     <meta property="og:title" content="Plov – Bei uns schmeckt's">
     <meta property="og:description" content="Lockerer Plov mit saftiger Putenoberkeule, Karotten, Zwiebeln und Knoblauch.">
     <meta property="og:image" content="images/plov-mit-putenoberkeule.webp">
-    <link rel="stylesheet" href="style.css?v=20260919-2">
+    <link rel="stylesheet" href="style.css?v=20260921-7">
 </head>
 <body>
     <header class="topbar">
@@ -53,21 +53,31 @@
             </section>
 
             <section class="rezept-bereich">
-                <h2>Zutaten</h2>
+                <div class="plov-zutatenkopf">
+                    <h2>Zutaten</h2>
+                    <div class="plov-mengenwahl" data-plov-mengenwahl aria-label="Kazan-Größe auswählen">
+                        <button type="button" data-plov-stufe="kazan12" aria-pressed="false">Für 12-L-Kazan · ca. 14–16 Portionen</button>
+                        <button type="button" data-plov-stufe="kazan16" aria-pressed="false">Für 16-L-Kazan · ca. 18–20 Portionen</button>
+                    </div>
+                </div>
+                <div class="plov-mengenstatus">
+                    <span data-plov-status>Grundrezept · 6 Portionen</span>
+                    <button type="button" data-plov-reset hidden>Zum Grundrezept zurück</button>
+                </div>
                 <div class="zutaten">
-                    <div><span>600 g</span><span>Putenoberkeule, alternativ Rindernacken, Rinderschulter, Lammnacken oder Lammschulter</span></div>
-                    <div><span>400 g</span><span>Parboiled Langkornreis</span></div>
-                    <div><span>500–550 g</span><span>Karotten, gerne gelbe und orange</span></div>
-                    <div><span>120 g</span><span>Zwiebeln</span></div>
-                    <div><span>1 Knolle</span><span>Knoblauch</span></div>
-                    <div><span>1–2</span><span>ganze Chilischoten</span></div>
-                    <div><span>150 ml</span><span>Raps- oder Sonnenblumenöl</span></div>
-                    <div><span>1 ½ TL</span><span>Kreuzkümmel, ganz</span></div>
-                    <div><span>1 TL</span><span>Koriandersaat, gestoßen</span></div>
-                    <div><span>Alternativ</span><span>2–3 TL Plovgewürz statt Kreuzkümmel und Koriandersaat</span></div>
-                    <div><span>2 TL</span><span>Salz, später nach Geschmack</span></div>
-                    <div><span>1 Prise</span><span>Zucker</span></div>
-                    <div><span>Ca. 700 ml</span><span>heißes Wasser</span></div>
+                    <div><span data-plov-menge data-basis="600 g" data-kazan12="1,5 kg" data-kazan16="1,9 kg">600 g</span><span>Putenoberkeule, alternativ Rindernacken, Rinderschulter, Lammnacken oder Lammschulter</span></div>
+                    <div><span data-plov-menge data-basis="400 g" data-kazan12="1 kg" data-kazan16="ca. 1,3 kg">400 g</span><span>Parboiled Langkornreis</span></div>
+                    <div><span data-plov-menge data-basis="500–550 g" data-kazan12="1,25–1,4 kg" data-kazan16="1,6–1,75 kg">500–550 g</span><span>Karotten, gerne gelbe und orange</span></div>
+                    <div><span data-plov-menge data-basis="120 g" data-kazan12="300 g" data-kazan16="380 g">120 g</span><span>Zwiebeln</span></div>
+                    <div><span data-plov-menge data-basis="1 Knolle" data-kazan12="2–3 Knollen" data-kazan16="3 Knollen">1 Knolle</span><span>Knoblauch</span></div>
+                    <div><span data-plov-menge data-basis="1–2" data-kazan12="3–5" data-kazan16="3–6">1–2</span><span>ganze Chilischoten</span></div>
+                    <div><span data-plov-menge data-basis="150 ml" data-kazan12="375 ml" data-kazan16="475 ml">150 ml</span><span>Raps- oder Sonnenblumenöl</span></div>
+                    <div><span data-plov-menge data-basis="1 ½ TL" data-kazan12="ca. 4 TL" data-kazan16="ca. 5 TL">1 ½ TL</span><span>Kreuzkümmel, ganz</span></div>
+                    <div><span data-plov-menge data-basis="1 TL" data-kazan12="2 ½ TL" data-kazan16="ca. 3 TL">1 TL</span><span>Koriandersaat, gestoßen</span></div>
+                    <div><span data-plov-menge data-basis="2–3 TL" data-kazan12="5–8 TL" data-kazan16="6–9 ½ TL">2–3 TL</span><span>Plovgewürz als Alternative zu Kreuzkümmel und Koriandersaat</span></div>
+                    <div><span data-plov-menge data-basis="2 TL" data-kazan12="5 TL" data-kazan16="6–6 ½ TL">2 TL</span><span>Salz, später nach Geschmack</span></div>
+                    <div><span data-plov-menge data-basis="1 Prise" data-kazan12="2–3 Prisen" data-kazan16="3 Prisen">1 Prise</span><span>Zucker</span></div>
+                    <div><span data-plov-menge data-basis="ca. 700 ml" data-kazan12="ca. 1,75 l" data-kazan16="ca. 2,2 l">Ca. 700 ml</span><span>heißes Wasser</span></div>
                 </div>
             </section>
 
@@ -78,7 +88,7 @@
                     <li>Das Fleisch in große, mundgerechte Stücke schneiden. Zwiebeln würfeln und die Karotten in etwa streichholzgroße Stifte schneiden. Von der Knoblauchknolle nur die äußere, lose Schale entfernen; die Knolle bleibt ganz.</li>
                     <li>Das Öl in einem Kazan oder einem großen, schweren Topf sehr heiß werden lassen. Das Fleisch portionsweise bei kräftiger Hitze rundherum scharf anbraten. Nicht zu viel auf einmal hineingeben, damit die Hitze erhalten bleibt und das Fleisch eine schöne Kruste bekommt. Das angebratene Fleisch kurz herausnehmen.</li>
                     <li>Die Zwiebeln im heißen Öl goldgelb braten. Das Fleisch wieder dazugeben und gleichmäßig mit den Karotten bedecken. Die Schichten dabei nicht vermischen.</li>
-                    <li>Die Knoblauchknolle und die geschlossenen Chilischoten mittig zwischen die Karotten setzen. Etwa 300 ml heißes Wasser angießen, mit Salz und einer Prise Zucker würzen und alles ohne Deckel rund 35 Minuten sanft köcheln lassen.</li>
+                    <li>Knoblauch und die geschlossenen Chilischoten mittig zwischen die Karotten setzen. Zunächst knapp die Hälfte des angegebenen heißen Wassers angießen, mit Salz und Zucker würzen und alles ohne Deckel rund 35 Minuten sanft köcheln lassen.</li>
                     <li>Knoblauch und Chili kurz herausnehmen. Den abgetropften Reis von der Mitte nach außen gleichmäßig auf den Karotten verteilen, ohne ihn mit den unteren Schichten zu vermischen. Vorsichtig so viel heißes Wasser angießen, dass es knapp an den Reis heranreicht; der Reis soll nicht darin schwimmen.</li>
                     <li>Offen und bei mittlerer Hitze garen, bis der Reis die Flüssigkeit weitgehend aufgenommen hat. Den Reis von außen nach innen wenden, dabei die Fleisch- und Karottenschicht darunter möglichst nicht berühren.</li>
                     <li>Den Kreuzkümmel zwischen den Händen leicht zerreiben und zusammen mit der gestoßenen Koriandersaat über den Reis geben. Alternativ das Plovgewürz verwenden. Den Reis zu einem flachen Berg zusammenschieben, mehrere Löcher bis fast zum Topfboden hineinstechen und Knoblauch sowie Chili wieder daraufsetzen.</li>
@@ -97,9 +107,10 @@
                 <h2>Tipp</h2>
                 <p>Im Originalrezept gehören auch Rosinen, Berberitzen und Kichererbsen in den Plov. Bei uns dürfen die drei heute allerdings zuschauen: Obst im Reis ist einfach nicht unser Ding – und die Kichererbsen bekommen ebenfalls frei. 😉</p>
             </section>
+
         </article>
     </main>
     <script src="recipes-data.js?v=20260919-1"></script>
-    <script src="script.js?v=20260919-3"></script>
+    <script src="script.js?v=20260921-4"></script>
 </body>
 </html>
