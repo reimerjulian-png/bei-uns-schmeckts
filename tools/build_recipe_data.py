@@ -146,9 +146,12 @@ class RecipeParser(HTMLParser):
         self.ingredient_parts: list[str] = []
         self.image = ""
         self.is_recipe = False
+        self.kazan_sizes = []
 
     def handle_starttag(self, tag: str, attrs_list: list[tuple[str, str | None]]) -> None:
         attrs = dict(attrs_list)
+        if attrs.get("data-kazan-stufe") in {"kazan12", "kazan16"}:
+            self.kazan_sizes.append(int(attrs["data-kazan-stufe"].replace("kazan", "")))
         classes = set((attrs.get("class") or "").split())
         self.stack.append(classes)
         if "rezept" in classes:
@@ -297,6 +300,8 @@ def main() -> None:
         for key in ("portions", "weekGroup", "weekLabel"):
             if key in prior:
                 item[key] = prior[key]
+        if parser and parser.kazan_sizes:
+            item["kazanSizes"] = sorted(set(parser.kazan_sizes))
         item.update(weekly.get(url, {}))
         catalog.append(item)
 

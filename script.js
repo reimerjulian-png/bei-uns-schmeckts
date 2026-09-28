@@ -25,11 +25,6 @@ if (menueInhalt) {
             <span><strong>Startseite</strong><small>Zur Übersicht</small></span>
         </a>
 
-        <button type="button" class="menu-suche-neu" id="menuSucheButton">
-            <span class="menu-icon suchsymbol" aria-hidden="true"></span>
-            <span><strong>Rezept suchen</strong><small>Schnell zum gewünschten Gericht</small></span>
-        </button>
-
         <a href="alle-rezepte.html" class="menu-start-neu menu-alle-rezepte">
             <span class="menu-icon" aria-hidden="true">▦</span>
             <span><strong>Alle Rezepte</strong><small>Die ganze Sammlung auf einen Blick</small></span>
@@ -40,6 +35,7 @@ if (menueInhalt) {
             <span><strong>Einkaufszettel <em id="menuEinkaufszettelAnzahl"></em></strong><small>Gesammelte Zutaten ansehen &amp; abhaken</small></span>
         </button>
 
+        <a href="kazan.html" class="menu-start-neu"><span class="menu-icon" aria-hidden="true">♨</span><span><strong>Kazan-Rezepte</strong><small>Für deinen 12- oder 16-L-Kazan</small></span></a>
         <section class="menu-gruppe" aria-labelledby="menuRezepteTitel">
             <p class="menu-bereichstitel" id="menuRezepteTitel">Rezepte entdecken</p>
             <div class="menu-kategorien-neu">
@@ -82,10 +78,6 @@ if (menueInhalt) {
         </section>`;
 }
 
-document.getElementById('menuSucheButton')?.addEventListener('click', () => {
-    menueSchliessen();
-    window.setTimeout(() => sucheButton?.click(), 180);
-});
 
 const kategorienSeiten = {
     'klassiker.html': 'Unsere Klassiker',
@@ -934,39 +926,66 @@ window.addEventListener('storage', (event) => {
     einkaufszettelRezeptbuttonAktualisieren();
 });
 
-function plovMengenwahlInitialisieren() {
-    const auswahl = document.querySelector('[data-plov-mengenwahl]');
+function kazanMengenwahlInitialisieren() {
+    const auswahl = document.querySelector('[data-kazan-mengenwahl]');
     if (!auswahl) return;
-
-    const mengen = [...document.querySelectorAll('[data-plov-menge]')];
-    const buttons = [...auswahl.querySelectorAll('[data-plov-stufe]')];
-    const status = document.querySelector('[data-plov-status]');
-    const reset = document.querySelector('[data-plov-reset]');
-    const beschriftungen = {
-        basis: 'Grundrezept · 6 Portionen',
-        kazan12: '12-L-Kazan · ca. 14–16 Portionen',
-        kazan16: '16-L-Kazan · ca. 18–20 Portionen'
-    };
-
+    const mengen = [...document.querySelectorAll('[data-kazan-menge]')];
+    const buttons = [...auswahl.querySelectorAll('[data-kazan-stufe]')];
+    const status = document.querySelector('[data-kazan-status]');
+    const reset = document.querySelector('[data-kazan-reset]');
+    const portionen = document.querySelector('[data-kazan-portionen]');
+    const basisPortionen = portionen?.textContent;
     function stufeSetzen(stufe) {
-        mengen.forEach((menge) => {
-            menge.textContent = menge.dataset[stufe] || menge.dataset.basis;
-        });
-        buttons.forEach((button) => {
-            button.setAttribute('aria-pressed', String(button.dataset.plovStufe === stufe));
-        });
-        if (status) status.textContent = beschriftungen[stufe] || beschriftungen.basis;
+        const button = buttons.find(button => button.dataset.kazanStufe === stufe);
+        if (!button) stufe = 'basis';
+        mengen.forEach(menge => { menge.textContent = menge.dataset[stufe] || menge.dataset.basis; });
+        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.kazanStufe === stufe)));
+        if (status) status.textContent = button ? button.textContent : auswahl.dataset.basisLabel;
+        if (portionen) portionen.textContent = button ? button.dataset.portionen : basisPortionen;
         if (reset) reset.hidden = stufe === 'basis';
+        const url = new URL(location.href);
+        if (button) url.searchParams.set('kazan', stufe.replace('kazan', ''));
+        else url.searchParams.delete('kazan');
+        history.replaceState(null, '', url);
+        document.querySelectorAll('[data-kazan-hinweis]').forEach(hinweis => {
+            hinweis.hidden = hinweis.dataset.kazanHinweis !== stufe;
+        });
     }
-
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => stufeSetzen(button.dataset.plovStufe));
-    });
+    buttons.forEach(button => button.addEventListener('click', () => stufeSetzen(button.dataset.kazanStufe)));
     reset?.addEventListener('click', () => stufeSetzen('basis'));
-    stufeSetzen('basis');
+    stufeSetzen('kazan' + new URLSearchParams(location.search).get('kazan'));
+}
+document.addEventListener('DOMContentLoaded', kazanMengenwahlInitialisieren);
+
+const kazanGrid = document.getElementById('kazanGrid');
+if (kazanGrid) {
+    const buttons = [...document.querySelectorAll('[data-kazan-filter]')];
+    function kazanAnzeigen(groesse) {
+        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.kazanFilter === groesse)));
+        kazanGrid.replaceChildren();
+        const auswahl = rezeptKatalog.filter(rezept => rezept.kazanSizes?.length && (groesse === 'alle' || rezept.kazanSizes.includes(Number(groesse))));
+        auswahl.forEach(rezept => {
+            const karte = document.createElement('a');
+            karte.className = 'alle-rezept-karte';
+            karte.href = rezept.url + '?kazan=' + (groesse === 'alle' ? rezept.kazanSizes[0] : groesse);
+            const bild = document.createElement('img');
+            bild.src = rezept.image; bild.alt = ''; bild.loading = 'lazy';
+            const label = document.createElement('span'); label.className = 'alle-rezept-kategorie';
+            label.textContent = rezept.kazanSizes.map(size => size + ' L').join(' · ');
+            const name = document.createElement('strong'); name.textContent = rezept.name;
+            karte.append(bild, label, name); kazanGrid.append(karte);
+        });
+        document.getElementById('kazanZaehler').textContent = auswahl.length + (auswahl.length === 1 ? ' Rezept' : ' Rezepte');
+        document.getElementById('kazanLeer').hidden = auswahl.length > 0;
+        const url = new URL(location.href);
+        if (groesse === 'alle') url.searchParams.delete('kazan'); else url.searchParams.set('kazan', groesse);
+        history.replaceState(null, '', url);
+    }
+    buttons.forEach(button => button.addEventListener('click', () => kazanAnzeigen(button.dataset.kazanFilter)));
+    const groesse = new URLSearchParams(location.search).get('kazan');
+    kazanAnzeigen(['12', '16'].includes(groesse) ? groesse : 'alle');
 }
 
-document.addEventListener('DOMContentLoaded', plovMengenwahlInitialisieren);
 
 
 document.getElementById('startSucheButton')?.addEventListener('click', () => {

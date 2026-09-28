@@ -1155,8 +1155,12 @@ window.RECIPE_CATALOG = [
     "recipeRank": 0,
     "theme": "reisgerichte",
     "image": "images/plov-mit-putenoberkeule.webp",
-    "searchText": "600 g Putenoberkeule, alternativ Rindernacken, Rinderschulter, Lammnacken oder Lammschulter 400 g Parboiled Langkornreis 500–550 g Karotten, gerne gelbe und orange 120 g Zwiebeln 1 Knolle Knoblauch 1–2 ganze Chilischoten 150 ml Raps- oder Sonnenblumenöl 1 ½ TL Kreuzkümmel, ganz 1 TL Koriandersaat, gestoßen Alternativ 2–3 TL Plovgewürz statt Kreuzkümmel und Koriandersaat 2 TL Salz, später nach Geschmack 1 Prise Zucker Ca. 700 ml heißes Wasser",
-    "newRank": -1
+    "searchText": "600 g Putenoberkeule, alternativ Rindernacken, Rinderschulter, Lammnacken oder Lammschulter 400 g Parboiled Langkornreis 500–550 g Karotten, gerne gelbe und orange 120 g Zwiebeln 1 Knolle Knoblauch 1–2 ganze Chilischoten 150 ml Raps- oder Sonnenblumenöl 1 ½ TL Kreuzkümmel, ganz 1 TL Koriandersaat, gestoßen 2–3 TL Plovgewürz als Alternative zu Kreuzkümmel und Koriandersaat 2 TL Salz, später nach Geschmack 1 Prise Zucker Ca. 700 ml heißes Wasser",
+    "newRank": -1,
+    "kazanSizes": [
+      12,
+      16
+    ]
   },
   {
     "name": "Tomatensalat zum Plov",
@@ -1192,7 +1196,11 @@ window.RECIPE_CATALOG = [
     "theme": "suppen",
     "image": "images/deftige-gulaschsuppe.webp",
     "searchText": "500 g Rinderschulter oder Rindernacken 2 EL Butterschmalz 1 große Zwiebel, fein gewürfelt 2 Zehen Knoblauch, fein gehackt 1 EL Tomatenmark 150 ml Rotwein, nach Geschmack 800 ml Rinderbouillon 2 EL Zucker 3 EL Paprikapulver, edelsüß 3 TL Paprikapulver, rosenscharf 2 Lorbeerblätter 4 Zweige Majoran, Blätter grob gehackt 3 große Kartoffeln, gewürfelt 1 große Karotte, in Scheiben 2 Paprikaschoten, klein gewürfelt 250 g Champignons, in Scheiben; kleine Champignons geviertelt ½ Bund Petersilie, fein gehackt Nach Geschmack Salz und Pfeffer",
-    "newRank": -4
+    "newRank": -4,
+    "kazanSizes": [
+      12,
+      16
+    ]
   },
   {
     "name": "Fantakuchen mit Pfirsich",

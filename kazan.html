@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erfrischende Getränke – Bei uns schmeckt's</title>
+    <title>Kazan-Rezepte – Bei uns schmeckt's</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
-    <meta name="description" content="Erfrischende Getränke, hausgemachte Limonaden und sommerliche Drinks.">
     <link rel="stylesheet" href="style.css?v=20260927-kazan">
 </head>
 <body>
@@ -32,21 +31,26 @@
         <nav class="seitenmenue-inhalt"></nav>
     </aside>
 
-    <main>
-        <section class="kapitel-seite">
-            <a class="zurueck" href="index.html">← Zurück</a>
-            <p class="kapitel-nummer">05</p>
-            <h1>Erfrischende Getränke</h1>
-            <p class="kapitel-beschreibung">Hausgemachte Limonaden, Eistees &amp; sommerliche Drinks</p>
+    <main class="alle-rezepte-seite">
+        <a class="zurueck" href="index.html">← Zur Startseite</a>
+        <section class="kazan-hero">
+            <div><p class="alle-rezepte-eyebrow">Großer Topf. Gemeinsam genießen.</p>
+            <h1>Aus dem Kazan</h1>
+            <p>Unsere Rezepte für deinen 12- oder 16-L-Kazan. Wähle deine Größe und entdecke die passenden Mengen für die große Runde.</p></div>
+            <img src="images/plov-mit-putenoberkeule.webp" alt="Plov mit Reis, Karotten und Putenoberkeule">
         </section>
-
-        <section class="rezeptliste" aria-label="Getränkerezepte"></section>
-
-        <section class="kapitel-leerstand">
-            <span aria-hidden="true">◌</span>
-            <h2>Hier wird bald eingeschenkt</h2>
-            <p>Die ersten erfrischenden Getränke kommen mit den nächsten Rezepten dazu.</p>
+        <section aria-label="Kazan-Größe wählen">
+            <h2>Welcher Kazan steht bei dir?</h2>
+            <div class="kazan-filter">
+                <button type="button" data-kazan-filter="alle" aria-pressed="true">Alle Größen</button>
+                <button type="button" data-kazan-filter="12" aria-pressed="false">12 Liter</button>
+                <button type="button" data-kazan-filter="16" aria-pressed="false">16 Liter</button>
+            </div>
+            <p id="kazanZaehler" aria-live="polite"></p>
         </section>
+        <section class="alle-rezepte-grid" id="kazanGrid" aria-label="Kazan-Rezepte"></section>
+        <p id="kazanLeer" hidden>Für diese Größe gibt es noch kein Rezept.</p>
+        <aside class="kazan-hinweis"><strong>Unsere Kazan-Sammlung wächst.</strong><br>Plov und deftige Gulaschsuppe machen den Anfang. Weitere Rezepte ergänzen wir mit eigenen Mengen und Hinweisen für die jeweilige Kazan-Größe.</aside>
     </main>
 
     <script src="recipes-data.js?v=20260927-kazan2"></script>

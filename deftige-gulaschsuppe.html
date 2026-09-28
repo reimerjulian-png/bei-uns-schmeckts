@@ -11,7 +11,7 @@
     <meta property="og:title" content="Deftige Gulaschsuppe – Bei uns schmeckt's">
     <meta property="og:description" content="Herzhafte Gulaschsuppe mit Rindfleisch, Kartoffeln, Paprika und Champignons für vier Personen.">
     <meta property="og:image" content="images/deftige-gulaschsuppe.webp">
-    <link rel="stylesheet" href="style.css?v=20260921-7">
+    <link rel="stylesheet" href="style.css?v=20260927-kazan">
 </head>
 <body>
     <header class="topbar">
@@ -42,7 +42,7 @@
             <header class="rezept-kopf">
                 <p class="rezept-kategorie">Unsere Klassiker · Suppen</p>
                 <h1>Deftige Gulaschsuppe</h1>
-                <div class="rezept-meta"><span>4 Portionen</span><span>Ca. 2 Stunden</span><span>Normal</span></div>
+                <div class="rezept-meta"><span data-kazan-portionen>4 Portionen</span><span>Ca. 2 Stunden</span><span>Normal</span></div>
                 <button class="rezept-teilen" type="button" aria-label="Rezept teilen"><span class="rezept-teilen-symbol" aria-hidden="true">↗</span><span>Rezept teilen</span></button>
             </header>
 
@@ -54,26 +54,36 @@
             </section>
 
             <section class="rezept-bereich">
-                <h2>Zutaten</h2>
+                <div class="kazan-zutatenkopf">
+                    <h2>Zutaten</h2>
+                    <div class="kazan-mengenwahl" data-kazan-mengenwahl data-basis-label="Grundrezept · 4 Portionen" aria-label="Kazan-Größe auswählen">
+                        <button type="button" data-kazan-stufe="kazan12" data-portionen="ca. 12 Portionen" aria-pressed="false">Für 12-L-Kazan · ca. 12 Portionen</button>
+                        <button type="button" data-kazan-stufe="kazan16" data-portionen="ca. 16 Portionen" aria-pressed="false">Für 16-L-Kazan · ca. 16 Portionen</button>
+                    </div>
+                </div>
+                <div class="kazan-mengenstatus">
+                    <span data-kazan-status aria-live="polite">Grundrezept · 4 Portionen</span>
+                    <button type="button" data-kazan-reset hidden>Zum Grundrezept zurück</button>
+                </div>
                 <div class="zutaten">
-                    <div><span>500 g</span><span>Rinderschulter oder Rindernacken</span></div>
-                    <div><span>2 EL</span><span>Butterschmalz</span></div>
-                    <div><span>1 große</span><span>Zwiebel, fein gewürfelt</span></div>
-                    <div><span>2 Zehen</span><span>Knoblauch, fein gehackt</span></div>
-                    <div><span>1 EL</span><span>Tomatenmark</span></div>
-                    <div><span>150 ml</span><span>Rotwein, nach Geschmack</span></div>
-                    <div><span>800 ml</span><span>Rinderbouillon</span></div>
-                    <div><span>2 EL</span><span>Zucker</span></div>
-                    <div><span>3 EL</span><span>Paprikapulver, edelsüß</span></div>
-                    <div><span>3 TL</span><span>Paprikapulver, rosenscharf</span></div>
-                    <div><span>2</span><span>Lorbeerblätter</span></div>
-                    <div><span>4 Zweige</span><span>Majoran, Blätter grob gehackt</span></div>
-                    <div><span>3 große</span><span>Kartoffeln, gewürfelt</span></div>
-                    <div><span>1 große</span><span>Karotte, in Scheiben</span></div>
-                    <div><span>2</span><span>Paprikaschoten, klein gewürfelt</span></div>
-                    <div><span>250 g</span><span>Champignons, in Scheiben; kleine Champignons geviertelt</span></div>
-                    <div><span>½ Bund</span><span>Petersilie, fein gehackt</span></div>
-                    <div><span>Nach Geschmack</span><span>Salz und Pfeffer</span></div>
+                    <div><span data-kazan-menge data-basis="500 g" data-kazan12="1,5 kg" data-kazan16="2 kg">500 g</span><span>Rinderschulter oder Rindernacken</span></div>
+                    <div><span data-kazan-menge data-basis="2 EL" data-kazan12="6 EL" data-kazan16="8 EL">2 EL</span><span>Butterschmalz</span></div>
+                    <div><span data-kazan-menge data-basis="1 große" data-kazan12="3 große" data-kazan16="4 große">1 große</span><span>Zwiebel, fein gewürfelt</span></div>
+                    <div><span data-kazan-menge data-basis="2 Zehen" data-kazan12="6 Zehen" data-kazan16="8 Zehen">2 Zehen</span><span>Knoblauch, fein gehackt</span></div>
+                    <div><span data-kazan-menge data-basis="1 EL" data-kazan12="3 EL" data-kazan16="4 EL">1 EL</span><span>Tomatenmark</span></div>
+                    <div><span data-kazan-menge data-basis="150 ml" data-kazan12="450 ml" data-kazan16="600 ml">150 ml</span><span>Rotwein, nach Geschmack</span></div>
+                    <div><span data-kazan-menge data-basis="800 ml" data-kazan12="2,4 l" data-kazan16="3,2 l">800 ml</span><span>Rinderbouillon</span></div>
+                    <div><span data-kazan-menge data-basis="2 EL" data-kazan12="bis zu 6 EL" data-kazan16="bis zu 8 EL">2 EL</span><span>Zucker</span></div>
+                    <div><span data-kazan-menge data-basis="3 EL" data-kazan12="9 EL" data-kazan16="12 EL">3 EL</span><span>Paprikapulver, edelsüß</span></div>
+                    <div><span data-kazan-menge data-basis="3 TL" data-kazan12="bis zu 9 TL" data-kazan16="bis zu 12 TL">3 TL</span><span>Paprikapulver, rosenscharf</span></div>
+                    <div><span data-kazan-menge data-basis="2" data-kazan12="4" data-kazan16="5">2</span><span>Lorbeerblätter</span></div>
+                    <div><span data-kazan-menge data-basis="4 Zweige" data-kazan12="12 Zweige" data-kazan16="16 Zweige">4 Zweige</span><span>Majoran, Blätter grob gehackt</span></div>
+                    <div><span data-kazan-menge data-basis="3 große" data-kazan12="9 große" data-kazan16="12 große">3 große</span><span>Kartoffeln, gewürfelt</span></div>
+                    <div><span data-kazan-menge data-basis="1 große" data-kazan12="3 große" data-kazan16="4 große">1 große</span><span>Karotte, in Scheiben</span></div>
+                    <div><span data-kazan-menge data-basis="2" data-kazan12="6" data-kazan16="8">2</span><span>Paprikaschoten, klein gewürfelt</span></div>
+                    <div><span data-kazan-menge data-basis="250 g" data-kazan12="750 g" data-kazan16="1 kg">250 g</span><span>Champignons, in Scheiben; kleine Champignons geviertelt</span></div>
+                    <div><span data-kazan-menge data-basis="½ Bund" data-kazan12="1 ½ Bund" data-kazan16="2 Bund">½ Bund</span><span>Petersilie, fein gehackt</span></div>
+                    <div><span data-kazan-menge data-basis="Nach Geschmack" data-kazan12="Nach Geschmack" data-kazan16="Nach Geschmack">Nach Geschmack</span><span>Salz und Pfeffer</span></div>
                 </div>
             </section>
 
@@ -81,11 +91,21 @@
                 <h2>Zubereitung</h2>
                 <ol class="zubereitung">
                     <li>Rinderschulter oder Rindernacken in etwa <strong>3 × 3 cm große Würfel</strong> schneiden. Zwiebel und Knoblauch fein würfeln. Kartoffeln und Paprika würfeln, die Karotte in Scheiben schneiden. Große Champignons in Scheiben schneiden, kleine Champignons vierteln.</li>
-                    <li>Das Butterschmalz in einem großen Topf erhitzen. Die Rindfleischwürfel hineingeben und unter regelmäßigem Rühren etwa <strong>5 Minuten</strong> kräftig anbraten. Zwiebel und Knoblauch dazugeben und alles weitere <strong>5 Minuten</strong> mitdünsten.</li>
+                    <li>Das Butterschmalz in einem großen Topf oder Kazan erhitzen. Die Rindfleischwürfel portionsweise etwa <strong>5 Minuten je Durchgang</strong> kräftig anbraten und herausnehmen. Zwiebel und Knoblauch anschließend etwa <strong>5 Minuten</strong> mitdünsten. Das Fleisch wieder dazugeben.</li>
                     <li>Das Fleisch mit Rinderbouillon und Rotwein ablöschen. Salz, Pfeffer, Zucker, beide Sorten Paprikapulver, Lorbeerblätter, Tomatenmark und Majoran dazugeben und gründlich unterrühren.</li>
                     <li>Den Deckel auflegen und die Suppe bei kleiner Hitze etwa <strong>60 Minuten</strong> sanft schmoren lassen, damit das Fleisch schön zart wird.</li>
                     <li>Kartoffeln, Paprika, Champignons und Karotten hinzugeben. Alles weitere <strong>etwa 20 Minuten</strong> köcheln lassen, bis das Gemüse gar ist. Zum Schluss die Petersilie unterrühren und die Gulaschsuppe heiß servieren.</li>
                 </ol>
+            </section>
+
+            <section class="rezept-bereich">
+                <h2>Hinweise für den Kazan</h2>
+                <p>Die Kazan-Mengen sind vom Grundrezept abgeleitete Richtwerte und noch nicht im Kazan erprobt. Die Literangabe bezeichnet die Topfgröße, nicht die fertige Suppenmenge. Platz zum Rühren lassen und die Bouillon bei Bedarf nach und nach ergänzen.</p>
+                <p data-kazan-hinweis="kazan12" hidden>12-L-Kazan: dreifache Grundmenge für etwa 12 Portionen, mit 1,5 kg Rindfleisch und 2,4 l Bouillon als Ausgangspunkt.</p>
+                <p data-kazan-hinweis="kazan16" hidden>16-L-Kazan: vierfache Grundmenge für etwa 16 Portionen, mit 2 kg Rindfleisch und 3,2 l Bouillon als Ausgangspunkt.</p>
+                <p>Das Fleisch in mehreren Durchgängen anbraten, damit es bräunt. Bei den großen Mengen zusätzliche Zeit fürs Anbraten und Aufheizen einplanen. Die Schmorzeit beginnt, sobald die Suppe sanft köchelt; das Gemüse erst zugeben, wenn das Fleisch nahezu zart ist.</p>
+                <p>Bei den Kazan-Varianten zunächst etwa die Hälfte des angegebenen Zuckers und rosenscharfen Paprikapulvers verwenden und später abschmecken. Salz vorsichtig dosieren, da die Bouillon bereits Salz mitbringt.</p>
+                <a href="kazan.html">Alle Kazan-Rezepte →</a>
             </section>
 
             <section class="rezept-bereich rezept-tipp">
@@ -94,7 +114,7 @@
             </section>
         </article>
     </main>
-    <script src="recipes-data.js?v=20260919-1"></script>
-    <script src="script.js?v=20260921-4"></script>
+    <script src="recipes-data.js?v=20260927-kazan2"></script>
+    <script src="script.js?v=20260927-menu"></script>
 </body>
 </html>

@@ -1277,7 +1277,7 @@ body.menu-offen {
     line-height: 1.4;
 }
 
-.plov-zutatenkopf {
+.kazan-zutatenkopf {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1285,18 +1285,18 @@ body.menu-offen {
     margin-bottom: 12px;
 }
 
-.plov-zutatenkopf h2 {
+.kazan-zutatenkopf h2 {
     margin: 0;
 }
 
-.plov-mengenwahl {
+.kazan-mengenwahl {
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
     width: 100%;
 }
 
-.plov-mengenwahl button {
+.kazan-mengenwahl button {
     min-height: 42px;
     padding: 9px 13px;
     border: 1px solid #bdb2a5;
@@ -1309,14 +1309,14 @@ body.menu-offen {
     cursor: pointer;
 }
 
-.plov-mengenwahl button[aria-pressed="true"] {
+.kazan-mengenwahl button[aria-pressed="true"] {
     border-color: #8e432e;
     background: #f2e6da;
     color: #6e3423;
     font-weight: 500;
 }
 
-.plov-mengenstatus {
+.kazan-mengenstatus {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1327,7 +1327,7 @@ body.menu-offen {
     font-size: 11px;
 }
 
-.plov-mengenstatus button {
+.kazan-mengenstatus button {
     padding: 0;
     border: 0;
     border-bottom: 1px solid rgba(142, 67, 46, .35);
@@ -1337,19 +1337,19 @@ body.menu-offen {
     cursor: pointer;
 }
 
-.plov-mengenstatus button[hidden] {
+.kazan-mengenstatus button[hidden] {
     display: none;
 }
 
 @media (min-width: 700px) {
-    .plov-zutatenkopf {
+    .kazan-zutatenkopf {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 24px;
     }
 
-    .plov-mengenwahl {
+    .kazan-mengenwahl {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: min(100%, 560px);
     }
@@ -3726,3 +3726,16 @@ input {
         grid-template-columns: 1fr;
     }
 }
+
+/* Kazan-Sammlung */
+.kazan-hero { display:grid; grid-template-columns:1.1fr 1fr; gap:36px; align-items:center; margin:28px 0 40px; }
+.kazan-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(48px,7vw,80px); font-weight:500; line-height:1; margin:12px 0 22px; }
+.kazan-hero p { line-height:1.7; }
+.kazan-hero img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:18px; }
+.kazan-filter { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.kazan-filter button { font:inherit; padding:12px 22px; border:1px solid #c8bcaa; border-radius:30px; background:transparent; cursor:pointer; }
+.kazan-filter button[aria-pressed="true"] { background:#344d3a; color:white; border-color:#344d3a; }
+.kazan-einstieg { display:block; max-width:1000px; margin:36px auto; padding:30px; background:#e6eadf; border-radius:16px; text-decoration:none; color:inherit; }
+.kazan-einstieg strong { display:block; font-family:'Cormorant Garamond',serif; font-size:34px; margin-bottom:8px; }
+.kazan-hinweis { margin-top:36px; padding:24px; border-left:3px solid #9b7956; line-height:1.7; }
+@media(max-width:650px) { .kazan-hero { grid-template-columns:1fr; gap:18px; } .kazan-hero img { max-height:260px; } .kazan-einstieg { margin:24px 20px; } }
