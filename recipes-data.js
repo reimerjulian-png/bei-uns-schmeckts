@@ -1155,7 +1155,7 @@ window.RECIPE_CATALOG = [
     "recipeRank": 0,
     "theme": "reisgerichte",
     "image": "images/plov-mit-putenoberkeule.webp",
-    "searchText": "600 g Putenoberkeule, alternativ Rindernacken, Rinderschulter, Lammnacken oder Lammschulter 400 g Parboiled Langkornreis 500–550 g Karotten, gerne gelbe und orange 120 g Zwiebeln 1 Knolle Knoblauch 1–2 ganze Chilischoten 150 ml Raps- oder Sonnenblumenöl 1 ½ TL Kreuzkümmel, ganz 1 TL Koriandersaat, gestoßen 2–3 TL Plovgewürz als Alternative zu Kreuzkümmel und Koriandersaat 2 TL Salz, später nach Geschmack 1 Prise Zucker Ca. 700 ml heißes Wasser",
+    "searchText": "600 g Putenoberkeule oder Nacken bzw. Schulter von Rind oder Lamm, jeweils ohne Knochen 400 g Parboiled-Langkornreis, trocken gewogen 500 g Möhren, gern gelbe und orange gemischt 120 g Zwiebeln 150–180 ml Raffiniertes Sonnenblumen- oder Rapsöl 1 Knolle Knoblauch, ganz 1 Stk. Chilischoten, ganz und unbeschädigt 1 TL Kreuzkümmelsamen, gestrichen abgemessen 10 g Salz als Startwert, später abschmecken 0,5 TL Zucker, nur bei Bedarf Nach Bedarf Heißes Wasser, nach Füllstand in Schritt 4–5",
     "newRank": -1,
     "kazanSizes": [
       12,
